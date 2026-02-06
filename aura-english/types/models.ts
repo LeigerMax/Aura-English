@@ -1,0 +1,147 @@
+/**
+ * Data models for the application
+ */
+
+/**
+ * Deck model
+ */
+export interface Deck {
+  id: string;
+  name: string;
+  description?: string;
+  color: string;
+  created_at: number;
+  updated_at: number;
+  // Computed field (not in database)
+  cardCount?: number;
+}
+
+/**
+ * Flashcard model
+ */
+export interface Flashcard {
+  id: string;
+  word: string;
+  definition: string;
+  context?: string;
+  // SM-2 spaced repetition fields
+  repetitions: number;
+  interval: number;
+  ease_factor: number;
+  last_reviewed_at: number | null;
+  next_review_at: number | null;
+  created_at: number;
+  updated_at: number;
+}
+
+/** Quality score for SM-2 algorithm (1 = difficult, 3 = correct, 5 = easy) */
+export type QualityScore = 1 | 3 | 5;
+
+/** Source origin of a review event */
+export type ReviewSource = 'flashcard' | 'quiz' | 'challenge';
+
+/** Input for the ReviewService */
+export interface ReviewInput {
+  flashcardId: string;
+  quality: QualityScore;
+  source: ReviewSource;
+}
+
+/** Result returned by the SM-2 algorithm */
+export interface SM2Result {
+  repetitions: number;
+  interval: number;
+  easeFactor: number;
+  nextReviewAt: number;
+}
+
+/** Quiz question types */
+export type QuizQuestionType = 'multiple_choice' | 'fill_in_the_blank';
+
+/** A single quiz question */
+export interface QuizQuestion {
+  id: string;
+  type: QuizQuestionType;
+  flashcard: Flashcard;
+  /** The question text */
+  question: string;
+  /** Correct answer */
+  correctAnswer: string;
+  /** Options for multiple choice */
+  options?: string[];
+  /** The sentence with a blank for fill-in-the-blank */
+  sentenceWithBlank?: string;
+}
+
+/** Result of a quiz answer */
+export interface QuizAnswerResult {
+  questionId: string;
+  flashcardId: string;
+  isCorrect: boolean;
+  quality: QualityScore;
+  userAnswer: string;
+  correctAnswer: string;
+}
+
+/**
+ * Deck-Flashcard association (N:N relationship)
+ */
+export interface DeckFlashcard {
+  deck_id: string;
+  flashcard_id: string;
+  added_at: number;
+}
+
+/**
+ * Flashcard with deck information (for queries)
+ */
+export interface FlashcardWithDecks extends Flashcard {
+  deckIds: string[];
+}
+
+/**
+ * Input for creating a new deck
+ */
+export interface CreateDeckInput {
+  name: string;
+  description?: string;
+  color?: string;
+}
+
+/**
+ * Input for updating a deck
+ */
+export interface UpdateDeckInput {
+  name?: string;
+  description?: string;
+  color?: string;
+}
+
+/**
+ * Input for creating a new flashcard
+ */
+export interface CreateFlashcardInput {
+  word: string;
+  definition: string;
+  context?: string;
+  deckIds?: string[]; // Optional: add to specific decks on creation
+}
+
+/**
+ * Input for updating a flashcard
+ */
+export interface UpdateFlashcardInput {
+  word?: string;
+  definition?: string;
+  context?: string;
+}
+
+/**
+ * Flashcard form data (for UI forms)
+ */
+export interface FlashcardFormData {
+  word: string;
+  definition: string;
+  context: string;
+  selectedDeckIds: string[];
+}

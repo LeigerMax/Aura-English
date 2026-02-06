@@ -1,0 +1,31 @@
+{
+  "expo": {
+    "name": "aura-english",
+    "slug": "aura-english",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "auraenglish",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#E6F4FE"
+      },
+      "edgeToEdgeEnabled": true,
+      "predictiveBackGestureEnabled": false,
+      "package": "com.allmaxou.auraenglish"
+    },
+    "web": {
+      "output": "static"
+    },
+    "plugins": [
+      "expo-sqlite"
+    ],
+    "experiments": {
+      "reactCompiler": true
+    }
+  }
+}
