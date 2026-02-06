@@ -145,3 +145,72 @@ export interface FlashcardFormData {
   context: string;
   selectedDeckIds: string[];
 }
+
+// ──────────────────────────────────────────────
+// Challenge Module Types
+// ──────────────────────────────────────────────
+
+/** Phases of a Challenge session */
+export type ChallengePhase =
+  | 'deck_selection'
+  | 'flashcard_review'
+  | 'quiz'
+  | 'translation'
+  | 'results';
+
+/** Configuration for starting a Challenge session */
+export interface ChallengeConfig {
+  deckId: string;
+  deckName: string;
+  /** Max number of cards to include in the session */
+  cardLimit: number;
+}
+
+/** Aggregated results of a completed Challenge session */
+export interface ChallengeSessionResult {
+  /** Flashcard review stats */
+  reviewStats: { difficult: number; correct: number; easy: number };
+  /** Quiz results */
+  quizResults: QuizAnswerResult[];
+  /** Translation exercise result (null if skipped / no API key) */
+  translationResult: TranslationResult | null;
+  /** Total cards processed */
+  totalCards: number;
+}
+
+/** A single translation exercise */
+export interface TranslationExercise {
+  /** French sentence to translate */
+  frenchSentence: string;
+  /** Words from the challenge cards used in the sentence */
+  relatedWords: string[];
+}
+
+/** Result of AI-powered translation correction */
+export interface TranslationResult {
+  /** Original French sentence */
+  frenchSentence: string;
+  /** User's attempted translation */
+  userTranslation: string;
+  /** AI-corrected version */
+  correctedTranslation: string;
+  /** Whether the translation was essentially correct */
+  isCorrect: boolean;
+  /** Detailed feedback / explanation of errors */
+  feedback: string;
+  /** Overall quality score */
+  quality: QualityScore;
+}
+
+/** Response shape from the Gemini API (sentence generation) */
+export interface GeminiSentenceResponse {
+  frenchSentence: string;
+  relatedWords: string[];
+}
+
+/** Response shape from the Gemini API (translation correction) */
+export interface GeminiCorrectionResponse {
+  correctedTranslation: string;
+  isCorrect: boolean;
+  feedback: string;
+}
