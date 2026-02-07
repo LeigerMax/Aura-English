@@ -13,7 +13,10 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '@/core/theme';
 import type { ThemeMode, ThemeColors } from '@/core/theme';
+import Constants from 'expo-constants';
 import { saveApiKey, getApiKey, deleteApiKey, hasApiKey } from '@/core/services/apiKeyService';
+
+const APP_VERSION = Constants.expoConfig?.version ?? '1.0.0';
 
 /**
  * SettingsScreen
@@ -117,7 +120,7 @@ export const SettingsScreen: React.FC = () => {
               <Ionicons name="information-circle-outline" size={22} color={colors.text.secondary} />
               <View style={styles.rowContent}>
                 <Text style={styles.label}>App</Text>
-                <Text style={styles.value}>Aura English v1.0.0</Text>
+                <Text style={styles.value}>Aura English v{APP_VERSION}</Text>
               </View>
             </View>
           </View>

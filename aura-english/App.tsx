@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { View, Text, ActivityIndicator } from 'react-native';
 import { NavigationContainer, DefaultTheme, DarkTheme, Theme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import * as Updates from 'expo-updates';
 import { HomeScreen, RootStackParamList } from '@/features/home/HomeScreen';
 import { DeckDetailScreen } from '@/features/decks/DeckDetailScreen';
 import { DeckListScreen  } from '@/features/decks/DeckListScreen';
@@ -107,6 +108,23 @@ export default function App() {
   const [isReady, setIsReady] = useState(false);
   const [initialTheme, setInitialTheme] = useState<ThemeMode>('system');
   const [error, setError] = useState<string | null>(null);
+  const [isUpdating, setIsUpdating] = useState(false);
+
+  // ── OTA auto-update ──
+  const checkForOTAUpdate = useCallback(async () => {
+    if (__DEV__) return; // skip in dev mode
+    try {
+      const update = await Updates.checkForUpdateAsync();
+      if (update.isAvailable) {
+        setIsUpdating(true);
+        await Updates.fetchUpdateAsync();
+        await Updates.reloadAsync();
+      }
+    } catch (e) {
+      // Silently ignore update errors — the app works fine with current bundle
+      console.log('OTA update check failed:', e);
+    }
+  }, []);
 
   useEffect(() => {
     Promise.all([
@@ -116,6 +134,8 @@ export default function App() {
       .then(([, mode]) => {
         setInitialTheme(mode);
         setIsReady(true);
+        // Check for updates after app is ready
+        checkForOTAUpdate();
       })
       .catch((err) => {
         console.error('App initialization failed:', err);
@@ -134,11 +154,13 @@ export default function App() {
     );
   }
 
-  if (!isReady) {
+  if (!isReady || isUpdating) {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#F9FAFB' }}>
         <ActivityIndicator size="large" color="#6366F1" />
-        <Text style={{ color: '#111827', marginTop: 16, fontSize: 16 }}>Loading...</Text>
+        <Text style={{ color: '#111827', marginTop: 16, fontSize: 16 }}>
+          {isUpdating ? 'Updating...' : 'Loading...'}
+        </Text>
       </View>
     );
   }

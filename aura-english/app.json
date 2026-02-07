@@ -5,6 +5,9 @@
     "version": "1.0.1",
     "orientation": "portrait",
     "scheme": "auraenglish",
+    "plateforms": [
+      "android"
+    ],
     "userInterfaceStyle": "automatic",
     "icon": "./assets/logo.png",
     "splash": {
@@ -40,6 +43,12 @@
       "eas": {
         "projectId": "df405ce5-236d-414d-9528-1fe50de60015"
       }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/df405ce5-236d-414d-9528-1fe50de60015"
     }
   }
 }
