@@ -9,7 +9,8 @@ import { FlashcardFormScreen } from '@/features/flashcards/FlashcardFormScreen';
 import { QuizScreen } from '@/features/quiz';
 import { ReviewScreen } from '@/features/review';
 import { ChallengeScreen } from '@/features/challenge';
-import { GrammarScreen } from '@/features/grammar';
+import { GrammarHomeScreen, GrammarCategoryScreen, GrammarRuleScreen } from '@/features/grammar';
+import { getCategoryById, getRuleById } from '@/data/grammar';
 import { SettingsScreen } from '@/features/settings';
 import { colors } from '@/constants';
 import { getDatabase } from '@/core/database';
@@ -82,7 +83,21 @@ export default function App() {
           options={({ route }) => ({ title: `Review: ${route.params.deckName}` })}
         />
         <Stack.Screen name="Challenge" component={ChallengeScreen} options={{ title: 'Challenge' }} />
-        <Stack.Screen name="Grammar" component={GrammarScreen} options={{ title: 'Grammar' }} />
+        <Stack.Screen name="Grammar" component={GrammarHomeScreen} options={{ title: 'Grammar' }} />
+        <Stack.Screen
+          name="GrammarCategory"
+          component={GrammarCategoryScreen}
+          options={({ route }) => ({
+            title: getCategoryById(route.params.categoryId)?.title ?? 'Category',
+          })}
+        />
+        <Stack.Screen
+          name="GrammarRule"
+          component={GrammarRuleScreen}
+          options={({ route }) => ({
+            title: getRuleById(route.params.ruleId)?.title ?? 'Grammar Rule',
+          })}
+        />
         <Stack.Screen name="Settings" component={SettingsScreen} options={{ title: 'Settings' }} />
       </Stack.Navigator>
     </NavigationContainer>

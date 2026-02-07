@@ -26,6 +26,8 @@ export type RootStackParamList = {
   Quiz: undefined;
   Challenge: undefined;
   Grammar: undefined;
+  GrammarCategory: { categoryId: string };
+  GrammarRule: { ruleId: string };
   Settings: undefined;
 };
 

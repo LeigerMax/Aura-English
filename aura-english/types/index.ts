@@ -3,3 +3,4 @@
  * Navigation types are exported from features/home/HomeScreen.tsx.
  */
 export * from './models';
+export * from './grammar';
