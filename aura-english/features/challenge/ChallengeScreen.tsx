@@ -613,7 +613,7 @@ export const ChallengeScreen: React.FC<ChallengeScreenProps> = ({ navigation }) 
               currentQuizQuestion.options?.map((option) => {
                 const isSelected = selectedAnswer === option;
                 const isCorrectOpt = option === currentQuizQuestion.correctAnswer;
-                const optStyle = getOptionStyle(option, selectedAnswer, currentQuizQuestion.correctAnswer, answerSubmitted);
+                const optStyle = getOptionStyle(option, selectedAnswer, currentQuizQuestion.correctAnswer, answerSubmitted, styles);
                 return (
                   <TouchableOpacity
                     key={option}
@@ -945,6 +945,7 @@ function getOptionStyle(
   selectedAnswer: string | null,
   correctAnswer: string,
   submitted: boolean,
+  styles: ReturnType<typeof createStyles>,
 ) {
   if (submitted) {
     if (option === correctAnswer) return styles.optionCorrect;
