@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, ActivityIndicator } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, DefaultTheme, DarkTheme, Theme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { HomeScreen, RootStackParamList } from '@/features/home/HomeScreen';
 import { DeckDetailScreen } from '@/features/decks/DeckDetailScreen';
@@ -12,51 +12,46 @@ import { ChallengeScreen } from '@/features/challenge';
 import { GrammarHomeScreen, GrammarCategoryScreen, GrammarRuleScreen } from '@/features/grammar';
 import { getCategoryById, getRuleById } from '@/data/grammar';
 import { SettingsScreen } from '@/features/settings';
-import { colors } from '@/constants';
+import { ThemeProvider, useTheme, loadThemePreference } from '@/core/theme';
+import type { ThemeMode, ThemeColors } from '@/core/theme';
+import { useColorScheme as useNativeWindColorScheme } from 'nativewind';
 import { getDatabase } from '@/core/database';
 import { seedDefaultDecks } from '@/core/services/seedService';
 import './global.css';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
-export default function App() {
-  const [isDbReady, setIsDbReady] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+/** Build a React Navigation theme from our palette. */
+function buildNavTheme(colors: ThemeColors, isDark: boolean): Theme {
+  const base = isDark ? DarkTheme : DefaultTheme;
+  return {
+    ...base,
+    dark: isDark,
+    colors: {
+      ...base.colors,
+      primary: colors.primary,
+      background: colors.background,
+      card: colors.surface,
+      text: colors.text.primary,
+      border: colors.border,
+      notification: colors.error,
+    },
+  };
+}
 
-  useEffect(() => {
-    getDatabase()
-      .then(async (db) => {
-        await seedDefaultDecks(db);
-        setIsDbReady(true);
-      })
-      .catch((err) => {
-        console.error('Database initialization failed:', err);
-        setError(err instanceof Error ? err.message : 'Failed to initialize database');
-      });
-  }, []);
+/** Inner app — consumes ThemeContext. */
+function AppContent() {
+  const { colors, isDark } = useTheme();
+  const { setColorScheme } = useNativeWindColorScheme();
+  const navTheme = React.useMemo(() => buildNavTheme(colors, isDark), [colors, isDark]);
 
-  if (error) {
-    return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: colors.background }}>
-        <Text style={{ color: '#ef4444', fontSize: 16, marginBottom: 8 }}>Database Error</Text>
-        <Text style={{ color: colors.text.primary, fontSize: 14, textAlign: 'center', paddingHorizontal: 20 }}>
-          {error}
-        </Text>
-      </View>
-    );
-  }
-
-  if (!isDbReady) {
-    return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: colors.background }}>
-        <ActivityIndicator size="large" color={colors.primary} />
-        <Text style={{ color: colors.text.primary, marginTop: 16, fontSize: 16 }}>Loading...</Text>
-      </View>
-    );
-  }
+  // Sync NativeWind dark mode with our theme context
+  React.useEffect(() => {
+    setColorScheme(isDark ? 'dark' : 'light');
+  }, [isDark]);
 
   return (
-    <NavigationContainer>
+    <NavigationContainer theme={navTheme}>
       <Stack.Navigator
         initialRouteName="Home"
         screenOptions={{
@@ -105,5 +100,52 @@ export default function App() {
         <Stack.Screen name="Settings" component={SettingsScreen} options={{ title: 'Settings' }} />
       </Stack.Navigator>
     </NavigationContainer>
+  );
+}
+
+export default function App() {
+  const [isReady, setIsReady] = useState(false);
+  const [initialTheme, setInitialTheme] = useState<ThemeMode>('system');
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    Promise.all([
+      getDatabase().then(async (db) => { await seedDefaultDecks(db); }),
+      loadThemePreference(),
+    ])
+      .then(([, mode]) => {
+        setInitialTheme(mode);
+        setIsReady(true);
+      })
+      .catch((err) => {
+        console.error('App initialization failed:', err);
+        setError(err instanceof Error ? err.message : 'Failed to initialize');
+      });
+  }, []);
+
+  if (error) {
+    return (
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#F9FAFB' }}>
+        <Text style={{ color: '#ef4444', fontSize: 16, marginBottom: 8 }}>Initialization Error</Text>
+        <Text style={{ color: '#111827', fontSize: 14, textAlign: 'center', paddingHorizontal: 20 }}>
+          {error}
+        </Text>
+      </View>
+    );
+  }
+
+  if (!isReady) {
+    return (
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#F9FAFB' }}>
+        <ActivityIndicator size="large" color="#6366F1" />
+        <Text style={{ color: '#111827', marginTop: 16, fontSize: 16 }}>Loading...</Text>
+      </View>
+    );
+  }
+
+  return (
+    <ThemeProvider initialMode={initialTheme}>
+      <AppContent />
+    </ThemeProvider>
   );
 }

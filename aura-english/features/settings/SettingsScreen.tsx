@@ -11,7 +11,8 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
-import { colors } from '@/constants';
+import { useTheme } from '@/core/theme';
+import type { ThemeMode, ThemeColors } from '@/core/theme';
 import { saveApiKey, getApiKey, deleteApiKey, hasApiKey } from '@/core/services/apiKeyService';
 
 /**
@@ -23,6 +24,9 @@ import { saveApiKey, getApiKey, deleteApiKey, hasApiKey } from '@/core/services/
  * - Delete the stored key
  */
 export const SettingsScreen: React.FC = () => {
+  const { colors, themeMode, setThemeMode } = useTheme();
+  const styles = React.useMemo(() => createStyles(colors), [colors]);
+
   const [keyInput, setKeyInput] = useState('');
   const [hasKey, setHasKey] = useState(false);
   const [maskedKey, setMaskedKey] = useState('');
@@ -116,6 +120,63 @@ export const SettingsScreen: React.FC = () => {
                 <Text style={styles.value}>Aura English v1.0.0</Text>
               </View>
             </View>
+          </View>
+        </View>
+
+        {/* Theme Section */}
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>Appearance</Text>
+          <Text style={styles.sectionDescription}>
+            Choose how the app looks. "System" follows your device settings.
+          </Text>
+
+          <View style={styles.card}>
+            {(['light', 'dark', 'system'] as ThemeMode[]).map((mode) => {
+              const isActive = themeMode === mode;
+              const iconMap: Record<ThemeMode, keyof typeof Ionicons.glyphMap> = {
+                light: 'sunny-outline',
+                dark: 'moon-outline',
+                system: 'phone-portrait-outline',
+              };
+              const labelMap: Record<ThemeMode, string> = {
+                light: 'Light',
+                dark: 'Dark',
+                system: 'System',
+              };
+
+              return (
+                <TouchableOpacity
+                  key={mode}
+                  style={[
+                    styles.themeOption,
+                    isActive && { backgroundColor: colors.primary + '15' },
+                    mode !== 'system' && styles.themeOptionBorder,
+                  ]}
+                  onPress={() => setThemeMode(mode)}
+                  activeOpacity={0.7}
+                >
+                  <View style={[
+                    styles.themeIconCircle,
+                    { backgroundColor: isActive ? colors.primary + '20' : colors.surfaceLight },
+                  ]}>
+                    <Ionicons
+                      name={iconMap[mode]}
+                      size={20}
+                      color={isActive ? colors.primary : colors.text.tertiary}
+                    />
+                  </View>
+                  <Text style={[
+                    styles.themeLabel,
+                    isActive && { color: colors.primary, fontWeight: '700' },
+                  ]}>
+                    {labelMap[mode]}
+                  </Text>
+                  {isActive && (
+                    <Ionicons name="checkmark-circle" size={22} color={colors.primary} />
+                  )}
+                </TouchableOpacity>
+              );
+            })}
           </View>
         </View>
 
@@ -249,7 +310,7 @@ export const SettingsScreen: React.FC = () => {
   );
 };
 
-const styles = StyleSheet.create({
+const createStyles = (colors: ThemeColors) => StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.background,
@@ -399,5 +460,29 @@ const styles = StyleSheet.create({
     fontSize: 13,
     color: colors.info,
     lineHeight: 18,
+  },
+  themeOption: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingVertical: 14,
+    paddingHorizontal: 4,
+    gap: 14,
+  },
+  themeOptionBorder: {
+    borderBottomWidth: 1,
+    borderBottomColor: colors.borderLight,
+  },
+  themeIconCircle: {
+    width: 36,
+    height: 36,
+    borderRadius: 18,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  themeLabel: {
+    flex: 1,
+    fontSize: 15,
+    color: colors.text.primary,
+    fontWeight: '500',
   },
 });

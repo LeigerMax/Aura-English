@@ -12,7 +12,8 @@ import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { Ionicons } from '@expo/vector-icons';
 import { RootStackParamList } from '@/features/home/HomeScreen';
 import { getDueFlashcards, getAllFlashcardsForDeck, applyReview } from '@/core/engine/reviewService';
-import { colors } from '@/constants';
+import { useTheme } from '@/core/theme';
+import type { ThemeColors } from '@/core/theme';
 import type { Flashcard, QualityScore } from '@/types/models';
 
 type ReviewScreenProps = NativeStackScreenProps<RootStackParamList, 'Review'>;
@@ -30,6 +31,9 @@ export const ReviewScreen: React.FC<ReviewScreenProps> = ({ route, navigation })
 
   const flipAnim = useRef(new Animated.Value(0)).current;
   const slideAnim = useRef(new Animated.Value(0)).current;
+
+  const { colors } = useTheme();
+  const styles = React.useMemo(() => createStyles(colors), [colors]);
 
   const loadCards = useCallback(async () => {
     setLoading(true);
@@ -282,7 +286,7 @@ const RatingButton: React.FC<{
   </TouchableOpacity>
 );
 
-const styles = StyleSheet.create({
+const createStyles = (colors: ThemeColors) => StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.background,

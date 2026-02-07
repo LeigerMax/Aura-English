@@ -23,7 +23,8 @@ import { selectChallengeCards, DEFAULT_CHALLENGE_CARD_LIMIT } from '@/core/servi
 import { hasApiKey } from '@/core/services/apiKeyService';
 import { generateFrenchSentence, correctTranslation } from '@/core/services/geminiService';
 import { deckRepository } from '@/data/repositories';
-import { colors } from '@/constants';
+import { useTheme } from '@/core/theme';
+import type { ThemeColors } from '@/core/theme';
 import type {
   Deck,
   Flashcard,
@@ -52,6 +53,9 @@ function qualityToKey(quality: QualityScore): 'difficult' | 'correct' | 'easy' {
 // ──────────────────────────────────────────────
 
 export const ChallengeScreen: React.FC<ChallengeScreenProps> = ({ navigation }) => {
+  const { colors } = useTheme();
+  const styles = React.useMemo(() => createStyles(colors), [colors]);
+
   // Phase management
   const [phase, setPhase] = useState<ChallengePhase>('deck_selection');
   const [loading, setLoading] = useState(false);
@@ -955,7 +959,7 @@ function getOptionStyle(
 // Styles
 // ──────────────────────────────────────────────
 
-const styles = StyleSheet.create({
+const createStyles = (colors: ThemeColors) => StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.background,

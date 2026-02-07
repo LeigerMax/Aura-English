@@ -4,7 +4,9 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { colors, sizes } from '@/constants';
+import { useTheme } from '@/core/theme';
+import type { ThemeColors } from '@/core/theme';
+import { sizes } from '@/constants';
 import { checkAnswer } from '@/data/grammar';
 import type { GrammarExercise } from '@/types/grammar';
 
@@ -14,6 +16,8 @@ interface Props {
 }
 
 export const FillInTheBlankExercise: React.FC<Props> = ({ exercise, onAnswer }) => {
+  const { colors } = useTheme();
+  const styles = React.useMemo(() => createStyles(colors), [colors]);
   const [input, setInput] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
@@ -81,7 +85,7 @@ export const FillInTheBlankExercise: React.FC<Props> = ({ exercise, onAnswer }) 
   );
 };
 
-const styles = StyleSheet.create({
+const createStyles = (colors: ThemeColors) => StyleSheet.create({
   container: { marginBottom: sizes.spacing.lg },
   question: {
     fontSize: sizes.fontSize.lg,

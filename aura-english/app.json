@@ -6,17 +6,25 @@
     "orientation": "portrait",
     "scheme": "auraenglish",
     "userInterfaceStyle": "automatic",
+    "icon": "./assets/logo.png",
+    "splash": {
+      "image": "./assets/logo.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0F172A"
+    },
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
+        "foregroundImage": "./assets/logo.png",
         "backgroundColor": "#E6F4FE"
       },
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false,
-      "package": "com.allmaxou.auraenglish"
+      "package": "com.allmaxou.auraenglish",
+      "versionCode": 1
     },
     "web": {
       "output": "static"
@@ -27,6 +35,11 @@
     ],
     "experiments": {
       "reactCompiler": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "df405ce5-236d-414d-9528-1fe50de60015"
+      }
     }
   }
 }

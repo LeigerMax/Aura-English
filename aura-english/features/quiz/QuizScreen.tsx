@@ -21,7 +21,8 @@ import {
   applyReview,
 } from '@/core/engine';
 import { deckRepository } from '@/data/repositories';
-import { colors } from '@/constants';
+import { useTheme } from '@/core/theme';
+import type { ThemeColors } from '@/core/theme';
 import type { Deck, QuizQuestion, QuizAnswerResult, QualityScore } from '@/types/models';
 
 type QuizScreenProps = NativeStackScreenProps<RootStackParamList, 'Quiz'>;
@@ -40,6 +41,7 @@ function getOptionStyle(
   selectedAnswer: string | null,
   correctAnswer: string,
   submitted: boolean,
+  styles: ReturnType<typeof createStyles>,
 ) {
   if (submitted) {
     if (option === correctAnswer) return styles.optionCorrect;
@@ -54,6 +56,7 @@ function getFillInputStyle(
   submitted: boolean,
   userAnswer: string,
   correctAnswer: string,
+  styles: ReturnType<typeof createStyles>,
 ) {
   if (!submitted) return null;
   const isCorrect = evaluateAnswer(userAnswer, correctAnswer);
@@ -73,6 +76,9 @@ export const QuizScreen: React.FC<QuizScreenProps> = ({ navigation }) => {
   const [fillAnswer, setFillAnswer] = useState('');
   const [answerSubmitted, setAnswerSubmitted] = useState(false);
   const [answerStartTime, setAnswerStartTime] = useState(0);
+
+  const { colors } = useTheme();
+  const styles = React.useMemo(() => createStyles(colors), [colors]);
 
   const currentQuestion = questions[currentIndex];
 
@@ -341,7 +347,7 @@ export const QuizScreen: React.FC<QuizScreenProps> = ({ navigation }) => {
             currentQuestion.options?.map((option) => {
               const isSelected = selectedAnswer === option;
               const isCorrectOption = option === currentQuestion.correctAnswer;
-              const optionStyle = getOptionStyle(option, selectedAnswer, currentQuestion.correctAnswer, answerSubmitted);
+              const optionStyle = getOptionStyle(option, selectedAnswer, currentQuestion.correctAnswer, answerSubmitted, styles);
 
               return (
                 <TouchableOpacity
@@ -371,7 +377,7 @@ export const QuizScreen: React.FC<QuizScreenProps> = ({ navigation }) => {
               <TextInput
                 style={[
                   styles.fillInput,
-                  getFillInputStyle(answerSubmitted, fillAnswer, currentQuestion.correctAnswer),
+                  getFillInputStyle(answerSubmitted, fillAnswer, currentQuestion.correctAnswer, styles),
                 ]}
                 placeholder="Type your answer..."
                 placeholderTextColor={colors.text.tertiary}
@@ -417,7 +423,7 @@ export const QuizScreen: React.FC<QuizScreenProps> = ({ navigation }) => {
   );
 };
 
-const styles = StyleSheet.create({
+const createStyles = (colors: ThemeColors) => StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.background,

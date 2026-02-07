@@ -7,7 +7,9 @@ import {
   Animated,
 } from 'react-native';
 import type { Deck } from '@/types/models';
-import { colors, sizes } from '@/constants';
+import { useTheme } from '@/core/theme';
+import { sizes } from '@/constants';
+import type { ThemeColors } from '@/core/theme';
 
 export interface DeckCardProps {
   /**
@@ -46,6 +48,8 @@ export const DeckCard: React.FC<DeckCardProps> = ({
   onEdit,
   disabled = false,
 }) => {
+  const { colors } = useTheme();
+  const styles = React.useMemo(() => createStyles(colors), [colors]);
   const scaleAnim = React.useRef(new Animated.Value(1)).current;
 
   const handlePressIn = () => {
@@ -138,7 +142,7 @@ export const DeckCard: React.FC<DeckCardProps> = ({
   );
 };
 
-const styles = StyleSheet.create({
+const createStyles = (colors: ThemeColors) => StyleSheet.create({
   container: {
     marginBottom: sizes.spacing.md,
   },

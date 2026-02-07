@@ -3,7 +3,9 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList } from '@/features/home/HomeScreen';
-import { colors, sizes } from '@/constants';
+import { useTheme } from '@/core/theme';
+import { sizes } from '@/constants';
+import type { ThemeColors } from '@/core/theme';
 
 type PlaceholderScreenProps = NativeStackScreenProps<RootStackParamList, any>;
 
@@ -22,6 +24,9 @@ export const createPlaceholderScreen = ({
   description,
 }: PlaceholderProps) => {
   const PlaceholderScreen: React.FC<PlaceholderScreenProps> = ({ navigation }) => {
+    const { colors } = useTheme();
+    const styles = React.useMemo(() => createThemedStyles(colors), [colors]);
+
     return (
       <SafeAreaView style={styles.container}>
         <View style={styles.content}>
@@ -43,7 +48,7 @@ export const createPlaceholderScreen = ({
   return PlaceholderScreen;
 };
 
-const styles = StyleSheet.create({
+const createThemedStyles = (colors: ThemeColors) => StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.background,

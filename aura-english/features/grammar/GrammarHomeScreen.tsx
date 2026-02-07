@@ -6,13 +6,18 @@ import { View, Text, ScrollView, TouchableOpacity, StyleSheet } from 'react-nati
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { Ionicons } from '@expo/vector-icons';
-import { colors, sizes } from '@/constants';
+import { useTheme } from '@/core/theme';
+import type { ThemeColors } from '@/core/theme';
+import { sizes } from '@/constants';
 import { allCategories, getRulesForCategory } from '@/data/grammar';
 import type { RootStackParamList } from '@/features/home/HomeScreen';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Grammar'>;
 
 export const GrammarHomeScreen: React.FC<Props> = ({ navigation }) => {
+  const { colors } = useTheme();
+  const styles = React.useMemo(() => createStyles(colors), [colors]);
+
   return (
     <SafeAreaView style={styles.safe} edges={['bottom']}>
       <ScrollView style={styles.scroll} contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
@@ -56,7 +61,7 @@ export const GrammarHomeScreen: React.FC<Props> = ({ navigation }) => {
   );
 };
 
-const styles = StyleSheet.create({
+const createStyles = (colors: ThemeColors) => StyleSheet.create({
   safe: { flex: 1, backgroundColor: colors.background },
   scroll: { flex: 1 },
   content: { padding: sizes.spacing.lg, paddingBottom: sizes.spacing.xxxl },

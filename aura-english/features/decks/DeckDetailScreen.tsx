@@ -12,7 +12,9 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList } from '@/features/home/HomeScreen';
 import { FlashcardCard } from '@/components/ui';
-import { colors, sizes } from '@/constants';
+import { useTheme } from '@/core/theme';
+import { sizes } from '@/constants';
+import type { ThemeColors } from '@/core/theme';
 import { deckRepository, flashcardRepository } from '@/data/repositories';
 import { FLASHCARD_PAGE_SIZE } from '@/data/repositories/flashcardRepository';
 import { GLOBAL_DECK_ID } from '@/core/database/schema';
@@ -22,6 +24,8 @@ type DeckDetailScreenProps = NativeStackScreenProps<RootStackParamList, 'DeckDet
 
 export const DeckDetailScreen: React.FC<DeckDetailScreenProps> = ({ navigation, route }) => {
   const { deckId } = route.params;
+  const { colors } = useTheme();
+  const styles = React.useMemo(() => createStyles(colors), [colors]);
 
   const [deck, setDeck] = React.useState<Deck | null>(null);
   const [flashcards, setFlashcards] = React.useState<Flashcard[]>([]);
@@ -229,7 +233,7 @@ export const DeckDetailScreen: React.FC<DeckDetailScreenProps> = ({ navigation, 
   );
 };
 
-const styles = StyleSheet.create({
+const createStyles = (colors: ThemeColors) => StyleSheet.create({
   safeArea: {
     flex: 1,
     backgroundColor: colors.background,

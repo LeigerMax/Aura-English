@@ -7,7 +7,9 @@ import { View, Text, ScrollView, TouchableOpacity, StyleSheet } from 'react-nati
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { Ionicons } from '@expo/vector-icons';
-import { colors, sizes } from '@/constants';
+import { useTheme } from '@/core/theme';
+import type { ThemeColors } from '@/core/theme';
+import { sizes } from '@/constants';
 import { getRuleById, getExercisesForRule } from '@/data/grammar';
 import { ExerciseRenderer } from '@/components/grammar';
 import type { RootStackParamList } from '@/features/home/HomeScreen';
@@ -16,6 +18,9 @@ import type { ExerciseAnswerResult, ExerciseSessionSummary } from '@/types/gramm
 type Props = NativeStackScreenProps<RootStackParamList, 'GrammarRule'>;
 
 export const GrammarRuleScreen: React.FC<Props> = ({ route, navigation }) => {
+  const { colors } = useTheme();
+  const styles = React.useMemo(() => createStyles(colors), [colors]);
+
   const { ruleId } = route.params;
   const rule = getRuleById(ruleId);
   const exercises = getExercisesForRule(ruleId);
@@ -228,7 +233,7 @@ export const GrammarRuleScreen: React.FC<Props> = ({ route, navigation }) => {
 
 // ── Styles ────────────────────────────────────────
 
-const styles = StyleSheet.create({
+const createStyles = (colors: ThemeColors) => StyleSheet.create({
   safe: { flex: 1, backgroundColor: colors.background },
   scroll: { flex: 1 },
   content: { padding: sizes.spacing.lg, paddingBottom: sizes.spacing.xxxl },

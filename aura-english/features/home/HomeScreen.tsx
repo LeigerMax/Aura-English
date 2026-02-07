@@ -9,8 +9,8 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { Ionicons } from '@expo/vector-icons';
-import { LinearGradient } from 'expo-linear-gradient';
 import type { Flashcard } from '@/types/models';
+import { useTheme } from '@/core/theme';
 
 // Navigation types
 export type RootStackParamList = {
@@ -94,22 +94,24 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
     }
   };
 
+  const { isDark } = useTheme();
+
   return (
-    <SafeAreaView className="flex-1 bg-gray-50">
-      <StatusBar barStyle="dark-content" backgroundColor="#F9FAFB" />
+    <SafeAreaView className="flex-1 bg-gray-50 dark:bg-gray-900">
+      <StatusBar barStyle={isDark ? 'light-content' : 'dark-content'} backgroundColor={isDark ? '#111827' : '#F9FAFB'} />
 
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         {/* Header Section */}
-        <View className="px-6 pt-8 pb-6 bg-white border-b border-gray-100">
+        <View className="px-6 pt-8 pb-6 bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700">
           <View className="flex-row items-center mb-2">
             <View className="w-10 h-10 bg-primary-500 rounded-full items-center justify-center mr-3">
               <Text className="text-white text-xl font-bold">A</Text>
             </View>
-            <Text className="text-3xl font-bold text-gray-900">
+            <Text className="text-3xl font-bold text-gray-900 dark:text-gray-50">
               Aura English
             </Text>
           </View>
-          <Text className="text-gray-500 text-base ml-13">
+          <Text className="text-gray-500 dark:text-gray-400 text-base ml-13">
             Your English learning assistant
           </Text>
         </View>
@@ -117,7 +119,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
 
         {/* Modules Grid */}
         <View className="px-6 py-6">
-          <Text className="text-gray-900 text-xl font-bold mb-4">
+          <Text className="text-gray-900 dark:text-gray-50 text-xl font-bold mb-4">
             Learning Modules
           </Text>
 
@@ -127,7 +129,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
                 <TouchableOpacity
                   onPress={() => handleModulePress(module.route)}
                   activeOpacity={0.7}
-                  className="bg-white rounded-2xl p-5 shadow-sm"
+                  className="bg-white dark:bg-gray-800 rounded-2xl p-5 shadow-sm"
                   style={{
                     shadowColor: module.color,
                     shadowOffset: { width: 0, height: 4 },
@@ -142,10 +144,10 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
                   >
                     <Ionicons name={module.iconName} size={28} color={module.color} />
                   </View>
-                  <Text className="text-gray-900 font-bold text-base mb-1">
+                  <Text className="text-gray-900 dark:text-gray-50 font-bold text-base mb-1">
                     {module.title}
                   </Text>
-                  <Text className="text-gray-500 text-xs leading-4">
+                  <Text className="text-gray-500 dark:text-gray-400 text-xs leading-4">
                     {module.subtitle}
                   </Text>
                 </TouchableOpacity>
@@ -158,17 +160,17 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
         <View className="mx-6 mb-6">
           <TouchableOpacity
             onPress={() => navigation.navigate('Deck')}
-            className="bg-white rounded-2xl p-5 flex-row items-center shadow-sm"
+            className="bg-white dark:bg-gray-800 rounded-2xl p-5 flex-row items-center shadow-sm"
             activeOpacity={0.7}
           >
             <View className="bg-primary-50 rounded-full p-3 mr-4">
               <Ionicons name="add" size={24} color="#5B5FE5" />
             </View>
             <View className="flex-1">
-              <Text className="text-gray-900 font-bold text-base mb-1">
+              <Text className="text-gray-900 dark:text-gray-50 font-bold text-base mb-1">
                 Create a new flashcard
               </Text>
-              <Text className="text-gray-500 text-sm">
+              <Text className="text-gray-500 dark:text-gray-400 text-sm">
                 Add vocabulary to your decks
               </Text>
             </View>
@@ -178,7 +180,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
 
         {/* Footer */}
         <View className="items-center py-8">
-          <Text className="text-gray-400 text-sm">
+          <Text className="text-gray-400 dark:text-gray-500 text-sm">
             Keep learning every day 🚀
           </Text>
         </View>

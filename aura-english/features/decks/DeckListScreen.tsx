@@ -14,7 +14,9 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList } from '@/features/home/HomeScreen';
 import { DeckCard } from '@/components/ui';
-import { colors, sizes } from '@/constants';
+import { useTheme } from '@/core/theme';
+import type { ThemeColors } from '@/core/theme';
+import { sizes } from '@/constants';
 import { deckRepository } from '@/data/repositories';
 import { DEFAULT_DECK_COLORS } from '@/core/database/schema';
 import type { Deck, CreateDeckInput } from '@/types/models';
@@ -22,6 +24,9 @@ import type { Deck, CreateDeckInput } from '@/types/models';
 type DeckListScreenProps = NativeStackScreenProps<RootStackParamList, 'Deck'>;
 
 export const DeckListScreen: React.FC<DeckListScreenProps> = ({ navigation }) => {
+  const { colors } = useTheme();
+  const styles = React.useMemo(() => createStyles(colors), [colors]);
+
   const [decks, setDecks] = React.useState<Deck[]>([]);
   const [globalDeck, setGlobalDeck] = React.useState<Deck | null>(null);
   const [loading, setLoading] = React.useState(true);
@@ -249,7 +254,7 @@ export const DeckListScreen: React.FC<DeckListScreenProps> = ({ navigation }) =>
   );
 };
 
-const styles = StyleSheet.create({
+const createStyles = (colors: ThemeColors) => StyleSheet.create({
   safeArea: {
     flex: 1,
     backgroundColor: colors.background,

@@ -9,6 +9,7 @@ import {
 import type { Flashcard } from '@/types/models';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
+import { useTheme } from '@/core/theme';
 
 export interface FlashcardCardProps {
   /**
@@ -63,6 +64,7 @@ export const FlashcardCard: React.FC<FlashcardCardProps> = ({
   const [isFlipped, setIsFlipped] = React.useState(false);
   const flipAnim = React.useRef(new Animated.Value(0)).current;
   const scaleAnim = React.useRef(new Animated.Value(1)).current;
+  const { isDark } = useTheme();
 
   const handleFlip = () => {
     if (disabled) return;
@@ -158,22 +160,22 @@ export const FlashcardCard: React.FC<FlashcardCardProps> = ({
             },
           ]}
           pointerEvents={isFlipped ? 'none' : 'auto'}
-          className="bg-white rounded-3xl shadow-lg"
+          className="bg-white dark:bg-gray-800 rounded-3xl shadow-lg"
         >
           <View className="flex-1 items-center justify-center p-8">
-            <View className="bg-primary-100 px-4 py-2 rounded-full mb-4">
-              <Text className="text-primary-600 font-semibold text-xs uppercase tracking-wide">
+            <View className="bg-primary-100 dark:bg-primary-900 px-4 py-2 rounded-full mb-4">
+              <Text className="text-primary-600 dark:text-primary-300 font-semibold text-xs uppercase tracking-wide">
                 ENGLISH
               </Text>
             </View>
             
-            <Text className="text-4xl font-bold text-gray-900 text-center mb-8">
+            <Text className="text-4xl font-bold text-gray-900 dark:text-gray-50 text-center mb-8">
               {flashcard.word}
             </Text>
             
             <View className="flex-row items-center opacity-60">
-              <Ionicons name="sync-outline" size={16} color="#9CA3AF" />
-              <Text className="text-gray-500 text-sm ml-2">
+              <Ionicons name="sync-outline" size={16} color={isDark ? '#6B7280' : '#9CA3AF'} />
+              <Text className="text-gray-500 dark:text-gray-400 text-sm ml-2">
                 Tap to flip
               </Text>
             </View>
@@ -188,7 +190,7 @@ export const FlashcardCard: React.FC<FlashcardCardProps> = ({
                     e.stopPropagation();
                     onEdit(flashcard);
                   }}
-                  className="bg-white rounded-full p-2 shadow-sm"
+                  className="bg-white dark:bg-gray-700 rounded-full p-2 shadow-sm"
                   style={{ elevation: 2 }}
                 >
                   <Ionicons name="pencil" size={18} color="#5B5FE5" />
@@ -201,7 +203,7 @@ export const FlashcardCard: React.FC<FlashcardCardProps> = ({
                     e.stopPropagation();
                     onDelete(flashcard);
                   }}
-                  className="bg-white rounded-full p-2 shadow-sm"
+                  className="bg-white dark:bg-gray-700 rounded-full p-2 shadow-sm"
                   style={{ elevation: 2 }}
                 >
                   <Ionicons name="trash-outline" size={18} color="#EF4444" />
@@ -276,7 +278,7 @@ export const FlashcardCard: React.FC<FlashcardCardProps> = ({
                     e.stopPropagation();
                     onEdit(flashcard);
                   }}
-                  className="bg-white rounded-full p-2 shadow-sm"
+                  className="bg-white dark:bg-gray-700 rounded-full p-2 shadow-sm"
                   style={{ elevation: 2 }}
                 >
                   <Ionicons name="pencil" size={18} color="#5B5FE5" />
@@ -289,7 +291,7 @@ export const FlashcardCard: React.FC<FlashcardCardProps> = ({
                     e.stopPropagation();
                     onDelete(flashcard);
                   }}
-                  className="bg-white rounded-full p-2 shadow-sm"
+                  className="bg-white dark:bg-gray-700 rounded-full p-2 shadow-sm"
                   style={{ elevation: 2 }}
                 >
                   <Ionicons name="trash-outline" size={18} color="#EF4444" />
