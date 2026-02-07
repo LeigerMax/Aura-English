@@ -25,6 +25,35 @@ export async function getFlashcardsByDeck(deckId: string): Promise<Flashcard[]> 
   `, [deckId]);
 }
 
+/** Page size constant for lazy-loaded lists. */
+export const FLASHCARD_PAGE_SIZE = 40;
+
+/** Get a paginated slice of flashcards for a deck. */
+export async function getFlashcardsByDeckPaginated(
+  deckId: string,
+  limit: number = FLASHCARD_PAGE_SIZE,
+  offset: number = 0,
+): Promise<Flashcard[]> {
+  const db = await getDatabase();
+
+  if (deckId === GLOBAL_DECK_ID) {
+    return db.getAllAsync<Flashcard>(
+      'SELECT * FROM flashcards ORDER BY created_at DESC LIMIT ? OFFSET ?',
+      [limit, offset],
+    );
+  }
+
+  return db.getAllAsync<Flashcard>(
+    `SELECT f.*
+     FROM flashcards f
+     INNER JOIN deck_flashcards df ON f.id = df.flashcard_id
+     WHERE df.deck_id = ?
+     ORDER BY df.added_at DESC
+     LIMIT ? OFFSET ?`,
+    [deckId, limit, offset],
+  );
+}
+
 /** Get a single flashcard by ID. */
 export async function getFlashcardById(id: string): Promise<Flashcard | null> {
   const db = await getDatabase();

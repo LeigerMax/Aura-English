@@ -14,6 +14,7 @@ import { getCategoryById, getRuleById } from '@/data/grammar';
 import { SettingsScreen } from '@/features/settings';
 import { colors } from '@/constants';
 import { getDatabase } from '@/core/database';
+import { seedDefaultDecks } from '@/core/services/seedService';
 import './global.css';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -24,7 +25,10 @@ export default function App() {
 
   useEffect(() => {
     getDatabase()
-      .then(() => setIsDbReady(true))
+      .then(async (db) => {
+        await seedDefaultDecks(db);
+        setIsDbReady(true);
+      })
       .catch((err) => {
         console.error('Database initialization failed:', err);
         setError(err instanceof Error ? err.message : 'Failed to initialize database');

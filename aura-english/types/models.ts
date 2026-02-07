@@ -10,6 +10,8 @@ export interface Deck {
   name: string;
   description?: string;
   color: string;
+  /** 1 = default CEFR deck (seeded automatically), 0 = user-created */
+  is_default: number;
   created_at: number;
   updated_at: number;
   // Computed field (not in database)

@@ -3,7 +3,7 @@ import {
   View,
   Text,
   StyleSheet,
-  ScrollView,
+  FlatList,
   TouchableOpacity,
   ActivityIndicator,
   Alert,
@@ -14,6 +14,7 @@ import { RootStackParamList } from '@/features/home/HomeScreen';
 import { FlashcardCard } from '@/components/ui';
 import { colors, sizes } from '@/constants';
 import { deckRepository, flashcardRepository } from '@/data/repositories';
+import { FLASHCARD_PAGE_SIZE } from '@/data/repositories/flashcardRepository';
 import { GLOBAL_DECK_ID } from '@/core/database/schema';
 import type { Deck, Flashcard } from '@/types/models';
 
@@ -25,6 +26,8 @@ export const DeckDetailScreen: React.FC<DeckDetailScreenProps> = ({ navigation, 
   const [deck, setDeck] = React.useState<Deck | null>(null);
   const [flashcards, setFlashcards] = React.useState<Flashcard[]>([]);
   const [loading, setLoading] = React.useState(true);
+  const [loadingMore, setLoadingMore] = React.useState(false);
+  const [hasMore, setHasMore] = React.useState(true);
 
   React.useEffect(() => {
     loadDeckData();
@@ -51,13 +54,32 @@ export const DeckDetailScreen: React.FC<DeckDetailScreenProps> = ({ navigation, 
       }
       setDeck(deckData);
 
-      const cards = await flashcardRepository.getFlashcardsByDeck(deckId);
-      setFlashcards(cards);
+      const firstPage = await flashcardRepository.getFlashcardsByDeckPaginated(deckId, FLASHCARD_PAGE_SIZE, 0);
+      setFlashcards(firstPage);
+      setHasMore(firstPage.length >= FLASHCARD_PAGE_SIZE);
     } catch (error) {
       console.error('Failed to load deck data:', error);
       Alert.alert('Error', 'Failed to load deck data');
     } finally {
       setLoading(false);
+    }
+  };
+
+  const loadMore = async () => {
+    if (loadingMore || !hasMore) return;
+    try {
+      setLoadingMore(true);
+      const nextPage = await flashcardRepository.getFlashcardsByDeckPaginated(
+        deckId,
+        FLASHCARD_PAGE_SIZE,
+        flashcards.length,
+      );
+      setFlashcards((prev) => [...prev, ...nextPage]);
+      setHasMore(nextPage.length >= FLASHCARD_PAGE_SIZE);
+    } catch (error) {
+      console.error('Failed to load more flashcards:', error);
+    } finally {
+      setLoadingMore(false);
     }
   };
 
@@ -92,6 +114,20 @@ export const DeckDetailScreen: React.FC<DeckDetailScreenProps> = ({ navigation, 
     );
   };
 
+  const totalCount = deck?.cardCount ?? flashcards.length;
+
+  const renderItem = React.useCallback(
+    ({ item }: { item: Flashcard }) => (
+      <FlashcardCard
+        flashcard={item}
+        onEdit={handleEditCard}
+        onDelete={handleDeleteCard}
+      />
+    ),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [],
+  );
+
   if (loading) {
     return (
       <SafeAreaView style={styles.safeArea}>
@@ -103,80 +139,92 @@ export const DeckDetailScreen: React.FC<DeckDetailScreenProps> = ({ navigation, 
     );
   }
 
+  const renderHeader = () => (
+    <View>
+      {/* Deck Info */}
+      {deck && (
+        <View style={[styles.deckInfo, { backgroundColor: deck.color }]}>
+          <Text style={styles.deckName}>{deck.name}</Text>
+          {deck.description && (
+            <Text style={styles.deckDescription}>{deck.description}</Text>
+          )}
+          <Text style={styles.cardCount}>
+            {totalCount} {totalCount === 1 ? 'card' : 'cards'}
+          </Text>
+        </View>
+      )}
+
+      {/* Add Card Button */}
+      <TouchableOpacity
+        style={[styles.addButton, { borderColor: deck?.color || colors.primary }]}
+        onPress={handleAddCard}
+      >
+        <Text style={styles.addButtonIcon}>➕</Text>
+        <Text style={styles.addButtonText}>Add New Card</Text>
+      </TouchableOpacity>
+
+      {/* Review Button */}
+      {totalCount > 0 && (
+        <TouchableOpacity
+          style={styles.reviewButton}
+          onPress={() =>
+            navigation.navigate('Review', {
+              deckId,
+              deckName: deck?.name ?? 'Review',
+            })
+          }
+          activeOpacity={0.7}
+        >
+          <Text style={styles.reviewButtonIcon}>🧠</Text>
+          <Text style={styles.reviewButtonText}>Start Review</Text>
+        </TouchableOpacity>
+      )}
+    </View>
+  );
+
+  const renderFooter = () => {
+    if (!loadingMore) return null;
+    return (
+      <View style={styles.footerLoader}>
+        <ActivityIndicator size="small" color={colors.primary} />
+      </View>
+    );
+  };
+
+  const renderEmpty = () => (
+    <View style={styles.emptyState}>
+      <Text style={styles.emptyIcon}>🎴</Text>
+      <Text style={styles.emptyTitle}>No flashcards yet</Text>
+      <Text style={styles.emptyText}>
+        Create your first flashcard to start learning
+      </Text>
+      <TouchableOpacity
+        style={[styles.emptyButton, { backgroundColor: deck?.color || colors.primary }]}
+        onPress={handleAddCard}
+      >
+        <Text style={styles.emptyButtonText}>Create Flashcard</Text>
+      </TouchableOpacity>
+    </View>
+  );
+
   return (
     <SafeAreaView style={styles.safeArea}>
-      <ScrollView
-        style={styles.scrollView}
+      <FlatList
+        data={flashcards}
+        keyExtractor={(item) => item.id}
+        renderItem={renderItem}
+        ListHeaderComponent={renderHeader}
+        ListFooterComponent={renderFooter}
+        ListEmptyComponent={renderEmpty}
         contentContainerStyle={styles.scrollContent}
         showsVerticalScrollIndicator={false}
-      >
-        {/* Deck Info */}
-        {deck && (
-          <View style={[styles.deckInfo, { backgroundColor: deck.color }]}>
-            <Text style={styles.deckName}>{deck.name}</Text>
-            {deck.description && (
-              <Text style={styles.deckDescription}>{deck.description}</Text>
-            )}
-            <Text style={styles.cardCount}>
-              {flashcards.length} {flashcards.length === 1 ? 'card' : 'cards'}
-            </Text>
-          </View>
-        )}
-
-        {/* Add Card Button */}
-        <TouchableOpacity
-          style={[styles.addButton, { borderColor: deck?.color || colors.primary }]}
-          onPress={handleAddCard}
-        >
-          <Text style={styles.addButtonIcon}>➕</Text>
-          <Text style={styles.addButtonText}>Add New Card</Text>
-        </TouchableOpacity>
-
-        {/* Review Button */}
-        {flashcards.length > 0 && (
-          <TouchableOpacity
-            style={styles.reviewButton}
-            onPress={() =>
-              navigation.navigate('Review', {
-                deckId,
-                deckName: deck?.name ?? 'Review',
-              })
-            }
-            activeOpacity={0.7}
-          >
-            <Text style={styles.reviewButtonIcon}>🧠</Text>
-            <Text style={styles.reviewButtonText}>Start Review</Text>
-          </TouchableOpacity>
-        )}
-
-        {/* Flashcards */}
-        {flashcards.length === 0 ? (
-          <View style={styles.emptyState}>
-            <Text style={styles.emptyIcon}>🎴</Text>
-            <Text style={styles.emptyTitle}>No flashcards yet</Text>
-            <Text style={styles.emptyText}>
-              Create your first flashcard to start learning
-            </Text>
-            <TouchableOpacity
-              style={[styles.emptyButton, { backgroundColor: deck?.color || colors.primary }]}
-              onPress={handleAddCard}
-            >
-              <Text style={styles.emptyButtonText}>Create Flashcard</Text>
-            </TouchableOpacity>
-          </View>
-        ) : (
-          <View style={styles.flashcardsContainer}>
-            {flashcards.map((flashcard) => (
-              <FlashcardCard
-                key={flashcard.id}
-                flashcard={flashcard}
-                onEdit={handleEditCard}
-                onDelete={handleDeleteCard}
-              />
-            ))}
-          </View>
-        )}
-      </ScrollView>
+        onEndReached={loadMore}
+        onEndReachedThreshold={0.4}
+        initialNumToRender={20}
+        maxToRenderPerBatch={20}
+        windowSize={7}
+        removeClippedSubviews
+      />
     </SafeAreaView>
   );
 };
@@ -185,9 +233,6 @@ const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
     backgroundColor: colors.background,
-  },
-  scrollView: {
-    flex: 1,
   },
   scrollContent: {
     padding: sizes.container.padding,
@@ -269,8 +314,9 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     color: colors.text.inverse,
   },
-  flashcardsContainer: {
-    marginBottom: sizes.spacing.xl,
+  footerLoader: {
+    paddingVertical: sizes.spacing.lg,
+    alignItems: 'center',
   },
   emptyState: {
     alignItems: 'center',

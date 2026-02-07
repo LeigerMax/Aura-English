@@ -28,6 +28,7 @@ async function initializeSchema(database: SQLite.SQLiteDatabase): Promise<void> 
       name TEXT NOT NULL,
       description TEXT,
       color TEXT NOT NULL DEFAULT '#6366F1',
+      is_default INTEGER NOT NULL DEFAULT 0,
       created_at INTEGER NOT NULL,
       updated_at INTEGER NOT NULL
     );
@@ -67,6 +68,7 @@ async function initializeSchema(database: SQLite.SQLiteDatabase): Promise<void> 
  * expo-sqlite requires each ALTER TABLE to be a separate call.
  */
 async function migrateSchema(database: SQLite.SQLiteDatabase): Promise<void> {
+  // ── Flashcard migrations ──
   const columns = await database.getAllAsync<{ name: string }>(
     `PRAGMA table_info(flashcards)`
   );
@@ -89,6 +91,18 @@ async function migrateSchema(database: SQLite.SQLiteDatabase): Promise<void> {
   await database.execAsync(
     'CREATE INDEX IF NOT EXISTS idx_flashcards_next_review ON flashcards(next_review_at)'
   );
+
+  // ── Deck migrations ──
+  const deckColumns = await database.getAllAsync<{ name: string }>(
+    `PRAGMA table_info(decks)`
+  );
+  const deckColumnNames = new Set(deckColumns.map((c) => c.name));
+
+  if (!deckColumnNames.has('is_default')) {
+    await database.runAsync(
+      'ALTER TABLE decks ADD COLUMN is_default INTEGER NOT NULL DEFAULT 0'
+    );
+  }
 }
 
 /**
