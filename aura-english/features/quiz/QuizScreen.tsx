@@ -23,7 +23,9 @@ import {
 import { deckRepository } from '@/data/repositories';
 import { useTheme } from '@/core/theme';
 import type { ThemeColors } from '@/core/theme';
-import type { Deck, QuizQuestion, QuizAnswerResult, QualityScore } from '@/types/models';
+import { playSound } from '@/core/services/soundService';
+import { getNextHint, applyHintPenalty, MAX_HINTS } from '@/core/services/hintService';
+import type { Deck, QuizQuestion, QuizAnswerResult, QualityScore, Hint, HintType } from '@/types/models';
 
 type QuizScreenProps = NativeStackScreenProps<RootStackParamList, 'Quiz'>;
 
@@ -77,6 +79,10 @@ export const QuizScreen: React.FC<QuizScreenProps> = ({ navigation }) => {
   const [answerSubmitted, setAnswerSubmitted] = useState(false);
   const [answerStartTime, setAnswerStartTime] = useState(0);
 
+  // Hint state (only for fill-in-the-blank)
+  const [revealedHints, setRevealedHints] = useState<Hint[]>([]);
+  const [usedHintTypes, setUsedHintTypes] = useState<HintType[]>([]);
+
   const { colors } = useTheme();
   const styles = React.useMemo(() => createStyles(colors), [colors]);
 
@@ -121,6 +127,8 @@ export const QuizScreen: React.FC<QuizScreenProps> = ({ navigation }) => {
     setFillAnswer('');
     setAnswerSubmitted(false);
     setAnswerStartTime(Date.now());
+    setRevealedHints([]);
+    setUsedHintTypes([]);
   };
 
   const handleMCQSelect = (answer: string) => {
@@ -142,6 +150,14 @@ export const QuizScreen: React.FC<QuizScreenProps> = ({ navigation }) => {
       quality = 3;
     } else {
       quality = 5;
+    }
+
+    // Penalize quality if hints were used
+    quality = applyHintPenalty(quality, revealedHints.length);
+
+    // Sound feedback on correct answer
+    if (isCorrect) {
+      playSound('correct');
     }
 
     const result: QuizAnswerResult = {
@@ -182,6 +198,14 @@ export const QuizScreen: React.FC<QuizScreenProps> = ({ navigation }) => {
     };
   };
 
+  const handleRevealHint = () => {
+    if (!currentQuestion) return;
+    const hint = getNextHint(currentQuestion.flashcard, usedHintTypes);
+    if (!hint) return;
+    setRevealedHints((prev) => [...prev, hint]);
+    setUsedHintTypes((prev) => [...prev, hint.type]);
+  };
+
   const nextQuestion = () => {
     if (currentIndex + 1 >= questions.length) {
       setPhase('results');
@@ -191,6 +215,8 @@ export const QuizScreen: React.FC<QuizScreenProps> = ({ navigation }) => {
       setFillAnswer('');
       setAnswerSubmitted(false);
       setAnswerStartTime(Date.now());
+      setRevealedHints([]);
+      setUsedHintTypes([]);
     }
   };
 
@@ -387,6 +413,33 @@ export const QuizScreen: React.FC<QuizScreenProps> = ({ navigation }) => {
                 autoCorrect={false}
                 editable={!answerSubmitted}
               />
+
+              {/* Hint button — only before submission */}
+              {!answerSubmitted && usedHintTypes.length < MAX_HINTS && (
+                <TouchableOpacity
+                  style={styles.hintButton}
+                  onPress={handleRevealHint}
+                  activeOpacity={0.7}
+                >
+                  <Ionicons name="bulb-outline" size={18} color={colors.warning} />
+                  <Text style={styles.hintButtonText}>
+                    Hint ({usedHintTypes.length}/{MAX_HINTS})
+                  </Text>
+                </TouchableOpacity>
+              )}
+
+              {/* Revealed hints */}
+              {revealedHints.length > 0 && (
+                <View style={styles.hintsContainer}>
+                  {revealedHints.map((hint, i) => (
+                    <View key={hint.type} style={styles.hintRow}>
+                      <Ionicons name="bulb" size={14} color={colors.warning} />
+                      <Text style={styles.hintText}>{hint.content}</Text>
+                    </View>
+                  ))}
+                </View>
+              )}
+
               {answerSubmitted &&
                 !evaluateAnswer(fillAnswer, currentQuestion.correctAnswer) && (
                   <Text style={styles.correctAnswerHint}>
@@ -594,6 +647,40 @@ const createStyles = (colors: ThemeColors) => StyleSheet.create({
     fontSize: 15,
     color: colors.success,
     fontWeight: '600',
+  },
+  hintButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    alignSelf: 'flex-start',
+    backgroundColor: colors.warning + '15',
+    paddingVertical: 8,
+    paddingHorizontal: 14,
+    borderRadius: 10,
+    marginTop: 12,
+    gap: 6,
+  },
+  hintButtonText: {
+    color: colors.warning,
+    fontSize: 14,
+    fontWeight: '600',
+  },
+  hintsContainer: {
+    marginTop: 12,
+    backgroundColor: colors.surfaceLight,
+    borderRadius: 12,
+    padding: 12,
+    gap: 8,
+  },
+  hintRow: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    gap: 8,
+  },
+  hintText: {
+    flex: 1,
+    fontSize: 14,
+    color: colors.text.secondary,
+    lineHeight: 20,
   },
   actionContainer: {
     paddingHorizontal: 24,

@@ -20,8 +20,9 @@ import { RootStackParamList } from '@/features/home/HomeScreen';
 import { applyReview } from '@/core/engine/reviewService';
 import { generateQuizQuestions, evaluateAnswer } from '@/core/engine/quizEngine';
 import { selectChallengeCards, DEFAULT_CHALLENGE_CARD_LIMIT } from '@/core/services/challengeService';
-import { hasApiKey } from '@/core/services/apiKeyService';
+import { hasProviderKey } from '@/core/services/aiProviderService';
 import { generateFrenchSentence, correctTranslation } from '@/core/services/geminiService';
+import { playSound } from '@/core/services/soundService';
 import { deckRepository } from '@/data/repositories';
 import { useTheme } from '@/core/theme';
 import type { ThemeColors } from '@/core/theme';
@@ -102,7 +103,7 @@ export const ChallengeScreen: React.FC<ChallengeScreenProps> = ({ navigation }) 
     const allDecks = await deckRepository.getAllDecks();
     const globalDeck = await deckRepository.getGlobalDeck();
     setDecks([globalDeck, ...allDecks]);
-    const keyAvailable = await hasApiKey();
+    const keyAvailable = await hasProviderKey();
     setApiKeyAvailable(keyAvailable);
     setLoading(false);
   };
@@ -239,6 +240,11 @@ export const ChallengeScreen: React.FC<ChallengeScreenProps> = ({ navigation }) 
       correctAnswer: currentQuizQuestion.correctAnswer,
     };
 
+    // Sound feedback on correct answer
+    if (isCorrect) {
+      playSound('correct');
+    }
+
     setQuizResults((prev) => [...prev, result]);
     setAnswerSubmitted(true);
 
@@ -252,7 +258,7 @@ export const ChallengeScreen: React.FC<ChallengeScreenProps> = ({ navigation }) 
   const nextQuizQuestion = async () => {
     if (quizIndex + 1 >= quizQuestions.length) {
       // Quiz complete → move to translation or results
-      const keyAvailable = await hasApiKey();
+      const keyAvailable = await hasProviderKey();
       setApiKeyAvailable(keyAvailable);
       if (keyAvailable) {
         startTranslationPhase();
@@ -337,6 +343,9 @@ export const ChallengeScreen: React.FC<ChallengeScreenProps> = ({ navigation }) 
   // ══════════════════════════════════════════════
 
   const finishSession = (transResult: TranslationResult | null) => {
+    // Sound feedback on challenge completion
+    playSound('challenge_complete');
+
     setSessionResult({
       reviewStats,
       quizResults,
@@ -383,11 +392,20 @@ export const ChallengeScreen: React.FC<ChallengeScreenProps> = ({ navigation }) 
 
           {!apiKeyAvailable && (
             <View style={styles.warningBox}>
-              <Ionicons name="warning-outline" size={18} color={colors.warning} />
-              <Text style={styles.warningText}>
-                No Gemini API key found. Translation phase will be skipped.
-                Add your key in Settings.
-              </Text>
+              <Ionicons name="lock-closed-outline" size={18} color={colors.warning} />
+              <View style={{ flex: 1 }}>
+                <Text style={styles.warningText}>
+                  No API key configured. The translation phase will be skipped.
+                </Text>
+                <TouchableOpacity
+                  style={styles.warningLink}
+                  onPress={() => navigation.navigate('Settings')}
+                  activeOpacity={0.7}
+                >
+                  <Text style={styles.warningLinkText}>Go to Settings</Text>
+                  <Ionicons name="arrow-forward" size={14} color={colors.primary} />
+                </TouchableOpacity>
+              </View>
             </View>
           )}
 
@@ -1094,6 +1112,17 @@ const createStyles = (colors: ThemeColors) => StyleSheet.create({
     fontSize: 13,
     color: colors.warning,
     lineHeight: 18,
+  },
+  warningLink: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: 8,
+    gap: 4,
+  },
+  warningLinkText: {
+    fontSize: 13,
+    fontWeight: '700',
+    color: colors.primary,
   },
 
   // Progress

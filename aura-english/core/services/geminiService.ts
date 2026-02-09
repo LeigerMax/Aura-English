@@ -1,4 +1,4 @@
-import { getApiKey } from './apiKeyService';
+import { getActiveProviderKey } from './aiProviderService';
 import type {
   Flashcard,
   GeminiSentenceResponse,
@@ -9,9 +9,8 @@ import type {
  * Gemini AI Service
  *
  * Abstracts all communication with the Google Gemini API.
- * Currently calls the REST endpoint directly; designed so the
- * implementation can be swapped to a backend proxy without
- * changing any consumer code.
+ * Uses the AI provider abstraction for key retrieval so the
+ * active provider's key is always used.
  */
 
 /** Models to try in order — first available free-tier model wins. */
@@ -68,10 +67,10 @@ function parseApiError(status: number, body: string, model: string): string {
  * with exponential backoff. Throws on auth errors immediately.
  */
 async function callGemini(prompt: string): Promise<string> {
-  const apiKey = await getApiKey();
+  const apiKey = await getActiveProviderKey();
   if (!apiKey) {
     throw new Error(
-      "No Gemini API key configured. Please add your key in Settings."
+      "No API key configured. Please add your key in Settings."
     );
   }
 

@@ -29,6 +29,7 @@ export type RootStackParamList = {
   GrammarCategory: { categoryId: string };
   GrammarRule: { ruleId: string };
   Settings: undefined;
+  ApiKeyTutorial: undefined;
 };
 
 type HomeScreenProps = NativeStackScreenProps<RootStackParamList, 'Home'>;

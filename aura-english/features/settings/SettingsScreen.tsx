@@ -8,13 +8,35 @@ import {
   StyleSheet,
   ScrollView,
   ActivityIndicator,
+  Switch,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { useTheme } from '@/core/theme';
 import type { ThemeMode, ThemeColors } from '@/core/theme';
 import Constants from 'expo-constants';
-import { saveApiKey, getApiKey, deleteApiKey, hasApiKey } from '@/core/services/apiKeyService';
+import { RootStackParamList } from '@/features/home/HomeScreen';
+import {
+  AI_PROVIDERS,
+  getActiveProvider,
+  setActiveProvider as persistActiveProvider,
+  saveProviderKey,
+  getProviderKey,
+  deleteProviderKey,
+  hasProviderKey,
+} from '@/core/services/aiProviderService';
+import {
+  getNotificationSettings,
+  isSoundEnabled,
+  setSoundEnabled,
+} from '@/core/services/settingsService';
+import {
+  updateNotificationSchedule,
+  requestPermissions,
+} from '@/core/services/notificationService';
+import type { AIProviderType, NotificationSettings } from '@/types/models';
 
 const APP_VERSION = Constants.expoConfig?.version ?? '1.0.0';
 
@@ -22,40 +44,68 @@ const APP_VERSION = Constants.expoConfig?.version ?? '1.0.0';
  * SettingsScreen
  *
  * Allows the user to:
- * - Enter and securely store a Gemini API key
- * - View whether a key is currently stored (masked)
- * - Delete the stored key
+ * - Select AI provider and manage per-provider API keys
+ * - Toggle notification schedule for Daily Word
+ * - Toggle sound effects
+ * - Access the Gemini API key tutorial
+ * - Switch theme
  */
 export const SettingsScreen: React.FC = () => {
   const { colors, themeMode, setThemeMode } = useTheme();
+  const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   const styles = React.useMemo(() => createStyles(colors), [colors]);
 
+  // AI provider state
+  const [activeProvider, setActiveProvider] = useState<AIProviderType>('gemini');
   const [keyInput, setKeyInput] = useState('');
   const [hasKey, setHasKey] = useState(false);
   const [maskedKey, setMaskedKey] = useState('');
-  const [loading, setLoading] = useState(true);
-  const [saving, setSaving] = useState(false);
   const [showInput, setShowInput] = useState(false);
+  const [saving, setSaving] = useState(false);
 
-  const refreshKeyStatus = useCallback(async () => {
+  // Notification state
+  const [notifSettings, setNotifSettings] = useState<NotificationSettings>({
+    enabled: false, hour: 9, minute: 0, deckId: null,
+  });
+
+  // Sound state
+  const [soundOn, setSoundOn] = useState(true);
+
+  const [loading, setLoading] = useState(true);
+
+  // ── Load all settings on mount ──
+  const loadSettings = useCallback(async () => {
     setLoading(true);
-    const stored = await hasApiKey();
+    const [provider, notif, sound] = await Promise.all([
+      getActiveProvider(),
+      getNotificationSettings(),
+      isSoundEnabled(),
+    ]);
+    setActiveProvider(provider);
+    setNotifSettings(notif);
+    setSoundOn(sound);
+    await refreshKeyStatus(provider);
+    setLoading(false);
+  }, []);
+
+  useEffect(() => { loadSettings(); }, [loadSettings]);
+
+  // ── Per-provider key status ──
+  const refreshKeyStatus = async (provider?: AIProviderType) => {
+    const target = provider ?? activeProvider;
+    const stored = await hasProviderKey(target);
     setHasKey(stored);
     if (stored) {
-      const key = await getApiKey();
-      // Mask the key: show first 4 and last 4 chars
+      const key = await getProviderKey(target);
       if (key && key.length > 8) {
         setMaskedKey(`${key.slice(0, 4)}${'•'.repeat(key.length - 8)}${key.slice(-4)}`);
       } else {
         setMaskedKey('••••••••');
       }
+    } else {
+      setMaskedKey('');
     }
-    setLoading(false);
-  }, []);
-
-  useEffect(() => {
-    refreshKeyStatus();
-  }, [refreshKeyStatus]);
+  };
 
   const handleSaveKey = async () => {
     const trimmed = keyInput.trim();
@@ -63,16 +113,14 @@ export const SettingsScreen: React.FC = () => {
       Alert.alert('Error', 'Please enter a valid API key.');
       return;
     }
-
     setSaving(true);
     try {
-      await saveApiKey(trimmed);
+      await saveProviderKey(activeProvider, trimmed);
       setKeyInput('');
       setShowInput(false);
       await refreshKeyStatus();
       Alert.alert('Success', 'API key saved securely on your device.');
-    } catch (e) {
-      console.error('Failed to save API key:', e);
+    } catch {
       Alert.alert('Error', 'Failed to save API key.');
     } finally {
       setSaving(false);
@@ -80,26 +128,71 @@ export const SettingsScreen: React.FC = () => {
   };
 
   const handleDeleteKey = () => {
+    const label = AI_PROVIDERS.find((p) => p.type === activeProvider)?.label ?? 'provider';
     Alert.alert(
       'Delete API Key',
-      'Are you sure you want to remove your Gemini API key? The Challenge translation feature will be disabled.',
+      `Remove the ${label} API key? AI features using this provider will be disabled.`,
       [
         { text: 'Cancel', style: 'cancel' },
         {
           text: 'Delete',
           style: 'destructive',
           onPress: () => {
-            deleteApiKey().then(() => {
+            void (async () => {
+              await deleteProviderKey(activeProvider);
               setHasKey(false);
               setMaskedKey('');
               setShowInput(false);
               setKeyInput('');
-            });
+            })();
           },
         },
       ],
     );
   };
+
+  const handleProviderChange = async (provider: AIProviderType) => {
+    setActiveProvider(provider);
+    await persistActiveProvider(provider);
+    setShowInput(false);
+    setKeyInput('');
+    await refreshKeyStatus(provider);
+  };
+
+  // ── Notification toggle ──
+  const handleNotifToggle = async (enabled: boolean) => {
+    if (enabled) {
+      const granted = await requestPermissions();
+      if (!granted) {
+        Alert.alert('Permissions Required', 'Please allow notifications in your device settings.');
+        return;
+      }
+    }
+    const updated = { ...notifSettings, enabled };
+    setNotifSettings(updated);
+    await updateNotificationSchedule(updated);
+  };
+
+  const handleNotifTimeChange = async (field: 'hour' | 'minute', delta: number) => {
+    const updated = { ...notifSettings };
+    if (field === 'hour') {
+      updated.hour = (updated.hour + delta + 24) % 24;
+    } else {
+      updated.minute = (updated.minute + delta + 60) % 60;
+    }
+    setNotifSettings(updated);
+    if (updated.enabled) {
+      await updateNotificationSchedule(updated);
+    }
+  };
+
+  // ── Sound toggle ──
+  const handleSoundToggle = async (enabled: boolean) => {
+    setSoundOn(enabled);
+    await setSoundEnabled(enabled);
+  };
+
+  const providerConfig = AI_PROVIDERS.find((p) => p.type === activeProvider) ?? AI_PROVIDERS[0];
 
   if (loading) {
     return (
@@ -183,22 +276,141 @@ export const SettingsScreen: React.FC = () => {
           </View>
         </View>
 
-        {/* Gemini API Key Section */}
+        {/* Sound Section */}
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Gemini AI</Text>
+          <Text style={styles.sectionTitle}>Sound</Text>
+          <View style={styles.card}>
+            <View style={styles.row}>
+              <Ionicons name="volume-high-outline" size={22} color={colors.text.secondary} />
+              <View style={styles.rowContent}>
+                <Text style={styles.label}>Sound Effects</Text>
+                <Text style={styles.value}>
+                  Play sounds on correct answers & challenge completion
+                </Text>
+              </View>
+              <Switch
+                value={soundOn}
+                onValueChange={handleSoundToggle}
+                trackColor={{ false: colors.border, true: colors.primary + '60' }}
+                thumbColor={soundOn ? colors.primary : colors.surfaceLight}
+              />
+            </View>
+          </View>
+        </View>
+
+        {/* Notifications Section */}
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>Daily Word</Text>
           <Text style={styles.sectionDescription}>
-            Add your Google Gemini API key to enable AI-powered translation
-            challenges. Your key is stored securely on this device only.
+            Get a daily notification with a random word and its definition.
           </Text>
 
           <View style={styles.card}>
+            <View style={styles.row}>
+              <Ionicons name="notifications-outline" size={22} color={colors.text.secondary} />
+              <View style={styles.rowContent}>
+                <Text style={styles.label}>Notifications</Text>
+                <Text style={styles.value}>
+                  {notifSettings.enabled ? 'Enabled' : 'Disabled'}
+                </Text>
+              </View>
+              <Switch
+                value={notifSettings.enabled}
+                onValueChange={handleNotifToggle}
+                trackColor={{ false: colors.border, true: colors.primary + '60' }}
+                thumbColor={notifSettings.enabled ? colors.primary : colors.surfaceLight}
+              />
+            </View>
+
+            {notifSettings.enabled && (
+              <View style={styles.timePickerRow}>
+                <Text style={styles.timeLabel}>Time:</Text>
+                <View style={styles.timeControl}>
+                  <TouchableOpacity onPress={() => handleNotifTimeChange('hour', -1)} style={styles.timeButton}>
+                    <Ionicons name="chevron-down" size={18} color={colors.text.secondary} />
+                  </TouchableOpacity>
+                  <Text style={styles.timeValue}>
+                    {String(notifSettings.hour).padStart(2, '0')}
+                  </Text>
+                  <TouchableOpacity onPress={() => handleNotifTimeChange('hour', 1)} style={styles.timeButton}>
+                    <Ionicons name="chevron-up" size={18} color={colors.text.secondary} />
+                  </TouchableOpacity>
+                </View>
+                <Text style={styles.timeSeparator}>:</Text>
+                <View style={styles.timeControl}>
+                  <TouchableOpacity onPress={() => handleNotifTimeChange('minute', -5)} style={styles.timeButton}>
+                    <Ionicons name="chevron-down" size={18} color={colors.text.secondary} />
+                  </TouchableOpacity>
+                  <Text style={styles.timeValue}>
+                    {String(notifSettings.minute).padStart(2, '0')}
+                  </Text>
+                  <TouchableOpacity onPress={() => handleNotifTimeChange('minute', 5)} style={styles.timeButton}>
+                    <Ionicons name="chevron-up" size={18} color={colors.text.secondary} />
+                  </TouchableOpacity>
+                </View>
+              </View>
+            )}
+          </View>
+        </View>
+
+        {/* AI Provider Section */}
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>AI Provider</Text>
+          <Text style={styles.sectionDescription}>
+            Select your AI provider and manage API keys. Only one provider
+            is active at a time.
+          </Text>
+
+          {/* Provider selector */}
+          <View style={styles.card}>
+            {AI_PROVIDERS.map((provider, idx) => {
+              const isActive = activeProvider === provider.type;
+              return (
+                <TouchableOpacity
+                  key={provider.type}
+                  style={[
+                    styles.themeOption,
+                    isActive && { backgroundColor: colors.primary + '15' },
+                    idx < AI_PROVIDERS.length - 1 && styles.themeOptionBorder,
+                  ]}
+                  onPress={() => provider.available && handleProviderChange(provider.type)}
+                  disabled={!provider.available}
+                  activeOpacity={0.7}
+                >
+                  <View style={[
+                    styles.themeIconCircle,
+                    { backgroundColor: isActive ? colors.primary + '20' : colors.surfaceLight },
+                  ]}>
+                    <Ionicons
+                      name="sparkles-outline"
+                      size={20}
+                      color={isActive ? colors.primary : colors.text.tertiary}
+                    />
+                  </View>
+                  <Text style={[
+                    styles.themeLabel,
+                    isActive && { color: colors.primary, fontWeight: '700' },
+                    !provider.available && { color: colors.text.tertiary },
+                  ]}>
+                    {provider.label}
+                    {!provider.available && ' (coming soon)'}
+                  </Text>
+                  {isActive && (
+                    <Ionicons name="checkmark-circle" size={22} color={colors.primary} />
+                  )}
+                </TouchableOpacity>
+              );
+            })}
+          </View>
+
+          {/* API key management for active provider */}
+          <View style={[styles.card, { marginTop: 12 }]}>
             {hasKey ? (
               <>
-                {/* Key is stored */}
                 <View style={styles.row}>
                   <Ionicons name="key-outline" size={22} color={colors.success} />
                   <View style={styles.rowContent}>
-                    <Text style={styles.label}>API Key</Text>
+                    <Text style={styles.label}>{providerConfig.label} Key</Text>
                     <Text style={[styles.value, { fontFamily: 'monospace' }]}>
                       {maskedKey}
                     </Text>
@@ -211,19 +423,12 @@ export const SettingsScreen: React.FC = () => {
                 <View style={styles.buttonRow}>
                   <TouchableOpacity
                     style={styles.secondaryButton}
-                    onPress={() => {
-                      setShowInput(true);
-                      setKeyInput('');
-                    }}
+                    onPress={() => { setShowInput(true); setKeyInput(''); }}
                   >
                     <Ionicons name="create-outline" size={18} color={colors.primary} />
                     <Text style={styles.secondaryButtonText}>Replace</Text>
                   </TouchableOpacity>
-
-                  <TouchableOpacity
-                    style={styles.dangerButton}
-                    onPress={handleDeleteKey}
-                  >
+                  <TouchableOpacity style={styles.dangerButton} onPress={handleDeleteKey}>
                     <Ionicons name="trash-outline" size={18} color={colors.error} />
                     <Text style={styles.dangerButtonText}>Delete</Text>
                   </TouchableOpacity>
@@ -231,11 +436,10 @@ export const SettingsScreen: React.FC = () => {
               </>
             ) : (
               <>
-                {/* No key stored */}
                 <View style={styles.row}>
                   <Ionicons name="key-outline" size={22} color={colors.text.tertiary} />
                   <View style={styles.rowContent}>
-                    <Text style={styles.label}>API Key</Text>
+                    <Text style={styles.label}>{providerConfig.label} Key</Text>
                     <Text style={[styles.value, { color: colors.text.tertiary }]}>
                       Not configured
                     </Text>
@@ -254,12 +458,11 @@ export const SettingsScreen: React.FC = () => {
               </>
             )}
 
-            {/* Input field */}
             {showInput && (
               <View style={styles.inputContainer}>
                 <TextInput
                   style={styles.input}
-                  placeholder="Paste your Gemini API key..."
+                  placeholder={providerConfig.keyPlaceholder}
                   placeholderTextColor={colors.text.tertiary}
                   value={keyInput}
                   onChangeText={setKeyInput}
@@ -270,20 +473,12 @@ export const SettingsScreen: React.FC = () => {
                 <View style={styles.buttonRow}>
                   <TouchableOpacity
                     style={styles.secondaryButton}
-                    onPress={() => {
-                      setShowInput(false);
-                      setKeyInput('');
-                    }}
+                    onPress={() => { setShowInput(false); setKeyInput(''); }}
                   >
                     <Text style={styles.secondaryButtonText}>Cancel</Text>
                   </TouchableOpacity>
-
                   <TouchableOpacity
-                    style={[
-                      styles.primaryButton,
-                      { flex: 1 },
-                      !keyInput.trim() && styles.buttonDisabled,
-                    ]}
+                    style={[styles.primaryButton, { flex: 1 }, !keyInput.trim() && styles.buttonDisabled]}
                     onPress={handleSaveKey}
                     disabled={!keyInput.trim() || saving}
                   >
@@ -298,11 +493,24 @@ export const SettingsScreen: React.FC = () => {
             )}
           </View>
 
+          {/* Tutorial link */}
+          <TouchableOpacity
+            style={styles.tutorialLink}
+            onPress={() => navigation.navigate('ApiKeyTutorial')}
+            activeOpacity={0.7}
+          >
+            <Ionicons name="help-circle-outline" size={20} color={colors.primary} />
+            <Text style={styles.tutorialLinkText}>
+              How to get an API key?
+            </Text>
+            <Ionicons name="chevron-forward" size={16} color={colors.primary} />
+          </TouchableOpacity>
+
           {/* Help text */}
           <View style={styles.helpBox}>
             <Ionicons name="shield-checkmark-outline" size={18} color={colors.info} />
             <Text style={styles.helpText}>
-              Your API key is encrypted and stored locally on your device. 
+              Your API key is encrypted and stored locally on your device.
               It is never sent to our servers. You can get a free Gemini API key
               at ai.google.dev.
             </Text>
@@ -463,6 +671,53 @@ const createStyles = (colors: ThemeColors) => StyleSheet.create({
     fontSize: 13,
     color: colors.info,
     lineHeight: 18,
+  },
+  tutorialLink: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: colors.surfaceLight,
+    borderRadius: 12,
+    padding: 14,
+    marginTop: 12,
+    gap: 8,
+  },
+  tutorialLinkText: {
+    flex: 1,
+    fontSize: 15,
+    fontWeight: '600',
+    color: colors.primary,
+  },
+  timePickerRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: 16,
+    justifyContent: 'center',
+    gap: 4,
+  },
+  timeLabel: {
+    fontSize: 14,
+    fontWeight: '600',
+    color: colors.text.secondary,
+    marginRight: 12,
+  },
+  timeControl: {
+    alignItems: 'center',
+  },
+  timeButton: {
+    padding: 6,
+  },
+  timeValue: {
+    fontSize: 24,
+    fontWeight: '700',
+    color: colors.text.primary,
+    minWidth: 36,
+    textAlign: 'center',
+  },
+  timeSeparator: {
+    fontSize: 24,
+    fontWeight: '700',
+    color: colors.text.primary,
+    marginHorizontal: 2,
   },
   themeOption: {
     flexDirection: 'row',

@@ -216,3 +216,59 @@ export interface GeminiCorrectionResponse {
   isCorrect: boolean;
   feedback: string;
 }
+
+// ──────────────────────────────────────────────
+// AI Provider Types
+// ──────────────────────────────────────────────
+
+/** Supported AI provider identifiers */
+export type AIProviderType = 'gemini' | 'openai' | 'anthropic';
+
+/** Configuration for an individual AI provider */
+export interface AIProviderConfig {
+  type: AIProviderType;
+  label: string;
+  keyPlaceholder: string;
+  /** URL where the user can obtain an API key */
+  keyUrl: string;
+  /** Whether this provider is currently implemented */
+  available: boolean;
+}
+
+// ──────────────────────────────────────────────
+// Notification Types
+// ──────────────────────────────────────────────
+
+/** Persisted notification preferences */
+export interface NotificationSettings {
+  enabled: boolean;
+  /** Hour of the day (0-23) */
+  hour: number;
+  /** Minute (0-59) */
+  minute: number;
+  /** Optional deck ID to draw words from; null = global */
+  deckId: string | null;
+}
+
+// ──────────────────────────────────────────────
+// Sound Types
+// ──────────────────────────────────────────────
+
+/** Available sound effect identifiers */
+export type SoundEffect = 'correct' | 'challenge_complete';
+
+// ──────────────────────────────────────────────
+// Hint Types
+// ──────────────────────────────────────────────
+
+/** Types of hints available for written quizzes */
+export type HintType = 'first_letter' | 'word_length' | 'context_sentence';
+
+/** A single hint that was revealed to the user */
+export interface Hint {
+  type: HintType;
+  content: string;
+}
+
+/** SM-2 quality penalty applied per hint used */
+export const HINT_QUALITY_PENALTY = 1 as const;

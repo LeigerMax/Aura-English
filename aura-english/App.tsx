@@ -12,7 +12,7 @@ import { ReviewScreen } from '@/features/review';
 import { ChallengeScreen } from '@/features/challenge';
 import { GrammarHomeScreen, GrammarCategoryScreen, GrammarRuleScreen } from '@/features/grammar';
 import { getCategoryById, getRuleById } from '@/data/grammar';
-import { SettingsScreen } from '@/features/settings';
+import { SettingsScreen, ApiKeyTutorialScreen } from '@/features/settings';
 import { ThemeProvider, useTheme, loadThemePreference } from '@/core/theme';
 import type { ThemeMode, ThemeColors } from '@/core/theme';
 import { useColorScheme as useNativeWindColorScheme } from 'nativewind';
@@ -99,6 +99,7 @@ function AppContent() {
           })}
         />
         <Stack.Screen name="Settings" component={SettingsScreen} options={{ title: 'Settings' }} />
+        <Stack.Screen name="ApiKeyTutorial" component={ApiKeyTutorialScreen} options={{ title: 'API Key Setup' }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
