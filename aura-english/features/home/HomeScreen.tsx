@@ -28,6 +28,7 @@ export type RootStackParamList = {
   Grammar: undefined;
   GrammarCategory: { categoryId: string };
   GrammarRule: { ruleId: string };
+  Statistics: undefined;
   Settings: undefined;
   ApiKeyTutorial: undefined;
 };
@@ -75,6 +76,14 @@ const MODULES: ModuleConfig[] = [
     color: '#8B5CF6',
     iconName: 'book',
     route: 'Grammar',
+  },
+  {
+    id: 'statistics',
+    title: 'Statistics',
+    subtitle: 'Track your progress',
+    color: '#14B8A6',
+    iconName: 'stats-chart',
+    route: 'Statistics',
   },
   {
     id: 'settings',

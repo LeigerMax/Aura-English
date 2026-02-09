@@ -7,8 +7,10 @@ import {
   TouchableOpacity,
   ActivityIndicator,
   Alert,
+  TextInput,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { Ionicons } from '@expo/vector-icons';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList } from '@/features/home/HomeScreen';
 import { FlashcardCard } from '@/components/ui';
@@ -32,6 +34,10 @@ export const DeckDetailScreen: React.FC<DeckDetailScreenProps> = ({ navigation, 
   const [loading, setLoading] = React.useState(true);
   const [loadingMore, setLoadingMore] = React.useState(false);
   const [hasMore, setHasMore] = React.useState(true);
+  const [searchQuery, setSearchQuery] = React.useState('');
+  const [searchResults, setSearchResults] = React.useState<Flashcard[] | null>(null);
+  const [searching, setSearching] = React.useState(false);
+  const searchTimeout = React.useRef<ReturnType<typeof setTimeout> | null>(null);
 
   React.useEffect(() => {
     loadDeckData();
@@ -90,6 +96,38 @@ export const DeckDetailScreen: React.FC<DeckDetailScreenProps> = ({ navigation, 
   const handleAddCard = () => {
     navigation.navigate('FlashcardForm', { deckId, mode: 'create' });
   };
+
+  // ── Search ──
+  const handleSearchChange = React.useCallback((text: string) => {
+    setSearchQuery(text);
+
+    if (searchTimeout.current) clearTimeout(searchTimeout.current);
+
+    if (!text.trim()) {
+      setSearchResults(null);
+      setSearching(false);
+      return;
+    }
+
+    setSearching(true);
+    searchTimeout.current = setTimeout(async () => {
+      try {
+        const results = await flashcardRepository.searchFlashcards(text.trim());
+        // If we're in a specific deck (not global), filter results to this deck
+        if (deckId !== GLOBAL_DECK_ID) {
+          const allDeckCards = await flashcardRepository.getFlashcardsByDeck(deckId);
+          const deckIds = new Set(allDeckCards.map((f) => f.id));
+          setSearchResults(results.filter((r) => deckIds.has(r.id)));
+        } else {
+          setSearchResults(results);
+        }
+      } catch {
+        setSearchResults([]);
+      } finally {
+        setSearching(false);
+      }
+    }, 300);
+  }, [deckId, flashcards]);
 
   const handleEditCard = (flashcard: Flashcard) => {
     navigation.navigate('FlashcardForm', { deckId, mode: 'edit', flashcard });
@@ -158,17 +196,56 @@ export const DeckDetailScreen: React.FC<DeckDetailScreenProps> = ({ navigation, 
         </View>
       )}
 
+      {/* Search Bar */}
+      {totalCount > 0 && (
+        <View style={styles.searchContainer}>
+          <Ionicons name="search" size={20} color={colors.text.tertiary} style={{ marginRight: sizes.spacing.sm }} />
+          <TextInput
+            style={styles.searchInput}
+            value={searchQuery}
+            onChangeText={handleSearchChange}
+            placeholder="Search words..."
+            placeholderTextColor={colors.text.tertiary}
+            autoCorrect={false}
+            autoCapitalize="none"
+            returnKeyType="search"
+          />
+          {searchQuery.length > 0 && (
+            <TouchableOpacity
+              onPress={() => handleSearchChange('')}
+              hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
+            >
+              <Ionicons name="close-circle" size={20} color={colors.text.tertiary} />
+            </TouchableOpacity>
+          )}
+        </View>
+      )}
+
+      {/* Search status */}
+      {searching && (
+        <View style={{ paddingVertical: sizes.spacing.sm, alignItems: 'center' }}>
+          <ActivityIndicator size="small" color={colors.primary} />
+        </View>
+      )}
+      {searchResults !== null && !searching && (
+        <Text style={styles.searchResultsLabel}>
+          {searchResults.length} result{searchResults.length !== 1 ? 's' : ''} for "{searchQuery}"
+        </Text>
+      )}
+
       {/* Add Card Button */}
-      <TouchableOpacity
-        style={[styles.addButton, { borderColor: deck?.color || colors.primary }]}
-        onPress={handleAddCard}
-      >
-        <Text style={styles.addButtonIcon}>➕</Text>
-        <Text style={styles.addButtonText}>Add New Card</Text>
-      </TouchableOpacity>
+      {searchResults === null && (
+        <TouchableOpacity
+          style={[styles.addButton, { borderColor: deck?.color || colors.primary }]}
+          onPress={handleAddCard}
+        >
+          <Text style={styles.addButtonIcon}>➕</Text>
+          <Text style={styles.addButtonText}>Add New Card</Text>
+        </TouchableOpacity>
+      )}
 
       {/* Review Button */}
-      {totalCount > 0 && (
+      {totalCount > 0 && searchResults === null && (
         <TouchableOpacity
           style={styles.reviewButton}
           onPress={() =>
@@ -211,10 +288,12 @@ export const DeckDetailScreen: React.FC<DeckDetailScreenProps> = ({ navigation, 
     </View>
   );
 
+  const displayedCards = searchResults ?? flashcards;
+
   return (
     <SafeAreaView style={styles.safeArea}>
       <FlatList
-        data={flashcards}
+        data={displayedCards}
         keyExtractor={(item) => item.id}
         renderItem={renderItem}
         ListHeaderComponent={renderHeader}
@@ -222,7 +301,7 @@ export const DeckDetailScreen: React.FC<DeckDetailScreenProps> = ({ navigation, 
         ListEmptyComponent={renderEmpty}
         contentContainerStyle={styles.scrollContent}
         showsVerticalScrollIndicator={false}
-        onEndReached={loadMore}
+        onEndReached={searchResults === null ? loadMore : undefined}
         onEndReachedThreshold={0.4}
         initialNumToRender={20}
         maxToRenderPerBatch={20}
@@ -279,6 +358,29 @@ const createStyles = (colors: ThemeColors) => StyleSheet.create({
     color: colors.text.inverse,
     opacity: 0.8,
     fontWeight: '600',
+  },
+  searchContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: colors.surface,
+    borderRadius: sizes.radius.xl,
+    paddingHorizontal: sizes.spacing.md,
+    paddingVertical: sizes.spacing.sm,
+    marginBottom: sizes.spacing.md,
+    borderWidth: 1,
+    borderColor: colors.border,
+  },
+  searchInput: {
+    flex: 1,
+    fontSize: sizes.fontSize.md,
+    color: colors.text.primary,
+    paddingVertical: sizes.spacing.xs,
+  },
+  searchResultsLabel: {
+    fontSize: sizes.fontSize.sm,
+    color: colors.text.secondary,
+    marginBottom: sizes.spacing.md,
+    fontStyle: 'italic',
   },
   addButton: {
     flexDirection: 'row',

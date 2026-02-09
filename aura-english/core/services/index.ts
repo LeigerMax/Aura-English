@@ -41,3 +41,15 @@ export {
   MAX_HINTS,
   applyHintPenalty,
 } from './hintService';
+
+// Statistics
+export {
+  getGlobalStats,
+  getDeckStats,
+  getAllStatistics,
+  sortDeckStats,
+  type ScopeStats,
+  type DeckStats,
+  type StatisticsData,
+  type DeckSortKey,
+} from './statisticsService';

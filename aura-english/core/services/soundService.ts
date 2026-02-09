@@ -1,4 +1,4 @@
-import { Audio } from 'expo-av';
+import { createAudioPlayer, type AudioPlayer } from 'expo-audio';
 import { isSoundEnabled } from './settingsService';
 import type { SoundEffect } from '@/types/models';
 
@@ -10,6 +10,7 @@ import type { SoundEffect } from '@/types/models';
  * sound never blocks UI rendering.
  *
  * Sounds are lazily loaded and cached to avoid repeated I/O.
+ * Uses expo-audio (replaces deprecated expo-av).
  */
 
 // ──────────────────────────────────────────────
@@ -21,20 +22,20 @@ const SOUND_MAP: Record<SoundEffect, any> = {
   challenge_complete: require('@/assets/sounds/challenge_complete.mp3'),
 };
 
-/** In-memory cache of loaded Audio.Sound instances */
-const cache = new Map<SoundEffect, Audio.Sound>();
+/** In-memory cache of loaded AudioPlayer instances */
+const cache = new Map<SoundEffect, AudioPlayer>();
 
 // ──────────────────────────────────────────────
 // Internal helpers
 // ──────────────────────────────────────────────
 
-async function loadSound(effect: SoundEffect): Promise<Audio.Sound> {
+function getPlayer(effect: SoundEffect): AudioPlayer {
   const existing = cache.get(effect);
   if (existing) return existing;
 
-  const { sound } = await Audio.Sound.createAsync(SOUND_MAP[effect]);
-  cache.set(effect, sound);
-  return sound;
+  const player = createAudioPlayer(SOUND_MAP[effect]);
+  cache.set(effect, player);
+  return player;
 }
 
 // ──────────────────────────────────────────────
@@ -52,9 +53,9 @@ export function playSound(effect: SoundEffect): void {
       const enabled = await isSoundEnabled();
       if (!enabled) return;
 
-      const sound = await loadSound(effect);
-      await sound.setPositionAsync(0);
-      await sound.playAsync();
+      const player = getPlayer(effect);
+      player.seekTo(0);
+      player.play();
     } catch {
       // Sound failure should never disrupt the user experience
     }
@@ -62,12 +63,12 @@ export function playSound(effect: SoundEffect): void {
 }
 
 /**
- * Unload all cached sounds to free memory.
+ * Release all cached players to free memory.
  * Call on app background or when no longer needed.
  */
 export async function unloadAllSounds(): Promise<void> {
-  for (const sound of cache.values()) {
-    try { await sound.unloadAsync(); } catch { /* ignore */ }
+  for (const player of cache.values()) {
+    try { player.remove(); } catch { /* ignore */ }
   }
   cache.clear();
 }

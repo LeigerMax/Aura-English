@@ -149,9 +149,18 @@ export const ReviewScreen: React.FC<ReviewScreenProps> = ({ route, navigation })
 
           {total > 0 && (
             <View style={styles.statsContainer}>
-              <StatBadge label="Difficult" count={stats.difficult} color="#EF4444" />
-              <StatBadge label="Correct" count={stats.correct} color="#F59E0B" />
-              <StatBadge label="Easy" count={stats.easy} color="#10B981" />
+              <View style={[styles.statBadge, { backgroundColor: '#EF4444' + '15' }]}>
+                <Text style={[styles.statCount, { color: '#EF4444' }]}>{stats.difficult}</Text>
+                <Text style={[styles.statLabel, { color: '#EF4444' }]}>Difficult</Text>
+              </View>
+              <View style={[styles.statBadge, { backgroundColor: '#F59E0B' + '15' }]}>
+                <Text style={[styles.statCount, { color: '#F59E0B' }]}>{stats.correct}</Text>
+                <Text style={[styles.statLabel, { color: '#F59E0B' }]}>Correct</Text>
+              </View>
+              <View style={[styles.statBadge, { backgroundColor: '#10B981' + '15' }]}>
+                <Text style={[styles.statCount, { color: '#10B981' }]}>{stats.easy}</Text>
+                <Text style={[styles.statLabel, { color: '#10B981' }]}>Easy</Text>
+              </View>
             </View>
           )}
 
@@ -233,58 +242,35 @@ export const ReviewScreen: React.FC<ReviewScreenProps> = ({ route, navigation })
       {/* Rating buttons (visible only when flipped) */}
       {isFlipped && (
         <View style={styles.ratingContainer}>
-          <RatingButton
-            label="Difficult"
-            icon="close-circle"
-            color="#EF4444"
+          <TouchableOpacity
+            style={[styles.ratingButton, { backgroundColor: '#EF4444' + '15', borderColor: '#EF4444' + '30' }]}
             onPress={() => handleRate(1)}
-          />
-          <RatingButton
-            label="Correct"
-            icon="checkmark-circle"
-            color="#F59E0B"
+            activeOpacity={0.7}
+          >
+            <Ionicons name="close-circle" size={28} color="#EF4444" />
+            <Text style={[styles.ratingLabel, { color: '#EF4444' }]}>Difficult</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={[styles.ratingButton, { backgroundColor: '#F59E0B' + '15', borderColor: '#F59E0B' + '30' }]}
             onPress={() => handleRate(3)}
-          />
-          <RatingButton
-            label="Easy"
-            icon="star"
-            color="#10B981"
+            activeOpacity={0.7}
+          >
+            <Ionicons name="checkmark-circle" size={28} color="#F59E0B" />
+            <Text style={[styles.ratingLabel, { color: '#F59E0B' }]}>Correct</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={[styles.ratingButton, { backgroundColor: '#10B981' + '15', borderColor: '#10B981' + '30' }]}
             onPress={() => handleRate(5)}
-          />
+            activeOpacity={0.7}
+          >
+            <Ionicons name="star" size={28} color="#10B981" />
+            <Text style={[styles.ratingLabel, { color: '#10B981' }]}>Easy</Text>
+          </TouchableOpacity>
         </View>
       )}
     </SafeAreaView>
   );
 };
-
-/** Stat badge for completion screen */
-const StatBadge: React.FC<{ label: string; count: number; color: string }> = ({
-  label,
-  count,
-  color,
-}) => (
-  <View style={[styles.statBadge, { backgroundColor: color + '15' }]}>
-    <Text style={[styles.statCount, { color }]}>{count}</Text>
-    <Text style={[styles.statLabel, { color }]}>{label}</Text>
-  </View>
-);
-
-/** Rating button component */
-const RatingButton: React.FC<{
-  label: string;
-  icon: keyof typeof Ionicons.glyphMap;
-  color: string;
-  onPress: () => void;
-}> = ({ label, icon, color, onPress }) => (
-  <TouchableOpacity
-    style={[styles.ratingButton, { backgroundColor: color + '15', borderColor: color + '30' }]}
-    onPress={onPress}
-    activeOpacity={0.7}
-  >
-    <Ionicons name={icon} size={28} color={color} />
-    <Text style={[styles.ratingLabel, { color }]}>{label}</Text>
-  </TouchableOpacity>
-);
 
 const createStyles = (colors: ThemeColors) => StyleSheet.create({
   container: {

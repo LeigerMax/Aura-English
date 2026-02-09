@@ -11,6 +11,7 @@ import { QuizScreen } from '@/features/quiz';
 import { ReviewScreen } from '@/features/review';
 import { ChallengeScreen } from '@/features/challenge';
 import { GrammarHomeScreen, GrammarCategoryScreen, GrammarRuleScreen } from '@/features/grammar';
+import { StatisticsScreen } from '@/features/statistics';
 import { getCategoryById, getRuleById } from '@/data/grammar';
 import { SettingsScreen, ApiKeyTutorialScreen } from '@/features/settings';
 import { ThemeProvider, useTheme, loadThemePreference } from '@/core/theme';
@@ -99,6 +100,7 @@ function AppContent() {
           })}
         />
         <Stack.Screen name="Settings" component={SettingsScreen} options={{ title: 'Settings' }} />
+        <Stack.Screen name="Statistics" component={StatisticsScreen} options={{ title: 'Statistics' }} />
         <Stack.Screen name="ApiKeyTutorial" component={ApiKeyTutorialScreen} options={{ title: 'API Key Setup' }} />
       </Stack.Navigator>
     </NavigationContainer>
