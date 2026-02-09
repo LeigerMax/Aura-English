@@ -17,9 +17,6 @@ const SOUND_ENABLED_KEY = 'settings_sound_enabled';
 
 const DEFAULT_NOTIFICATION_SETTINGS: NotificationSettings = {
   enabled: false,
-  hour: 9,
-  minute: 0,
-  deckId: null,
 };
 
 export async function getNotificationSettings(): Promise<NotificationSettings> {

@@ -242,12 +242,6 @@ export interface AIProviderConfig {
 /** Persisted notification preferences */
 export interface NotificationSettings {
   enabled: boolean;
-  /** Hour of the day (0-23) */
-  hour: number;
-  /** Minute (0-59) */
-  minute: number;
-  /** Optional deck ID to draw words from; null = global */
-  deckId: string | null;
 }
 
 // ──────────────────────────────────────────────

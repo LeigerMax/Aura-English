@@ -6,20 +6,21 @@ import type { Flashcard, NotificationSettings } from '@/types/models';
 /**
  * Notification Service
  *
- * Handles scheduling / cancelling the "Daily Word" local notification.
- * The notification shows a random word + definition from a selected deck
- * (or the global deck when no specific deck is chosen).
+ * Handles scheduling / cancelling daily reminder notifications.
+ * When enabled, 3 notifications are sent every day at 10:00, 14:00 and 18:00
+ * showing a random word + definition.
  *
  * Implementation notes:
  * - Uses expo-notifications for cross-platform local alerts.
- * - Scheduling is idempotent: calling `schedule` always cancels the
- *   previous notification first, so there is never a duplicate.
- * - Content is resolved at schedule-time; rescheduling daily keeps
- *   the word fresh without a background task.
+ * - Scheduling is idempotent: calling `schedule` always cancels all
+ *   previous notifications first, so there are never duplicates.
  */
 
-/** Unique identifier used to cancel the daily-word notification. */
-const DAILY_WORD_ID = 'daily-word';
+/** Identifiers for the three daily notifications. */
+const NOTIF_IDS = ['daily-word-10', 'daily-word-14', 'daily-word-18'] as const;
+
+/** Fixed schedule hours */
+const SCHEDULE_HOURS = [10, 14, 18] as const;
 
 // ──────────────────────────────────────────────
 // Permission
@@ -38,11 +39,8 @@ export async function requestPermissions(): Promise<boolean> {
 // Random word selection
 // ──────────────────────────────────────────────
 
-async function pickRandomWord(deckId: string | null): Promise<Flashcard | null> {
-  const cards = deckId
-    ? await flashcardRepository.getFlashcardsByDeck(deckId)
-    : await flashcardRepository.getAllFlashcards();
-
+async function pickRandomWord(): Promise<Flashcard | null> {
+  const cards = await flashcardRepository.getAllFlashcards();
   if (cards.length === 0) return null;
   return cards[Math.floor(Math.random() * cards.length)];
 }
@@ -51,42 +49,47 @@ async function pickRandomWord(deckId: string | null): Promise<Flashcard | null> 
 // Scheduling
 // ──────────────────────────────────────────────
 
-/** Cancel any existing daily-word notification. */
-export async function cancelDailyWord(): Promise<void> {
-  await Notifications.cancelScheduledNotificationAsync(DAILY_WORD_ID);
+/** Cancel all existing daily notifications. */
+export async function cancelDailyNotifications(): Promise<void> {
+  await Promise.all(
+    NOTIF_IDS.map((id) => Notifications.cancelScheduledNotificationAsync(id)),
+  );
 }
 
 /**
- * Schedule (or reschedule) the daily-word notification
- * according to the persisted NotificationSettings.
+ * Schedule (or reschedule) the 3 daily notifications
+ * at 10:00, 14:00 and 18:00 according to the persisted settings.
  */
-export async function scheduleDailyWord(): Promise<void> {
+export async function scheduleDailyNotifications(): Promise<void> {
   const settings = await getNotificationSettings();
 
   // Always cancel first to avoid duplicates
-  await cancelDailyWord();
+  await cancelDailyNotifications();
 
   if (!settings.enabled) return;
 
   const granted = await requestPermissions();
   if (!granted) return;
 
-  const card = await pickRandomWord(settings.deckId);
-  if (!card) return;
+  // Schedule one notification per time slot
+  for (let i = 0; i < SCHEDULE_HOURS.length; i++) {
+    const card = await pickRandomWord();
+    if (!card) continue;
 
-  await Notifications.scheduleNotificationAsync({
-    identifier: DAILY_WORD_ID,
-    content: {
-      title: `📖 Word of the Day: ${card.word}`,
-      body: card.definition,
-      sound: true,
-    },
-    trigger: {
-      type: Notifications.SchedulableTriggerInputTypes.DAILY,
-      hour: settings.hour,
-      minute: settings.minute,
-    },
-  });
+    await Notifications.scheduleNotificationAsync({
+      identifier: NOTIF_IDS[i],
+      content: {
+        title: `📖 Word of the Day: ${card.word}`,
+        body: card.definition,
+        sound: true,
+      },
+      trigger: {
+        type: Notifications.SchedulableTriggerInputTypes.DAILY,
+        hour: SCHEDULE_HOURS[i],
+        minute: 0,
+      },
+    });
+  }
 }
 
 /**
@@ -97,5 +100,5 @@ export async function updateNotificationSchedule(
   settings: NotificationSettings,
 ): Promise<void> {
   await saveNotificationSettings(settings);
-  await scheduleDailyWord();
+  await scheduleDailyNotifications();
 }

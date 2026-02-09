@@ -27,8 +27,8 @@ export {
 // Notifications
 export {
   requestPermissions,
-  scheduleDailyWord,
-  cancelDailyWord,
+  scheduleDailyNotifications,
+  cancelDailyNotifications,
   updateNotificationSchedule,
 } from './notificationService';
 

@@ -36,7 +36,7 @@ import {
   updateNotificationSchedule,
   requestPermissions,
 } from '@/core/services/notificationService';
-import type { AIProviderType, NotificationSettings } from '@/types/models';
+import type { AIProviderType } from '@/types/models';
 
 const APP_VERSION = Constants.expoConfig?.version ?? '1.0.0';
 
@@ -64,9 +64,7 @@ export const SettingsScreen: React.FC = () => {
   const [saving, setSaving] = useState(false);
 
   // Notification state
-  const [notifSettings, setNotifSettings] = useState<NotificationSettings>({
-    enabled: false, hour: 9, minute: 0, deckId: null,
-  });
+  const [notifEnabled, setNotifEnabled] = useState(false);
 
   // Sound state
   const [soundOn, setSoundOn] = useState(true);
@@ -82,7 +80,7 @@ export const SettingsScreen: React.FC = () => {
       isSoundEnabled(),
     ]);
     setActiveProvider(provider);
-    setNotifSettings(notif);
+    setNotifEnabled(notif.enabled);
     setSoundOn(sound);
     await refreshKeyStatus(provider);
     setLoading(false);
@@ -168,22 +166,8 @@ export const SettingsScreen: React.FC = () => {
         return;
       }
     }
-    const updated = { ...notifSettings, enabled };
-    setNotifSettings(updated);
-    await updateNotificationSchedule(updated);
-  };
-
-  const handleNotifTimeChange = async (field: 'hour' | 'minute', delta: number) => {
-    const updated = { ...notifSettings };
-    if (field === 'hour') {
-      updated.hour = (updated.hour + delta + 24) % 24;
-    } else {
-      updated.minute = (updated.minute + delta + 60) % 60;
-    }
-    setNotifSettings(updated);
-    if (updated.enabled) {
-      await updateNotificationSchedule(updated);
-    }
+    setNotifEnabled(enabled);
+    await updateNotificationSchedule({ enabled });
   };
 
   // ── Sound toggle ──
@@ -300,9 +284,9 @@ export const SettingsScreen: React.FC = () => {
 
         {/* Notifications Section */}
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Daily Word</Text>
+          <Text style={styles.sectionTitle}>Daily Reminders</Text>
           <Text style={styles.sectionDescription}>
-            Get a daily notification with a random word and its definition.
+            Receive 3 daily notifications (10:00, 14:00, 18:00) with a random word and its definition.
           </Text>
 
           <View style={styles.card}>
@@ -311,45 +295,16 @@ export const SettingsScreen: React.FC = () => {
               <View style={styles.rowContent}>
                 <Text style={styles.label}>Notifications</Text>
                 <Text style={styles.value}>
-                  {notifSettings.enabled ? 'Enabled' : 'Disabled'}
+                  {notifEnabled ? 'Enabled' : 'Disabled'}
                 </Text>
               </View>
               <Switch
-                value={notifSettings.enabled}
+                value={notifEnabled}
                 onValueChange={handleNotifToggle}
                 trackColor={{ false: colors.border, true: colors.primary + '60' }}
-                thumbColor={notifSettings.enabled ? colors.primary : colors.surfaceLight}
+                thumbColor={notifEnabled ? colors.primary : colors.surfaceLight}
               />
             </View>
-
-            {notifSettings.enabled && (
-              <View style={styles.timePickerRow}>
-                <Text style={styles.timeLabel}>Time:</Text>
-                <View style={styles.timeControl}>
-                  <TouchableOpacity onPress={() => handleNotifTimeChange('hour', -1)} style={styles.timeButton}>
-                    <Ionicons name="chevron-down" size={18} color={colors.text.secondary} />
-                  </TouchableOpacity>
-                  <Text style={styles.timeValue}>
-                    {String(notifSettings.hour).padStart(2, '0')}
-                  </Text>
-                  <TouchableOpacity onPress={() => handleNotifTimeChange('hour', 1)} style={styles.timeButton}>
-                    <Ionicons name="chevron-up" size={18} color={colors.text.secondary} />
-                  </TouchableOpacity>
-                </View>
-                <Text style={styles.timeSeparator}>:</Text>
-                <View style={styles.timeControl}>
-                  <TouchableOpacity onPress={() => handleNotifTimeChange('minute', -5)} style={styles.timeButton}>
-                    <Ionicons name="chevron-down" size={18} color={colors.text.secondary} />
-                  </TouchableOpacity>
-                  <Text style={styles.timeValue}>
-                    {String(notifSettings.minute).padStart(2, '0')}
-                  </Text>
-                  <TouchableOpacity onPress={() => handleNotifTimeChange('minute', 5)} style={styles.timeButton}>
-                    <Ionicons name="chevron-up" size={18} color={colors.text.secondary} />
-                  </TouchableOpacity>
-                </View>
-              </View>
-            )}
           </View>
         </View>
 
@@ -687,38 +642,7 @@ const createStyles = (colors: ThemeColors) => StyleSheet.create({
     fontWeight: '600',
     color: colors.primary,
   },
-  timePickerRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginTop: 16,
-    justifyContent: 'center',
-    gap: 4,
-  },
-  timeLabel: {
-    fontSize: 14,
-    fontWeight: '600',
-    color: colors.text.secondary,
-    marginRight: 12,
-  },
-  timeControl: {
-    alignItems: 'center',
-  },
-  timeButton: {
-    padding: 6,
-  },
-  timeValue: {
-    fontSize: 24,
-    fontWeight: '700',
-    color: colors.text.primary,
-    minWidth: 36,
-    textAlign: 'center',
-  },
-  timeSeparator: {
-    fontSize: 24,
-    fontWeight: '700',
-    color: colors.text.primary,
-    marginHorizontal: 2,
-  },
+
   themeOption: {
     flexDirection: 'row',
     alignItems: 'center',
