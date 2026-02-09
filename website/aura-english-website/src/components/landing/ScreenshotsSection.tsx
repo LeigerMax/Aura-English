@@ -44,7 +44,6 @@ export function ScreenshotsSection() {
                     className="object-cover"
                     sizes="260px"
                   />
-
                 </div>
               </div>
               <p className="mt-3 text-center text-sm font-medium text-slate-400">
