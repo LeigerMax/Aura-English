@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { APP_NAME } from "@/src/constants";
 
@@ -17,8 +18,17 @@ export function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
       <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 h-16">
-        <Link href="/" className="text-xl font-bold text-slate-900">
-          {APP_NAME}
+        <Link href="/" className="flex items-center gap-2.5">
+          <Image
+            src="/logo.png"
+            alt={`${APP_NAME} logo`}
+            width={32}
+            height={32}
+            className="rounded-lg"
+          />
+          <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+            {APP_NAME}
+          </span>
         </Link>
 
         {/* Desktop nav */}
@@ -27,7 +37,7 @@ export function Header() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors"
+                className="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors"
               >
                 {link.label}
               </Link>
@@ -70,7 +80,7 @@ export function Header() {
                   <Link
                     href={link.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="block text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors py-1"
+                    className="block text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors py-1"
                   >
                     {link.label}
                   </Link>

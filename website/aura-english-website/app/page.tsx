@@ -1,6 +1,7 @@
 import {
   HeroSection,
   FeaturesSection,
+  ScreenshotsSection,
   HowItWorksSection,
   CtaSection,
 } from "@/src/components";
@@ -10,6 +11,7 @@ export default function HomePage() {
     <>
       <HeroSection />
       <FeaturesSection />
+      <ScreenshotsSection />
       <HowItWorksSection />
       <CtaSection />
     </>

@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-white text-slate-900 antialiased">
+      <body className="bg-white text-slate-900 antialiased selection:bg-blue-200 selection:text-blue-900">
         <Header />
         <main>{children}</main>
         <Footer />

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ANDROID_APK_URL } from "@/src/constants";
+import { Download } from "lucide-react";
 
 interface DownloadButtonProps {
   size?: "default" | "large";
@@ -15,8 +16,9 @@ export function DownloadButton({ size = "default", className = "" }: DownloadBut
       href={ANDROID_APK_URL}
       target="_blank"
       rel="noopener noreferrer"
-      className={`inline-block font-semibold rounded-xl bg-slate-900 text-white hover:bg-slate-700 transition-colors ${sizeClasses} ${className}`}
+      className={`inline-flex items-center gap-2 font-semibold rounded-xl bg-gradient-to-r from-blue-500 to-indigo-600 text-white hover:from-blue-600 hover:to-indigo-700 shadow-lg hover:shadow-xl transition-all duration-300 ${sizeClasses} ${className}`}
     >
+      <Download className="h-5 w-5" />
       Download APK
     </Link>
   );

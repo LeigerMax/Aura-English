@@ -7,11 +7,18 @@ import { FEATURES } from "@/src/data";
 
 export function FeaturesSection() {
   return (
-    <section id="features" className="py-20 sm:py-28 bg-white">
-      <div className="mx-auto max-w-5xl px-6">
+    <section id="features" className="relative py-20 sm:py-28 bg-slate-50">
+      {/* Decorative gradient */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-400/40 to-transparent"
+      />
+
+      <div className="mx-auto max-w-6xl px-6">
         <SectionHeading
           title="Everything you need to learn English"
           subtitle="A focused toolkit — no bloat, no distractions."
+          accent
         />
 
         <motion.div
@@ -19,7 +26,7 @@ export function FeaturesSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-60px" }}
-          className="grid gap-6 sm:grid-cols-2"
+          className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
         >
           {FEATURES.map((feature) => (
             <FeatureCard key={feature.title} feature={feature} />
