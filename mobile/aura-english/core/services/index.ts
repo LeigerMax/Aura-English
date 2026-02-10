@@ -42,6 +42,16 @@ export {
   applyHintPenalty,
 } from './hintService';
 
+// Update check
+export {
+  checkForAppUpdate,
+  dismissUpdate,
+  openUpdatePage,
+  getCurrentVersion,
+  type VersionInfo,
+  type UpdateCheckResult,
+} from './updateService';
+
 // Statistics
 export {
   getGlobalStats,

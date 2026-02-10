@@ -1,6 +1,10 @@
+import { APP_VERSION } from "./app";
+import { GITHUB_URL } from "./links";
+
 /**
- * Direct EAS artifact link for the latest APK.
- * Update this URL after each `eas build -p android --profile apk`.
+ * GitHub Releases APK download link.
+ * Automatically built from the current APP_VERSION.
+ * Upload the APK to GitHub Releases with tag `v{APP_VERSION}`.
  */
 export const ANDROID_APK_URL =
-  "https://expo.dev/artifacts/eas/79n1yYhNcRvx3m6utFgtMZ.apk";
+  `${GITHUB_URL}/releases/download/v${APP_VERSION}/aura-english-v${APP_VERSION}.apk`;

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { fadeInUp, staggerContainer } from "@/src/lib";
 import { DownloadButton } from "@/src/components/ui";
 import { APP_VERSION, PLATFORM } from "@/src/constants";
+import { CHANGELOG } from "@/src/data/changelog";
 
 export function DownloadPageContent() {
   return (
@@ -47,12 +48,47 @@ export function DownloadPageContent() {
         >
           You may need to allow installs from unknown sources in your device settings.
         </motion.p>
+
+        {/* Changelog */}
+        {CHANGELOG.length > 0 && (
+          <motion.div variants={fadeInUp} className="mt-16 text-left">
+            <h2 className="text-2xl font-bold text-slate-900 text-center mb-6">
+              What&apos;s New
+            </h2>
+            <div className="space-y-6">
+              {CHANGELOG.map((entry) => (
+                <div
+                  key={entry.version}
+                  className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm"
+                >
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="inline-flex items-center rounded-full bg-indigo-50 px-3 py-1 text-sm font-semibold text-indigo-600">
+                      v{entry.version}
+                    </span>
+                    <span className="text-xs text-slate-400">{entry.date}</span>
+                  </div>
+                  <ul className="space-y-1.5">
+                    {entry.changes.map((change) => (
+                      <li
+                        key={change}
+                        className="flex items-start gap-2 text-sm text-slate-600"
+                      >
+                        <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-indigo-400" />
+                        {change}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        )}
       </motion.div>
     </section>
   );
 }
 
-function InfoRow({ label, value }: { label: string; value: string }) {
+function InfoRow({ label, value }: Readonly<{ label: string; value: string }>) {
   return (
     <p className="text-sm text-slate-600">
       <span className="font-medium text-slate-900">{label}:</span>{" "}

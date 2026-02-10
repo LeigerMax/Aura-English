@@ -19,6 +19,9 @@ import type { ThemeMode, ThemeColors } from '@/core/theme';
 import { useColorScheme as useNativeWindColorScheme } from 'nativewind';
 import { getDatabase } from '@/core/database';
 import { seedDefaultDecks } from '@/core/services/seedService';
+import { checkForAppUpdate, dismissUpdate, openUpdatePage } from '@/core/services/updateService';
+import type { VersionInfo } from '@/core/services/updateService';
+import { UpdateModal } from '@/components/ui/UpdateModal';
 import './global.css';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -113,7 +116,12 @@ export default function App() {
   const [error, setError] = useState<string | null>(null);
   const [isUpdating, setIsUpdating] = useState(false);
 
-  // ── OTA auto-update ──
+  // ── App update modal state ──
+  const [showUpdateModal, setShowUpdateModal] = useState(false);
+  const [updateVersionInfo, setUpdateVersionInfo] = useState<VersionInfo | null>(null);
+  const [currentVersion, setCurrentVersion] = useState('0.0.0');
+
+  // ── OTA auto-update (for JS bundle changes) ──
   const checkForOTAUpdate = useCallback(async () => {
     if (__DEV__) return; // skip in dev mode
     try {
@@ -129,6 +137,33 @@ export default function App() {
     }
   }, []);
 
+  // ── Native APK update check ──
+  const checkForNativeUpdate = useCallback(async () => {
+    if (__DEV__) return;
+    try {
+      const result = await checkForAppUpdate();
+      if (result.updateAvailable && result.versionInfo) {
+        setUpdateVersionInfo(result.versionInfo);
+        setCurrentVersion(result.currentVersion);
+        setShowUpdateModal(true);
+      }
+    } catch (e) {
+      console.log('Native update check failed:', e);
+    }
+  }, []);
+
+  const handleUpdate = useCallback(() => {
+    setShowUpdateModal(false);
+    openUpdatePage();
+  }, []);
+
+  const handleDismissUpdate = useCallback(() => {
+    if (updateVersionInfo) {
+      dismissUpdate(updateVersionInfo.version);
+    }
+    setShowUpdateModal(false);
+  }, [updateVersionInfo]);
+
   useEffect(() => {
     Promise.all([
       getDatabase().then(async (db) => { await seedDefaultDecks(db); }),
@@ -137,8 +172,9 @@ export default function App() {
       .then(([, mode]) => {
         setInitialTheme(mode);
         setIsReady(true);
-        // Check for updates after app is ready
+        // Check for OTA updates first, then check for native APK updates
         checkForOTAUpdate();
+        checkForNativeUpdate();
       })
       .catch((err) => {
         console.error('App initialization failed:', err);
@@ -171,6 +207,15 @@ export default function App() {
   return (
     <ThemeProvider initialMode={initialTheme}>
       <AppContent />
+      {updateVersionInfo && (
+        <UpdateModal
+          visible={showUpdateModal}
+          versionInfo={updateVersionInfo}
+          currentVersion={currentVersion}
+          onUpdate={handleUpdate}
+          onDismiss={handleDismissUpdate}
+        />
+      )}
     </ThemeProvider>
   );
 }
