@@ -22,7 +22,7 @@ export type RootStackParamList = {
     mode: 'create' | 'edit';
     flashcard?: Flashcard;
   };
-  Review: { deckId: string; deckName: string };
+  Review: { deckId: string; deckName: string } | undefined;
   Quiz: undefined;
   Challenge: undefined;
   Grammar: undefined;
@@ -52,6 +52,14 @@ const MODULES: ModuleConfig[] = [
     color: '#5B5FE5',
     iconName: 'albums',
     route: 'Deck',
+  },
+  {
+    id: 'review',
+    title: 'Review',
+    subtitle: 'Spaced repetition',
+    color: '#EC4899',
+    iconName: 'refresh-circle',
+    route: 'Review',
   },
   {
     id: 'quiz',

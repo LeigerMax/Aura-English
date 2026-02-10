@@ -81,7 +81,7 @@ function AppContent() {
         <Stack.Screen
           name="Review"
           component={ReviewScreen}
-          options={({ route }) => ({ title: `Review: ${route.params.deckName}` })}
+          options={({ route }) => ({ title: route.params?.deckName ? `Review: ${route.params.deckName}` : 'Review' })}
         />
         <Stack.Screen name="Challenge" component={ChallengeScreen} options={{ title: 'Challenge' }} />
         <Stack.Screen name="Grammar" component={GrammarHomeScreen} options={{ title: 'Grammar' }} />

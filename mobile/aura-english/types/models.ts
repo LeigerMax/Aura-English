@@ -256,7 +256,7 @@ export type SoundEffect = 'correct' | 'challenge_complete';
 // ──────────────────────────────────────────────
 
 /** Types of hints available for written quizzes */
-export type HintType = 'first_letter' | 'word_length' | 'context_sentence';
+export type HintType = 'first_letter' | 'word_length' | 'definition';
 
 /** A single hint that was revealed to the user */
 export interface Hint {

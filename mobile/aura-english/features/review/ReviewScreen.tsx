@@ -6,28 +6,51 @@ import {
   Animated,
   ActivityIndicator,
   StyleSheet,
+  ScrollView,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { Ionicons } from '@expo/vector-icons';
 import { RootStackParamList } from '@/features/home/HomeScreen';
 import { getDueFlashcards, getAllFlashcardsForDeck, applyReview } from '@/core/engine/reviewService';
+import { deckRepository } from '@/data/repositories';
 import { useTheme } from '@/core/theme';
 import type { ThemeColors } from '@/core/theme';
-import type { Flashcard, QualityScore } from '@/types/models';
+import type { Deck, Flashcard, QualityScore } from '@/types/models';
+
+/** Max cards per review session */
+const REVIEW_SESSION_SIZE = 20;
 
 type ReviewScreenProps = NativeStackScreenProps<RootStackParamList, 'Review'>;
 
+type ReviewPhase = 'deck_selection' | 'reviewing';
+
 export const ReviewScreen: React.FC<ReviewScreenProps> = ({ route, navigation }) => {
-  const { deckId, deckName } = route.params;
+  const deckId = route.params?.deckId;
+  const deckName = route.params?.deckName;
+
+  // When navigated from Home without params → show deck selection first
+  const [phase, setPhase] = useState<ReviewPhase>(deckId ? 'reviewing' : 'deck_selection');
+  const [selectedDeckId, setSelectedDeckId] = useState<string | null>(deckId ?? null);
+  const [selectedDeckName, setSelectedDeckName] = useState<string>(deckName ?? '');
+
+  // Update navigation title when deck is selected
+  useEffect(() => {
+    if (selectedDeckName) {
+      navigation.setOptions({ title: `Review: ${selectedDeckName}` });
+    }
+  }, [selectedDeckName, navigation]);
+  const [availableDecks, setAvailableDecks] = useState<Deck[]>([]);
 
   const [cards, setCards] = useState<Flashcard[]>([]);
+  const [allDueCards, setAllDueCards] = useState<Flashcard[]>([]);
   const [totalDeckCards, setTotalDeckCards] = useState(0);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
   const [loading, setLoading] = useState(true);
   const [sessionComplete, setSessionComplete] = useState(false);
   const [stats, setStats] = useState({ difficult: 0, correct: 0, easy: 0 });
+  const [isAnimating, setIsAnimating] = useState(false);
 
   const flipAnim = useRef(new Animated.Value(0)).current;
   const slideAnim = useRef(new Animated.Value(0)).current;
@@ -35,32 +58,84 @@ export const ReviewScreen: React.FC<ReviewScreenProps> = ({ route, navigation })
   const { colors } = useTheme();
   const styles = React.useMemo(() => createStyles(colors), [colors]);
 
-  const loadCards = useCallback(async () => {
+  // Load available decks for the selection phase
+  const loadDecks = useCallback(async () => {
     setLoading(true);
-    const allCards = await getAllFlashcardsForDeck(deckId);
+    const [globalDeck, userDecks] = await Promise.all([
+      deckRepository.getGlobalDeck(),
+      deckRepository.getAllDecks(),
+    ]);
+    setAvailableDecks([globalDeck, ...userDecks]);
+    setLoading(false);
+  }, []);
+
+  const loadCards = useCallback(async (dId: string) => {
+    setLoading(true);
+    const allCards = await getAllFlashcardsForDeck(dId);
     setTotalDeckCards(allCards.length);
-    const due = await getDueFlashcards(deckId);
-    setCards(due);
+    const due = await getDueFlashcards(dId);
+    setAllDueCards(due);
+    // Limit to REVIEW_SESSION_SIZE per session
+    const sessionCards = due.slice(0, REVIEW_SESSION_SIZE);
+    setCards(sessionCards);
     setCurrentIndex(0);
     setIsFlipped(false);
-    setSessionComplete(due.length === 0);
+    setIsAnimating(false);
+    setSessionComplete(sessionCards.length === 0);
+    flipAnim.setValue(0);
+    slideAnim.setValue(0);
     setLoading(false);
-  }, [deckId]);
+  }, [flipAnim, slideAnim]);
+
+  /** Continue with the next batch of due cards */
+  const continueReview = useCallback(async () => {
+    if (!selectedDeckId) return;
+    setLoading(true);
+    // Re-fetch due cards (some may no longer be due after the last session)
+    const due = await getDueFlashcards(selectedDeckId);
+    setAllDueCards(due);
+    const sessionCards = due.slice(0, REVIEW_SESSION_SIZE);
+    setCards(sessionCards);
+    setCurrentIndex(0);
+    setIsFlipped(false);
+    setIsAnimating(false);
+    setSessionComplete(sessionCards.length === 0);
+    setStats({ difficult: 0, correct: 0, easy: 0 });
+    flipAnim.setValue(0);
+    slideAnim.setValue(0);
+    setLoading(false);
+  }, [selectedDeckId, flipAnim, slideAnim]);
 
   const practiceAll = useCallback(async () => {
+    if (!selectedDeckId) return;
     setLoading(true);
-    const allCards = await getAllFlashcardsForDeck(deckId);
-    setCards(allCards);
+    const allCards = await getAllFlashcardsForDeck(selectedDeckId);
+    // Also limit practice-all to REVIEW_SESSION_SIZE
+    setCards(allCards.slice(0, REVIEW_SESSION_SIZE));
     setCurrentIndex(0);
     setIsFlipped(false);
     setSessionComplete(false);
+    setIsAnimating(false);
     setStats({ difficult: 0, correct: 0, easy: 0 });
+    flipAnim.setValue(0);
+    slideAnim.setValue(0);
     setLoading(false);
-  }, [deckId]);
+  }, [selectedDeckId, flipAnim, slideAnim]);
+
+  const handleSelectDeck = useCallback((deck: Deck) => {
+    setSelectedDeckId(deck.id);
+    setSelectedDeckName(deck.name);
+    setPhase('reviewing');
+    loadCards(deck.id);
+  }, [loadCards]);
 
   useEffect(() => {
-    loadCards();
-  }, [loadCards]);
+    if (phase === 'deck_selection') {
+      loadDecks();
+    } else if (selectedDeckId) {
+      loadCards(selectedDeckId);
+    }
+  }, [phase, selectedDeckId, loadDecks, loadCards]);
 
   const currentCard = cards[currentIndex];
   const remaining = cards.length - currentIndex;
@@ -77,7 +152,8 @@ export const ReviewScreen: React.FC<ReviewScreenProps> = ({ route, navigation })
   };
 
   const handleRate = async (quality: QualityScore) => {
-    if (!currentCard) return;
+    if (!currentCard || isAnimating) return;
+    setIsAnimating(true);
 
     // Update stats
     const key = quality === 1 ? 'difficult' : quality === 3 ? 'correct' : 'easy';
@@ -90,21 +166,32 @@ export const ReviewScreen: React.FC<ReviewScreenProps> = ({ route, navigation })
       source: 'flashcard',
     });
 
-    // Animate slide out
+    // Animate slide out to the left
     Animated.timing(slideAnim, {
       toValue: -400,
-      duration: 200,
+      duration: 150,
       useNativeDriver: true,
     }).start(() => {
       // Move to next card
       if (currentIndex + 1 >= cards.length) {
         setSessionComplete(true);
+        setIsAnimating(false);
       } else {
+        // Update card state while off-screen
         setCurrentIndex((prev) => prev + 1);
         setIsFlipped(false);
         flipAnim.setValue(0);
+
+        // Slide new card in from the right
+        slideAnim.setValue(400);
+        Animated.timing(slideAnim, {
+          toValue: 0,
+          duration: 150,
+          useNativeDriver: true,
+        }).start(() => {
+          setIsAnimating(false);
+        });
       }
-      slideAnim.setValue(0);
     });
   };
 
@@ -134,8 +221,38 @@ export const ReviewScreen: React.FC<ReviewScreenProps> = ({ route, navigation })
     );
   }
 
+  // --- Deck selection phase ---
+  if (phase === 'deck_selection') {
+    return (
+      <SafeAreaView style={styles.container}>
+        <ScrollView contentContainerStyle={styles.deckSelectionList}>
+          <Text style={styles.deckSelectionTitle}>Choose a deck to review</Text>
+          {availableDecks.map((deck) => (
+            <TouchableOpacity
+              key={deck.id}
+              style={styles.deckSelectionItem}
+              onPress={() => handleSelectDeck(deck)}
+              activeOpacity={0.7}
+            >
+              <View style={[styles.deckColorDot, { backgroundColor: deck.color }]} />
+              <View style={styles.deckSelectionInfo}>
+                <Text style={styles.deckSelectionName}>{deck.name}</Text>
+                <Text style={styles.deckSelectionCount}>
+                  {deck.cardCount ?? 0} card{(deck.cardCount ?? 0) === 1 ? '' : 's'}
+                </Text>
+              </View>
+              <Ionicons name="chevron-forward" size={20} color={colors.text.tertiary} />
+            </TouchableOpacity>
+          ))}
+        </ScrollView>
+      </SafeAreaView>
+    );
+  }
+
   if (sessionComplete) {
     const total = stats.difficult + stats.correct + stats.easy;
+    const remainingDue = allDueCards.length - total;
+    const hasMoreDueCards = remainingDue > 0;
     return (
       <SafeAreaView style={styles.container}>
         <View style={styles.completionContainer}>
@@ -164,6 +281,18 @@ export const ReviewScreen: React.FC<ReviewScreenProps> = ({ route, navigation })
             </View>
           )}
 
+          {/* Continue reviewing next batch if more due cards exist */}
+          {hasMoreDueCards && (
+            <TouchableOpacity
+              style={styles.primaryButton}
+              onPress={continueReview}
+            >
+              <Text style={styles.primaryButtonText}>
+                Continue ({remainingDue} more due)
+              </Text>
+            </TouchableOpacity>
+          )}
+
           {totalDeckCards > 0 && (
             <TouchableOpacity
               style={styles.secondaryButton}
@@ -174,10 +303,10 @@ export const ReviewScreen: React.FC<ReviewScreenProps> = ({ route, navigation })
           )}
 
           <TouchableOpacity
-            style={styles.primaryButton}
+            style={[styles.secondaryButton, { marginTop: 12 }]}
             onPress={() => navigation.goBack()}
           >
-            <Text style={styles.primaryButtonText}>Back to Deck</Text>
+            <Text style={styles.secondaryButtonText}>Back</Text>
           </TouchableOpacity>
         </View>
       </SafeAreaView>
@@ -214,7 +343,7 @@ export const ReviewScreen: React.FC<ReviewScreenProps> = ({ route, navigation })
               ]}
             >
               <Text style={styles.cardLabel}>WORD</Text>
-              <Text style={styles.cardWord}>{currentCard?.word}</Text>
+              <Text style={styles.cardWord} adjustsFontSizeToFit numberOfLines={2}>{currentCard?.word}</Text>
               <Text style={styles.tapHint}>Tap to reveal</Text>
             </Animated.View>
 
@@ -226,14 +355,20 @@ export const ReviewScreen: React.FC<ReviewScreenProps> = ({ route, navigation })
                 { opacity: backOpacity, transform: [{ scale: backScale }] },
               ]}
             >
-              <Text style={styles.cardLabel}>DEFINITION</Text>
-              <Text style={styles.cardDefinition}>{currentCard?.definition}</Text>
-              {currentCard?.context && (
-                <View style={styles.contextContainer}>
-                  <Text style={styles.contextLabel}>CONTEXT</Text>
-                  <Text style={styles.contextText}>{currentCard.context}</Text>
-                </View>
-              )}
+              <ScrollView
+                style={{ flex: 1, width: '100%' }}
+                contentContainerStyle={{ alignItems: 'center', justifyContent: 'center', flexGrow: 1 }}
+                showsVerticalScrollIndicator={false}
+              >
+                <Text style={styles.cardLabel}>DEFINITION</Text>
+                <Text style={styles.cardDefinition} adjustsFontSizeToFit minimumFontScale={0.6} numberOfLines={5}>{currentCard?.definition}</Text>
+                {currentCard?.context && (
+                  <View style={styles.contextContainer}>
+                    <Text style={styles.contextLabel}>CONTEXT</Text>
+                    <Text style={styles.contextText} numberOfLines={4}>{currentCard.context}</Text>
+                  </View>
+                )}
+              </ScrollView>
             </Animated.View>
           </View>
         </TouchableOpacity>
@@ -471,5 +606,42 @@ const createStyles = (colors: ThemeColors) => StyleSheet.create({
     color: colors.text.primary,
     fontSize: 16,
     fontWeight: '700',
+  },
+  // Deck selection styles
+  deckSelectionList: {
+    padding: 24,
+  },
+  deckSelectionTitle: {
+    fontSize: 20,
+    fontWeight: '700',
+    color: colors.text.primary,
+    marginBottom: 20,
+  },
+  deckSelectionItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: colors.surface,
+    padding: 16,
+    borderRadius: 16,
+    marginBottom: 12,
+  },
+  deckColorDot: {
+    width: 12,
+    height: 12,
+    borderRadius: 6,
+    marginRight: 12,
+  },
+  deckSelectionInfo: {
+    flex: 1,
+  },
+  deckSelectionName: {
+    fontSize: 16,
+    fontWeight: '600',
+    color: colors.text.primary,
+  },
+  deckSelectionCount: {
+    fontSize: 13,
+    color: colors.text.secondary,
+    marginTop: 2,
   },
 });

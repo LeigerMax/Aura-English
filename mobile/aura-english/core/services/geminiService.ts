@@ -167,8 +167,15 @@ export async function generateFrenchSentence(
 ${wordList}
 
 Generate ONE simple-to-intermediate French sentence that a language learner would need to translate into English.
-The sentence MUST naturally use the concept or context of at least 2-3 of these words (or their French equivalents).
-The sentence should be grammatically correct, natural-sounding French.
+
+CRITICAL RULES:
+- The sentence MUST be logically coherent and make sense in real life.
+- The sentence MUST sound natural, like something a native French speaker would actually say.
+- Do NOT create absurd or nonsensical combinations (e.g. "I like to drink chocolate as a meal" is BAD).
+- Use the vocabulary words in a context that matches their actual meaning and typical usage.
+- The sentence should describe a realistic everyday situation, opinion, or observation.
+- The sentence MUST naturally use the concept or context of at least 2-3 of these words (or their French equivalents).
+- The sentence should be grammatically correct French.
 
 Return a JSON object with exactly this structure (no extra keys):
 {

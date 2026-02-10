@@ -169,7 +169,7 @@ export const FlashcardCard: React.FC<FlashcardCardProps> = ({
               </Text>
             </View>
             
-            <Text className="text-4xl font-bold text-gray-900 dark:text-gray-50 text-center mb-8">
+            <Text className="text-4xl font-bold text-gray-900 dark:text-gray-50 text-center mb-8" adjustsFontSizeToFit numberOfLines={2}>
               {flashcard.word}
             </Text>
             
@@ -243,7 +243,7 @@ export const FlashcardCard: React.FC<FlashcardCardProps> = ({
                 </Text>
               </View>
               
-              <Text className="text-white text-xl font-medium leading-7 mb-6">
+              <Text className="text-white text-xl font-medium leading-7 mb-6" adjustsFontSizeToFit minimumFontScale={0.65} numberOfLines={5}>
                 {flashcard.definition}
               </Text>
               
@@ -254,7 +254,7 @@ export const FlashcardCard: React.FC<FlashcardCardProps> = ({
                       EXAMPLE
                     </Text>
                   </View>
-                  <Text className="text-white/90 text-base italic leading-6">
+                  <Text className="text-white/90 text-base italic leading-6" numberOfLines={4}>
                     "{flashcard.context}"
                   </Text>
                 </View>

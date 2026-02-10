@@ -180,3 +180,13 @@ export async function searchFlashcards(query: string): Promise<Flashcard[]> {
     [pattern, pattern]
   );
 }
+
+/** Search flashcards by word only (not definition/context). */
+export async function searchFlashcardsByWord(query: string): Promise<Flashcard[]> {
+  const db = await getDatabase();
+  const pattern = `%${query}%`;
+  return db.getAllAsync<Flashcard>(
+    `SELECT * FROM flashcards WHERE word LIKE ? ORDER BY word`,
+    [pattern]
+  );
+}

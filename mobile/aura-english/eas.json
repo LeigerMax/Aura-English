@@ -6,22 +6,26 @@
   "build": {
     "development": {
       "developmentClient": true,
+      "channel": "dev",
       "distribution": "internal"
     },
     "preview": {
       "distribution": "internal",
+      "channel": "preview",
       "android": {
         "buildType": "apk"
       }
     },
     "production": {
       "autoIncrement": true,
+      "channel": "production",
       "android": {
         "buildType": "app-bundle"
       }
     },
     "apk": {
       "autoIncrement": true,
+      "channel": "apk",
       "android": {
         "buildType": "apk"
       }

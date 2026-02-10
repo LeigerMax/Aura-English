@@ -1,4 +1,4 @@
-import type { Flashcard, Hint, HintType, QualityScore, HINT_QUALITY_PENALTY } from '@/types/models';
+import type { Flashcard, Hint, HintType, QualityScore } from '@/types/models';
 
 /**
  * Hint Service
@@ -12,7 +12,7 @@ import type { Flashcard, Hint, HintType, QualityScore, HINT_QUALITY_PENALTY } fr
  */
 
 /** Ordered list of hint types — revealed in this progression. */
-const HINT_ORDER: HintType[] = ['first_letter', 'word_length', 'context_sentence'];
+const HINT_ORDER: HintType[] = ['first_letter', 'word_length', 'definition'];
 
 // ──────────────────────────────────────────────
 // Hint generators
@@ -34,35 +34,17 @@ function wordLengthHint(flashcard: Flashcard): Hint {
   };
 }
 
-function contextSentenceHint(flashcard: Flashcard): Hint {
-  if (flashcard.context) {
-    // Mask the target word in the sentence
-    const masked = flashcard.context.replace(
-      new RegExp(`\\b${escapeRegex(flashcard.word)}\\b`, 'gi'),
-      '___',
-    );
-    return {
-      type: 'context_sentence',
-      content: masked,
-    };
-  }
-  // Fallback: partial definition
-  const words = flashcard.definition.split(' ');
-  const partial = words.slice(0, Math.ceil(words.length / 2)).join(' ') + '...';
+function definitionHint(flashcard: Flashcard): Hint {
   return {
-    type: 'context_sentence',
-    content: `Hint: ${partial}`,
+    type: 'definition',
+    content: flashcard.definition,
   };
-}
-
-function escapeRegex(str: string): string {
-  return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
 const GENERATORS: Record<HintType, (fc: Flashcard) => Hint> = {
   first_letter: firstLetterHint,
   word_length: wordLengthHint,
-  context_sentence: contextSentenceHint,
+  definition: definitionHint,
 };
 
 // ──────────────────────────────────────────────

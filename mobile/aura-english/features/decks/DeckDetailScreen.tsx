@@ -109,10 +109,12 @@ export const DeckDetailScreen: React.FC<DeckDetailScreenProps> = ({ navigation, 
       return;
     }
 
-    setSearching(true);
+    // Longer debounce so the user can finish typing
     searchTimeout.current = setTimeout(async () => {
+      setSearching(true);
       try {
-        const results = await flashcardRepository.searchFlashcards(text.trim());
+        // Search only by word (not definition/context)
+        const results = await flashcardRepository.searchFlashcardsByWord(text.trim());
         // If we're in a specific deck (not global), filter results to this deck
         if (deckId !== GLOBAL_DECK_ID) {
           const allDeckCards = await flashcardRepository.getFlashcardsByDeck(deckId);
@@ -126,8 +128,8 @@ export const DeckDetailScreen: React.FC<DeckDetailScreenProps> = ({ navigation, 
       } finally {
         setSearching(false);
       }
-    }, 300);
-  }, [deckId, flashcards]);
+    }, 600);
+  }, [deckId]);
 
   const handleEditCard = (flashcard: Flashcard) => {
     navigation.navigate('FlashcardForm', { deckId, mode: 'edit', flashcard });
@@ -307,6 +309,8 @@ export const DeckDetailScreen: React.FC<DeckDetailScreenProps> = ({ navigation, 
         maxToRenderPerBatch={20}
         windowSize={7}
         removeClippedSubviews
+        keyboardShouldPersistTaps="handled"
+        keyboardDismissMode="none"
       />
     </SafeAreaView>
   );
