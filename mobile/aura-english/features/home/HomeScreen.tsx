@@ -31,6 +31,7 @@ export type RootStackParamList = {
   Statistics: undefined;
   Settings: undefined;
   ApiKeyTutorial: undefined;
+  OnlineDecks: undefined;
 };
 
 type HomeScreenProps = NativeStackScreenProps<RootStackParamList, 'Home'>;

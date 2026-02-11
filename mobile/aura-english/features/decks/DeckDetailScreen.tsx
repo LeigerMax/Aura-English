@@ -13,13 +13,14 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList } from '@/features/home/HomeScreen';
-import { FlashcardCard } from '@/components/ui';
+import { FlashcardCard, QRShareModal } from '@/components/ui';
 import { useTheme } from '@/core/theme';
 import { sizes } from '@/constants';
 import type { ThemeColors } from '@/core/theme';
 import { deckRepository, flashcardRepository } from '@/data/repositories';
 import { FLASHCARD_PAGE_SIZE } from '@/data/repositories/flashcardRepository';
 import { GLOBAL_DECK_ID } from '@/core/database/schema';
+import { exportDeck } from '@/core/services/exportService';
 import type { Deck, Flashcard } from '@/types/models';
 
 type DeckDetailScreenProps = NativeStackScreenProps<RootStackParamList, 'DeckDetail'>;
@@ -38,6 +39,8 @@ export const DeckDetailScreen: React.FC<DeckDetailScreenProps> = ({ navigation, 
   const [searchResults, setSearchResults] = React.useState<Flashcard[] | null>(null);
   const [searching, setSearching] = React.useState(false);
   const searchTimeout = React.useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [exporting, setExporting] = React.useState(false);
+  const [showQRModal, setShowQRModal] = React.useState(false);
 
   React.useEffect(() => {
     loadDeckData();
@@ -95,6 +98,18 @@ export const DeckDetailScreen: React.FC<DeckDetailScreenProps> = ({ navigation, 
 
   const handleAddCard = () => {
     navigation.navigate('FlashcardForm', { deckId, mode: 'create' });
+  };
+
+  const handleExport = async () => {
+    if (exporting) return;
+    setExporting(true);
+    try {
+      await exportDeck(deckId);
+    } catch (err) {
+      Alert.alert('Export Failed', err instanceof Error ? err.message : 'An unknown error occurred.');
+    } finally {
+      setExporting(false);
+    }
   };
 
   // ── Search ──
@@ -262,6 +277,36 @@ export const DeckDetailScreen: React.FC<DeckDetailScreenProps> = ({ navigation, 
           <Text style={styles.reviewButtonText}>Start Review</Text>
         </TouchableOpacity>
       )}
+
+      {/* Export & Share actions — only for real decks with cards */}
+      {deckId !== GLOBAL_DECK_ID && totalCount > 0 && searchResults === null && (
+        <View style={styles.shareRow}>
+          <TouchableOpacity
+            style={[styles.shareActionButton, { backgroundColor: colors.secondary }]}
+            onPress={handleExport}
+            disabled={exporting}
+            activeOpacity={0.7}
+          >
+            {exporting ? (
+              <ActivityIndicator size="small" color={colors.text.inverse} />
+            ) : (
+              <>
+                <Ionicons name="share-outline" size={18} color={colors.text.inverse} />
+                <Text style={styles.shareActionText}>Export</Text>
+              </>
+            )}
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={[styles.shareActionButton, { backgroundColor: colors.info }]}
+            onPress={() => setShowQRModal(true)}
+            activeOpacity={0.7}
+          >
+            <Ionicons name="qr-code-outline" size={18} color={colors.text.inverse} />
+            <Text style={styles.shareActionText}>QR Share</Text>
+          </TouchableOpacity>
+        </View>
+      )}
     </View>
   );
 
@@ -311,6 +356,14 @@ export const DeckDetailScreen: React.FC<DeckDetailScreenProps> = ({ navigation, 
         removeClippedSubviews
         keyboardShouldPersistTaps="handled"
         keyboardDismissMode="none"
+      />
+
+      {/* QR Share Modal */}
+      <QRShareModal
+        visible={showQRModal}
+        deckId={deckId}
+        deckName={deck?.name ?? ''}
+        onClose={() => setShowQRModal(false)}
       />
     </SafeAreaView>
   );
@@ -463,5 +516,24 @@ const createStyles = (colors: ThemeColors) => StyleSheet.create({
     color: colors.text.inverse,
     fontSize: sizes.fontSize.md,
     fontWeight: '600',
+  },
+  shareRow: {
+    flexDirection: 'row',
+    gap: sizes.spacing.sm,
+    marginBottom: sizes.spacing.xl,
+  },
+  shareActionButton: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: sizes.spacing.md,
+    borderRadius: sizes.radius.xl,
+    gap: sizes.spacing.xs,
+  },
+  shareActionText: {
+    fontSize: sizes.fontSize.md,
+    fontWeight: '600',
+    color: '#FFFFFF',
   },
 });

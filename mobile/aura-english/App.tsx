@@ -6,6 +6,7 @@ import * as Updates from 'expo-updates';
 import { HomeScreen, RootStackParamList } from '@/features/home/HomeScreen';
 import { DeckDetailScreen } from '@/features/decks/DeckDetailScreen';
 import { DeckListScreen  } from '@/features/decks/DeckListScreen';
+import { OnlineDecksScreen } from '@/features/decks/OnlineDecksScreen';
 import { FlashcardFormScreen } from '@/features/flashcards/FlashcardFormScreen';
 import { QuizScreen } from '@/features/quiz';
 import { ReviewScreen } from '@/features/review';
@@ -105,6 +106,7 @@ function AppContent() {
         <Stack.Screen name="Settings" component={SettingsScreen} options={{ title: 'Settings' }} />
         <Stack.Screen name="Statistics" component={StatisticsScreen} options={{ title: 'Statistics' }} />
         <Stack.Screen name="ApiKeyTutorial" component={ApiKeyTutorialScreen} options={{ title: 'API Key Setup' }} />
+        <Stack.Screen name="OnlineDecks" component={OnlineDecksScreen} options={{ title: 'Online Decks' }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

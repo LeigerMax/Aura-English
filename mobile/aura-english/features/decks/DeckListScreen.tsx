@@ -11,6 +11,7 @@ import {
   Modal,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { Ionicons } from '@expo/vector-icons';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList } from '@/features/home/HomeScreen';
 import { DeckCard } from '@/components/ui';
@@ -19,6 +20,7 @@ import type { ThemeColors } from '@/core/theme';
 import { sizes } from '@/constants';
 import { deckRepository } from '@/data/repositories';
 import { DEFAULT_DECK_COLORS } from '@/core/database/schema';
+import { importDeckFromFile } from '@/core/services/importService';
 import type { Deck, CreateDeckInput } from '@/types/models';
 
 type DeckListScreenProps = NativeStackScreenProps<RootStackParamList, 'Deck'>;
@@ -35,6 +37,7 @@ export const DeckListScreen: React.FC<DeckListScreenProps> = ({ navigation }) =>
   const [newDeckDescription, setNewDeckDescription] = React.useState('');
   const [selectedColor, setSelectedColor] = React.useState<string>(DEFAULT_DECK_COLORS[0]);
   const [creating, setCreating] = React.useState(false);
+  const [importing, setImporting] = React.useState(false);
 
   React.useEffect(() => {
     loadDecks();
@@ -99,6 +102,28 @@ export const DeckListScreen: React.FC<DeckListScreenProps> = ({ navigation }) =>
     navigation.navigate('DeckDetail', { deckId: deck.id, deckName: deck.name });
   };
 
+  const handleImportDeck = async () => {
+    if (importing) return;
+    setImporting(true);
+    try {
+      const result = await importDeckFromFile();
+      if (result) {
+        const dupMsg = result.duplicateSkipped > 0
+          ? ` (${result.duplicateSkipped} duplicates skipped)`
+          : '';
+        Alert.alert(
+          'Deck Imported! \uD83C\uDF89',
+          `"${result.deckName}" with ${result.cardsImported} cards has been added.${dupMsg}`,
+        );
+        await loadDecks();
+      }
+    } catch (err) {
+      Alert.alert('Import Failed', err instanceof Error ? err.message : 'An unknown error occurred.');
+    } finally {
+      setImporting(false);
+    }
+  };
+
   if (loading) {
     return (
       <SafeAreaView style={styles.safeArea}>
@@ -142,7 +167,33 @@ export const DeckListScreen: React.FC<DeckListScreenProps> = ({ navigation }) =>
               <Text style={styles.addButtonText}>+ New Deck</Text>
             </TouchableOpacity>
           </View>
+          {/* Import & Online Decks actions */}
+          <View style={styles.actionRow}>
+            <TouchableOpacity
+              style={[styles.actionButton, { backgroundColor: colors.secondary }]}
+              onPress={handleImportDeck}
+              disabled={importing}
+              activeOpacity={0.7}
+            >
+              {importing ? (
+                <ActivityIndicator size="small" color={colors.text.inverse} />
+              ) : (
+                <>
+                  <Ionicons name="document-outline" size={18} color={colors.text.inverse} />
+                  <Text style={styles.actionButtonText}>Import Deck</Text>
+                </>
+              )}
+            </TouchableOpacity>
 
+            <TouchableOpacity
+              style={[styles.actionButton, { backgroundColor: colors.info }]}
+              onPress={() => navigation.navigate('OnlineDecks' as never)}
+              activeOpacity={0.7}
+            >
+              <Ionicons name="cloud-download-outline" size={18} color={colors.text.inverse} />
+              <Text style={styles.actionButtonText}>Online Decks</Text>
+            </TouchableOpacity>
+          </View>
           {decks.length === 0 ? (
             <View style={styles.emptyState}>
               <Text style={styles.emptyIcon}>📦</Text>
@@ -444,5 +495,24 @@ const createStyles = (colors: ThemeColors) => StyleSheet.create({
     color: colors.text.inverse,
     fontSize: sizes.fontSize.md,
     fontWeight: '600',
+  },
+  actionRow: {
+    flexDirection: 'row',
+    gap: sizes.spacing.sm,
+    marginBottom: sizes.spacing.md,
+  },
+  actionButton: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: sizes.spacing.sm + 2,
+    borderRadius: sizes.radius.lg,
+    gap: sizes.spacing.xs,
+  },
+  actionButtonText: {
+    fontSize: sizes.fontSize.sm,
+    fontWeight: '600',
+    color: '#FFFFFF',
   },
 });

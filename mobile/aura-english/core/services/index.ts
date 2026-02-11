@@ -63,3 +63,22 @@ export {
   type StatisticsData,
   type DeckSortKey,
 } from './statisticsService';
+
+// Deck validation
+export {
+  validateExportedDeck,
+  parseAndValidateDeckJson,
+  sanitiseString,
+  DeckValidationError,
+} from './deckValidation';
+
+// Deck export / import / sharing
+export { exportDeck, exportDeckToJson, buildExportPayload } from './exportService';
+export {
+  importDeckFromFile,
+  importDeckFromPayload,
+  deckNameExists,
+  resolveUniqueDeckName,
+} from './importService';
+export { fetchAvailableDecks, downloadDeck } from './remoteDeckService';
+export { generateDeckQR, parseDeckFromQR } from './qrDeckService';
