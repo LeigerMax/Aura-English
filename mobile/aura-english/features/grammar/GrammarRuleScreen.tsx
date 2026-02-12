@@ -187,7 +187,7 @@ export const GrammarRuleScreen: React.FC<Props> = ({ route, navigation }) => {
         {/* ── Results ───────────────────────────── */}
         {sessionComplete && summary && (
           <View style={styles.resultsCard}>
-            <Text style={styles.resultsTitle}>🎯 Practice Complete</Text>
+            <Text style={styles.resultsTitle}>Practice Complete</Text>
             <Text style={styles.resultsScore}>
               {summary.correctAnswers} / {summary.totalQuestions} correct
             </Text>
@@ -212,7 +212,7 @@ export const GrammarRuleScreen: React.FC<Props> = ({ route, navigation }) => {
                 ? 'Perfect score! 🎉'
                 : summary.correctAnswers / summary.totalQuestions >= 0.7
                   ? 'Great job! Keep it up! 💪'
-                  : 'Keep practising — you\'ll get there! 📚'}
+                  : 'Keep practising — you\'ll get there! '}
             </Text>
 
             <View style={styles.resultsActions}>

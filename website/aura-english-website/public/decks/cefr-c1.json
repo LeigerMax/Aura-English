@@ -1,0 +1,1171 @@
+{
+  "version": "1.0",
+  "exportedAt": "2026-02-12T00:00:00.000Z",
+  "deck": {
+    "name": "C1 – Advanced Vocabulary",
+    "description": "Advanced: sophisticated language for academic, professional, and complex social contexts.",
+    "language": "en",
+    "cards": [
+      {
+        "term": "abstain",
+        "definition": "to choose not to do or have something",
+        "context": "Several members abstained from voting."
+      },
+      {
+        "term": "adhere",
+        "definition": "to stick firmly to; to follow closely",
+        "context": "Employees must adhere to the company policy."
+      },
+      {
+        "term": "adjacent",
+        "definition": "next to or near something",
+        "context": "The hotel is adjacent to the train station."
+      },
+      {
+        "term": "adversity",
+        "definition": "a difficult or unfortunate situation",
+        "context": "She showed great strength in the face of adversity."
+      },
+      {
+        "term": "affiliation",
+        "definition": "an official connection to an organization",
+        "context": "His affiliation with the university ended last year."
+      },
+      {
+        "term": "aftermath",
+        "definition": "the consequences of a significant event",
+        "context": "In the aftermath of the flood, thousands were homeless."
+      },
+      {
+        "term": "allegiance",
+        "definition": "loyalty to a group, leader, or cause",
+        "context": "She pledged her allegiance to the new organization."
+      },
+      {
+        "term": "alleviate",
+        "definition": "to make something less severe",
+        "context": "The medicine helped alleviate the pain."
+      },
+      {
+        "term": "ambiguity",
+        "definition": "the quality of being open to more than one interpretation",
+        "context": "The contract was full of ambiguity."
+      },
+      {
+        "term": "ample",
+        "definition": "more than enough",
+        "context": "There is ample evidence to support the claim."
+      },
+      {
+        "term": "analogy",
+        "definition": "a comparison between things that have similar features",
+        "context": "He drew an analogy between the brain and a computer."
+      },
+      {
+        "term": "anomaly",
+        "definition": "something that deviates from what is expected",
+        "context": "The test result was an anomaly."
+      },
+      {
+        "term": "apparatus",
+        "definition": "equipment or system used for a particular purpose",
+        "context": "The laboratory has sophisticated apparatus."
+      },
+      {
+        "term": "apprehension",
+        "definition": "anxiety or fear about the future",
+        "context": "She felt a sense of apprehension before the interview."
+      },
+      {
+        "term": "arbitrary",
+        "definition": "based on random choice rather than reason",
+        "context": "The decision seemed completely arbitrary."
+      },
+      {
+        "term": "articulate",
+        "definition": "able to express thoughts clearly",
+        "context": "She is an articulate speaker."
+      },
+      {
+        "term": "assertion",
+        "definition": "a confident statement of fact",
+        "context": "His assertion was backed by evidence."
+      },
+      {
+        "term": "attribute",
+        "definition": "a quality or feature; to regard as caused by",
+        "context": "Patience is an important attribute for a teacher."
+      },
+      {
+        "term": "augment",
+        "definition": "to make something greater by adding to it",
+        "context": "The company augmented its workforce."
+      },
+      {
+        "term": "avert",
+        "definition": "to prevent or turn away",
+        "context": "Quick action averted a disaster."
+      },
+      {
+        "term": "behold",
+        "definition": "to see or observe something remarkable",
+        "context": "Behold the beauty of the sunset."
+      },
+      {
+        "term": "bestow",
+        "definition": "to give something as a gift or honor",
+        "context": "The university bestowed an honorary degree."
+      },
+      {
+        "term": "breach",
+        "definition": "to break through or violate",
+        "context": "The company breached its contract."
+      },
+      {
+        "term": "calibrate",
+        "definition": "to adjust precisely for accuracy",
+        "context": "The instruments must be calibrated regularly."
+      },
+      {
+        "term": "cease",
+        "definition": "to stop or come to an end",
+        "context": "The factory ceased production last month."
+      },
+      {
+        "term": "circumvent",
+        "definition": "to find a way around an obstacle",
+        "context": "They tried to circumvent the regulations."
+      },
+      {
+        "term": "coerce",
+        "definition": "to persuade by force or threats",
+        "context": "He was coerced into signing the agreement."
+      },
+      {
+        "term": "coincide",
+        "definition": "to happen at the same time",
+        "context": "My holiday coincides with the conference."
+      },
+      {
+        "term": "commence",
+        "definition": "to begin formally",
+        "context": "The ceremony will commence at noon."
+      },
+      {
+        "term": "compile",
+        "definition": "to collect and assemble information",
+        "context": "She compiled a list of recommendations."
+      },
+      {
+        "term": "complement",
+        "definition": "to add to or complete something",
+        "context": "The wine complements the meal perfectly."
+      },
+      {
+        "term": "conceal",
+        "definition": "to hide or keep secret",
+        "context": "He tried to conceal his disappointment."
+      },
+      {
+        "term": "concede",
+        "definition": "to admit something is true; to yield",
+        "context": "She conceded that the plan had flaws."
+      },
+      {
+        "term": "conceive",
+        "definition": "to form an idea; to become pregnant",
+        "context": "She conceived a brilliant plan."
+      },
+      {
+        "term": "condemn",
+        "definition": "to express strong disapproval",
+        "context": "The government condemned the attack."
+      },
+      {
+        "term": "confine",
+        "definition": "to keep within limits",
+        "context": "Please confine your remarks to the topic."
+      },
+      {
+        "term": "consolidate",
+        "definition": "to make stronger or combine",
+        "context": "The company consolidated its operations."
+      },
+      {
+        "term": "constrain",
+        "definition": "to restrict or limit",
+        "context": "Budget constraints limited our options."
+      },
+      {
+        "term": "contemplate",
+        "definition": "to think deeply about",
+        "context": "She contemplated a career change."
+      },
+      {
+        "term": "contradict",
+        "definition": "to say the opposite of",
+        "context": "The evidence contradicts his testimony."
+      },
+      {
+        "term": "convene",
+        "definition": "to come together for a meeting",
+        "context": "The board convened an emergency meeting."
+      },
+      {
+        "term": "converge",
+        "definition": "to come together from different directions",
+        "context": "Several factors converged to cause the crisis."
+      },
+      {
+        "term": "convey",
+        "definition": "to communicate or transport",
+        "context": "Words cannot convey my gratitude."
+      },
+      {
+        "term": "curb",
+        "definition": "to restrain or control",
+        "context": "The government took steps to curb inflation."
+      },
+      {
+        "term": "deceive",
+        "definition": "to mislead or trick",
+        "context": "Appearances can deceive."
+      },
+      {
+        "term": "deem",
+        "definition": "to consider or regard as",
+        "context": "The project was deemed a success."
+      },
+      {
+        "term": "defer",
+        "definition": "to postpone or yield to someone",
+        "context": "They deferred the decision until next month."
+      },
+      {
+        "term": "depict",
+        "definition": "to represent in a picture or words",
+        "context": "The painting depicts a rural landscape."
+      },
+      {
+        "term": "deplete",
+        "definition": "to use up or exhaust a supply",
+        "context": "Overfishing has depleted ocean stocks."
+      },
+      {
+        "term": "deploy",
+        "definition": "to move into position for use",
+        "context": "The company deployed new technology."
+      },
+      {
+        "term": "designate",
+        "definition": "to officially assign a name or role",
+        "context": "The area was designated a national park."
+      },
+      {
+        "term": "deteriorate",
+        "definition": "to become worse",
+        "context": "His health deteriorated rapidly."
+      },
+      {
+        "term": "deviate",
+        "definition": "to depart from an established course",
+        "context": "Do not deviate from the original plan."
+      },
+      {
+        "term": "devise",
+        "definition": "to invent or plan cleverly",
+        "context": "She devised a strategy to win the contract."
+      },
+      {
+        "term": "diminish",
+        "definition": "to reduce or make less",
+        "context": "Nothing can diminish her achievements."
+      },
+      {
+        "term": "discard",
+        "definition": "to throw away something unwanted",
+        "context": "Discard any food that has expired."
+      },
+      {
+        "term": "disclose",
+        "definition": "to make known or reveal",
+        "context": "The company refused to disclose its profits."
+      },
+      {
+        "term": "dismay",
+        "definition": "to cause concern and distress",
+        "context": "The news dismayed the investors."
+      },
+      {
+        "term": "disperse",
+        "definition": "to scatter in different directions",
+        "context": "The police dispersed the crowd."
+      },
+      {
+        "term": "displace",
+        "definition": "to force someone from their home or position",
+        "context": "The war displaced millions of people."
+      },
+      {
+        "term": "dispose",
+        "definition": "to get rid of; to arrange",
+        "context": "Dispose of hazardous waste properly."
+      },
+      {
+        "term": "disrupt",
+        "definition": "to interrupt the normal course of",
+        "context": "The protest disrupted traffic for hours."
+      },
+      {
+        "term": "dissolve",
+        "definition": "to cause to disappear into a liquid; to end",
+        "context": "Parliament was dissolved before the election."
+      },
+      {
+        "term": "divert",
+        "definition": "to redirect to a different course",
+        "context": "Traffic was diverted due to the accident."
+      },
+      {
+        "term": "elicit",
+        "definition": "to draw out a response",
+        "context": "The question elicited a strong reaction."
+      },
+      {
+        "term": "embark",
+        "definition": "to begin a new venture",
+        "context": "She embarked on a new career."
+      },
+      {
+        "term": "embrace",
+        "definition": "to accept willingly; to hold closely",
+        "context": "The company embraced new technology."
+      },
+      {
+        "term": "emit",
+        "definition": "to release or send out",
+        "context": "The factory emits greenhouse gases."
+      },
+      {
+        "term": "endorse",
+        "definition": "to declare public support for",
+        "context": "The celebrity endorsed the product."
+      },
+      {
+        "term": "endure",
+        "definition": "to suffer through something difficult",
+        "context": "She endured months of rehabilitation."
+      },
+      {
+        "term": "enforce",
+        "definition": "to make sure rules are followed",
+        "context": "The police enforce the law."
+      },
+      {
+        "term": "engage",
+        "definition": "to participate or involve",
+        "context": "Students engaged actively in the discussion."
+      },
+      {
+        "term": "enrich",
+        "definition": "to improve the quality of",
+        "context": "Travel enriches your understanding of the world."
+      },
+      {
+        "term": "entail",
+        "definition": "to involve as a necessary consequence",
+        "context": "The job entails a lot of traveling."
+      },
+      {
+        "term": "erode",
+        "definition": "to gradually wear away",
+        "context": "Wind and rain eroded the cliff face."
+      },
+      {
+        "term": "escalate",
+        "definition": "to increase in intensity or seriousness",
+        "context": "The conflict escalated quickly."
+      },
+      {
+        "term": "evade",
+        "definition": "to escape or avoid",
+        "context": "He evaded answering the question directly."
+      },
+      {
+        "term": "exaggerate",
+        "definition": "to represent as larger than it really is",
+        "context": "He tends to exaggerate his achievements."
+      },
+      {
+        "term": "exert",
+        "definition": "to apply force or influence",
+        "context": "She exerted pressure on the committee."
+      },
+      {
+        "term": "extract",
+        "definition": "to remove or obtain",
+        "context": "Oil is extracted from the ground."
+      },
+      {
+        "term": "fabricate",
+        "definition": "to invent or manufacture",
+        "context": "He fabricated the entire story."
+      },
+      {
+        "term": "acute",
+        "definition": "very severe; sharp or perceptive",
+        "context": "There is an acute shortage of nurses."
+      },
+      {
+        "term": "adverse",
+        "definition": "unfavorable or harmful",
+        "context": "The drug has adverse side effects."
+      },
+      {
+        "term": "affluent",
+        "definition": "wealthy; having a lot of money",
+        "context": "They live in an affluent neighborhood."
+      },
+      {
+        "term": "aggregate",
+        "definition": "formed by combining several elements",
+        "context": "The aggregate cost exceeded the budget."
+      },
+      {
+        "term": "ambiguous",
+        "definition": "having more than one meaning; unclear",
+        "context": "The instructions are ambiguous."
+      },
+      {
+        "term": "authoritative",
+        "definition": "commanding and confident; reliable",
+        "context": "She spoke in an authoritative tone."
+      },
+      {
+        "term": "coherent",
+        "definition": "logical and consistent",
+        "context": "He presented a coherent argument."
+      },
+      {
+        "term": "compelling",
+        "definition": "very convincing or interesting",
+        "context": "The evidence was compelling."
+      },
+      {
+        "term": "compatible",
+        "definition": "able to exist or work together",
+        "context": "The software is compatible with most devices."
+      },
+      {
+        "term": "complacent",
+        "definition": "too satisfied with oneself; not worried",
+        "context": "Do not become complacent about safety."
+      },
+      {
+        "term": "conceivable",
+        "definition": "possible to imagine or believe",
+        "context": "Every conceivable option was considered."
+      },
+      {
+        "term": "conducive",
+        "definition": "making something possible or likely",
+        "context": "A quiet environment is conducive to study."
+      },
+      {
+        "term": "consecutive",
+        "definition": "following one after another without interruption",
+        "context": "It rained for five consecutive days."
+      },
+      {
+        "term": "conspicuous",
+        "definition": "standing out; easily noticeable",
+        "context": "His absence was conspicuous."
+      },
+      {
+        "term": "contemptuous",
+        "definition": "showing disrespect or scorn",
+        "context": "He was contemptuous of their efforts."
+      },
+      {
+        "term": "credible",
+        "definition": "believable; trustworthy",
+        "context": "The witness gave a credible account."
+      },
+      {
+        "term": "cumulative",
+        "definition": "increasing by successive additions",
+        "context": "The cumulative effect of stress can be harmful."
+      },
+      {
+        "term": "decisive",
+        "definition": "settling an issue; making decisions quickly",
+        "context": "The battle was a decisive victory."
+      },
+      {
+        "term": "deficient",
+        "definition": "lacking or insufficient",
+        "context": "The diet is deficient in vitamins."
+      },
+      {
+        "term": "degrading",
+        "definition": "causing a loss of dignity",
+        "context": "The prisoners were subjected to degrading treatment."
+      },
+      {
+        "term": "detrimental",
+        "definition": "causing harm or damage",
+        "context": "Smoking is detrimental to your health."
+      },
+      {
+        "term": "discernible",
+        "definition": "able to be perceived or recognized",
+        "context": "There was no discernible difference."
+      },
+      {
+        "term": "discreet",
+        "definition": "careful not to attract attention",
+        "context": "Please be discreet about this matter."
+      },
+      {
+        "term": "disposable",
+        "definition": "designed to be thrown away after use",
+        "context": "Reduce your use of disposable plastic."
+      },
+      {
+        "term": "elaborate",
+        "definition": "detailed and carefully prepared",
+        "context": "She organized an elaborate dinner party."
+      },
+      {
+        "term": "elusive",
+        "definition": "difficult to find or achieve",
+        "context": "Success remained elusive."
+      },
+      {
+        "term": "eminent",
+        "definition": "famous and respected",
+        "context": "She is an eminent scientist."
+      },
+      {
+        "term": "empirical",
+        "definition": "based on observation or experience",
+        "context": "The theory is supported by empirical data."
+      },
+      {
+        "term": "erratic",
+        "definition": "unpredictable and inconsistent",
+        "context": "His behavior has been erratic lately."
+      },
+      {
+        "term": "exquisite",
+        "definition": "extremely beautiful or delicate",
+        "context": "The jewelry is exquisite."
+      },
+      {
+        "term": "feasible",
+        "definition": "possible and practical to do",
+        "context": "The plan is technically feasible."
+      },
+      {
+        "term": "formidable",
+        "definition": "inspiring fear or respect through great size or ability",
+        "context": "She is a formidable opponent."
+      },
+      {
+        "term": "futile",
+        "definition": "having no useful result; pointless",
+        "context": "Further attempts were futile."
+      },
+      {
+        "term": "imminent",
+        "definition": "about to happen very soon",
+        "context": "A storm is imminent."
+      },
+      {
+        "term": "impartial",
+        "definition": "treating everyone equally; fair",
+        "context": "A judge must be impartial."
+      },
+      {
+        "term": "impending",
+        "definition": "about to occur",
+        "context": "There is a sense of impending change."
+      },
+      {
+        "term": "implicit",
+        "definition": "implied but not directly stated",
+        "context": "There was an implicit agreement between them."
+      },
+      {
+        "term": "inadvertent",
+        "definition": "unintentional; accidental",
+        "context": "The error was inadvertent."
+      },
+      {
+        "term": "inclination",
+        "definition": "a tendency or preference",
+        "context": "She has an inclination toward art."
+      },
+      {
+        "term": "indispensable",
+        "definition": "absolutely necessary",
+        "context": "She has become indispensable to the team."
+      },
+      {
+        "term": "inherent",
+        "definition": "existing as a permanent and essential quality",
+        "context": "Risk is inherent in any business venture."
+      },
+      {
+        "term": "intricate",
+        "definition": "very complex or detailed",
+        "context": "The design is incredibly intricate."
+      },
+      {
+        "term": "intuitive",
+        "definition": "based on feelings rather than reasoning",
+        "context": "The software has an intuitive interface."
+      },
+      {
+        "term": "lucrative",
+        "definition": "producing a lot of profit",
+        "context": "Real estate can be a lucrative investment."
+      },
+      {
+        "term": "marginal",
+        "definition": "minor; relating to the edge",
+        "context": "The improvement was only marginal."
+      },
+      {
+        "term": "meticulous",
+        "definition": "showing great attention to detail",
+        "context": "She is meticulous in her research."
+      },
+      {
+        "term": "mundane",
+        "definition": "ordinary; lacking interest",
+        "context": "He wanted to escape his mundane routine."
+      },
+      {
+        "term": "negligible",
+        "definition": "so small as to be unimportant",
+        "context": "The difference in price is negligible."
+      },
+      {
+        "term": "notorious",
+        "definition": "famous for something bad",
+        "context": "The road is notorious for accidents."
+      },
+      {
+        "term": "obscure",
+        "definition": "not well known; hard to understand",
+        "context": "The reference was rather obscure."
+      },
+      {
+        "term": "paramount",
+        "definition": "more important than anything else",
+        "context": "Safety is of paramount importance."
+      },
+      {
+        "term": "plausible",
+        "definition": "seeming reasonable or probable",
+        "context": "Her explanation was plausible."
+      },
+      {
+        "term": "pragmatic",
+        "definition": "dealing with things in a practical way",
+        "context": "She took a pragmatic approach to the problem."
+      },
+      {
+        "term": "precarious",
+        "definition": "not safe or certain; dangerously unstable",
+        "context": "The company is in a precarious financial position."
+      },
+      {
+        "term": "predominant",
+        "definition": "most common or greatest in number",
+        "context": "English is the predominant language in the office."
+      },
+      {
+        "term": "prevalent",
+        "definition": "widespread or common",
+        "context": "Allergies are increasingly prevalent."
+      },
+      {
+        "term": "profound",
+        "definition": "very great or deep",
+        "context": "The book had a profound impact on me."
+      },
+      {
+        "term": "prolific",
+        "definition": "producing a lot of work or results",
+        "context": "She is a prolific writer."
+      },
+      {
+        "term": "prospective",
+        "definition": "expected or likely to happen in the future",
+        "context": "Prospective buyers viewed the house."
+      },
+      {
+        "term": "provisional",
+        "definition": "arranged temporarily; not permanent",
+        "context": "We reached a provisional agreement."
+      },
+      {
+        "term": "redundant",
+        "definition": "no longer needed; unnecessary",
+        "context": "Several workers were made redundant."
+      },
+      {
+        "term": "resilient",
+        "definition": "able to recover quickly from difficulties",
+        "context": "Children are remarkably resilient."
+      },
+      {
+        "term": "robust",
+        "definition": "strong and healthy; sturdy",
+        "context": "The economy is showing robust growth."
+      },
+      {
+        "term": "scarce",
+        "definition": "not enough; in short supply",
+        "context": "Clean water is scarce in the region."
+      },
+      {
+        "term": "stringent",
+        "definition": "strict and precise",
+        "context": "The regulations are very stringent."
+      },
+      {
+        "term": "subsequent",
+        "definition": "coming after something",
+        "context": "Subsequent events confirmed our fears."
+      },
+      {
+        "term": "superficial",
+        "definition": "existing or occurring on the surface; not deep",
+        "context": "His understanding of the subject is superficial."
+      },
+      {
+        "term": "tangible",
+        "definition": "real and concrete; able to be touched",
+        "context": "We need tangible evidence of progress."
+      },
+      {
+        "term": "tentative",
+        "definition": "not certain or fixed; cautious",
+        "context": "We have a tentative agreement."
+      },
+      {
+        "term": "trivial",
+        "definition": "of little value or importance",
+        "context": "Do not waste time on trivial matters."
+      },
+      {
+        "term": "unanimous",
+        "definition": "fully in agreement",
+        "context": "The decision was unanimous."
+      },
+      {
+        "term": "unprecedented",
+        "definition": "never done or known before",
+        "context": "We are facing unprecedented challenges."
+      },
+      {
+        "term": "viable",
+        "definition": "capable of working successfully",
+        "context": "Is this a viable business model?"
+      },
+      {
+        "term": "accountability",
+        "definition": "the state of being responsible",
+        "context": "There must be accountability for these decisions."
+      },
+      {
+        "term": "acquisition",
+        "definition": "the act of obtaining something",
+        "context": "The acquisition of the company was finalized."
+      },
+      {
+        "term": "allegory",
+        "definition": "a story with a hidden meaning",
+        "context": "The novel is an allegory of political oppression."
+      },
+      {
+        "term": "ambivalence",
+        "definition": "having mixed feelings",
+        "context": "She felt ambivalence about leaving."
+      },
+      {
+        "term": "bureaucracy",
+        "definition": "a system with many complex rules",
+        "context": "Government bureaucracy slows decision-making."
+      },
+      {
+        "term": "catalyst",
+        "definition": "something that causes an important change",
+        "context": "The protest was a catalyst for reform."
+      },
+      {
+        "term": "cohesion",
+        "definition": "the action of forming a united whole",
+        "context": "The team lacked cohesion."
+      },
+      {
+        "term": "complication",
+        "definition": "a difficulty or problem",
+        "context": "There were complications during the surgery."
+      },
+      {
+        "term": "connotation",
+        "definition": "an additional meaning suggested by a word",
+        "context": "The word \"home\" has warm connotations."
+      },
+      {
+        "term": "consensus",
+        "definition": "general agreement",
+        "context": "We reached a consensus on the plan."
+      },
+      {
+        "term": "correlation",
+        "definition": "a connection between two things",
+        "context": "There is a strong correlation between diet and health."
+      },
+      {
+        "term": "criterion",
+        "definition": "a standard by which something is judged (singular)",
+        "context": "Quality is the main criterion for selection."
+      },
+      {
+        "term": "deficiency",
+        "definition": "a lack or shortage of something",
+        "context": "Iron deficiency can cause tiredness."
+      },
+      {
+        "term": "degradation",
+        "definition": "the process of becoming worse",
+        "context": "Environmental degradation is a serious concern."
+      },
+      {
+        "term": "deliberation",
+        "definition": "careful consideration",
+        "context": "After long deliberation, they reached a decision."
+      },
+      {
+        "term": "deprivation",
+        "definition": "the lack of basic necessities",
+        "context": "Many children live in deprivation."
+      },
+      {
+        "term": "deterrent",
+        "definition": "something that discourages action",
+        "context": "The fine acts as a deterrent."
+      },
+      {
+        "term": "discrepancy",
+        "definition": "a difference between things that should be the same",
+        "context": "There is a discrepancy in the accounts."
+      },
+      {
+        "term": "disposition",
+        "definition": "a person\\",
+        "context": "She has a cheerful disposition."
+      },
+      {
+        "term": "doctrine",
+        "definition": "a set of beliefs or principles",
+        "context": "The political doctrine has evolved over time."
+      },
+      {
+        "term": "dynamics",
+        "definition": "the forces that produce change or movement",
+        "context": "The dynamics of the team have changed."
+      },
+      {
+        "term": "endeavor",
+        "definition": "a serious attempt to achieve something",
+        "context": "Scientific endeavor has led to great discoveries."
+      },
+      {
+        "term": "equity",
+        "definition": "fairness; the value of shares in a company",
+        "context": "The policy promotes equity in education."
+      },
+      {
+        "term": "excerpt",
+        "definition": "a short extract from a text",
+        "context": "She read an excerpt from her new book."
+      },
+      {
+        "term": "facet",
+        "definition": "one aspect of something",
+        "context": "There are many facets to this issue."
+      },
+      {
+        "term": "fallacy",
+        "definition": "a mistaken belief or false argument",
+        "context": "That argument is based on a common fallacy."
+      },
+      {
+        "term": "friction",
+        "definition": "conflict or disagreement; resistance between surfaces",
+        "context": "There is friction between the two departments."
+      },
+      {
+        "term": "grievance",
+        "definition": "a formal complaint about unfair treatment",
+        "context": "She filed a grievance with the HR department."
+      },
+      {
+        "term": "hierarchy",
+        "definition": "a system of ranking levels",
+        "context": "The company has a strict hierarchy."
+      },
+      {
+        "term": "implication",
+        "definition": "a likely consequence; something implied",
+        "context": "The findings have serious implications for policy."
+      },
+      {
+        "term": "incentive",
+        "definition": "something that motivates action",
+        "context": "Tax cuts provide an incentive for investment."
+      },
+      {
+        "term": "increment",
+        "definition": "a small increase",
+        "context": "Salaries increase in annual increments."
+      },
+      {
+        "term": "infrastructure",
+        "definition": "basic facilities and systems",
+        "context": "The country needs better road infrastructure."
+      },
+      {
+        "term": "integrity",
+        "definition": "honesty and strong moral principles",
+        "context": "He is a man of great integrity."
+      },
+      {
+        "term": "intervention",
+        "definition": "the act of becoming involved to change a situation",
+        "context": "Medical intervention saved his life."
+      },
+      {
+        "term": "jurisdiction",
+        "definition": "the authority to apply the law",
+        "context": "This falls outside our jurisdiction."
+      },
+      {
+        "term": "litigation",
+        "definition": "the process of taking legal action",
+        "context": "The case went through years of litigation."
+      },
+      {
+        "term": "magnitude",
+        "definition": "the great size or importance of something",
+        "context": "They did not realize the magnitude of the problem."
+      },
+      {
+        "term": "mandate",
+        "definition": "an official order or authority",
+        "context": "The government has a mandate to reform healthcare."
+      },
+      {
+        "term": "manifestation",
+        "definition": "a visible sign of something",
+        "context": "The symptoms are a manifestation of stress."
+      },
+      {
+        "term": "monopoly",
+        "definition": "exclusive control of a market",
+        "context": "The company has a monopoly on the industry."
+      },
+      {
+        "term": "paradox",
+        "definition": "a seemingly contradictory statement that may be true",
+        "context": "It is a paradox that the busiest people often get the most done."
+      },
+      {
+        "term": "parity",
+        "definition": "the state of being equal",
+        "context": "The movement fights for pay parity."
+      },
+      {
+        "term": "pitfall",
+        "definition": "a hidden danger or difficulty",
+        "context": "Be aware of the pitfalls of investing."
+      },
+      {
+        "term": "premise",
+        "definition": "a statement assumed true as the basis for reasoning",
+        "context": "The argument is based on a false premise."
+      },
+      {
+        "term": "prerogative",
+        "definition": "a right or privilege",
+        "context": "It is your prerogative to decide."
+      },
+      {
+        "term": "prevalence",
+        "definition": "the state of being widespread",
+        "context": "The prevalence of the disease has decreased."
+      },
+      {
+        "term": "procurement",
+        "definition": "the process of obtaining goods or services",
+        "context": "The procurement process was transparent."
+      },
+      {
+        "term": "rationale",
+        "definition": "the reasons or logical basis for something",
+        "context": "What is the rationale behind this decision?"
+      },
+      {
+        "term": "reimbursement",
+        "definition": "repayment of money spent",
+        "context": "You can claim reimbursement for travel expenses."
+      },
+      {
+        "term": "repercussion",
+        "definition": "an unintended consequence of an action",
+        "context": "The decision had serious repercussions."
+      },
+      {
+        "term": "rhetoric",
+        "definition": "the art of persuasive speaking; language designed to persuade",
+        "context": "Political rhetoric often oversimplifies issues."
+      },
+      {
+        "term": "sanction",
+        "definition": "a penalty or official permission",
+        "context": "The country faced economic sanctions."
+      },
+      {
+        "term": "scrutiny",
+        "definition": "careful and thorough examination",
+        "context": "The plan came under close scrutiny."
+      },
+      {
+        "term": "sovereignty",
+        "definition": "supreme authority over a territory",
+        "context": "National sovereignty is a sensitive issue."
+      },
+      {
+        "term": "stakeholder",
+        "definition": "a person with an interest in a business",
+        "context": "All stakeholders were consulted."
+      },
+      {
+        "term": "trajectory",
+        "definition": "the path followed by a moving object; direction of development",
+        "context": "Her career trajectory has been impressive."
+      },
+      {
+        "term": "turmoil",
+        "definition": "a state of great disturbance or confusion",
+        "context": "The country was in political turmoil."
+      },
+      {
+        "term": "albeit",
+        "definition": "although; even though",
+        "context": "The task was challenging, albeit rewarding."
+      },
+      {
+        "term": "by virtue of",
+        "definition": "because of; by reason of",
+        "context": "He succeeded by virtue of hard work."
+      },
+      {
+        "term": "insofar as",
+        "definition": "to the extent that",
+        "context": "I will help insofar as I can."
+      },
+      {
+        "term": "notwithstanding",
+        "definition": "in spite of; nevertheless",
+        "context": "Notwithstanding the delays, the project was completed on time."
+      },
+      {
+        "term": "inasmuch as",
+        "definition": "to the extent that; since",
+        "context": "The plan is good inasmuch as it addresses the main issues."
+      },
+      {
+        "term": "henceforth",
+        "definition": "from this time on",
+        "context": "Henceforth, all meetings will be recorded."
+      },
+      {
+        "term": "in lieu of",
+        "definition": "instead of",
+        "context": "She offered cash in lieu of a gift."
+      },
+      {
+        "term": "pertaining to",
+        "definition": "relating to; concerning",
+        "context": "Rules pertaining to safety must be followed."
+      },
+      {
+        "term": "with regard to",
+        "definition": "concerning; in relation to",
+        "context": "I have a question with regard to the schedule."
+      },
+      {
+        "term": "in conjunction with",
+        "definition": "together with; in combination",
+        "context": "The drug works in conjunction with therapy."
+      },
+      {
+        "term": "on behalf of",
+        "definition": "as a representative of",
+        "context": "I am writing on behalf of my client."
+      },
+      {
+        "term": "take into account",
+        "definition": "to consider",
+        "context": "We must take all factors into account."
+      },
+      {
+        "term": "bear in mind",
+        "definition": "to remember or consider",
+        "context": "Bear in mind that the deadline is Friday."
+      },
+      {
+        "term": "draw conclusions",
+        "definition": "to form an opinion after considering facts",
+        "context": "It is too early to draw conclusions."
+      },
+      {
+        "term": "give rise to",
+        "definition": "to cause something to happen",
+        "context": "The policy gave rise to widespread protests."
+      },
+      {
+        "term": "shed light on",
+        "definition": "to clarify or explain",
+        "context": "The research shed light on the mystery."
+      },
+      {
+        "term": "to a great extent",
+        "definition": "largely; mostly",
+        "context": "Success depends to a great extent on effort."
+      },
+      {
+        "term": "in the long run",
+        "definition": "over a long period of time",
+        "context": "Investing in education pays off in the long run."
+      },
+      {
+        "term": "on the whole",
+        "definition": "generally; all things considered",
+        "context": "On the whole, the event was a success."
+      },
+      {
+        "term": "for the sake of",
+        "definition": "for the purpose of; in the interest of",
+        "context": "He compromised for the sake of peace."
+      }
+    ]
+  }
+}

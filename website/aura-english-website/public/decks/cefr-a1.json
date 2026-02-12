@@ -1,0 +1,1931 @@
+{
+  "version": "1.0",
+  "exportedAt": "2026-02-12T00:00:00.000Z",
+  "deck": {
+    "name": "A1 – Essential Vocabulary",
+    "description": "Beginner: basic words for everyday situations — greetings, numbers, family, food, and common objects.",
+    "language": "en",
+    "cards": [
+      {
+        "term": "hello",
+        "definition": "a common greeting",
+        "context": "Hello, how are you today?"
+      },
+      {
+        "term": "goodbye",
+        "definition": "a word said when leaving",
+        "context": "Goodbye, see you tomorrow!"
+      },
+      {
+        "term": "please",
+        "definition": "used to make a polite request",
+        "context": "Can I have some water, please?"
+      },
+      {
+        "term": "thank you",
+        "definition": "an expression of gratitude",
+        "context": "Thank you for helping me."
+      },
+      {
+        "term": "sorry",
+        "definition": "used to apologize",
+        "context": "Sorry, I did not hear you."
+      },
+      {
+        "term": "yes",
+        "definition": "used to agree or confirm",
+        "context": "Yes, I would like some tea."
+      },
+      {
+        "term": "no",
+        "definition": "used to refuse or deny",
+        "context": "No, I do not want any coffee."
+      },
+      {
+        "term": "excuse me",
+        "definition": "used to get attention or apologize",
+        "context": "Excuse me, where is the station?"
+      },
+      {
+        "term": "good morning",
+        "definition": "a greeting used in the morning",
+        "context": "Good morning, did you sleep well?"
+      },
+      {
+        "term": "good night",
+        "definition": "said before going to sleep",
+        "context": "Good night, see you tomorrow."
+      },
+      {
+        "term": "welcome",
+        "definition": "a greeting for someone who arrives",
+        "context": "Welcome to our home!"
+      },
+      {
+        "term": "hi",
+        "definition": "an informal greeting",
+        "context": "Hi, my name is Tom."
+      },
+      {
+        "term": "bye",
+        "definition": "an informal way to say goodbye",
+        "context": "Bye, have a nice day!"
+      },
+      {
+        "term": "I",
+        "definition": "refers to the speaker",
+        "context": "I am a student."
+      },
+      {
+        "term": "you",
+        "definition": "refers to the person spoken to",
+        "context": "You are very kind."
+      },
+      {
+        "term": "he",
+        "definition": "refers to a male person",
+        "context": "He is my brother."
+      },
+      {
+        "term": "she",
+        "definition": "refers to a female person",
+        "context": "She is a doctor."
+      },
+      {
+        "term": "it",
+        "definition": "refers to a thing or animal",
+        "context": "It is a beautiful day."
+      },
+      {
+        "term": "we",
+        "definition": "refers to the speaker and others",
+        "context": "We are going to the park."
+      },
+      {
+        "term": "they",
+        "definition": "refers to other people or things",
+        "context": "They live in London."
+      },
+      {
+        "term": "my",
+        "definition": "belonging to me",
+        "context": "This is my book."
+      },
+      {
+        "term": "your",
+        "definition": "belonging to you",
+        "context": "Is this your bag?"
+      },
+      {
+        "term": "his",
+        "definition": "belonging to him",
+        "context": "His car is red."
+      },
+      {
+        "term": "her",
+        "definition": "belonging to her",
+        "context": "Her name is Anna."
+      },
+      {
+        "term": "our",
+        "definition": "belonging to us",
+        "context": "This is our classroom."
+      },
+      {
+        "term": "their",
+        "definition": "belonging to them",
+        "context": "Their house is big."
+      },
+      {
+        "term": "this",
+        "definition": "referring to something close",
+        "context": "This is my favorite song."
+      },
+      {
+        "term": "that",
+        "definition": "referring to something farther away",
+        "context": "That building is very tall."
+      },
+      {
+        "term": "family",
+        "definition": "a group of related people",
+        "context": "My family lives in Paris."
+      },
+      {
+        "term": "mother",
+        "definition": "a female parent",
+        "context": "My mother cooks very well."
+      },
+      {
+        "term": "father",
+        "definition": "a male parent",
+        "context": "My father works in an office."
+      },
+      {
+        "term": "brother",
+        "definition": "a male sibling",
+        "context": "My brother is older than me."
+      },
+      {
+        "term": "sister",
+        "definition": "a female sibling",
+        "context": "My sister goes to university."
+      },
+      {
+        "term": "son",
+        "definition": "a male child",
+        "context": "Their son is three years old."
+      },
+      {
+        "term": "daughter",
+        "definition": "a female child",
+        "context": "Her daughter loves reading."
+      },
+      {
+        "term": "husband",
+        "definition": "a married man",
+        "context": "Her husband is a teacher."
+      },
+      {
+        "term": "wife",
+        "definition": "a married woman",
+        "context": "His wife works at a hospital."
+      },
+      {
+        "term": "baby",
+        "definition": "a very young child",
+        "context": "The baby is sleeping."
+      },
+      {
+        "term": "child",
+        "definition": "a young person",
+        "context": "The child is playing in the garden."
+      },
+      {
+        "term": "children",
+        "definition": "more than one child",
+        "context": "The children are at school."
+      },
+      {
+        "term": "parent",
+        "definition": "a mother or father",
+        "context": "Every parent wants the best for their child."
+      },
+      {
+        "term": "friend",
+        "definition": "a person you like and trust",
+        "context": "She is my best friend."
+      },
+      {
+        "term": "boy",
+        "definition": "a young male person",
+        "context": "The boy is riding his bicycle."
+      },
+      {
+        "term": "girl",
+        "definition": "a young female person",
+        "context": "The girl is drawing a picture."
+      },
+      {
+        "term": "man",
+        "definition": "an adult male",
+        "context": "The man is reading a newspaper."
+      },
+      {
+        "term": "woman",
+        "definition": "an adult female",
+        "context": "The woman is talking on the phone."
+      },
+      {
+        "term": "people",
+        "definition": "more than one person",
+        "context": "Many people live in this city."
+      },
+      {
+        "term": "one",
+        "definition": "the number 1",
+        "context": "I have one cat."
+      },
+      {
+        "term": "two",
+        "definition": "the number 2",
+        "context": "She has two brothers."
+      },
+      {
+        "term": "three",
+        "definition": "the number 3",
+        "context": "There are three apples on the table."
+      },
+      {
+        "term": "four",
+        "definition": "the number 4",
+        "context": "We have four chairs in the kitchen."
+      },
+      {
+        "term": "five",
+        "definition": "the number 5",
+        "context": "The class starts in five minutes."
+      },
+      {
+        "term": "six",
+        "definition": "the number 6",
+        "context": "There are six eggs in the box."
+      },
+      {
+        "term": "seven",
+        "definition": "the number 7",
+        "context": "There are seven days in a week."
+      },
+      {
+        "term": "eight",
+        "definition": "the number 8",
+        "context": "I wake up at eight o\\"
+      },
+      {
+        "term": "nine",
+        "definition": "the number 9",
+        "context": "The shop closes at nine."
+      },
+      {
+        "term": "ten",
+        "definition": "the number 10",
+        "context": "I count from one to ten."
+      },
+      {
+        "term": "twenty",
+        "definition": "the number 20",
+        "context": "There are twenty students in the class."
+      },
+      {
+        "term": "hundred",
+        "definition": "the number 100",
+        "context": "The book has one hundred pages."
+      },
+      {
+        "term": "first",
+        "definition": "coming before all others",
+        "context": "This is my first day at school."
+      },
+      {
+        "term": "second",
+        "definition": "coming after the first",
+        "context": "She came in second place."
+      },
+      {
+        "term": "last",
+        "definition": "coming after all others",
+        "context": "This is the last question."
+      },
+      {
+        "term": "red",
+        "definition": "the color of blood or fire",
+        "context": "She is wearing a red dress."
+      },
+      {
+        "term": "blue",
+        "definition": "the color of the sky",
+        "context": "The sea is blue today."
+      },
+      {
+        "term": "green",
+        "definition": "the color of grass",
+        "context": "The trees are green in summer."
+      },
+      {
+        "term": "yellow",
+        "definition": "the color of the sun",
+        "context": "The taxi is yellow."
+      },
+      {
+        "term": "black",
+        "definition": "the darkest color",
+        "context": "He is wearing a black jacket."
+      },
+      {
+        "term": "white",
+        "definition": "the lightest color",
+        "context": "The snow is white."
+      },
+      {
+        "term": "brown",
+        "definition": "the color of chocolate",
+        "context": "The dog has brown fur."
+      },
+      {
+        "term": "orange",
+        "definition": "a color between red and yellow",
+        "context": "I like orange juice."
+      },
+      {
+        "term": "water",
+        "definition": "a clear liquid for drinking",
+        "context": "Can I have a glass of water?"
+      },
+      {
+        "term": "food",
+        "definition": "things you eat",
+        "context": "The food in this restaurant is good."
+      },
+      {
+        "term": "bread",
+        "definition": "a basic baked food made from flour",
+        "context": "I buy fresh bread every morning."
+      },
+      {
+        "term": "milk",
+        "definition": "a white liquid from cows",
+        "context": "Children drink milk for breakfast."
+      },
+      {
+        "term": "egg",
+        "definition": "a food laid by a chicken",
+        "context": "I eat an egg for breakfast."
+      },
+      {
+        "term": "rice",
+        "definition": "small white or brown grains used as food",
+        "context": "We eat rice with vegetables."
+      },
+      {
+        "term": "meat",
+        "definition": "food from animals",
+        "context": "He does not eat meat."
+      },
+      {
+        "term": "chicken",
+        "definition": "a common bird used for food",
+        "context": "We are having chicken for dinner."
+      },
+      {
+        "term": "fish",
+        "definition": "an animal that lives in water, also a food",
+        "context": "I like to eat fish on Friday."
+      },
+      {
+        "term": "fruit",
+        "definition": "sweet food from plants, like apples",
+        "context": "Fruit is good for your health."
+      },
+      {
+        "term": "apple",
+        "definition": "a round red or green fruit",
+        "context": "She eats an apple every day."
+      },
+      {
+        "term": "banana",
+        "definition": "a long yellow fruit",
+        "context": "Monkeys love bananas."
+      },
+      {
+        "term": "vegetable",
+        "definition": "a plant or part of a plant used as food",
+        "context": "You should eat more vegetables."
+      },
+      {
+        "term": "potato",
+        "definition": "a round vegetable that grows underground",
+        "context": "We have potatoes with dinner."
+      },
+      {
+        "term": "tomato",
+        "definition": "a soft red fruit used in salads and cooking",
+        "context": "I put tomato in my salad."
+      },
+      {
+        "term": "cheese",
+        "definition": "a solid food made from milk",
+        "context": "I like cheese on my sandwich."
+      },
+      {
+        "term": "sugar",
+        "definition": "a sweet white substance",
+        "context": "Do you take sugar in your tea?"
+      },
+      {
+        "term": "salt",
+        "definition": "a white substance used to add flavor",
+        "context": "Can you pass me the salt?"
+      },
+      {
+        "term": "coffee",
+        "definition": "a hot brown drink",
+        "context": "I drink coffee in the morning."
+      },
+      {
+        "term": "tea",
+        "definition": "a hot drink made with leaves and water",
+        "context": "Would you like a cup of tea?"
+      },
+      {
+        "term": "juice",
+        "definition": "a liquid from fruit",
+        "context": "I drink orange juice for breakfast."
+      },
+      {
+        "term": "cake",
+        "definition": "a sweet baked food",
+        "context": "She made a chocolate cake."
+      },
+      {
+        "term": "soup",
+        "definition": "a hot liquid food",
+        "context": "I eat soup when I am cold."
+      },
+      {
+        "term": "sandwich",
+        "definition": "bread with food between two slices",
+        "context": "I had a sandwich for lunch."
+      },
+      {
+        "term": "breakfast",
+        "definition": "the first meal of the day",
+        "context": "I have breakfast at seven."
+      },
+      {
+        "term": "lunch",
+        "definition": "a meal eaten in the middle of the day",
+        "context": "We eat lunch at noon."
+      },
+      {
+        "term": "dinner",
+        "definition": "the main evening meal",
+        "context": "Dinner is ready at eight."
+      },
+      {
+        "term": "body",
+        "definition": "the physical form of a person",
+        "context": "Exercise is good for your body."
+      },
+      {
+        "term": "head",
+        "definition": "the top part of the body",
+        "context": "He put a hat on his head."
+      },
+      {
+        "term": "hand",
+        "definition": "the part at the end of your arm",
+        "context": "She held the cup in her hand."
+      },
+      {
+        "term": "eye",
+        "definition": "the part of the body used for seeing",
+        "context": "She has beautiful blue eyes."
+      },
+      {
+        "term": "mouth",
+        "definition": "the part of the face used for eating and speaking",
+        "context": "Open your mouth and say ah."
+      },
+      {
+        "term": "ear",
+        "definition": "the part of the body used for hearing",
+        "context": "He has an earache in his left ear."
+      },
+      {
+        "term": "nose",
+        "definition": "the part of the face used for smelling",
+        "context": "The dog has a cold nose."
+      },
+      {
+        "term": "hair",
+        "definition": "the thin strands growing on your head",
+        "context": "She has long brown hair."
+      },
+      {
+        "term": "foot",
+        "definition": "the bottom part of your leg",
+        "context": "I hurt my foot playing football."
+      },
+      {
+        "term": "leg",
+        "definition": "the long part of the body used for walking",
+        "context": "He broke his leg skiing."
+      },
+      {
+        "term": "arm",
+        "definition": "the part of the body between shoulder and hand",
+        "context": "She carried the baby in her arms."
+      },
+      {
+        "term": "face",
+        "definition": "the front part of the head",
+        "context": "Wash your face with warm water."
+      },
+      {
+        "term": "heart",
+        "definition": "the organ that pumps blood",
+        "context": "Your heart beats faster when you run."
+      },
+      {
+        "term": "back",
+        "definition": "the rear part of the body",
+        "context": "My back hurts after sitting all day."
+      },
+      {
+        "term": "house",
+        "definition": "a building where people live",
+        "context": "My house has three bedrooms."
+      },
+      {
+        "term": "room",
+        "definition": "a part of a building with walls",
+        "context": "This room is very bright."
+      },
+      {
+        "term": "door",
+        "definition": "a flat surface that opens and closes an entrance",
+        "context": "Please close the door."
+      },
+      {
+        "term": "window",
+        "definition": "an opening with glass in a wall",
+        "context": "Open the window for fresh air."
+      },
+      {
+        "term": "table",
+        "definition": "a flat surface with legs for placing things",
+        "context": "The book is on the table."
+      },
+      {
+        "term": "chair",
+        "definition": "a piece of furniture for sitting",
+        "context": "Sit on the chair, please."
+      },
+      {
+        "term": "bed",
+        "definition": "furniture for sleeping",
+        "context": "She goes to bed at ten."
+      },
+      {
+        "term": "kitchen",
+        "definition": "a room for cooking",
+        "context": "He is cooking in the kitchen."
+      },
+      {
+        "term": "bathroom",
+        "definition": "a room with a toilet and shower",
+        "context": "The bathroom is upstairs."
+      },
+      {
+        "term": "garden",
+        "definition": "an area of land with plants or flowers",
+        "context": "We have flowers in the garden."
+      },
+      {
+        "term": "key",
+        "definition": "a metal object used to lock or unlock",
+        "context": "I lost my house key."
+      },
+      {
+        "term": "phone",
+        "definition": "a device used to make calls",
+        "context": "My phone is ringing."
+      },
+      {
+        "term": "bag",
+        "definition": "a container for carrying things",
+        "context": "She put the book in her bag."
+      },
+      {
+        "term": "book",
+        "definition": "pages with words bound together",
+        "context": "I am reading a good book."
+      },
+      {
+        "term": "pen",
+        "definition": "a tool used for writing with ink",
+        "context": "Can I borrow your pen?"
+      },
+      {
+        "term": "paper",
+        "definition": "thin material for writing on",
+        "context": "I need a piece of paper."
+      },
+      {
+        "term": "picture",
+        "definition": "an image or photograph",
+        "context": "There is a picture on the wall."
+      },
+      {
+        "term": "clock",
+        "definition": "a device that shows the time",
+        "context": "The clock on the wall says three."
+      },
+      {
+        "term": "cup",
+        "definition": "a small container for drinking",
+        "context": "She drank a cup of tea."
+      },
+      {
+        "term": "glass",
+        "definition": "a container for drinking, usually transparent",
+        "context": "Fill the glass with water."
+      },
+      {
+        "term": "bottle",
+        "definition": "a container with a narrow neck",
+        "context": "I bought a bottle of water."
+      },
+      {
+        "term": "money",
+        "definition": "coins and notes used to buy things",
+        "context": "I do not have enough money."
+      },
+      {
+        "term": "car",
+        "definition": "a vehicle with four wheels",
+        "context": "He drives a blue car."
+      },
+      {
+        "term": "bus",
+        "definition": "a large vehicle for many passengers",
+        "context": "I take the bus to work."
+      },
+      {
+        "term": "train",
+        "definition": "a vehicle that runs on rails",
+        "context": "The train leaves at nine."
+      },
+      {
+        "term": "school",
+        "definition": "a place where children learn",
+        "context": "The children go to school at eight."
+      },
+      {
+        "term": "shop",
+        "definition": "a place where you buy things",
+        "context": "The shop is open from nine to five."
+      },
+      {
+        "term": "hospital",
+        "definition": "a place where sick people are treated",
+        "context": "She works at the hospital."
+      },
+      {
+        "term": "station",
+        "definition": "a place where buses or trains stop",
+        "context": "The station is near the park."
+      },
+      {
+        "term": "restaurant",
+        "definition": "a place where you eat meals",
+        "context": "We went to a nice restaurant."
+      },
+      {
+        "term": "hotel",
+        "definition": "a place where travelers sleep",
+        "context": "The hotel is near the beach."
+      },
+      {
+        "term": "city",
+        "definition": "a large town",
+        "context": "London is a big city."
+      },
+      {
+        "term": "street",
+        "definition": "a road in a town or city",
+        "context": "I live on a quiet street."
+      },
+      {
+        "term": "park",
+        "definition": "a public area with grass and trees",
+        "context": "We walk in the park every Sunday."
+      },
+      {
+        "term": "airport",
+        "definition": "a place where planes land and take off",
+        "context": "The airport is far from the city."
+      },
+      {
+        "term": "office",
+        "definition": "a place where people work at desks",
+        "context": "He goes to the office every day."
+      },
+      {
+        "term": "market",
+        "definition": "a place where food and goods are sold",
+        "context": "I buy fruit at the market."
+      },
+      {
+        "term": "bank",
+        "definition": "a place where money is kept",
+        "context": "I need to go to the bank."
+      },
+      {
+        "term": "church",
+        "definition": "a building for Christian worship",
+        "context": "The church is very old."
+      },
+      {
+        "term": "country",
+        "definition": "a nation or land area",
+        "context": "France is a beautiful country."
+      },
+      {
+        "term": "time",
+        "definition": "the ongoing passage of hours and minutes",
+        "context": "What time is it?"
+      },
+      {
+        "term": "day",
+        "definition": "a period of 24 hours",
+        "context": "Today is a beautiful day."
+      },
+      {
+        "term": "night",
+        "definition": "the dark part of the day",
+        "context": "The stars shine at night."
+      },
+      {
+        "term": "morning",
+        "definition": "the early part of the day",
+        "context": "I go jogging in the morning."
+      },
+      {
+        "term": "afternoon",
+        "definition": "the time from noon to evening",
+        "context": "I have a class in the afternoon."
+      },
+      {
+        "term": "evening",
+        "definition": "the time from late afternoon to night",
+        "context": "We eat dinner in the evening."
+      },
+      {
+        "term": "today",
+        "definition": "this current day",
+        "context": "Today is Monday."
+      },
+      {
+        "term": "tomorrow",
+        "definition": "the day after today",
+        "context": "I will call you tomorrow."
+      },
+      {
+        "term": "yesterday",
+        "definition": "the day before today",
+        "context": "I saw her yesterday."
+      },
+      {
+        "term": "week",
+        "definition": "a period of seven days",
+        "context": "I work five days a week."
+      },
+      {
+        "term": "month",
+        "definition": "one of the twelve parts of a year",
+        "context": "January is the first month of the year."
+      },
+      {
+        "term": "year",
+        "definition": "a period of twelve months",
+        "context": "This year I want to travel."
+      },
+      {
+        "term": "hour",
+        "definition": "a period of sixty minutes",
+        "context": "The film is two hours long."
+      },
+      {
+        "term": "minute",
+        "definition": "a period of sixty seconds",
+        "context": "Wait one minute, please."
+      },
+      {
+        "term": "now",
+        "definition": "at the present time",
+        "context": "I am busy right now."
+      },
+      {
+        "term": "always",
+        "definition": "at all times",
+        "context": "She always arrives on time."
+      },
+      {
+        "term": "never",
+        "definition": "not at any time",
+        "context": "I never eat fast food."
+      },
+      {
+        "term": "sometimes",
+        "definition": "on some occasions",
+        "context": "Sometimes I walk to work."
+      },
+      {
+        "term": "often",
+        "definition": "many times",
+        "context": "He often reads before bed."
+      },
+      {
+        "term": "early",
+        "definition": "before the expected time",
+        "context": "I wake up early on weekdays."
+      },
+      {
+        "term": "late",
+        "definition": "after the expected time",
+        "context": "Sorry, I am late for class."
+      },
+      {
+        "term": "weather",
+        "definition": "the condition of the atmosphere",
+        "context": "The weather is nice today."
+      },
+      {
+        "term": "sun",
+        "definition": "the star that gives light and heat",
+        "context": "The sun is shining brightly."
+      },
+      {
+        "term": "rain",
+        "definition": "water falling from clouds",
+        "context": "It is going to rain this afternoon."
+      },
+      {
+        "term": "snow",
+        "definition": "frozen white flakes falling from the sky",
+        "context": "Children love playing in the snow."
+      },
+      {
+        "term": "hot",
+        "definition": "having a high temperature",
+        "context": "It is very hot in summer."
+      },
+      {
+        "term": "cold",
+        "definition": "having a low temperature",
+        "context": "It is cold outside today."
+      },
+      {
+        "term": "wind",
+        "definition": "moving air",
+        "context": "The wind is blowing hard."
+      },
+      {
+        "term": "tree",
+        "definition": "a tall plant with a trunk and branches",
+        "context": "There is a big tree in the garden."
+      },
+      {
+        "term": "flower",
+        "definition": "the colorful part of a plant",
+        "context": "She gave me a beautiful flower."
+      },
+      {
+        "term": "animal",
+        "definition": "a living creature that is not a plant",
+        "context": "A dog is a popular animal."
+      },
+      {
+        "term": "dog",
+        "definition": "a common pet animal",
+        "context": "My dog likes to play in the park."
+      },
+      {
+        "term": "cat",
+        "definition": "a small furry pet animal",
+        "context": "The cat is sleeping on the sofa."
+      },
+      {
+        "term": "bird",
+        "definition": "an animal with wings that can fly",
+        "context": "A bird is singing in the tree."
+      },
+      {
+        "term": "sea",
+        "definition": "a large body of salt water",
+        "context": "We swim in the sea in summer."
+      },
+      {
+        "term": "river",
+        "definition": "a large stream of water flowing to the sea",
+        "context": "The river runs through the city."
+      },
+      {
+        "term": "mountain",
+        "definition": "a very high area of land",
+        "context": "We climbed a mountain last weekend."
+      },
+      {
+        "term": "be",
+        "definition": "to exist or have a state",
+        "context": "I want to be happy."
+      },
+      {
+        "term": "have",
+        "definition": "to own or possess",
+        "context": "I have a big family."
+      },
+      {
+        "term": "do",
+        "definition": "to perform an action",
+        "context": "What do you do for a living?"
+      },
+      {
+        "term": "go",
+        "definition": "to move from one place to another",
+        "context": "I go to school every day."
+      },
+      {
+        "term": "come",
+        "definition": "to move toward the speaker",
+        "context": "Come here, please."
+      },
+      {
+        "term": "eat",
+        "definition": "to put food in your mouth and swallow",
+        "context": "We eat breakfast at seven."
+      },
+      {
+        "term": "drink",
+        "definition": "to take in liquid",
+        "context": "I drink a lot of water."
+      },
+      {
+        "term": "sleep",
+        "definition": "to rest with eyes closed",
+        "context": "I sleep eight hours a night."
+      },
+      {
+        "term": "read",
+        "definition": "to look at and understand written words",
+        "context": "She likes to read books."
+      },
+      {
+        "term": "write",
+        "definition": "to form letters or words on paper",
+        "context": "Can you write your name here?"
+      },
+      {
+        "term": "speak",
+        "definition": "to say words",
+        "context": "Do you speak English?"
+      },
+      {
+        "term": "listen",
+        "definition": "to pay attention to sound",
+        "context": "Listen to the music."
+      },
+      {
+        "term": "see",
+        "definition": "to notice with your eyes",
+        "context": "I can see the mountains from here."
+      },
+      {
+        "term": "look",
+        "definition": "to direct your eyes at something",
+        "context": "Look at this picture!"
+      },
+      {
+        "term": "know",
+        "definition": "to have information in your mind",
+        "context": "I know the answer."
+      },
+      {
+        "term": "want",
+        "definition": "to wish for something",
+        "context": "I want a glass of water."
+      },
+      {
+        "term": "like",
+        "definition": "to enjoy or find pleasant",
+        "context": "I like chocolate ice cream."
+      },
+      {
+        "term": "love",
+        "definition": "to feel deep affection for",
+        "context": "I love my family."
+      },
+      {
+        "term": "need",
+        "definition": "to require something",
+        "context": "I need to buy some bread."
+      },
+      {
+        "term": "take",
+        "definition": "to get hold of something",
+        "context": "Take your umbrella, it might rain."
+      },
+      {
+        "term": "give",
+        "definition": "to hand something to someone",
+        "context": "Can you give me that book?"
+      },
+      {
+        "term": "make",
+        "definition": "to create or produce something",
+        "context": "She makes good coffee."
+      },
+      {
+        "term": "think",
+        "definition": "to use your mind to form ideas",
+        "context": "I think this is a good idea."
+      },
+      {
+        "term": "say",
+        "definition": "to express in words",
+        "context": "What did you say?"
+      },
+      {
+        "term": "tell",
+        "definition": "to give information to someone",
+        "context": "Tell me about your day."
+      },
+      {
+        "term": "ask",
+        "definition": "to request information",
+        "context": "Can I ask you a question?"
+      },
+      {
+        "term": "help",
+        "definition": "to give assistance",
+        "context": "Can you help me, please?"
+      },
+      {
+        "term": "work",
+        "definition": "to do a job or task",
+        "context": "I work in an office."
+      },
+      {
+        "term": "play",
+        "definition": "to do an activity for fun",
+        "context": "The children play in the park."
+      },
+      {
+        "term": "run",
+        "definition": "to move quickly on foot",
+        "context": "He runs every morning."
+      },
+      {
+        "term": "walk",
+        "definition": "to move on foot at a normal speed",
+        "context": "I walk to the station."
+      },
+      {
+        "term": "sit",
+        "definition": "to rest on a chair or seat",
+        "context": "Please sit down."
+      },
+      {
+        "term": "stand",
+        "definition": "to be on your feet",
+        "context": "Stand up, please."
+      },
+      {
+        "term": "open",
+        "definition": "to make something no longer closed",
+        "context": "Open the door, please."
+      },
+      {
+        "term": "close",
+        "definition": "to shut something",
+        "context": "Close the window, it is cold."
+      },
+      {
+        "term": "stop",
+        "definition": "to not continue moving or doing",
+        "context": "The bus stops here."
+      },
+      {
+        "term": "start",
+        "definition": "to begin doing something",
+        "context": "The movie starts at seven."
+      },
+      {
+        "term": "buy",
+        "definition": "to get something by paying money",
+        "context": "I want to buy a new shirt."
+      },
+      {
+        "term": "pay",
+        "definition": "to give money for something",
+        "context": "I need to pay the bill."
+      },
+      {
+        "term": "wait",
+        "definition": "to stay in one place until something happens",
+        "context": "Wait for me at the door."
+      },
+      {
+        "term": "call",
+        "definition": "to phone or shout to someone",
+        "context": "I will call you later."
+      },
+      {
+        "term": "put",
+        "definition": "to place something somewhere",
+        "context": "Put the book on the table."
+      },
+      {
+        "term": "live",
+        "definition": "to reside in a place",
+        "context": "I live in a small apartment."
+      },
+      {
+        "term": "try",
+        "definition": "to make an effort to do something",
+        "context": "Try this cake, it is delicious."
+      },
+      {
+        "term": "learn",
+        "definition": "to gain knowledge or skill",
+        "context": "I want to learn English."
+      },
+      {
+        "term": "study",
+        "definition": "to spend time learning",
+        "context": "She studies at the library."
+      },
+      {
+        "term": "teach",
+        "definition": "to help someone learn",
+        "context": "He teaches English at school."
+      },
+      {
+        "term": "understand",
+        "definition": "to know the meaning of something",
+        "context": "I do not understand this word."
+      },
+      {
+        "term": "wash",
+        "definition": "to clean with water",
+        "context": "Wash your hands before eating."
+      },
+      {
+        "term": "cook",
+        "definition": "to prepare food by heating",
+        "context": "My mother cooks dinner every day."
+      },
+      {
+        "term": "drive",
+        "definition": "to control a vehicle",
+        "context": "She drives to work."
+      },
+      {
+        "term": "fly",
+        "definition": "to travel through the air",
+        "context": "We fly to London tomorrow."
+      },
+      {
+        "term": "swim",
+        "definition": "to move through water",
+        "context": "He can swim very well."
+      },
+      {
+        "term": "sing",
+        "definition": "to make music with your voice",
+        "context": "She sings beautifully."
+      },
+      {
+        "term": "dance",
+        "definition": "to move rhythmically to music",
+        "context": "They dance every Saturday."
+      },
+      {
+        "term": "feel",
+        "definition": "to experience an emotion or sensation",
+        "context": "I feel happy today."
+      },
+      {
+        "term": "find",
+        "definition": "to discover something",
+        "context": "I cannot find my keys."
+      },
+      {
+        "term": "get",
+        "definition": "to obtain or receive",
+        "context": "I get up at six every morning."
+      },
+      {
+        "term": "bring",
+        "definition": "to carry something to a place",
+        "context": "Bring your homework to class."
+      },
+      {
+        "term": "leave",
+        "definition": "to go away from a place",
+        "context": "I leave home at eight."
+      },
+      {
+        "term": "turn",
+        "definition": "to change direction",
+        "context": "Turn left at the traffic lights."
+      },
+      {
+        "term": "use",
+        "definition": "to do something with an object or tool",
+        "context": "I use a computer at work."
+      },
+      {
+        "term": "watch",
+        "definition": "to look at something for a period of time",
+        "context": "We watch TV in the evening."
+      },
+      {
+        "term": "show",
+        "definition": "to let someone see something",
+        "context": "Show me your new phone."
+      },
+      {
+        "term": "move",
+        "definition": "to change position or place",
+        "context": "We are going to move to a new house."
+      },
+      {
+        "term": "change",
+        "definition": "to make or become different",
+        "context": "I need to change my clothes."
+      },
+      {
+        "term": "send",
+        "definition": "to cause something to go to another place",
+        "context": "I will send you an email."
+      },
+      {
+        "term": "meet",
+        "definition": "to come together with someone",
+        "context": "I will meet you at the café."
+      },
+      {
+        "term": "finish",
+        "definition": "to complete something",
+        "context": "I need to finish my homework."
+      },
+      {
+        "term": "carry",
+        "definition": "to hold and move something",
+        "context": "He carries his bag to school."
+      },
+      {
+        "term": "wear",
+        "definition": "to have clothing on your body",
+        "context": "She wears a blue jacket."
+      },
+      {
+        "term": "stay",
+        "definition": "to remain in a place",
+        "context": "Stay here, I will be back soon."
+      },
+      {
+        "term": "big",
+        "definition": "large in size",
+        "context": "They live in a big house."
+      },
+      {
+        "term": "small",
+        "definition": "little in size",
+        "context": "The kitten is very small."
+      },
+      {
+        "term": "good",
+        "definition": "of high quality or pleasant",
+        "context": "This is a good book."
+      },
+      {
+        "term": "bad",
+        "definition": "of poor quality or unpleasant",
+        "context": "The weather is bad today."
+      },
+      {
+        "term": "new",
+        "definition": "recently made or discovered",
+        "context": "I have a new phone."
+      },
+      {
+        "term": "old",
+        "definition": "having existed for a long time",
+        "context": "This building is very old."
+      },
+      {
+        "term": "happy",
+        "definition": "feeling pleased or joyful",
+        "context": "I am happy to see you."
+      },
+      {
+        "term": "sad",
+        "definition": "feeling unhappy",
+        "context": "She feels sad today."
+      },
+      {
+        "term": "nice",
+        "definition": "pleasant or attractive",
+        "context": "He is a nice person."
+      },
+      {
+        "term": "beautiful",
+        "definition": "very attractive to look at",
+        "context": "The garden is beautiful in spring."
+      },
+      {
+        "term": "long",
+        "definition": "having great length",
+        "context": "The river is very long."
+      },
+      {
+        "term": "short",
+        "definition": "not long in length or height",
+        "context": "She has short hair."
+      },
+      {
+        "term": "tall",
+        "definition": "having great height",
+        "context": "He is very tall for his age."
+      },
+      {
+        "term": "fast",
+        "definition": "moving quickly",
+        "context": "The train is very fast."
+      },
+      {
+        "term": "slow",
+        "definition": "not moving quickly",
+        "context": "The turtle is slow."
+      },
+      {
+        "term": "easy",
+        "definition": "not difficult",
+        "context": "This exercise is easy."
+      },
+      {
+        "term": "difficult",
+        "definition": "hard to do or understand",
+        "context": "The exam was very difficult."
+      },
+      {
+        "term": "important",
+        "definition": "having great value or meaning",
+        "context": "Health is very important."
+      },
+      {
+        "term": "different",
+        "definition": "not the same",
+        "context": "Every person is different."
+      },
+      {
+        "term": "same",
+        "definition": "not different; identical",
+        "context": "We have the same teacher."
+      },
+      {
+        "term": "right",
+        "definition": "correct, or the opposite of left",
+        "context": "Turn right at the corner."
+      },
+      {
+        "term": "wrong",
+        "definition": "not correct",
+        "context": "This answer is wrong."
+      },
+      {
+        "term": "free",
+        "definition": "not costing money, or not restricted",
+        "context": "This app is free to download."
+      },
+      {
+        "term": "full",
+        "definition": "containing as much as possible",
+        "context": "The bus is full."
+      },
+      {
+        "term": "empty",
+        "definition": "containing nothing",
+        "context": "The bottle is empty."
+      },
+      {
+        "term": "clean",
+        "definition": "not dirty",
+        "context": "The kitchen is clean."
+      },
+      {
+        "term": "dirty",
+        "definition": "not clean",
+        "context": "Your shoes are dirty."
+      },
+      {
+        "term": "young",
+        "definition": "not old, early in life",
+        "context": "She is too young to drive."
+      },
+      {
+        "term": "tired",
+        "definition": "needing rest or sleep",
+        "context": "I am tired after work."
+      },
+      {
+        "term": "hungry",
+        "definition": "wanting food",
+        "context": "I am hungry, let us eat."
+      },
+      {
+        "term": "thirsty",
+        "definition": "wanting a drink",
+        "context": "I am thirsty after running."
+      },
+      {
+        "term": "open",
+        "definition": "not closed",
+        "context": "The shop is open until nine."
+      },
+      {
+        "term": "closed",
+        "definition": "not open",
+        "context": "The library is closed on Sunday."
+      },
+      {
+        "term": "cheap",
+        "definition": "not costing a lot of money",
+        "context": "This shirt is very cheap."
+      },
+      {
+        "term": "expensive",
+        "definition": "costing a lot of money",
+        "context": "That restaurant is too expensive."
+      },
+      {
+        "term": "safe",
+        "definition": "not in danger",
+        "context": "This area is safe at night."
+      },
+      {
+        "term": "ready",
+        "definition": "prepared for something",
+        "context": "I am ready to go."
+      },
+      {
+        "term": "sick",
+        "definition": "not feeling well",
+        "context": "He is sick and cannot come to work."
+      },
+      {
+        "term": "busy",
+        "definition": "having a lot to do",
+        "context": "I am busy this afternoon."
+      },
+      {
+        "term": "quiet",
+        "definition": "making little or no noise",
+        "context": "The library is a quiet place."
+      },
+      {
+        "term": "loud",
+        "definition": "making a lot of noise",
+        "context": "The music is too loud."
+      },
+      {
+        "term": "warm",
+        "definition": "slightly hot, comfortably heated",
+        "context": "It is warm and sunny today."
+      },
+      {
+        "term": "cool",
+        "definition": "slightly cold",
+        "context": "The evening air is cool."
+      },
+      {
+        "term": "interesting",
+        "definition": "holding your attention",
+        "context": "The film was very interesting."
+      },
+      {
+        "term": "favorite",
+        "definition": "the one you like the most",
+        "context": "Pizza is my favorite food."
+      },
+      {
+        "term": "next",
+        "definition": "coming after this one",
+        "context": "The next bus arrives in ten minutes."
+      },
+      {
+        "term": "little",
+        "definition": "small in size or amount",
+        "context": "She has a little garden."
+      },
+      {
+        "term": "many",
+        "definition": "a large number of",
+        "context": "There are many books on the shelf."
+      },
+      {
+        "term": "much",
+        "definition": "a large amount of",
+        "context": "I do not have much time."
+      },
+      {
+        "term": "every",
+        "definition": "each one without exception",
+        "context": "I brush my teeth every morning."
+      },
+      {
+        "term": "all",
+        "definition": "the whole amount or number",
+        "context": "All the students passed the test."
+      },
+      {
+        "term": "some",
+        "definition": "an unspecified amount",
+        "context": "Would you like some tea?"
+      },
+      {
+        "term": "other",
+        "definition": "additional or different",
+        "context": "Do you have any other questions?"
+      },
+      {
+        "term": "only",
+        "definition": "just, nothing more",
+        "context": "She is the only child in the family."
+      },
+      {
+        "term": "in",
+        "definition": "inside a place or thing",
+        "context": "The cat is in the box."
+      },
+      {
+        "term": "on",
+        "definition": "resting on a surface",
+        "context": "The keys are on the table."
+      },
+      {
+        "term": "at",
+        "definition": "used to show a specific place or time",
+        "context": "I am at the station."
+      },
+      {
+        "term": "to",
+        "definition": "in the direction of",
+        "context": "I walk to school every day."
+      },
+      {
+        "term": "from",
+        "definition": "starting at a particular place or time",
+        "context": "I am from France."
+      },
+      {
+        "term": "with",
+        "definition": "together or accompanied by",
+        "context": "I live with my parents."
+      },
+      {
+        "term": "for",
+        "definition": "intended to belong to or benefit",
+        "context": "This gift is for you."
+      },
+      {
+        "term": "about",
+        "definition": "on the subject of",
+        "context": "Tell me about your family."
+      },
+      {
+        "term": "after",
+        "definition": "following in time",
+        "context": "We go home after school."
+      },
+      {
+        "term": "before",
+        "definition": "earlier in time",
+        "context": "Wash your hands before dinner."
+      },
+      {
+        "term": "between",
+        "definition": "in the space separating two things",
+        "context": "The bank is between the shop and the park."
+      },
+      {
+        "term": "under",
+        "definition": "below something",
+        "context": "The cat is under the bed."
+      },
+      {
+        "term": "near",
+        "definition": "close to",
+        "context": "The school is near my house."
+      },
+      {
+        "term": "and",
+        "definition": "used to connect words or ideas",
+        "context": "I have a cat and a dog."
+      },
+      {
+        "term": "but",
+        "definition": "used to show contrast",
+        "context": "I like coffee but not tea."
+      },
+      {
+        "term": "or",
+        "definition": "used to show alternatives",
+        "context": "Do you want tea or coffee?"
+      },
+      {
+        "term": "because",
+        "definition": "for the reason that",
+        "context": "I am happy because it is Friday."
+      },
+      {
+        "term": "if",
+        "definition": "on the condition that",
+        "context": "If it rains, we stay home."
+      },
+      {
+        "term": "when",
+        "definition": "at the time that",
+        "context": "I read when I have free time."
+      },
+      {
+        "term": "very",
+        "definition": "to a great degree",
+        "context": "She is very kind."
+      },
+      {
+        "term": "also",
+        "definition": "in addition",
+        "context": "I also speak Spanish."
+      },
+      {
+        "term": "here",
+        "definition": "in this place",
+        "context": "Come here, please."
+      },
+      {
+        "term": "there",
+        "definition": "in that place",
+        "context": "The park is over there."
+      },
+      {
+        "term": "how",
+        "definition": "in what way or manner",
+        "context": "How are you?"
+      },
+      {
+        "term": "what",
+        "definition": "used to ask about something",
+        "context": "What is your name?"
+      },
+      {
+        "term": "where",
+        "definition": "used to ask about a place",
+        "context": "Where do you live?"
+      },
+      {
+        "term": "who",
+        "definition": "used to ask about a person",
+        "context": "Who is your teacher?"
+      },
+      {
+        "term": "why",
+        "definition": "used to ask for a reason",
+        "context": "Why are you late?"
+      },
+      {
+        "term": "clothes",
+        "definition": "things you wear on your body",
+        "context": "I need new clothes for winter."
+      },
+      {
+        "term": "shirt",
+        "definition": "a piece of clothing for the upper body",
+        "context": "He is wearing a white shirt."
+      },
+      {
+        "term": "shoe",
+        "definition": "a covering for the foot",
+        "context": "I bought new shoes yesterday."
+      },
+      {
+        "term": "hat",
+        "definition": "a covering for the head",
+        "context": "She wears a hat in the sun."
+      },
+      {
+        "term": "dress",
+        "definition": "a one-piece garment for women",
+        "context": "She looks lovely in that dress."
+      },
+      {
+        "term": "coat",
+        "definition": "a warm outer garment",
+        "context": "Put on your coat, it is cold."
+      },
+      {
+        "term": "name",
+        "definition": "what a person or thing is called",
+        "context": "My name is Maria."
+      },
+      {
+        "term": "language",
+        "definition": "a system of communication",
+        "context": "English is an important language."
+      },
+      {
+        "term": "word",
+        "definition": "a single unit of language",
+        "context": "I learned a new word today."
+      },
+      {
+        "term": "question",
+        "definition": "something you ask",
+        "context": "Can I ask a question?"
+      },
+      {
+        "term": "answer",
+        "definition": "a response to a question",
+        "context": "I do not know the answer."
+      },
+      {
+        "term": "problem",
+        "definition": "a difficulty or challenge",
+        "context": "There is a problem with my phone."
+      },
+      {
+        "term": "thing",
+        "definition": "an object or item",
+        "context": "What is that thing on the table?"
+      },
+      {
+        "term": "place",
+        "definition": "a particular area or location",
+        "context": "This is a nice place to eat."
+      },
+      {
+        "term": "life",
+        "definition": "the existence of a person",
+        "context": "Life is beautiful."
+      },
+      {
+        "term": "job",
+        "definition": "paid work or employment",
+        "context": "She has a good job."
+      },
+      {
+        "term": "idea",
+        "definition": "a thought or suggestion",
+        "context": "That is a great idea!"
+      },
+      {
+        "term": "way",
+        "definition": "a method or direction",
+        "context": "This is the way to the park."
+      },
+      {
+        "term": "number",
+        "definition": "a figure like 1, 2, or 3",
+        "context": "What is your phone number?"
+      },
+      {
+        "term": "part",
+        "definition": "a piece of something",
+        "context": "This is the best part of the movie."
+      },
+      {
+        "term": "lot",
+        "definition": "a large amount",
+        "context": "I have a lot of homework."
+      },
+      {
+        "term": "kind",
+        "definition": "a type or category; also generous",
+        "context": "What kind of music do you like?"
+      },
+      {
+        "term": "again",
+        "definition": "one more time",
+        "context": "Say it again, please."
+      },
+      {
+        "term": "together",
+        "definition": "with each other",
+        "context": "We work together."
+      },
+      {
+        "term": "maybe",
+        "definition": "perhaps, possibly",
+        "context": "Maybe we can go tomorrow."
+      },
+      {
+        "term": "already",
+        "definition": "before now or earlier than expected",
+        "context": "I have already eaten."
+      },
+      {
+        "term": "still",
+        "definition": "continuing up to now",
+        "context": "She is still sleeping."
+      },
+      {
+        "term": "really",
+        "definition": "truly, in fact",
+        "context": "I really like this song."
+      },
+      {
+        "term": "just",
+        "definition": "only or exactly",
+        "context": "I just want to rest."
+      },
+      {
+        "term": "enough",
+        "definition": "as much as is needed",
+        "context": "I have enough money for lunch."
+      },
+      {
+        "term": "well",
+        "definition": "in a good way",
+        "context": "She speaks English very well."
+      },
+      {
+        "term": "then",
+        "definition": "after that, next",
+        "context": "First eat, then study."
+      },
+      {
+        "term": "so",
+        "definition": "therefore; to such a degree",
+        "context": "I was tired, so I went to bed."
+      },
+      {
+        "term": "too",
+        "definition": "more than needed; also",
+        "context": "This room is too small."
+      },
+      {
+        "term": "more",
+        "definition": "a greater amount",
+        "context": "I want more time."
+      },
+      {
+        "term": "less",
+        "definition": "a smaller amount",
+        "context": "I need to eat less sugar."
+      },
+      {
+        "term": "something",
+        "definition": "an unspecified thing",
+        "context": "I want to eat something."
+      },
+      {
+        "term": "nothing",
+        "definition": "not anything",
+        "context": "There is nothing in the fridge."
+      },
+      {
+        "term": "everything",
+        "definition": "all things",
+        "context": "Everything is fine."
+      },
+      {
+        "term": "everyone",
+        "definition": "all people",
+        "context": "Everyone is welcome."
+      },
+      {
+        "term": "someone",
+        "definition": "an unknown person",
+        "context": "Someone is knocking on the door."
+      },
+      {
+        "term": "no one",
+        "definition": "not a single person",
+        "context": "No one knows the answer."
+      }
+    ]
+  }
+}

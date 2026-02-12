@@ -21,7 +21,7 @@ import { sizes } from '@/constants';
 import { deckRepository } from '@/data/repositories';
 import { DEFAULT_DECK_COLORS } from '@/core/database/schema';
 import { importDeckFromFile } from '@/core/services/importService';
-import type { Deck, CreateDeckInput } from '@/types/models';
+import type { Deck, CreateDeckInput, UpdateDeckInput } from '@/types/models';
 
 type DeckListScreenProps = NativeStackScreenProps<RootStackParamList, 'Deck'>;
 
@@ -38,6 +38,14 @@ export const DeckListScreen: React.FC<DeckListScreenProps> = ({ navigation }) =>
   const [selectedColor, setSelectedColor] = React.useState<string>(DEFAULT_DECK_COLORS[0]);
   const [creating, setCreating] = React.useState(false);
   const [importing, setImporting] = React.useState(false);
+
+  // Edit deck state
+  const [showEditModal, setShowEditModal] = React.useState(false);
+  const [editingDeck, setEditingDeck] = React.useState<Deck | null>(null);
+  const [editDeckName, setEditDeckName] = React.useState('');
+  const [editDeckDescription, setEditDeckDescription] = React.useState('');
+  const [editSelectedColor, setEditSelectedColor] = React.useState<string>(DEFAULT_DECK_COLORS[0]);
+  const [updating, setUpdating] = React.useState(false);
 
   React.useEffect(() => {
     loadDecks();
@@ -102,6 +110,43 @@ export const DeckListScreen: React.FC<DeckListScreenProps> = ({ navigation }) =>
     navigation.navigate('DeckDetail', { deckId: deck.id, deckName: deck.name });
   };
 
+  const handleEditDeck = (deck: Deck) => {
+    setEditingDeck(deck);
+    setEditDeckName(deck.name);
+    setEditDeckDescription(deck.description ?? '');
+    setEditSelectedColor(deck.color);
+    setShowEditModal(true);
+  };
+
+  const handleUpdateDeck = async () => {
+    if (!editingDeck) return;
+    if (!editDeckName.trim()) {
+      Alert.alert('Error', 'Please enter a deck name');
+      return;
+    }
+
+    try {
+      setUpdating(true);
+
+      const input: UpdateDeckInput = {
+        name: editDeckName.trim(),
+        description: editDeckDescription.trim() || undefined,
+        color: editSelectedColor,
+      };
+
+      await deckRepository.updateDeck(editingDeck.id, input);
+
+      setShowEditModal(false);
+      setEditingDeck(null);
+      await loadDecks();
+    } catch (error) {
+      console.error('Failed to update deck:', error);
+      Alert.alert('Error', 'Failed to update deck');
+    } finally {
+      setUpdating(false);
+    }
+  };
+
   const handleImportDeck = async () => {
     if (importing) return;
     setImporting(true);
@@ -151,22 +196,25 @@ export const DeckListScreen: React.FC<DeckListScreenProps> = ({ navigation }) =>
         {/* Global Deck */}
         {globalDeck && (
           <View style={styles.section}>
-            <Text style={styles.sectionTitle}>📚 All Cards</Text>
+            <Text style={styles.sectionTitle}>All Cards</Text>
             <DeckCard deck={globalDeck} onPress={handleDeckPress} />
           </View>
         )}
 
         {/* User Decks */}
         <View style={styles.section}>
-          <View style={styles.sectionHeader}>
-            <Text style={styles.sectionTitle}>🎯 My Decks</Text>
-            <TouchableOpacity
-              style={styles.addButton}
-              onPress={() => setShowCreateModal(true)}
-            >
-              <Text style={styles.addButtonText}>+ New Deck</Text>
-            </TouchableOpacity>
-          </View>
+          <Text style={styles.sectionTitle}>My Decks</Text>
+
+          {/* New Deck — full width */}
+          <TouchableOpacity
+            style={styles.newDeckButton}
+            onPress={() => setShowCreateModal(true)}
+            activeOpacity={0.7}
+          >
+            <Ionicons name="add-circle-outline" size={20} color={colors.text.inverse} />
+            <Text style={styles.newDeckButtonText}>New Deck</Text>
+          </TouchableOpacity>
+
           {/* Import & Online Decks actions */}
           <View style={styles.actionRow}>
             <TouchableOpacity
@@ -210,11 +258,97 @@ export const DeckListScreen: React.FC<DeckListScreenProps> = ({ navigation }) =>
             </View>
           ) : (
             decks.map((deck) => (
-              <DeckCard key={deck.id} deck={deck} onPress={handleDeckPress} />
+              <DeckCard key={deck.id} deck={deck} onPress={handleDeckPress} onEdit={handleEditDeck} />
             ))
           )}
         </View>
       </ScrollView>
+
+      {/* Edit Deck Modal */}
+      <Modal
+        visible={showEditModal}
+        animationType="slide"
+        transparent={true}
+        onRequestClose={() => setShowEditModal(false)}
+      >
+        <View style={styles.modalOverlay}>
+          <View style={styles.modalContent}>
+            <View style={styles.modalHeader}>
+              <Text style={styles.modalTitle}>Edit Deck</Text>
+              <TouchableOpacity
+                onPress={() => setShowEditModal(false)}
+                hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+              >
+                <Text style={styles.closeButton}>✕</Text>
+              </TouchableOpacity>
+            </View>
+
+            <View style={styles.form}>
+              <Text style={styles.label}>Deck Name *</Text>
+              <TextInput
+                style={styles.input}
+                value={editDeckName}
+                onChangeText={setEditDeckName}
+                placeholder="e.g., Business English"
+                placeholderTextColor={colors.text.tertiary}
+                autoFocus
+              />
+
+              <Text style={styles.label}>Description (Optional)</Text>
+              <TextInput
+                style={[styles.input, styles.textArea]}
+                value={editDeckDescription}
+                onChangeText={setEditDeckDescription}
+                placeholder="What's this deck about?"
+                placeholderTextColor={colors.text.tertiary}
+                multiline
+                numberOfLines={3}
+              />
+
+              <Text style={styles.label}>Choose Color</Text>
+              <View style={styles.colorPicker}>
+                {DEFAULT_DECK_COLORS.map((color) => (
+                  <TouchableOpacity
+                    key={color}
+                    style={[
+                      styles.colorOption,
+                      { backgroundColor: color },
+                      editSelectedColor === color && styles.colorOptionSelected,
+                    ]}
+                    onPress={() => setEditSelectedColor(color)}
+                  />
+                ))}
+              </View>
+            </View>
+
+            <View style={styles.modalActions}>
+              <TouchableOpacity
+                style={[styles.modalButton, styles.cancelButton]}
+                onPress={() => setShowEditModal(false)}
+                disabled={updating}
+              >
+                <Text style={styles.cancelButtonText}>Cancel</Text>
+              </TouchableOpacity>
+
+              <TouchableOpacity
+                style={[
+                  styles.modalButton,
+                  styles.createButton,
+                  { backgroundColor: editSelectedColor },
+                ]}
+                onPress={handleUpdateDeck}
+                disabled={updating}
+              >
+                {updating ? (
+                  <ActivityIndicator size="small" color={colors.text.inverse} />
+                ) : (
+                  <Text style={styles.createButtonText}>Save</Text>
+                )}
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+      </Modal>
 
       {/* Create Deck Modal */}
       <Modal
@@ -343,27 +477,26 @@ const createStyles = (colors: ThemeColors) => StyleSheet.create({
   section: {
     marginBottom: sizes.spacing.xl,
   },
-  sectionHeader: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginBottom: sizes.spacing.md,
-  },
   sectionTitle: {
     fontSize: sizes.fontSize.xl,
     fontWeight: '700',
     color: colors.text.primary,
+    marginBottom: sizes.spacing.md,
   },
-  addButton: {
+  newDeckButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
     backgroundColor: colors.primary,
-    paddingHorizontal: sizes.spacing.md,
-    paddingVertical: sizes.spacing.sm,
+    paddingVertical: sizes.spacing.sm + 2,
     borderRadius: sizes.radius.lg,
+    marginBottom: sizes.spacing.sm,
+    gap: sizes.spacing.xs,
   },
-  addButtonText: {
+  newDeckButtonText: {
     color: colors.text.inverse,
-    fontSize: sizes.fontSize.sm,
-    fontWeight: '600',
+    fontSize: sizes.fontSize.md,
+    fontWeight: '700',
   },
   emptyState: {
     alignItems: 'center',

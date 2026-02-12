@@ -1,0 +1,1686 @@
+{
+  "version": "1.0",
+  "exportedAt": "2026-02-12T00:00:00.000Z",
+  "deck": {
+    "name": "B1 – Intermediate Vocabulary",
+    "description": "Intermediate: express opinions, discuss work, health, and handle most travel situations.",
+    "language": "en",
+    "cards": [
+      {
+        "term": "ability",
+        "definition": "the power or skill to do something",
+        "context": "She has the ability to solve complex problems."
+      },
+      {
+        "term": "advantage",
+        "definition": "a condition that puts you in a better position",
+        "context": "Speaking two languages is a great advantage."
+      },
+      {
+        "term": "achievement",
+        "definition": "something accomplished through effort",
+        "context": "Graduating from university was a huge achievement."
+      },
+      {
+        "term": "aim",
+        "definition": "a purpose or intention",
+        "context": "My aim is to speak English fluently."
+      },
+      {
+        "term": "amount",
+        "definition": "a quantity of something",
+        "context": "She spends a large amount of time reading."
+      },
+      {
+        "term": "appearance",
+        "definition": "the way someone or something looks",
+        "context": "First impressions depend a lot on appearance."
+      },
+      {
+        "term": "argument",
+        "definition": "a disagreement or reason given",
+        "context": "They had an argument about where to go."
+      },
+      {
+        "term": "arrangement",
+        "definition": "a plan or preparation",
+        "context": "We made arrangements for the meeting."
+      },
+      {
+        "term": "attention",
+        "definition": "the act of focusing the mind",
+        "context": "Pay attention to the instructions."
+      },
+      {
+        "term": "attitude",
+        "definition": "a way of thinking or feeling about something",
+        "context": "A positive attitude helps you succeed."
+      },
+      {
+        "term": "authority",
+        "definition": "the power to give orders or make decisions",
+        "context": "The police have the authority to stop cars."
+      },
+      {
+        "term": "average",
+        "definition": "typical; the usual amount",
+        "context": "The average temperature in July is 25 degrees."
+      },
+      {
+        "term": "awareness",
+        "definition": "knowledge that something exists",
+        "context": "There is growing awareness of climate change."
+      },
+      {
+        "term": "balance",
+        "definition": "an even distribution; equilibrium",
+        "context": "It is important to find a good work-life balance."
+      },
+      {
+        "term": "benefit",
+        "definition": "an advantage or good result",
+        "context": "Exercise has many health benefits."
+      },
+      {
+        "term": "behavior",
+        "definition": "the way someone acts",
+        "context": "Good behavior is expected in class."
+      },
+      {
+        "term": "cause",
+        "definition": "the reason something happens",
+        "context": "The cause of the accident is still unknown."
+      },
+      {
+        "term": "challenge",
+        "definition": "a difficult task that tests ability",
+        "context": "Learning a new language is a real challenge."
+      },
+      {
+        "term": "choice",
+        "definition": "the act of selecting between options",
+        "context": "You have a choice between tea and coffee."
+      },
+      {
+        "term": "community",
+        "definition": "a group of people living in the same area",
+        "context": "Our community organized a cleanup day."
+      },
+      {
+        "term": "competition",
+        "definition": "a contest or rivalry",
+        "context": "There is strong competition for the job."
+      },
+      {
+        "term": "condition",
+        "definition": "the state of something; a requirement",
+        "context": "The car is in good condition."
+      },
+      {
+        "term": "confidence",
+        "definition": "belief in your own ability",
+        "context": "She spoke with great confidence."
+      },
+      {
+        "term": "connection",
+        "definition": "a link between things or people",
+        "context": "There is a strong connection between diet and health."
+      },
+      {
+        "term": "consequence",
+        "definition": "a result of an action",
+        "context": "Every action has consequences."
+      },
+      {
+        "term": "content",
+        "definition": "what is contained in something; also satisfied",
+        "context": "The content of the article was very informative."
+      },
+      {
+        "term": "contrast",
+        "definition": "a clear difference between two things",
+        "context": "There is a strong contrast between the two paintings."
+      },
+      {
+        "term": "contribution",
+        "definition": "something given to help",
+        "context": "Thank you for your contribution to the project."
+      },
+      {
+        "term": "control",
+        "definition": "the power to direct or manage",
+        "context": "The pilot has control of the plane."
+      },
+      {
+        "term": "conversation",
+        "definition": "a talk between two or more people",
+        "context": "We had an interesting conversation about travel."
+      },
+      {
+        "term": "accept",
+        "definition": "to agree to receive or take",
+        "context": "She accepted the job offer."
+      },
+      {
+        "term": "admit",
+        "definition": "to confess or acknowledge",
+        "context": "He admitted that he was wrong."
+      },
+      {
+        "term": "advise",
+        "definition": "to give a suggestion about what to do",
+        "context": "I advise you to study harder."
+      },
+      {
+        "term": "announce",
+        "definition": "to make a public statement",
+        "context": "They announced the results this morning."
+      },
+      {
+        "term": "apologize",
+        "definition": "to say sorry for something",
+        "context": "He apologized for being late."
+      },
+      {
+        "term": "approve",
+        "definition": "to officially agree to something",
+        "context": "The board approved the new plan."
+      },
+      {
+        "term": "argue",
+        "definition": "to express disagreement",
+        "context": "They argue about politics all the time."
+      },
+      {
+        "term": "claim",
+        "definition": "to state that something is true",
+        "context": "He claims to be an expert."
+      },
+      {
+        "term": "communicate",
+        "definition": "to share information with others",
+        "context": "It is important to communicate clearly."
+      },
+      {
+        "term": "confirm",
+        "definition": "to verify or make certain",
+        "context": "Please confirm your reservation by email."
+      },
+      {
+        "term": "convince",
+        "definition": "to make someone believe something is true",
+        "context": "She convinced me to change my mind."
+      },
+      {
+        "term": "deny",
+        "definition": "to say that something is not true",
+        "context": "He denied stealing the money."
+      },
+      {
+        "term": "disagree",
+        "definition": "to have a different opinion",
+        "context": "I disagree with that statement."
+      },
+      {
+        "term": "encourage",
+        "definition": "to give support or confidence to someone",
+        "context": "My teacher encouraged me to apply for the scholarship."
+      },
+      {
+        "term": "express",
+        "definition": "to communicate thoughts or feelings",
+        "context": "She expressed her gratitude."
+      },
+      {
+        "term": "inform",
+        "definition": "to tell someone about something",
+        "context": "We will inform you of the results next week."
+      },
+      {
+        "term": "insist",
+        "definition": "to demand something firmly",
+        "context": "She insisted on paying for dinner."
+      },
+      {
+        "term": "mention",
+        "definition": "to refer to briefly",
+        "context": "He mentioned the meeting during lunch."
+      },
+      {
+        "term": "persuade",
+        "definition": "to cause someone to do something through reasoning",
+        "context": "I persuaded him to join the team."
+      },
+      {
+        "term": "recommend",
+        "definition": "to suggest as good or suitable",
+        "context": "I recommend this restaurant."
+      },
+      {
+        "term": "refuse",
+        "definition": "to say no to something",
+        "context": "She refused to answer the question."
+      },
+      {
+        "term": "remind",
+        "definition": "to help someone remember",
+        "context": "Remind me to call the dentist."
+      },
+      {
+        "term": "reply",
+        "definition": "to give an answer",
+        "context": "She replied to my email immediately."
+      },
+      {
+        "term": "report",
+        "definition": "to give an account of something",
+        "context": "The journalist reported the story."
+      },
+      {
+        "term": "suggest",
+        "definition": "to put forward an idea",
+        "context": "I suggest we take a break."
+      },
+      {
+        "term": "warn",
+        "definition": "to inform about a danger",
+        "context": "The sign warns visitors about the cliff edge."
+      },
+      {
+        "term": "apply",
+        "definition": "to make a formal request",
+        "context": "I applied for a new position."
+      },
+      {
+        "term": "career",
+        "definition": "a profession or long-term job path",
+        "context": "She has had a successful career in medicine."
+      },
+      {
+        "term": "client",
+        "definition": "a person who uses professional services",
+        "context": "The lawyer met with her client."
+      },
+      {
+        "term": "contract",
+        "definition": "a formal written agreement",
+        "context": "She signed a two-year contract."
+      },
+      {
+        "term": "deadline",
+        "definition": "the latest time by which something must be done",
+        "context": "The deadline for the report is Friday."
+      },
+      {
+        "term": "department",
+        "definition": "a section of a large organization",
+        "context": "He works in the marketing department."
+      },
+      {
+        "term": "employ",
+        "definition": "to give someone a job",
+        "context": "The company employs 200 workers."
+      },
+      {
+        "term": "industry",
+        "definition": "an area of economic activity",
+        "context": "The tourism industry is very important here."
+      },
+      {
+        "term": "manager",
+        "definition": "a person who runs a business or department",
+        "context": "The manager approved the holiday request."
+      },
+      {
+        "term": "organize",
+        "definition": "to arrange in a systematic way",
+        "context": "She organized a team-building event."
+      },
+      {
+        "term": "professional",
+        "definition": "relating to a profession; skilled",
+        "context": "She is a professional photographer."
+      },
+      {
+        "term": "project",
+        "definition": "a planned piece of work",
+        "context": "We are working on a big project."
+      },
+      {
+        "term": "promote",
+        "definition": "to raise to a higher position",
+        "context": "She was promoted to senior manager."
+      },
+      {
+        "term": "qualify",
+        "definition": "to reach the required standard",
+        "context": "He qualified as a doctor last year."
+      },
+      {
+        "term": "resign",
+        "definition": "to give up a job voluntarily",
+        "context": "She resigned from her position."
+      },
+      {
+        "term": "responsible",
+        "definition": "having a duty to take care of something",
+        "context": "He is responsible for the budget."
+      },
+      {
+        "term": "retire",
+        "definition": "to stop working permanently",
+        "context": "She plans to retire at 65."
+      },
+      {
+        "term": "schedule",
+        "definition": "a plan of events and times",
+        "context": "My schedule is very busy this week."
+      },
+      {
+        "term": "skill",
+        "definition": "an ability developed through practice",
+        "context": "Communication is an important skill."
+      },
+      {
+        "term": "task",
+        "definition": "a piece of work to be done",
+        "context": "I completed all my tasks for the day."
+      },
+      {
+        "term": "training",
+        "definition": "learning skills for a specific job",
+        "context": "New employees receive two weeks of training."
+      },
+      {
+        "term": "appointment",
+        "definition": "an arranged meeting at a specific time",
+        "context": "I have a dentist appointment on Tuesday."
+      },
+      {
+        "term": "cure",
+        "definition": "a treatment that makes a disease go away",
+        "context": "There is no cure for the common cold."
+      },
+      {
+        "term": "disease",
+        "definition": "an illness that affects the body",
+        "context": "Heart disease is a major health problem."
+      },
+      {
+        "term": "diet",
+        "definition": "the food a person regularly eats",
+        "context": "A balanced diet is important for health."
+      },
+      {
+        "term": "drug",
+        "definition": "a substance used as medicine",
+        "context": "The doctor prescribed a new drug."
+      },
+      {
+        "term": "energy",
+        "definition": "the strength to be active",
+        "context": "I do not have much energy in the afternoon."
+      },
+      {
+        "term": "fitness",
+        "definition": "the state of being physically healthy",
+        "context": "She goes to the gym to improve her fitness."
+      },
+      {
+        "term": "habit",
+        "definition": "something done regularly, often automatically",
+        "context": "Smoking is a bad habit."
+      },
+      {
+        "term": "infection",
+        "definition": "a disease caused by bacteria or viruses",
+        "context": "He has an ear infection."
+      },
+      {
+        "term": "injury",
+        "definition": "physical damage to the body",
+        "context": "She suffered a knee injury during the match."
+      },
+      {
+        "term": "mental",
+        "definition": "relating to the mind",
+        "context": "Mental health is just as important as physical health."
+      },
+      {
+        "term": "operation",
+        "definition": "a medical procedure involving cutting the body",
+        "context": "She had an operation on her knee."
+      },
+      {
+        "term": "patient",
+        "definition": "a person receiving medical treatment",
+        "context": "The doctor sees about 30 patients a day."
+      },
+      {
+        "term": "recover",
+        "definition": "to get well after an illness",
+        "context": "It took him two weeks to recover."
+      },
+      {
+        "term": "stress",
+        "definition": "mental or emotional pressure",
+        "context": "Too much stress can affect your health."
+      },
+      {
+        "term": "suffer",
+        "definition": "to experience pain or difficulty",
+        "context": "She suffers from allergies in spring."
+      },
+      {
+        "term": "symptom",
+        "definition": "a sign of illness",
+        "context": "A fever is a common symptom of the flu."
+      },
+      {
+        "term": "treat",
+        "definition": "to give medical care",
+        "context": "The doctor treated the wound."
+      },
+      {
+        "term": "weight",
+        "definition": "how heavy something is",
+        "context": "I need to lose some weight."
+      },
+      {
+        "term": "wellbeing",
+        "definition": "the state of being healthy and happy",
+        "context": "The company cares about employee wellbeing."
+      },
+      {
+        "term": "climate",
+        "definition": "the usual weather conditions in a region",
+        "context": "The climate here is mild and rainy."
+      },
+      {
+        "term": "countryside",
+        "definition": "land outside cities and towns",
+        "context": "I prefer living in the countryside."
+      },
+      {
+        "term": "crowd",
+        "definition": "a large group of people",
+        "context": "There was a huge crowd at the concert."
+      },
+      {
+        "term": "culture",
+        "definition": "the customs and beliefs of a group of people",
+        "context": "I enjoy learning about other cultures."
+      },
+      {
+        "term": "economy",
+        "definition": "the system of money and trade in a country",
+        "context": "The economy has been growing steadily."
+      },
+      {
+        "term": "election",
+        "definition": "the process of choosing a leader by voting",
+        "context": "The election will be held in November."
+      },
+      {
+        "term": "environment",
+        "definition": "the natural world around us",
+        "context": "We must protect the environment."
+      },
+      {
+        "term": "government",
+        "definition": "the group of people who run a country",
+        "context": "The government announced new taxes."
+      },
+      {
+        "term": "influence",
+        "definition": "the power to affect people or events",
+        "context": "Social media has a strong influence on young people."
+      },
+      {
+        "term": "issue",
+        "definition": "an important topic for discussion",
+        "context": "Climate change is a global issue."
+      },
+      {
+        "term": "law",
+        "definition": "a rule made by the government",
+        "context": "There is a new law about recycling."
+      },
+      {
+        "term": "level",
+        "definition": "a position on a scale; a floor of a building",
+        "context": "Your English is at an intermediate level."
+      },
+      {
+        "term": "media",
+        "definition": "newspapers, TV, and internet as a group",
+        "context": "The media reported on the election results."
+      },
+      {
+        "term": "nature",
+        "definition": "the physical world, including plants and animals",
+        "context": "I love spending time in nature."
+      },
+      {
+        "term": "neighbor",
+        "definition": "a person living next door or nearby",
+        "context": "Our neighbors are very friendly."
+      },
+      {
+        "term": "pollution",
+        "definition": "harmful substances in the environment",
+        "context": "Air pollution is a serious problem in big cities."
+      },
+      {
+        "term": "population",
+        "definition": "the number of people living in a place",
+        "context": "The population of this city is growing."
+      },
+      {
+        "term": "poverty",
+        "definition": "the state of being very poor",
+        "context": "Many families still live in poverty."
+      },
+      {
+        "term": "region",
+        "definition": "an area of a country or the world",
+        "context": "This region is known for its wine."
+      },
+      {
+        "term": "society",
+        "definition": "people living together as a group",
+        "context": "Technology has changed modern society."
+      },
+      {
+        "term": "tradition",
+        "definition": "a custom passed down through generations",
+        "context": "It is a tradition to eat turkey on Thanksgiving."
+      },
+      {
+        "term": "vote",
+        "definition": "to make a choice in an election",
+        "context": "Everyone should vote in the election."
+      },
+      {
+        "term": "waste",
+        "definition": "materials thrown away; to use carelessly",
+        "context": "Do not waste water."
+      },
+      {
+        "term": "achieve",
+        "definition": "to successfully reach a goal",
+        "context": "She achieved her dream of becoming a pilot."
+      },
+      {
+        "term": "affect",
+        "definition": "to have an impact on",
+        "context": "The weather affects my mood."
+      },
+      {
+        "term": "allow",
+        "definition": "to permit",
+        "context": "Smoking is not allowed in the building."
+      },
+      {
+        "term": "appear",
+        "definition": "to become visible; to seem",
+        "context": "A rainbow appeared after the rain."
+      },
+      {
+        "term": "approach",
+        "definition": "to come near to",
+        "context": "We approached the entrance slowly."
+      },
+      {
+        "term": "arrange",
+        "definition": "to organize or plan something",
+        "context": "She arranged a surprise party."
+      },
+      {
+        "term": "assume",
+        "definition": "to accept something as true without proof",
+        "context": "I assumed the shop was open on Sunday."
+      },
+      {
+        "term": "attempt",
+        "definition": "to try to do something",
+        "context": "He attempted to climb the wall."
+      },
+      {
+        "term": "attend",
+        "definition": "to be present at an event",
+        "context": "I will attend the conference next week."
+      },
+      {
+        "term": "avoid",
+        "definition": "to stay away from",
+        "context": "Try to avoid making the same mistake."
+      },
+      {
+        "term": "behave",
+        "definition": "to act in a particular way",
+        "context": "The children behaved well at the restaurant."
+      },
+      {
+        "term": "cancel",
+        "definition": "to decide that something will not happen",
+        "context": "They cancelled the flight due to bad weather."
+      },
+      {
+        "term": "charge",
+        "definition": "to ask for payment; to supply with power",
+        "context": "They charge five euros for parking."
+      },
+      {
+        "term": "combine",
+        "definition": "to join together",
+        "context": "Combine the ingredients in a bowl."
+      },
+      {
+        "term": "commit",
+        "definition": "to promise to do something",
+        "context": "He committed to running every day."
+      },
+      {
+        "term": "compete",
+        "definition": "to try to win against others",
+        "context": "The teams compete for the trophy."
+      },
+      {
+        "term": "concern",
+        "definition": "to worry or be about",
+        "context": "This issue concerns all of us."
+      },
+      {
+        "term": "confuse",
+        "definition": "to make unclear or difficult to understand",
+        "context": "The instructions confused me."
+      },
+      {
+        "term": "connect",
+        "definition": "to join or link together",
+        "context": "Connect your phone to the Wi-Fi."
+      },
+      {
+        "term": "consider",
+        "definition": "to think about carefully",
+        "context": "I am considering moving abroad."
+      },
+      {
+        "term": "contain",
+        "definition": "to have inside",
+        "context": "The box contains twelve pencils."
+      },
+      {
+        "term": "create",
+        "definition": "to make something new",
+        "context": "She created a beautiful painting."
+      },
+      {
+        "term": "damage",
+        "definition": "to cause harm to something",
+        "context": "The storm damaged several houses."
+      },
+      {
+        "term": "decrease",
+        "definition": "to become smaller in number or amount",
+        "context": "Sales have decreased this quarter."
+      },
+      {
+        "term": "deliver",
+        "definition": "to bring something to a person or place",
+        "context": "The package was delivered this morning."
+      },
+      {
+        "term": "demand",
+        "definition": "to ask for something firmly",
+        "context": "The workers demanded higher wages."
+      },
+      {
+        "term": "depend",
+        "definition": "to be determined by",
+        "context": "It depends on the weather."
+      },
+      {
+        "term": "design",
+        "definition": "to plan and make something",
+        "context": "She designed the new company logo."
+      },
+      {
+        "term": "destroy",
+        "definition": "to damage beyond repair",
+        "context": "The fire destroyed the old building."
+      },
+      {
+        "term": "develop",
+        "definition": "to grow or progress",
+        "context": "The company is developing a new product."
+      },
+      {
+        "term": "disappear",
+        "definition": "to stop being visible",
+        "context": "The sun disappeared behind the clouds."
+      },
+      {
+        "term": "divide",
+        "definition": "to separate into parts",
+        "context": "Divide the cake into eight pieces."
+      },
+      {
+        "term": "earn",
+        "definition": "to receive money for work",
+        "context": "She earns a good salary."
+      },
+      {
+        "term": "emphasize",
+        "definition": "to give special importance to",
+        "context": "I want to emphasize the importance of teamwork."
+      },
+      {
+        "term": "enable",
+        "definition": "to make possible",
+        "context": "Technology enables us to work from home."
+      },
+      {
+        "term": "ensure",
+        "definition": "to make certain",
+        "context": "Please ensure all windows are closed."
+      },
+      {
+        "term": "establish",
+        "definition": "to set up or create",
+        "context": "The company was established in 1990."
+      },
+      {
+        "term": "estimate",
+        "definition": "to roughly calculate",
+        "context": "I estimate the trip will take two hours."
+      },
+      {
+        "term": "examine",
+        "definition": "to look at closely",
+        "context": "The doctor examined the patient."
+      },
+      {
+        "term": "exist",
+        "definition": "to be real or present",
+        "context": "Do aliens exist?"
+      },
+      {
+        "term": "expand",
+        "definition": "to become larger",
+        "context": "The company is expanding into new markets."
+      },
+      {
+        "term": "expect",
+        "definition": "to think something will happen",
+        "context": "I expect the train to arrive on time."
+      },
+      {
+        "term": "explore",
+        "definition": "to travel through an area to learn about it",
+        "context": "We explored the old town on foot."
+      },
+      {
+        "term": "fail",
+        "definition": "to not succeed",
+        "context": "He failed the driving test twice."
+      },
+      {
+        "term": "gain",
+        "definition": "to obtain or increase",
+        "context": "She gained valuable experience abroad."
+      },
+      {
+        "term": "generate",
+        "definition": "to produce or create",
+        "context": "Solar panels generate electricity."
+      },
+      {
+        "term": "handle",
+        "definition": "to deal with a situation",
+        "context": "She handles pressure very well."
+      },
+      {
+        "term": "identify",
+        "definition": "to recognize or name",
+        "context": "Can you identify the problem?"
+      },
+      {
+        "term": "ignore",
+        "definition": "to pay no attention to",
+        "context": "She ignored my phone calls."
+      },
+      {
+        "term": "improve",
+        "definition": "to make or become better",
+        "context": "I want to improve my pronunciation."
+      },
+      {
+        "term": "increase",
+        "definition": "to become greater in size or number",
+        "context": "The price of petrol has increased."
+      },
+      {
+        "term": "indicate",
+        "definition": "to show or point out",
+        "context": "The sign indicates the exit."
+      },
+      {
+        "term": "involve",
+        "definition": "to include as a necessary part",
+        "context": "The job involves a lot of travel."
+      },
+      {
+        "term": "manage",
+        "definition": "to be in charge of; to succeed in doing",
+        "context": "He manages a team of ten people."
+      },
+      {
+        "term": "measure",
+        "definition": "to find the size or amount of something",
+        "context": "Measure the length of the room."
+      },
+      {
+        "term": "occur",
+        "definition": "to happen",
+        "context": "The accident occurred at midnight."
+      },
+      {
+        "term": "operate",
+        "definition": "to function or work; to perform surgery",
+        "context": "The machine operates automatically."
+      },
+      {
+        "term": "perform",
+        "definition": "to carry out an action; to act on stage",
+        "context": "The band performed live at the festival."
+      },
+      {
+        "term": "permit",
+        "definition": "to allow",
+        "context": "Cameras are not permitted in the museum."
+      },
+      {
+        "term": "prevent",
+        "definition": "to stop something from happening",
+        "context": "Washing your hands helps prevent illness."
+      },
+      {
+        "term": "produce",
+        "definition": "to make or manufacture",
+        "context": "The factory produces cars."
+      },
+      {
+        "term": "protect",
+        "definition": "to keep safe from harm",
+        "context": "We must protect endangered animals."
+      },
+      {
+        "term": "provide",
+        "definition": "to supply or give",
+        "context": "The hotel provides free breakfast."
+      },
+      {
+        "term": "publish",
+        "definition": "to make available to the public",
+        "context": "She published her first novel last year."
+      },
+      {
+        "term": "raise",
+        "definition": "to lift up; to increase",
+        "context": "Raise your hand if you have a question."
+      },
+      {
+        "term": "reach",
+        "definition": "to arrive at; to stretch out to touch",
+        "context": "We reached the summit at noon."
+      },
+      {
+        "term": "realize",
+        "definition": "to become aware of",
+        "context": "I realized I had left my wallet at home."
+      },
+      {
+        "term": "reduce",
+        "definition": "to make smaller in amount",
+        "context": "We need to reduce waste."
+      },
+      {
+        "term": "relate",
+        "definition": "to make a connection between things",
+        "context": "How does this relate to our project?"
+      },
+      {
+        "term": "release",
+        "definition": "to set free or make available",
+        "context": "The company released a new product."
+      },
+      {
+        "term": "rely",
+        "definition": "to depend on",
+        "context": "You can rely on me for help."
+      },
+      {
+        "term": "remain",
+        "definition": "to stay in the same place or condition",
+        "context": "Please remain seated until the plane stops."
+      },
+      {
+        "term": "remove",
+        "definition": "to take away",
+        "context": "Please remove your shoes before entering."
+      },
+      {
+        "term": "replace",
+        "definition": "to put something new in place of",
+        "context": "We need to replace the old batteries."
+      },
+      {
+        "term": "require",
+        "definition": "to need",
+        "context": "This job requires good communication skills."
+      },
+      {
+        "term": "respect",
+        "definition": "to admire or show consideration for",
+        "context": "We should respect other people\\"
+      },
+      {
+        "term": "respond",
+        "definition": "to give an answer or reaction",
+        "context": "She responded to the email quickly."
+      },
+      {
+        "term": "result",
+        "definition": "to happen as a consequence",
+        "context": "His injury resulted from poor training."
+      },
+      {
+        "term": "reveal",
+        "definition": "to make known something hidden",
+        "context": "The study revealed surprising results."
+      },
+      {
+        "term": "review",
+        "definition": "to examine or assess",
+        "context": "Let me review the document before sending it."
+      },
+      {
+        "term": "select",
+        "definition": "to carefully choose",
+        "context": "Select the correct answer."
+      },
+      {
+        "term": "separate",
+        "definition": "to divide or keep apart",
+        "context": "Separate the white clothes from the colored ones."
+      },
+      {
+        "term": "solve",
+        "definition": "to find the answer to a problem",
+        "context": "We need to solve this issue quickly."
+      },
+      {
+        "term": "spread",
+        "definition": "to extend over an area",
+        "context": "The news spread quickly."
+      },
+      {
+        "term": "struggle",
+        "definition": "to make a great effort",
+        "context": "He struggled to keep up with the class."
+      },
+      {
+        "term": "succeed",
+        "definition": "to achieve a goal",
+        "context": "If you work hard, you will succeed."
+      },
+      {
+        "term": "supply",
+        "definition": "to provide what is needed",
+        "context": "The company supplies food to restaurants."
+      },
+      {
+        "term": "support",
+        "definition": "to help or encourage",
+        "context": "My family supports my decision."
+      },
+      {
+        "term": "survive",
+        "definition": "to continue living after a danger",
+        "context": "She survived the earthquake."
+      },
+      {
+        "term": "tend",
+        "definition": "to be likely to do something",
+        "context": "I tend to wake up early."
+      },
+      {
+        "term": "translate",
+        "definition": "to express in another language",
+        "context": "Can you translate this word into English?"
+      },
+      {
+        "term": "accurate",
+        "definition": "correct and without errors",
+        "context": "The report needs to be accurate."
+      },
+      {
+        "term": "anxious",
+        "definition": "feeling worried or nervous",
+        "context": "She was anxious about the results."
+      },
+      {
+        "term": "appropriate",
+        "definition": "suitable for the situation",
+        "context": "Wear appropriate clothing for the interview."
+      },
+      {
+        "term": "aware",
+        "definition": "knowing about something",
+        "context": "I am aware of the problem."
+      },
+      {
+        "term": "basic",
+        "definition": "fundamental; the simplest level",
+        "context": "He has a basic understanding of Spanish."
+      },
+      {
+        "term": "brief",
+        "definition": "lasting a short time",
+        "context": "The meeting was very brief."
+      },
+      {
+        "term": "calm",
+        "definition": "peaceful and quiet",
+        "context": "Stay calm during the emergency."
+      },
+      {
+        "term": "complex",
+        "definition": "having many connected parts; complicated",
+        "context": "This is a complex problem."
+      },
+      {
+        "term": "confused",
+        "definition": "unable to think clearly",
+        "context": "I was confused by the directions."
+      },
+      {
+        "term": "constant",
+        "definition": "happening all the time",
+        "context": "There is constant noise from the traffic."
+      },
+      {
+        "term": "convenient",
+        "definition": "easy to use or suitable for your needs",
+        "context": "The hotel is in a convenient location."
+      },
+      {
+        "term": "creative",
+        "definition": "able to produce new and original ideas",
+        "context": "She has a very creative mind."
+      },
+      {
+        "term": "current",
+        "definition": "happening now",
+        "context": "What is the current situation?"
+      },
+      {
+        "term": "curious",
+        "definition": "eager to know or learn",
+        "context": "Children are naturally curious."
+      },
+      {
+        "term": "disappointed",
+        "definition": "sad because something did not meet expectations",
+        "context": "I was disappointed with the result."
+      },
+      {
+        "term": "effective",
+        "definition": "producing the desired result",
+        "context": "Exercise is an effective way to reduce stress."
+      },
+      {
+        "term": "efficient",
+        "definition": "working well without waste",
+        "context": "This machine is very energy efficient."
+      },
+      {
+        "term": "embarrassed",
+        "definition": "feeling ashamed or awkward",
+        "context": "He was embarrassed by the mistake."
+      },
+      {
+        "term": "enormous",
+        "definition": "extremely large",
+        "context": "They live in an enormous house."
+      },
+      {
+        "term": "entire",
+        "definition": "whole, complete",
+        "context": "I spent the entire day reading."
+      },
+      {
+        "term": "essential",
+        "definition": "absolutely necessary",
+        "context": "Water is essential for life."
+      },
+      {
+        "term": "exact",
+        "definition": "perfectly correct",
+        "context": "What is the exact time?"
+      },
+      {
+        "term": "fair",
+        "definition": "treating everyone equally; reasonable",
+        "context": "That is a fair decision."
+      },
+      {
+        "term": "familiar",
+        "definition": "well known to you",
+        "context": "This place looks familiar."
+      },
+      {
+        "term": "flexible",
+        "definition": "able to change or be changed easily",
+        "context": "We have flexible working hours."
+      },
+      {
+        "term": "formal",
+        "definition": "following strict rules of behavior",
+        "context": "It was a formal dinner party."
+      },
+      {
+        "term": "frequent",
+        "definition": "happening often",
+        "context": "Buses are frequent on this route."
+      },
+      {
+        "term": "gentle",
+        "definition": "kind and careful",
+        "context": "She has a gentle personality."
+      },
+      {
+        "term": "genuine",
+        "definition": "real and honest",
+        "context": "His surprise was genuine."
+      },
+      {
+        "term": "grateful",
+        "definition": "feeling thankful",
+        "context": "I am grateful for your help."
+      },
+      {
+        "term": "guilty",
+        "definition": "responsible for wrongdoing",
+        "context": "He felt guilty about lying."
+      },
+      {
+        "term": "huge",
+        "definition": "extremely large",
+        "context": "There was a huge crowd at the stadium."
+      },
+      {
+        "term": "independent",
+        "definition": "not depending on others",
+        "context": "She is very independent."
+      },
+      {
+        "term": "individual",
+        "definition": "single or separate",
+        "context": "Each individual has different needs."
+      },
+      {
+        "term": "intelligent",
+        "definition": "able to learn and understand quickly",
+        "context": "He is an intelligent student."
+      },
+      {
+        "term": "local",
+        "definition": "relating to a nearby area",
+        "context": "I shop at the local market."
+      },
+      {
+        "term": "major",
+        "definition": "very important or large",
+        "context": "Traffic is a major problem in the city."
+      },
+      {
+        "term": "natural",
+        "definition": "existing in nature, not made by people",
+        "context": "This juice is made from natural ingredients."
+      },
+      {
+        "term": "necessary",
+        "definition": "needed; required",
+        "context": "It is necessary to book in advance."
+      },
+      {
+        "term": "negative",
+        "definition": "bad or harmful; not positive",
+        "context": "Try not to focus on negative thoughts."
+      },
+      {
+        "term": "obvious",
+        "definition": "easy to see or understand",
+        "context": "The answer was obvious."
+      },
+      {
+        "term": "particular",
+        "definition": "specific; special",
+        "context": "Is there a particular reason you called?"
+      },
+      {
+        "term": "patient",
+        "definition": "able to wait without becoming annoyed",
+        "context": "Please be patient, the doctor will see you soon."
+      },
+      {
+        "term": "pleased",
+        "definition": "feeling happy and satisfied",
+        "context": "I am pleased with the results."
+      },
+      {
+        "term": "positive",
+        "definition": "good or hopeful",
+        "context": "Try to stay positive."
+      },
+      {
+        "term": "previous",
+        "definition": "happening before the present",
+        "context": "I have experience from my previous job."
+      },
+      {
+        "term": "private",
+        "definition": "personal; not for others to know",
+        "context": "That is a private matter."
+      },
+      {
+        "term": "rare",
+        "definition": "not common or happening often",
+        "context": "Snow is rare in this region."
+      },
+      {
+        "term": "reasonable",
+        "definition": "fair and sensible",
+        "context": "The price is very reasonable."
+      },
+      {
+        "term": "recent",
+        "definition": "happening or done not long ago",
+        "context": "I read about it in a recent article."
+      },
+      {
+        "term": "regular",
+        "definition": "happening at the same time or in the same way",
+        "context": "Regular exercise keeps you healthy."
+      },
+      {
+        "term": "relevant",
+        "definition": "closely connected to the topic",
+        "context": "Only include relevant information."
+      },
+      {
+        "term": "serious",
+        "definition": "important and needing attention",
+        "context": "This is a serious problem."
+      },
+      {
+        "term": "significant",
+        "definition": "important or meaningful",
+        "context": "There has been a significant improvement."
+      },
+      {
+        "term": "strict",
+        "definition": "demanding rules be followed exactly",
+        "context": "The school has strict rules about phones."
+      },
+      {
+        "term": "suitable",
+        "definition": "right for a particular purpose",
+        "context": "This film is not suitable for children."
+      },
+      {
+        "term": "typical",
+        "definition": "usual for a particular type",
+        "context": "A typical day at work starts at nine."
+      },
+      {
+        "term": "valuable",
+        "definition": "worth a lot of money; very useful",
+        "context": "She gave me valuable advice."
+      },
+      {
+        "term": "various",
+        "definition": "several different types",
+        "context": "The shop sells various kinds of bread."
+      },
+      {
+        "term": "actually",
+        "definition": "in fact, really",
+        "context": "I actually prefer the blue one."
+      },
+      {
+        "term": "apparently",
+        "definition": "it seems; according to what is said",
+        "context": "Apparently, the concert is sold out."
+      },
+      {
+        "term": "approximately",
+        "definition": "about; not exactly",
+        "context": "The journey takes approximately two hours."
+      },
+      {
+        "term": "gradually",
+        "definition": "slowly, over time",
+        "context": "The weather is gradually getting warmer."
+      },
+      {
+        "term": "immediately",
+        "definition": "right now, without delay",
+        "context": "Call the doctor immediately."
+      },
+      {
+        "term": "meanwhile",
+        "definition": "at the same time",
+        "context": "I will cook dinner. Meanwhile, you can set the table."
+      },
+      {
+        "term": "mostly",
+        "definition": "mainly, for the most part",
+        "context": "I mostly work from home."
+      },
+      {
+        "term": "obviously",
+        "definition": "clearly, as everyone can see",
+        "context": "She is obviously tired."
+      },
+      {
+        "term": "otherwise",
+        "definition": "in a different way; or else",
+        "context": "Hurry up, otherwise we will be late."
+      },
+      {
+        "term": "properly",
+        "definition": "correctly, in the right way",
+        "context": "Make sure the door is closed properly."
+      },
+      {
+        "term": "therefore",
+        "definition": "for that reason",
+        "context": "He was ill and therefore could not come."
+      },
+      {
+        "term": "whether",
+        "definition": "used to talk about a choice between possibilities",
+        "context": "I do not know whether to go or stay."
+      },
+      {
+        "term": "within",
+        "definition": "inside; in less than a certain time",
+        "context": "We will deliver within 24 hours."
+      },
+      {
+        "term": "according to",
+        "definition": "as stated by",
+        "context": "According to the forecast, it will rain tomorrow."
+      },
+      {
+        "term": "as well as",
+        "definition": "in addition to",
+        "context": "She speaks French as well as English."
+      },
+      {
+        "term": "due to",
+        "definition": "because of",
+        "context": "The flight was cancelled due to fog."
+      },
+      {
+        "term": "in addition",
+        "definition": "also, besides",
+        "context": "In addition to English, she speaks German."
+      },
+      {
+        "term": "in fact",
+        "definition": "actually, truly",
+        "context": "In fact, the movie was better than I expected."
+      },
+      {
+        "term": "in order to",
+        "definition": "for the purpose of",
+        "context": "She studied hard in order to pass the exam."
+      },
+      {
+        "term": "on the other hand",
+        "definition": "used to present a different viewpoint",
+        "context": "The salary is low. On the other hand, the hours are flexible."
+      },
+      {
+        "term": "access",
+        "definition": "the ability to enter or use something",
+        "context": "The building has wheelchair access."
+      },
+      {
+        "term": "article",
+        "definition": "a piece of writing in a newspaper",
+        "context": "I read an interesting article about space."
+      },
+      {
+        "term": "aspect",
+        "definition": "a feature or part of something",
+        "context": "This is an important aspect of the plan."
+      },
+      {
+        "term": "budget",
+        "definition": "the amount of money available to spend",
+        "context": "We need to stay within our budget."
+      },
+      {
+        "term": "century",
+        "definition": "a period of a hundred years",
+        "context": "The castle was built in the 15th century."
+      },
+      {
+        "term": "circumstance",
+        "definition": "a condition or fact surrounding an event",
+        "context": "Under the circumstances, we had no choice."
+      },
+      {
+        "term": "comparison",
+        "definition": "the act of comparing two things",
+        "context": "There is no comparison between the two restaurants."
+      },
+      {
+        "term": "degree",
+        "definition": "a unit of measurement; a university qualification",
+        "context": "She has a degree in engineering."
+      },
+      {
+        "term": "detail",
+        "definition": "a small piece of information",
+        "context": "Please give me more details about the event."
+      },
+      {
+        "term": "distance",
+        "definition": "the amount of space between two points",
+        "context": "The distance between the two cities is 200 kilometers."
+      },
+      {
+        "term": "effort",
+        "definition": "the use of energy to do something",
+        "context": "Learning a language requires a lot of effort."
+      },
+      {
+        "term": "evidence",
+        "definition": "facts that help prove something",
+        "context": "There is no evidence of wrongdoing."
+      },
+      {
+        "term": "feature",
+        "definition": "a notable quality or part",
+        "context": "The phone has many useful features."
+      },
+      {
+        "term": "income",
+        "definition": "money earned from work",
+        "context": "His monthly income covers the rent."
+      },
+      {
+        "term": "majority",
+        "definition": "more than half of a group",
+        "context": "The majority of students passed the exam."
+      },
+      {
+        "term": "material",
+        "definition": "a substance things are made from",
+        "context": "The dress is made of natural material."
+      },
+      {
+        "term": "method",
+        "definition": "a way of doing something",
+        "context": "This is the best method for learning vocabulary."
+      },
+      {
+        "term": "opportunity",
+        "definition": "a chance to do something",
+        "context": "This is a great opportunity to travel."
+      },
+      {
+        "term": "period",
+        "definition": "a length of time",
+        "context": "We studied for a period of three months."
+      },
+      {
+        "term": "process",
+        "definition": "a series of steps to achieve a result",
+        "context": "The application process takes two weeks."
+      },
+      {
+        "term": "progress",
+        "definition": "movement toward a goal",
+        "context": "You are making great progress in English."
+      },
+      {
+        "term": "purpose",
+        "definition": "the reason for doing something",
+        "context": "What is the purpose of this meeting?"
+      },
+      {
+        "term": "quality",
+        "definition": "how good or bad something is",
+        "context": "This hotel offers good quality at a fair price."
+      },
+      {
+        "term": "range",
+        "definition": "a variety of things; a set of limits",
+        "context": "The shop offers a wide range of products."
+      },
+      {
+        "term": "rate",
+        "definition": "the speed or frequency of something",
+        "context": "The crime rate has decreased."
+      },
+      {
+        "term": "research",
+        "definition": "a careful study to discover facts",
+        "context": "She is doing research on climate change."
+      },
+      {
+        "term": "resource",
+        "definition": "a supply of something useful",
+        "context": "Water is a precious resource."
+      },
+      {
+        "term": "responsibility",
+        "definition": "a duty you are expected to carry out",
+        "context": "It is your responsibility to lock the door."
+      },
+      {
+        "term": "risk",
+        "definition": "the possibility of something bad happening",
+        "context": "There is a risk of rain this afternoon."
+      },
+      {
+        "term": "situation",
+        "definition": "the conditions and circumstances at a time",
+        "context": "It was a difficult situation."
+      },
+      {
+        "term": "solution",
+        "definition": "an answer to a problem",
+        "context": "We need to find a solution quickly."
+      },
+      {
+        "term": "source",
+        "definition": "where something comes from",
+        "context": "What is the source of this information?"
+      },
+      {
+        "term": "speech",
+        "definition": "a formal talk given to an audience",
+        "context": "She gave a great speech at the conference."
+      },
+      {
+        "term": "standard",
+        "definition": "a level of quality considered acceptable",
+        "context": "The standard of teaching is very high."
+      },
+      {
+        "term": "structure",
+        "definition": "the way parts are arranged together",
+        "context": "The structure of the essay is clear."
+      },
+      {
+        "term": "surface",
+        "definition": "the outside part of something",
+        "context": "The surface of the table is smooth."
+      },
+      {
+        "term": "technology",
+        "definition": "the use of science in industry and everyday life",
+        "context": "Technology is changing the way we work."
+      },
+      {
+        "term": "theory",
+        "definition": "an idea used to explain something",
+        "context": "In theory, the plan should work."
+      },
+      {
+        "term": "topic",
+        "definition": "a subject for discussion",
+        "context": "What is the topic of the meeting?"
+      },
+      {
+        "term": "trend",
+        "definition": "a general direction of change",
+        "context": "Online shopping is a growing trend."
+      },
+      {
+        "term": "value",
+        "definition": "the importance or worth of something",
+        "context": "Education has great value."
+      },
+      {
+        "term": "variety",
+        "definition": "a number of different types",
+        "context": "The menu offers a great variety of dishes."
+      },
+      {
+        "term": "version",
+        "definition": "a particular form of something",
+        "context": "This is the latest version of the software."
+      },
+      {
+        "term": "view",
+        "definition": "an opinion; what you can see from a place",
+        "context": "The view from the window is beautiful."
+      },
+      {
+        "term": "volume",
+        "definition": "the amount of sound; the space inside",
+        "context": "Turn down the volume, please."
+      }
+    ]
+  }
+}

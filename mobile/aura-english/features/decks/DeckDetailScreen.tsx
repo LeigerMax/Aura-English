@@ -112,6 +112,30 @@ export const DeckDetailScreen: React.FC<DeckDetailScreenProps> = ({ navigation, 
     }
   };
 
+  const handleDeleteDeck = () => {
+    if (deckId === GLOBAL_DECK_ID) return;
+    Alert.alert(
+      'Delete Deck',
+      `Are you sure you want to delete "${deck?.name}"? This will remove the deck but keep the flashcards.`,
+      [
+        { text: 'Cancel', style: 'cancel' },
+        {
+          text: 'Delete',
+          style: 'destructive',
+          onPress: async () => {
+            try {
+              await deckRepository.deleteDeck(deckId);
+              navigation.goBack();
+            } catch (error) {
+              console.error('Failed to delete deck:', error);
+              Alert.alert('Error', 'Failed to delete deck');
+            }
+          },
+        },
+      ]
+    );
+  };
+
   // ── Search ──
   const handleSearchChange = React.useCallback((text: string) => {
     setSearchQuery(text);
@@ -306,6 +330,18 @@ export const DeckDetailScreen: React.FC<DeckDetailScreenProps> = ({ navigation, 
             <Text style={styles.shareActionText}>QR Share</Text>
           </TouchableOpacity>
         </View>
+      )}
+
+      {/* Delete Deck — only for user-created decks */}
+      {deckId !== GLOBAL_DECK_ID && searchResults === null && (
+        <TouchableOpacity
+          style={styles.deleteDeckButton}
+          onPress={handleDeleteDeck}
+          activeOpacity={0.7}
+        >
+          <Ionicons name="trash-outline" size={18} color={colors.error} />
+          <Text style={[styles.deleteDeckButtonText, { color: colors.error }]}>Delete Deck</Text>
+        </TouchableOpacity>
       )}
     </View>
   );
@@ -535,5 +571,20 @@ const createStyles = (colors: ThemeColors) => StyleSheet.create({
     fontSize: sizes.fontSize.md,
     fontWeight: '600',
     color: '#FFFFFF',
+  },
+  deleteDeckButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: sizes.spacing.md,
+    borderRadius: sizes.radius.xl,
+    borderWidth: 1,
+    borderColor: colors.error,
+    marginBottom: sizes.spacing.xl,
+    gap: sizes.spacing.xs,
+  },
+  deleteDeckButtonText: {
+    fontSize: sizes.fontSize.md,
+    fontWeight: '600',
   },
 });

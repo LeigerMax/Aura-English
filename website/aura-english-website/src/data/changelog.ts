@@ -10,14 +10,13 @@ export interface ChangelogEntry {
  */
 export const CHANGELOG: ChangelogEntry[] = [
   {
-    version: "1.4.0",
-    date: "2026-02-11",
+    version: "1.4.1",
+    date: "2026-02-12",
     changes: [
-      "Export decks to an app-compatible file.",
-      "Import decks from a file",
-      "Official Decks section available on the website",
-      "Direct deck download from the app",
-      "Share decks between users",
+      "Add delete decks",
+      "Add new decks online",
+      "Fix name app",
+      "Add edit deck",
       "Bug fixes and performance improvements",
     ],
   },

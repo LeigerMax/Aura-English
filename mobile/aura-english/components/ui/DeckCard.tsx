@@ -9,6 +9,7 @@ import {
 import type { Deck } from '@/types/models';
 import { useTheme } from '@/core/theme';
 import { sizes } from '@/constants';
+import { Ionicons } from '@expo/vector-icons';
 import type { ThemeColors } from '@/core/theme';
 
 export interface DeckCardProps {
@@ -112,7 +113,7 @@ export const DeckCard: React.FC<DeckCardProps> = ({
                 }}
                 hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
               >
-                <Text style={styles.editIcon}>✏️</Text>
+                <Ionicons name="pencil" size={18} color="rgba(255,255,255,0.9)" />
               </TouchableOpacity>
             )}
           </View>

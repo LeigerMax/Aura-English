@@ -1,0 +1,2046 @@
+{
+  "version": "1.0",
+  "exportedAt": "2026-02-12T00:00:00.000Z",
+  "deck": {
+    "name": "C2 – Proficient Vocabulary",
+    "description": "Proficient: master idiomatic expressions, nuanced verbs, and near-native fluency.",
+    "language": "en",
+    "cards": [
+      {
+        "term": "at the drop of a hat",
+        "definition": "immediately, without hesitation",
+        "context": "She would travel at the drop of a hat."
+      },
+      {
+        "term": "bark up the wrong tree",
+        "definition": "to pursue a mistaken approach",
+        "context": "If you think I did it, you are barking up the wrong tree."
+      },
+      {
+        "term": "beat around the bush",
+        "definition": "to avoid talking about the main point",
+        "context": "Stop beating around the bush and tell me what happened."
+      },
+      {
+        "term": "bite the bullet",
+        "definition": "to endure a painful situation bravely",
+        "context": "We had to bite the bullet and accept the pay cut."
+      },
+      {
+        "term": "break the ice",
+        "definition": "to relieve tension in a social situation",
+        "context": "A joke helped break the ice at the meeting."
+      },
+      {
+        "term": "burn the midnight oil",
+        "definition": "to work late into the night",
+        "context": "Students often burn the midnight oil before exams."
+      },
+      {
+        "term": "by and large",
+        "definition": "on the whole; generally speaking",
+        "context": "By and large, the project has been a success."
+      },
+      {
+        "term": "call it a day",
+        "definition": "to stop working for the day",
+        "context": "We have done enough — let us call it a day."
+      },
+      {
+        "term": "cut corners",
+        "definition": "to do something in the cheapest or easiest way",
+        "context": "The builder cut corners and the roof leaked."
+      },
+      {
+        "term": "down to earth",
+        "definition": "practical and realistic",
+        "context": "Despite her fame, she remains very down to earth."
+      },
+      {
+        "term": "draw a blank",
+        "definition": "to fail to remember something",
+        "context": "I drew a blank when asked for his phone number."
+      },
+      {
+        "term": "face the music",
+        "definition": "to accept the unpleasant consequences",
+        "context": "He had to face the music after missing the deadline."
+      },
+      {
+        "term": "get the ball rolling",
+        "definition": "to start an activity or process",
+        "context": "Let me get the ball rolling with a brief introduction."
+      },
+      {
+        "term": "go the extra mile",
+        "definition": "to make more effort than expected",
+        "context": "She always goes the extra mile for her clients."
+      },
+      {
+        "term": "hit the nail on the head",
+        "definition": "to describe exactly what is right",
+        "context": "Your analysis hit the nail on the head."
+      },
+      {
+        "term": "in the long run",
+        "definition": "over a long period of time; eventually",
+        "context": "Investing in education pays off in the long run."
+      },
+      {
+        "term": "jump on the bandwagon",
+        "definition": "to join a popular trend or activity",
+        "context": "Many companies jumped on the bandwagon of remote work."
+      },
+      {
+        "term": "keep a low profile",
+        "definition": "to avoid attention",
+        "context": "After the scandal, the politician kept a low profile."
+      },
+      {
+        "term": "leave no stone unturned",
+        "definition": "to try every possible approach",
+        "context": "Detectives left no stone unturned in the investigation."
+      },
+      {
+        "term": "let the cat out of the bag",
+        "definition": "to reveal a secret accidentally",
+        "context": "She let the cat out of the bag about the surprise party."
+      },
+      {
+        "term": "miss the boat",
+        "definition": "to miss an opportunity",
+        "context": "If we do not act now, we will miss the boat."
+      },
+      {
+        "term": "nip it in the bud",
+        "definition": "to stop a problem before it develops",
+        "context": "Address the issue early and nip it in the bud."
+      },
+      {
+        "term": "on the fence",
+        "definition": "undecided about something",
+        "context": "Many voters are still on the fence."
+      },
+      {
+        "term": "once in a blue moon",
+        "definition": "very rarely",
+        "context": "He visits his hometown once in a blue moon."
+      },
+      {
+        "term": "piece of cake",
+        "definition": "something very easy",
+        "context": "The test was a piece of cake."
+      },
+      {
+        "term": "pull strings",
+        "definition": "to use influence secretly to gain advantage",
+        "context": "He pulled strings to get the contract."
+      },
+      {
+        "term": "put all your eggs in one basket",
+        "definition": "to risk everything on a single venture",
+        "context": "Diversify — do not put all your eggs in one basket."
+      },
+      {
+        "term": "read between the lines",
+        "definition": "to find hidden meaning",
+        "context": "If you read between the lines, the message is clear."
+      },
+      {
+        "term": "see eye to eye",
+        "definition": "to agree completely",
+        "context": "The two leaders do not see eye to eye on trade policy."
+      },
+      {
+        "term": "sit on the fence",
+        "definition": "to not take a side in a debate",
+        "context": "You cannot sit on the fence forever — decide."
+      },
+      {
+        "term": "spill the beans",
+        "definition": "to reveal secret information",
+        "context": "Who spilled the beans about the acquisition?"
+      },
+      {
+        "term": "take it with a grain of salt",
+        "definition": "to view something with skepticism",
+        "context": "Take his claims with a grain of salt."
+      },
+      {
+        "term": "the ball is in your court",
+        "definition": "it is your decision or responsibility now",
+        "context": "I have made my offer — the ball is in your court."
+      },
+      {
+        "term": "throw in the towel",
+        "definition": "to give up",
+        "context": "After months of losses, the company threw in the towel."
+      },
+      {
+        "term": "turn a blind eye",
+        "definition": "to deliberately ignore something",
+        "context": "The authorities turned a blind eye to the violations."
+      },
+      {
+        "term": "under the weather",
+        "definition": "feeling slightly ill",
+        "context": "I am feeling under the weather today."
+      },
+      {
+        "term": "up in the air",
+        "definition": "uncertain; not yet decided",
+        "context": "Plans for the event are still up in the air."
+      },
+      {
+        "term": "water under the bridge",
+        "definition": "past events no longer important",
+        "context": "Our old disagreements are water under the bridge now."
+      },
+      {
+        "term": "when pigs fly",
+        "definition": "something that will never happen",
+        "context": "He will apologize when pigs fly."
+      },
+      {
+        "term": "a far cry from",
+        "definition": "very different from",
+        "context": "This hotel is a far cry from the luxury we expected."
+      },
+      {
+        "term": "add insult to injury",
+        "definition": "to worsen an already bad situation",
+        "context": "To add insult to injury, the flight was delayed again."
+      },
+      {
+        "term": "at a crossroads",
+        "definition": "at a point where a crucial decision must be made",
+        "context": "The company is at a crossroads regarding its future strategy."
+      },
+      {
+        "term": "back to the drawing board",
+        "definition": "start over after a failed attempt",
+        "context": "The prototype failed, so it is back to the drawing board."
+      },
+      {
+        "term": "behind closed doors",
+        "definition": "in private; secretly",
+        "context": "The negotiations took place behind closed doors."
+      },
+      {
+        "term": "be in hot water",
+        "definition": "to be in trouble",
+        "context": "The CEO is in hot water over the financial scandal."
+      },
+      {
+        "term": "blow it out of proportion",
+        "definition": "to exaggerate a situation",
+        "context": "The media blew the incident out of proportion."
+      },
+      {
+        "term": "come to grips with",
+        "definition": "to accept and deal with something difficult",
+        "context": "She is still coming to grips with the diagnosis."
+      },
+      {
+        "term": "cut to the chase",
+        "definition": "to get to the point without wasting time",
+        "context": "Let me cut to the chase — we need more funding."
+      },
+      {
+        "term": "give the benefit of the doubt",
+        "definition": "to trust someone despite uncertainty",
+        "context": "I will give her the benefit of the doubt this time."
+      },
+      {
+        "term": "have a change of heart",
+        "definition": "to change one\\",
+        "context": "He had a change of heart and decided to stay."
+      },
+      {
+        "term": "in the same boat",
+        "definition": "in the same difficult situation",
+        "context": "We are all in the same boat during this recession."
+      },
+      {
+        "term": "keep one\\",
+        "definition": "to hope for the best",
+        "context": "Keep your fingers crossed for good weather tomorrow."
+      },
+      {
+        "term": "make ends meet",
+        "definition": "to earn just enough to cover expenses",
+        "context": "Many families struggle to make ends meet."
+      },
+      {
+        "term": "not see the wood for the trees",
+        "definition": "to be too focused on details to see the bigger picture",
+        "context": "We are not seeing the wood for the trees — step back."
+      },
+      {
+        "term": "push the envelope",
+        "definition": "to go beyond established limits",
+        "context": "Their research pushes the envelope of current technology."
+      },
+      {
+        "term": "ring a bell",
+        "definition": "to sound familiar",
+        "context": "The name rings a bell, but I cannot place it."
+      },
+      {
+        "term": "rule of thumb",
+        "definition": "a general guideline based on practice",
+        "context": "As a rule of thumb, save twenty percent of your income."
+      },
+      {
+        "term": "take the bull by the horns",
+        "definition": "to deal with a problem directly",
+        "context": "She took the bull by the horns and confronted the issue."
+      },
+      {
+        "term": "the tip of the iceberg",
+        "definition": "only a small visible part of a larger problem",
+        "context": "These complaints are just the tip of the iceberg."
+      },
+      {
+        "term": "weather the storm",
+        "definition": "to survive a difficult period",
+        "context": "The startup managed to weather the storm of the recession."
+      },
+      {
+        "term": "abdicate",
+        "definition": "to formally give up power or responsibility",
+        "context": "The king abdicated the throne in favour of his son."
+      },
+      {
+        "term": "abrogate",
+        "definition": "to repeal or abolish formally",
+        "context": "The government abrogated the outdated treaty."
+      },
+      {
+        "term": "acclimatize",
+        "definition": "to adjust to new conditions",
+        "context": "It took weeks to acclimatize to the altitude."
+      },
+      {
+        "term": "admonish",
+        "definition": "to warn or reprimand firmly",
+        "context": "The judge admonished the witness for lying."
+      },
+      {
+        "term": "amalgamate",
+        "definition": "to combine or unite into one body",
+        "context": "The two departments were amalgamated last year."
+      },
+      {
+        "term": "ameliorate",
+        "definition": "to make something bad better",
+        "context": "New policies were introduced to ameliorate living conditions."
+      },
+      {
+        "term": "annihilate",
+        "definition": "to destroy completely",
+        "context": "The army annihilated the enemy forces."
+      },
+      {
+        "term": "appease",
+        "definition": "to pacify by giving in to demands",
+        "context": "They offered concessions to appease the protesters."
+      },
+      {
+        "term": "ascertain",
+        "definition": "to find out for certain",
+        "context": "We need to ascertain the facts before proceeding."
+      },
+      {
+        "term": "beguile",
+        "definition": "to charm or enchant, sometimes deceptively",
+        "context": "She was beguiled by his eloquent speech."
+      },
+      {
+        "term": "beleaguer",
+        "definition": "to surround or harass persistently",
+        "context": "The beleaguered city finally received aid."
+      },
+      {
+        "term": "bemoan",
+        "definition": "to express sorrow or dissatisfaction about",
+        "context": "Critics bemoaned the decline of traditional craftsmanship."
+      },
+      {
+        "term": "bewilder",
+        "definition": "to confuse or puzzle greatly",
+        "context": "The complexity of the regulations bewildered even experts."
+      },
+      {
+        "term": "bolster",
+        "definition": "to support or strengthen",
+        "context": "New evidence bolstered the prosecution\\"
+      },
+      {
+        "term": "browbeat",
+        "definition": "to intimidate with stern looks or words",
+        "context": "The manager browbeat employees into working overtime."
+      },
+      {
+        "term": "capitulate",
+        "definition": "to cease resisting; to surrender",
+        "context": "After lengthy negotiations, the union capitulated."
+      },
+      {
+        "term": "castigate",
+        "definition": "to criticize severely",
+        "context": "The report castigated the agency for its negligence."
+      },
+      {
+        "term": "cede",
+        "definition": "to give up power or territory",
+        "context": "The losing side ceded territory after the war."
+      },
+      {
+        "term": "circumscribe",
+        "definition": "to restrict or limit",
+        "context": "His authority was circumscribed by the new regulations."
+      },
+      {
+        "term": "clamour",
+        "definition": "to demand noisily",
+        "context": "Residents clamoured for better public services."
+      },
+      {
+        "term": "coalesce",
+        "definition": "to come together and form one whole",
+        "context": "Opposition groups coalesced into a unified movement."
+      },
+      {
+        "term": "commiserate",
+        "definition": "to express sympathy for someone\\",
+        "context": "Friends commiserated with her over the job loss."
+      },
+      {
+        "term": "confiscate",
+        "definition": "to seize by authority",
+        "context": "Customs officials confiscated the illegal goods."
+      },
+      {
+        "term": "conflate",
+        "definition": "to combine two ideas into one, often mistakenly",
+        "context": "People often conflate correlation with causation."
+      },
+      {
+        "term": "conjecture",
+        "definition": "to form an opinion based on incomplete information",
+        "context": "Scientists can only conjecture about the origin of the signal."
+      },
+      {
+        "term": "connive",
+        "definition": "to secretly plan something immoral",
+        "context": "They connived to defraud the investors."
+      },
+      {
+        "term": "consecrate",
+        "definition": "to declare sacred or dedicate to a purpose",
+        "context": "The bishop consecrated the new church."
+      },
+      {
+        "term": "corroborate",
+        "definition": "to confirm or support with evidence",
+        "context": "Witnesses corroborated the victim\\"
+      },
+      {
+        "term": "countermand",
+        "definition": "to revoke a command or order",
+        "context": "The general countermanded the order to retreat."
+      },
+      {
+        "term": "culminate",
+        "definition": "to reach the highest point or final result",
+        "context": "Months of work culminated in a successful launch."
+      },
+      {
+        "term": "dapple",
+        "definition": "to mark with spots or patches of colour",
+        "context": "Sunlight dappled the forest floor through the leaves."
+      },
+      {
+        "term": "debilitate",
+        "definition": "to make very weak",
+        "context": "The illness debilitated him for months."
+      },
+      {
+        "term": "decimate",
+        "definition": "to destroy a large proportion of",
+        "context": "The hurricane decimated the coastal town."
+      },
+      {
+        "term": "delineate",
+        "definition": "to describe or portray precisely",
+        "context": "The report delineated the causes of the crisis."
+      },
+      {
+        "term": "denigrate",
+        "definition": "to criticize unfairly; to disparage",
+        "context": "She denigrated his contributions to the project."
+      },
+      {
+        "term": "deplore",
+        "definition": "to strongly disapprove of",
+        "context": "Human rights organizations deplored the ruling."
+      },
+      {
+        "term": "desecrate",
+        "definition": "to treat a sacred place with violating disrespect",
+        "context": "Vandals desecrated the historic monument."
+      },
+      {
+        "term": "disseminate",
+        "definition": "to spread information widely",
+        "context": "The organization disseminated safety guidelines to all schools."
+      },
+      {
+        "term": "divulge",
+        "definition": "to reveal private or secret information",
+        "context": "He refused to divulge the source of his information."
+      },
+      {
+        "term": "edify",
+        "definition": "to instruct or improve morally or intellectually",
+        "context": "The lecture was meant to edify rather than entertain."
+      },
+      {
+        "term": "efface",
+        "definition": "to erase or make oneself inconspicuous",
+        "context": "Time had effaced the inscription on the stone."
+      },
+      {
+        "term": "elucidate",
+        "definition": "to make clear; to explain",
+        "context": "Could you elucidate the procedure for new applicants?"
+      },
+      {
+        "term": "emancipate",
+        "definition": "to set free from legal, social, or political restrictions",
+        "context": "The movement sought to emancipate workers from oppressive conditions."
+      },
+      {
+        "term": "embellish",
+        "definition": "to make more attractive by adding details; to exaggerate",
+        "context": "He tends to embellish his stories for dramatic effect."
+      },
+      {
+        "term": "embroil",
+        "definition": "to involve deeply in conflict or difficulty",
+        "context": "The country was embroiled in a bitter trade dispute."
+      },
+      {
+        "term": "enervate",
+        "definition": "to drain energy or vitality from",
+        "context": "The tropical heat enervated the entire team."
+      },
+      {
+        "term": "engender",
+        "definition": "to cause a feeling or situation to develop",
+        "context": "The policy engendered widespread resentment."
+      },
+      {
+        "term": "enmesh",
+        "definition": "to entangle in a complex situation",
+        "context": "The company became enmeshed in legal disputes."
+      },
+      {
+        "term": "enshroud",
+        "definition": "to cover or conceal completely",
+        "context": "Fog enshrouded the harbour at dawn."
+      },
+      {
+        "term": "enumerate",
+        "definition": "to list items one by one",
+        "context": "She enumerated the reasons for her resignation."
+      },
+      {
+        "term": "epitomize",
+        "definition": "to be a perfect example of",
+        "context": "His career epitomizes dedication and hard work."
+      },
+      {
+        "term": "equivocate",
+        "definition": "to use ambiguous language to conceal the truth",
+        "context": "The politician equivocated when asked about tax rises."
+      },
+      {
+        "term": "eschew",
+        "definition": "to deliberately avoid or abstain from",
+        "context": "She eschews social media entirely."
+      },
+      {
+        "term": "espouse",
+        "definition": "to adopt or support a cause or belief",
+        "context": "The organization espouses environmental sustainability."
+      },
+      {
+        "term": "eviscerate",
+        "definition": "to disembowel; to deprive of essential content",
+        "context": "The critic eviscerated the movie in her review."
+      },
+      {
+        "term": "exacerbate",
+        "definition": "to make a problem or situation worse",
+        "context": "The drought was exacerbated by poor water management."
+      },
+      {
+        "term": "excoriate",
+        "definition": "to criticize harshly",
+        "context": "The senator was excoriated in the press for his remarks."
+      },
+      {
+        "term": "exculpate",
+        "definition": "to prove not guilty; to clear of blame",
+        "context": "DNA evidence exculpated the wrongly convicted man."
+      },
+      {
+        "term": "exonerate",
+        "definition": "to absolve from blame",
+        "context": "The inquiry exonerated the officer of all charges."
+      },
+      {
+        "term": "expiate",
+        "definition": "to make amends for wrongdoing",
+        "context": "He sought to expiate his guilt through charity."
+      },
+      {
+        "term": "expunge",
+        "definition": "to erase or remove completely",
+        "context": "The court ordered the record to be expunged."
+      },
+      {
+        "term": "extemporize",
+        "definition": "to speak or perform without preparation",
+        "context": "She had to extemporize when the teleprompter failed."
+      },
+      {
+        "term": "extol",
+        "definition": "to praise enthusiastically",
+        "context": "The review extolled the virtues of the new software."
+      },
+      {
+        "term": "extrapolate",
+        "definition": "to extend the application of findings beyond the known",
+        "context": "We cannot simply extrapolate from these limited results."
+      },
+      {
+        "term": "fabricate",
+        "definition": "to invent false information; to manufacture",
+        "context": "The witness fabricated key details of the testimony."
+      },
+      {
+        "term": "fathom",
+        "definition": "to understand thoroughly after much thought",
+        "context": "I cannot fathom why they rejected the offer."
+      },
+      {
+        "term": "forestall",
+        "definition": "to prevent by taking action in advance",
+        "context": "Early intervention forestalled a wider epidemic."
+      },
+      {
+        "term": "galvanize",
+        "definition": "to shock or excite into action",
+        "context": "The speech galvanized the crowd to demand reform."
+      },
+      {
+        "term": "garner",
+        "definition": "to gather or collect",
+        "context": "The documentary garnered critical acclaim worldwide."
+      },
+      {
+        "term": "glean",
+        "definition": "to gather information bit by bit",
+        "context": "We gleaned useful insights from the customer feedback."
+      },
+      {
+        "term": "grapple",
+        "definition": "to struggle or wrestle with a difficult issue",
+        "context": "The committee grappled with the ethical implications."
+      },
+      {
+        "term": "hamstring",
+        "definition": "to severely restrict the efficiency of",
+        "context": "Budget cuts have hamstrung the research department."
+      },
+      {
+        "term": "hoodwink",
+        "definition": "to deceive or trick",
+        "context": "Investors were hoodwinked by the fraudulent scheme."
+      },
+      {
+        "term": "imbue",
+        "definition": "to permeate or inspire with a feeling or quality",
+        "context": "The training imbued recruits with a sense of discipline."
+      },
+      {
+        "term": "impede",
+        "definition": "to delay or prevent by obstructing",
+        "context": "Bureaucracy continues to impede economic reform."
+      },
+      {
+        "term": "impugn",
+        "definition": "to dispute the truth or honesty of",
+        "context": "The defence lawyer impugned the credibility of the witness."
+      },
+      {
+        "term": "incapacitate",
+        "definition": "to deprive of ability or strength",
+        "context": "The injury incapacitated her for several weeks."
+      },
+      {
+        "term": "inculcate",
+        "definition": "to instil ideas by persistent instruction",
+        "context": "Parents strive to inculcate moral values in their children."
+      },
+      {
+        "term": "insinuate",
+        "definition": "to suggest indirectly; to hint",
+        "context": "Are you insinuating that I was involved?"
+      },
+      {
+        "term": "interpolate",
+        "definition": "to insert something between fixed points",
+        "context": "The editor interpolated several clarifying sentences."
+      },
+      {
+        "term": "invoke",
+        "definition": "to call upon as authority or justification",
+        "context": "The lawyer invoked a rarely used constitutional clause."
+      },
+      {
+        "term": "juxtapose",
+        "definition": "to place side by side for comparison",
+        "context": "The exhibition juxtaposes modern art with classical sculptures."
+      },
+      {
+        "term": "lambaste",
+        "definition": "to criticize harshly",
+        "context": "The press lambasted the government for the policy failure."
+      },
+      {
+        "term": "languish",
+        "definition": "to suffer from being forced to remain in an unpleasant state",
+        "context": "The prisoner languished in solitary confinement."
+      },
+      {
+        "term": "mitigate",
+        "definition": "to make less severe or painful",
+        "context": "Steps were taken to mitigate the environmental damage."
+      },
+      {
+        "term": "mollify",
+        "definition": "to appease the anger of someone",
+        "context": "A public apology did little to mollify the protesters."
+      },
+      {
+        "term": "obfuscate",
+        "definition": "to make unclear or unintelligible",
+        "context": "The jargon served to obfuscate rather than clarify the issue."
+      },
+      {
+        "term": "obviate",
+        "definition": "to remove a need or difficulty",
+        "context": "A simple redesign would obviate the need for costly repairs."
+      },
+      {
+        "term": "oscillate",
+        "definition": "to move or swing back and forth between states",
+        "context": "Public opinion oscillated between support and opposition."
+      },
+      {
+        "term": "ostracize",
+        "definition": "to exclude from a group",
+        "context": "He was ostracized by his colleagues after the incident."
+      },
+      {
+        "term": "palliate",
+        "definition": "to relieve symptoms without curing",
+        "context": "Medication can palliate the symptoms but not the disease."
+      },
+      {
+        "term": "perpetuate",
+        "definition": "to cause something to continue indefinitely",
+        "context": "These stereotypes perpetuate harmful misconceptions."
+      },
+      {
+        "term": "perturb",
+        "definition": "to make someone anxious or unsettled",
+        "context": "The unexpected findings perturbed the research team."
+      },
+      {
+        "term": "pillory",
+        "definition": "to publicly ridicule or criticize",
+        "context": "The politician was pilloried in the tabloid press."
+      },
+      {
+        "term": "placate",
+        "definition": "to make less angry or hostile",
+        "context": "The company offered a full refund to placate the customer."
+      },
+      {
+        "term": "pontificate",
+        "definition": "to express opinions in a pompous way",
+        "context": "He loves to pontificate about modern architecture."
+      },
+      {
+        "term": "preclude",
+        "definition": "to prevent from happening; to make impossible",
+        "context": "The injury precluded her from competing this season."
+      },
+      {
+        "term": "promulgate",
+        "definition": "to make widely known; to put a law into effect",
+        "context": "The government promulgated new safety regulations."
+      },
+      {
+        "term": "propitiate",
+        "definition": "to win the favour of by doing something pleasing",
+        "context": "Offerings were made to propitiate the gods."
+      },
+      {
+        "term": "proscribe",
+        "definition": "to forbid officially",
+        "context": "The use of certain chemicals has been proscribed by law."
+      },
+      {
+        "term": "quash",
+        "definition": "to suppress or reject decisively",
+        "context": "The court quashed the conviction on appeal."
+      },
+      {
+        "term": "ratify",
+        "definition": "to formally approve or confirm",
+        "context": "Parliament ratified the international agreement."
+      },
+      {
+        "term": "rebuff",
+        "definition": "to reject firmly",
+        "context": "The proposal was rebuffed by the board."
+      },
+      {
+        "term": "rebuke",
+        "definition": "to express sharp disapproval",
+        "context": "The manager rebuked the employee for carelessness."
+      },
+      {
+        "term": "recapitulate",
+        "definition": "to summarize the main points",
+        "context": "Allow me to recapitulate the arguments we have discussed."
+      },
+      {
+        "term": "relinquish",
+        "definition": "to voluntarily give up",
+        "context": "She relinquished her claim to the property."
+      },
+      {
+        "term": "remonstrate",
+        "definition": "to protest or argue forcefully",
+        "context": "Staff remonstrated with management over the pay freeze."
+      },
+      {
+        "term": "repudiate",
+        "definition": "to refuse to accept or be associated with",
+        "context": "The party repudiated his extremist views."
+      },
+      {
+        "term": "rescind",
+        "definition": "to revoke or cancel officially",
+        "context": "The university rescinded the offer after the scandal."
+      },
+      {
+        "term": "ruminate",
+        "definition": "to think deeply about something",
+        "context": "She ruminated on the decision for weeks."
+      },
+      {
+        "term": "sanction",
+        "definition": "to authorize officially; or to penalize",
+        "context": "The UN sanctioned the country for violating the agreement."
+      },
+      {
+        "term": "scrutinize",
+        "definition": "to examine very carefully",
+        "context": "Auditors scrutinized the company\\"
+      },
+      {
+        "term": "sequester",
+        "definition": "to isolate or hide away",
+        "context": "The jury was sequestered during deliberations."
+      },
+      {
+        "term": "stymie",
+        "definition": "to prevent from making progress",
+        "context": "Lack of funding stymied the research project."
+      },
+      {
+        "term": "subjugate",
+        "definition": "to bring under domination or control",
+        "context": "The empire sought to subjugate neighbouring territories."
+      },
+      {
+        "term": "supplant",
+        "definition": "to replace by something superior",
+        "context": "Digital media has supplanted print in many markets."
+      },
+      {
+        "term": "surmount",
+        "definition": "to overcome a difficulty or obstacle",
+        "context": "She surmounted every challenge on her path to success."
+      },
+      {
+        "term": "surreptitiously",
+        "definition": "in a way that is kept secret",
+        "context": "He surreptitiously recorded the conversation."
+      },
+      {
+        "term": "tantalize",
+        "definition": "to tease with the sight of something desirable but unattainable",
+        "context": "The aroma of fresh bread tantalized passers-by."
+      },
+      {
+        "term": "transgress",
+        "definition": "to violate a rule or moral boundary",
+        "context": "Those who transgress the code of conduct face dismissal."
+      },
+      {
+        "term": "truncate",
+        "definition": "to shorten by cutting off the top or end",
+        "context": "The report was truncated due to space constraints."
+      },
+      {
+        "term": "undermine",
+        "definition": "to weaken gradually; to sabotage",
+        "context": "Constant criticism undermined her confidence."
+      },
+      {
+        "term": "usurp",
+        "definition": "to seize power or position illegally or by force",
+        "context": "The general usurped the president\\"
+      },
+      {
+        "term": "vacillate",
+        "definition": "to waver between different opinions or actions",
+        "context": "She vacillated between accepting and declining the offer."
+      },
+      {
+        "term": "vilify",
+        "definition": "to speak about someone in a very negative way",
+        "context": "The candidate was vilified by opposing media outlets."
+      },
+      {
+        "term": "vindicate",
+        "definition": "to clear of blame; to justify",
+        "context": "The investigation vindicated her original claims."
+      },
+      {
+        "term": "vitiate",
+        "definition": "to impair or reduce the effectiveness of",
+        "context": "Procedural errors vitiated the entire experiment."
+      },
+      {
+        "term": "wrangle",
+        "definition": "to argue or dispute noisily",
+        "context": "The committee wrangled over the proposed amendments."
+      },
+      {
+        "term": "acquiescent",
+        "definition": "ready to accept without protest",
+        "context": "The public was disappointingly acquiescent to the changes."
+      },
+      {
+        "term": "acrimonious",
+        "definition": "angry and bitter in manner",
+        "context": "The divorce turned acrimonious very quickly."
+      },
+      {
+        "term": "anachronistic",
+        "definition": "belonging to a past era; out of date",
+        "context": "The handwritten ledger seemed anachronistic in a digital age."
+      },
+      {
+        "term": "ancillary",
+        "definition": "providing support rather than being central",
+        "context": "Ancillary staff are essential to the hospital\\"
+      },
+      {
+        "term": "antithetical",
+        "definition": "directly opposed or contrasted",
+        "context": "His views are antithetical to everything we stand for."
+      },
+      {
+        "term": "apocryphal",
+        "definition": "widely believed but probably untrue",
+        "context": "The apocryphal tale of the founder has been debunked."
+      },
+      {
+        "term": "arcane",
+        "definition": "understood by few; mysterious",
+        "context": "The arcane rules of the ancient game baffled newcomers."
+      },
+      {
+        "term": "asinine",
+        "definition": "extremely stupid or foolish",
+        "context": "That was an asinine suggestion and everyone knew it."
+      },
+      {
+        "term": "austere",
+        "definition": "severe in manner or appearance; lacking comfort",
+        "context": "The monastery\\"
+      },
+      {
+        "term": "avaricious",
+        "definition": "having an extreme greed for wealth",
+        "context": "The avaricious businessman exploited his workers."
+      },
+      {
+        "term": "beatific",
+        "definition": "blissfully happy; saintly",
+        "context": "She had a beatific smile after receiving the good news."
+      },
+      {
+        "term": "bellicose",
+        "definition": "inclined to fight; aggressive",
+        "context": "The bellicose rhetoric alarmed neighbouring nations."
+      },
+      {
+        "term": "byzantine",
+        "definition": "excessively complicated",
+        "context": "The tax system is positively byzantine in its complexity."
+      },
+      {
+        "term": "capricious",
+        "definition": "prone to sudden changes of mood or behaviour",
+        "context": "The capricious weather forced us to change plans."
+      },
+      {
+        "term": "caustic",
+        "definition": "sarcastic in a scathing way",
+        "context": "Her caustic remarks wounded even her allies."
+      },
+      {
+        "term": "clandestine",
+        "definition": "kept secret or done hidden",
+        "context": "The agents held a clandestine meeting at midnight."
+      },
+      {
+        "term": "commensurate",
+        "definition": "corresponding in size, extent, or degree",
+        "context": "Salary will be commensurate with experience."
+      },
+      {
+        "term": "compendious",
+        "definition": "containing all necessary information concisely",
+        "context": "The handbook provides a compendious guide to EU law."
+      },
+      {
+        "term": "concomitant",
+        "definition": "naturally accompanying or associated",
+        "context": "Fame and its concomitant loss of privacy can be overwhelming."
+      },
+      {
+        "term": "contrite",
+        "definition": "feeling deep remorse",
+        "context": "He gave a contrite apology to the team."
+      },
+      {
+        "term": "convoluted",
+        "definition": "extremely complex and difficult to follow",
+        "context": "The plot of the novel is unnecessarily convoluted."
+      },
+      {
+        "term": "corrosive",
+        "definition": "gradually destructive; bitingly sarcastic",
+        "context": "The corrosive effect of cynicism on morale is well documented."
+      },
+      {
+        "term": "credulous",
+        "definition": "too ready to believe things",
+        "context": "The scam targeted credulous elderly people."
+      },
+      {
+        "term": "cumbersome",
+        "definition": "large, heavy, and difficult to use or manage",
+        "context": "The cumbersome approval process slowed progress."
+      },
+      {
+        "term": "cursory",
+        "definition": "hasty and not thorough",
+        "context": "A cursory glance at the data revealed significant errors."
+      },
+      {
+        "term": "deleterious",
+        "definition": "causing harm or damage",
+        "context": "Pollution has a deleterious effect on public health."
+      },
+      {
+        "term": "derisory",
+        "definition": "ridiculously small or inadequate",
+        "context": "The pay increase was derisory — only one percent."
+      },
+      {
+        "term": "despondent",
+        "definition": "in low spirits from loss of hope",
+        "context": "After failing the exam, he became deeply despondent."
+      },
+      {
+        "term": "diaphanous",
+        "definition": "light, delicate, and translucent",
+        "context": "She wore a diaphanous silk scarf."
+      },
+      {
+        "term": "didactic",
+        "definition": "intended to teach, sometimes in a patronizing way",
+        "context": "The film was overly didactic and lacked subtlety."
+      },
+      {
+        "term": "diffident",
+        "definition": "modest or shy because of a lack of self-confidence",
+        "context": "He was too diffident to speak up at the meeting."
+      },
+      {
+        "term": "dilatory",
+        "definition": "slow to act; intended to cause delay",
+        "context": "The court penalized the defence for dilatory tactics."
+      },
+      {
+        "term": "discursive",
+        "definition": "digressing from the main subject; rambling",
+        "context": "His discursive writing style frustrated the editors."
+      },
+      {
+        "term": "egregious",
+        "definition": "outstandingly bad; shocking",
+        "context": "The report highlighted egregious violations of the rules."
+      },
+      {
+        "term": "ephemeral",
+        "definition": "lasting for a very short time",
+        "context": "Fame on social media can be ephemeral."
+      },
+      {
+        "term": "equanimous",
+        "definition": "calm and composed, especially in difficulty",
+        "context": "She remained equanimous despite the turbulence around her."
+      },
+      {
+        "term": "esoteric",
+        "definition": "intended for or understood by only a few",
+        "context": "The lecture dealt with esoteric mathematical theories."
+      },
+      {
+        "term": "evanescent",
+        "definition": "fading from sight, memory, or existence",
+        "context": "The evanescent beauty of cherry blossoms captivated her."
+      },
+      {
+        "term": "execrable",
+        "definition": "extremely bad",
+        "context": "The food at the conference was execrable."
+      },
+      {
+        "term": "expedient",
+        "definition": "convenient and practical, though possibly improper",
+        "context": "The politically expedient decision was not the right one."
+      },
+      {
+        "term": "extemporaneous",
+        "definition": "spoken or done without preparation",
+        "context": "Her extemporaneous remarks were more memorable than the speech."
+      },
+      {
+        "term": "facetious",
+        "definition": "treating serious issues with inappropriate humour",
+        "context": "I hope you are being facetious and not serious."
+      },
+      {
+        "term": "fallacious",
+        "definition": "based on a mistaken belief; misleading",
+        "context": "The argument was fallacious from the very start."
+      },
+      {
+        "term": "fastidious",
+        "definition": "very attentive to accuracy and detail",
+        "context": "She was fastidious about the cleanliness of her workspace."
+      },
+      {
+        "term": "felicitous",
+        "definition": "well chosen and pleasing; apt",
+        "context": "His felicitous turn of phrase delighted the audience."
+      },
+      {
+        "term": "frenetic",
+        "definition": "fast and energetic in a rather wild way",
+        "context": "The frenetic pace of the city overwhelmed the visitors."
+      },
+      {
+        "term": "grandiloquent",
+        "definition": "using pompous or extravagant language",
+        "context": "His grandiloquent speeches impressed few people."
+      },
+      {
+        "term": "gratuitous",
+        "definition": "uncalled for; unjustified",
+        "context": "The violence in the film was gratuitous and unnecessary."
+      },
+      {
+        "term": "gregarious",
+        "definition": "fond of company; sociable",
+        "context": "Her gregarious nature made her the life of the party."
+      },
+      {
+        "term": "hackneyed",
+        "definition": "overused and unoriginal",
+        "context": "The article was full of hackneyed phrases."
+      },
+      {
+        "term": "hapless",
+        "definition": "unlucky and unfortunate",
+        "context": "The hapless tourists were caught in the downpour."
+      },
+      {
+        "term": "ignominious",
+        "definition": "deserving or causing public shame",
+        "context": "The team suffered an ignominious defeat."
+      },
+      {
+        "term": "immutable",
+        "definition": "unchanging over time; permanent",
+        "context": "The laws of physics are considered immutable."
+      },
+      {
+        "term": "imperious",
+        "definition": "assuming power without justification; domineering",
+        "context": "Her imperious tone irritated her colleagues."
+      },
+      {
+        "term": "imperturbable",
+        "definition": "unable to be upset or excited; calm",
+        "context": "The imperturbable diplomat handled every crisis with ease."
+      },
+      {
+        "term": "impervious",
+        "definition": "not affected or influenced by",
+        "context": "He seemed impervious to criticism."
+      },
+      {
+        "term": "implacable",
+        "definition": "unable to be appeased",
+        "context": "She was an implacable opponent of the policy."
+      },
+      {
+        "term": "inchoate",
+        "definition": "just begun; not fully formed",
+        "context": "The plan was inchoate and lacked clear objectives."
+      },
+      {
+        "term": "incongruous",
+        "definition": "not in harmony or compatible",
+        "context": "The modern building looked incongruous next to the cathedral."
+      },
+      {
+        "term": "incorrigible",
+        "definition": "not able to be corrected or reformed",
+        "context": "He was an incorrigible optimist, despite everything."
+      },
+      {
+        "term": "indefatigable",
+        "definition": "showing sustained tireless effort",
+        "context": "Her indefatigable work ethic inspired the whole team."
+      },
+      {
+        "term": "ineffable",
+        "definition": "too great or extreme to be expressed in words",
+        "context": "She felt an ineffable sense of peace in the garden."
+      },
+      {
+        "term": "inexorable",
+        "definition": "impossible to stop or prevent",
+        "context": "The inexorable march of technology continues to reshape society."
+      },
+      {
+        "term": "insidious",
+        "definition": "proceeding harmfully in a gradual or subtle way",
+        "context": "The insidious effects of the propaganda went unnoticed."
+      },
+      {
+        "term": "insipid",
+        "definition": "lacking flavour, interest, or excitement",
+        "context": "The insipid dialogue ruined an otherwise decent film."
+      },
+      {
+        "term": "intractable",
+        "definition": "hard to manage or resolve",
+        "context": "Poverty remains an intractable problem in many regions."
+      },
+      {
+        "term": "inveterate",
+        "definition": "having a long-standing habit unlikely to change",
+        "context": "He is an inveterate collector of rare books."
+      },
+      {
+        "term": "irascible",
+        "definition": "easily made angry",
+        "context": "The irascible professor tolerated no interruptions."
+      },
+      {
+        "term": "laconic",
+        "definition": "using very few words",
+        "context": "His laconic reply gave nothing away."
+      },
+      {
+        "term": "loquacious",
+        "definition": "tending to talk a great deal",
+        "context": "The loquacious host kept everyone entertained."
+      },
+      {
+        "term": "lugubrious",
+        "definition": "looking or sounding sad and dismal",
+        "context": "The lugubrious music matched the somber ceremony."
+      },
+      {
+        "term": "magnanimous",
+        "definition": "generous or forgiving, especially toward a rival",
+        "context": "She was magnanimous in victory and praised her opponent."
+      },
+      {
+        "term": "mercurial",
+        "definition": "subject to sudden or unpredictable changes",
+        "context": "His mercurial temperament made working with him difficult."
+      },
+      {
+        "term": "munificent",
+        "definition": "extremely generous",
+        "context": "The munificent donation funded the entire wing of the hospital."
+      },
+      {
+        "term": "nefarious",
+        "definition": "wicked or criminal",
+        "context": "The nefarious scheme was exposed by investigative journalists."
+      },
+      {
+        "term": "obsequious",
+        "definition": "excessively eager to serve or please",
+        "context": "His obsequious manner towards the boss annoyed his peers."
+      },
+      {
+        "term": "officious",
+        "definition": "asserting authority in an annoying way",
+        "context": "The officious clerk insisted on following every rule to the letter."
+      },
+      {
+        "term": "opaque",
+        "definition": "not transparent; difficult to understand",
+        "context": "The bureaucratic language rendered the policy opaque."
+      },
+      {
+        "term": "palpable",
+        "definition": "so intense it can almost be felt physically",
+        "context": "The tension in the room was palpable."
+      },
+      {
+        "term": "parsimonious",
+        "definition": "unwilling to spend money; excessively frugal",
+        "context": "The parsimonious billionaire famously drove a used car."
+      },
+      {
+        "term": "pedantic",
+        "definition": "excessively concerned with minor details",
+        "context": "His pedantic corrections annoyed the entire class."
+      },
+      {
+        "term": "pejorative",
+        "definition": "expressing contempt or disapproval",
+        "context": "The term has acquired a pejorative connotation over the years."
+      },
+      {
+        "term": "pellucid",
+        "definition": "translucently clear; easily understood",
+        "context": "Her pellucid prose made complex topics accessible."
+      },
+      {
+        "term": "perfidious",
+        "definition": "deceitful and untrustworthy",
+        "context": "The perfidious ally betrayed them at the crucial moment."
+      },
+      {
+        "term": "perfunctory",
+        "definition": "carried out with minimum effort; mechanical",
+        "context": "The inspector gave only a perfunctory glance at the documents."
+      },
+      {
+        "term": "pernicious",
+        "definition": "having a very harmful effect, especially gradually",
+        "context": "The pernicious influence of misinformation cannot be overstated."
+      },
+      {
+        "term": "perspicacious",
+        "definition": "having keen mental perception and understanding",
+        "context": "Her perspicacious analysis identified the root cause quickly."
+      },
+      {
+        "term": "petulant",
+        "definition": "childishly sulky or bad-tempered",
+        "context": "His petulant outburst shocked the committee."
+      },
+      {
+        "term": "plaintive",
+        "definition": "sounding sad and mournful",
+        "context": "A plaintive melody echoed through the empty hall."
+      },
+      {
+        "term": "plausible",
+        "definition": "seeming reasonable or probable",
+        "context": "The explanation is plausible but not proven."
+      },
+      {
+        "term": "portentous",
+        "definition": "of great significance; ominous",
+        "context": "The portentous clouds signalled an approaching storm."
+      },
+      {
+        "term": "precipitous",
+        "definition": "dangerously high or steep; hasty",
+        "context": "The precipitous decline in sales alarmed the board."
+      },
+      {
+        "term": "prescient",
+        "definition": "having knowledge of events before they happen",
+        "context": "Her prescient warnings about the crisis went unheeded."
+      },
+      {
+        "term": "prepossessing",
+        "definition": "attractive or appealing in appearance",
+        "context": "He was not a prepossessing figure at first glance."
+      },
+      {
+        "term": "prodigious",
+        "definition": "remarkably great in extent, size, or degree",
+        "context": "She displayed prodigious talent from a very young age."
+      },
+      {
+        "term": "prosaic",
+        "definition": "lacking poetic beauty; unimaginative",
+        "context": "The report was accurate but rather prosaic."
+      },
+      {
+        "term": "punctilious",
+        "definition": "showing great attention to detail or correct behaviour",
+        "context": "He was punctilious in observing all formalities."
+      },
+      {
+        "term": "quixotic",
+        "definition": "extremely idealistic; unrealistic and impractical",
+        "context": "His quixotic quest for perfection delayed the launch."
+      },
+      {
+        "term": "recalcitrant",
+        "definition": "stubbornly uncooperative",
+        "context": "The recalcitrant teenager refused to comply."
+      },
+      {
+        "term": "redolent",
+        "definition": "strongly reminiscent of; fragrant",
+        "context": "The garden was redolent of jasmine in the evening."
+      },
+      {
+        "term": "refractory",
+        "definition": "stubborn, resistant to control",
+        "context": "The infection proved refractory to standard treatment."
+      },
+      {
+        "term": "sacrosanct",
+        "definition": "regarded as too important to be changed",
+        "context": "Freedom of the press is sacrosanct in a democracy."
+      },
+      {
+        "term": "salacious",
+        "definition": "having an excessive interest in sexual matters",
+        "context": "The tabloid published salacious details about the celebrity."
+      },
+      {
+        "term": "scrupulous",
+        "definition": "diligent, careful, and thorough",
+        "context": "The scientist was scrupulous in documenting every step."
+      },
+      {
+        "term": "sedulous",
+        "definition": "showing dedication and careful effort",
+        "context": "Her sedulous research over the years finally paid off."
+      },
+      {
+        "term": "spurious",
+        "definition": "false or fake; not genuine",
+        "context": "The claims were based on spurious evidence."
+      },
+      {
+        "term": "surreptitious",
+        "definition": "kept secret because it would not be approved of",
+        "context": "He took a surreptitious glance at his phone during the lecture."
+      },
+      {
+        "term": "sycophantic",
+        "definition": "behaving in an excessively flattering manner",
+        "context": "Sycophantic praise is not the same as genuine admiration."
+      },
+      {
+        "term": "taciturn",
+        "definition": "reserved and uncommunicative",
+        "context": "The taciturn farmer said little at the community meeting."
+      },
+      {
+        "term": "tangential",
+        "definition": "only slightly related to the main subject",
+        "context": "His comments were tangential and distracted from the issue."
+      },
+      {
+        "term": "tenable",
+        "definition": "able to be defended against attack or objection",
+        "context": "The position is no longer tenable given the evidence."
+      },
+      {
+        "term": "tenuous",
+        "definition": "very weak or slight; insubstantial",
+        "context": "The connection between the two events is tenuous at best."
+      },
+      {
+        "term": "terse",
+        "definition": "using few words; abruptly concise",
+        "context": "His terse email left everyone wondering what was wrong."
+      },
+      {
+        "term": "torpid",
+        "definition": "mentally or physically inactive; sluggish",
+        "context": "The heat made everyone torpid by mid-afternoon."
+      },
+      {
+        "term": "tractable",
+        "definition": "easy to manage or deal with",
+        "context": "The issue turned out to be more tractable than expected."
+      },
+      {
+        "term": "transient",
+        "definition": "lasting only a short time",
+        "context": "Happiness can be a transient emotion."
+      },
+      {
+        "term": "truculent",
+        "definition": "eager to fight; aggressively defiant",
+        "context": "The truculent crowd confronted police at the barrier."
+      },
+      {
+        "term": "ubiquitous",
+        "definition": "present everywhere at the same time",
+        "context": "Smartphones have become ubiquitous in modern life."
+      },
+      {
+        "term": "unconscionable",
+        "definition": "not right or reasonable",
+        "context": "The unconscionable price gouging drew public outrage."
+      },
+      {
+        "term": "unctuous",
+        "definition": "excessively flattering; oily in texture",
+        "context": "The salesman\\"
+      },
+      {
+        "term": "unequivocal",
+        "definition": "leaving no doubt; unmistakable",
+        "context": "The results were unequivocal — the drug works."
+      },
+      {
+        "term": "unfathomable",
+        "definition": "impossible to understand or measure",
+        "context": "The sheer scale of the universe is unfathomable."
+      },
+      {
+        "term": "vainglorious",
+        "definition": "excessively proud of oneself",
+        "context": "The vainglorious general underestimated the enemy."
+      },
+      {
+        "term": "venal",
+        "definition": "open to bribery; corrupt",
+        "context": "The venal official was arrested by the anti-corruption unit."
+      },
+      {
+        "term": "vitriolic",
+        "definition": "filled with bitter criticism or malice",
+        "context": "The vitriolic exchange on social media went viral."
+      },
+      {
+        "term": "vociferous",
+        "definition": "expressing opinions loudly and forcefully",
+        "context": "Vociferous protests erupted outside parliament."
+      },
+      {
+        "term": "wistful",
+        "definition": "having a feeling of vague or regretful longing",
+        "context": "She cast a wistful glance at the old family photograph."
+      },
+      {
+        "term": "zealous",
+        "definition": "having great energy or enthusiasm for a cause",
+        "context": "The zealous campaigner knocked on every door in the neighborhood."
+      },
+      {
+        "term": "accolade",
+        "definition": "an award or privilege given as recognition",
+        "context": "The film received the highest accolade at the festival."
+      },
+      {
+        "term": "acumen",
+        "definition": "the ability to make good judgements",
+        "context": "She is well known for her business acumen."
+      },
+      {
+        "term": "affront",
+        "definition": "an action that causes offence",
+        "context": "His late arrival was seen as a personal affront."
+      },
+      {
+        "term": "behemoth",
+        "definition": "something enormous",
+        "context": "The tech behemoth dominates the global market."
+      },
+      {
+        "term": "bulwark",
+        "definition": "a defensive wall; a strong support",
+        "context": "A free press is a bulwark against tyranny."
+      },
+      {
+        "term": "cacophony",
+        "definition": "a harsh, discordant mixture of sounds",
+        "context": "A cacophony of horns echoed from the gridlocked streets."
+      },
+      {
+        "term": "catalyst",
+        "definition": "a person or event that triggers change",
+        "context": "The scandal served as a catalyst for political reform."
+      },
+      {
+        "term": "caveat",
+        "definition": "a warning or proviso",
+        "context": "The findings come with an important caveat."
+      },
+      {
+        "term": "compunction",
+        "definition": "a feeling of guilt that prevents wrongdoing",
+        "context": "She felt no compunction about exposing the fraud."
+      },
+      {
+        "term": "conflagration",
+        "definition": "an extensive fire",
+        "context": "The conflagration destroyed several city blocks."
+      },
+      {
+        "term": "conundrum",
+        "definition": "a confusing and difficult problem",
+        "context": "The budget deficit presents a real conundrum for policymakers."
+      },
+      {
+        "term": "debacle",
+        "definition": "a sudden and complete disaster",
+        "context": "The product launch was a complete debacle."
+      },
+      {
+        "term": "deference",
+        "definition": "humble submission and respect",
+        "context": "In deference to tradition, the ceremony was held outdoors."
+      },
+      {
+        "term": "denouement",
+        "definition": "the final outcome of a situation",
+        "context": "The trial\\"
+      },
+      {
+        "term": "diatribe",
+        "definition": "a forceful and bitter verbal attack",
+        "context": "She launched into a diatribe against governmental corruption."
+      },
+      {
+        "term": "dichotomy",
+        "definition": "a contrast between two things",
+        "context": "The dichotomy between rich and poor is growing wider."
+      },
+      {
+        "term": "edifice",
+        "definition": "a large, imposing building; a complex system",
+        "context": "The entire edifice of international law was called into question."
+      },
+      {
+        "term": "ennui",
+        "definition": "a feeling of listlessness and dissatisfaction from boredom",
+        "context": "A sense of ennui settled over the office."
+      },
+      {
+        "term": "epiphany",
+        "definition": "a sudden, powerful realization",
+        "context": "She had an epiphany while reading the research paper."
+      },
+      {
+        "term": "exigency",
+        "definition": "an urgent need or demand",
+        "context": "The exigencies of war required difficult decisions."
+      },
+      {
+        "term": "fiasco",
+        "definition": "a complete and humiliating failure",
+        "context": "The negotiations ended in a diplomatic fiasco."
+      },
+      {
+        "term": "hegemony",
+        "definition": "leadership or dominance over others",
+        "context": "The country maintains economic hegemony in the region."
+      },
+      {
+        "term": "hubris",
+        "definition": "excessive pride or arrogance",
+        "context": "Their hubris led them to underestimate the competition."
+      },
+      {
+        "term": "idiosyncrasy",
+        "definition": "a quirk or unusual habit unique to a person",
+        "context": "His idiosyncrasies made him a memorable character."
+      },
+      {
+        "term": "imbroglio",
+        "definition": "a confused, complicated, or embarrassing situation",
+        "context": "The political imbroglio dominated the news cycle."
+      },
+      {
+        "term": "impasse",
+        "definition": "a situation in which no progress seems possible",
+        "context": "Negotiations reached an impasse over trade tariffs."
+      },
+      {
+        "term": "impunity",
+        "definition": "exemption from punishment or consequences",
+        "context": "The regime committed atrocities with impunity."
+      },
+      {
+        "term": "juggernaut",
+        "definition": "a massive and unstoppable force",
+        "context": "The company has become a juggernaut in the streaming industry."
+      },
+      {
+        "term": "litany",
+        "definition": "a long and tedious list or recital",
+        "context": "The report contained a litany of complaints."
+      },
+      {
+        "term": "maelstrom",
+        "definition": "a situation of confused and violent movement",
+        "context": "The country was caught in a maelstrom of political upheaval."
+      },
+      {
+        "term": "moratorium",
+        "definition": "a temporary prohibition of an activity",
+        "context": "The government declared a moratorium on new drilling permits."
+      },
+      {
+        "term": "nadir",
+        "definition": "the lowest point",
+        "context": "Relations between the countries reached their nadir."
+      },
+      {
+        "term": "nemesis",
+        "definition": "a long-standing rival; a cause of downfall",
+        "context": "Overconfidence proved to be her nemesis."
+      },
+      {
+        "term": "non sequitur",
+        "definition": "a statement that does not logically follow",
+        "context": "His argument was a non sequitur and confused the jury."
+      },
+      {
+        "term": "onus",
+        "definition": "a burden of responsibility",
+        "context": "The onus is on the prosecution to prove guilt."
+      },
+      {
+        "term": "opprobrium",
+        "definition": "harsh criticism or public disgrace",
+        "context": "The company faced universal opprobrium for the data breach."
+      },
+      {
+        "term": "paradigm",
+        "definition": "a typical example or model; a framework",
+        "context": "The internet created a new paradigm for communication."
+      },
+      {
+        "term": "paragon",
+        "definition": "a model of excellence or perfection",
+        "context": "She is considered a paragon of judicial integrity."
+      },
+      {
+        "term": "paradox",
+        "definition": "a statement that seems contradictory but may be true",
+        "context": "The paradox of progress is that it creates new problems."
+      },
+      {
+        "term": "pedagogy",
+        "definition": "the method and practice of teaching",
+        "context": "The university is experimenting with new forms of digital pedagogy."
+      },
+      {
+        "term": "penchant",
+        "definition": "a strong habitual liking",
+        "context": "She has a penchant for elaborate hats."
+      },
+      {
+        "term": "pinnacle",
+        "definition": "the highest point of development",
+        "context": "Winning the championship was the pinnacle of her career."
+      },
+      {
+        "term": "platitude",
+        "definition": "a remark that has been used too often to be meaningful",
+        "context": "His speech was full of platitudes and offered nothing new."
+      },
+      {
+        "term": "posterity",
+        "definition": "all future generations",
+        "context": "These archives are preserved for posterity."
+      },
+      {
+        "term": "prerogative",
+        "definition": "an exclusive right or privilege",
+        "context": "It is the manager\\"
+      },
+      {
+        "term": "propensity",
+        "definition": "a natural tendency to behave in a certain way",
+        "context": "He has a propensity for exaggeration."
+      },
+      {
+        "term": "quagmire",
+        "definition": "a complex or difficult situation from which it is hard to escape",
+        "context": "The project became a bureaucratic quagmire."
+      },
+      {
+        "term": "ramification",
+        "definition": "a complex consequence of an action or event",
+        "context": "The ramifications of the decision are still being felt."
+      },
+      {
+        "term": "raison d\\",
+        "definition": "the most important reason for existence",
+        "context": "Customer satisfaction is the company\\"
+      },
+      {
+        "term": "rancour",
+        "definition": "bitterness or resentfulness",
+        "context": "The negotiations were conducted without rancour."
+      },
+      {
+        "term": "rapprochement",
+        "definition": "an establishment of harmonious relations",
+        "context": "The summit marked a rapprochement between the two nations."
+      },
+      {
+        "term": "repertoire",
+        "definition": "a stock of skills, works, or resources",
+        "context": "She added several new pieces to her repertoire."
+      },
+      {
+        "term": "schism",
+        "definition": "a split or division between groups",
+        "context": "A schism within the party threatened its unity."
+      },
+      {
+        "term": "stratagem",
+        "definition": "a plan or scheme to outwit an opponent",
+        "context": "The general devised a clever stratagem to surprise the enemy."
+      },
+      {
+        "term": "stricture",
+        "definition": "a restriction; a critical remark",
+        "context": "The new strictures on lending worried the banks."
+      },
+      {
+        "term": "subterfuge",
+        "definition": "deceit used to achieve one\\",
+        "context": "They gained access through subterfuge and bribery."
+      },
+      {
+        "term": "temerity",
+        "definition": "excessive confidence or boldness; audacity",
+        "context": "He had the temerity to question the chairman in public."
+      },
+      {
+        "term": "travesty",
+        "definition": "a false, absurd representation of something",
+        "context": "The trial was a travesty of justice."
+      },
+      {
+        "term": "turpitude",
+        "definition": "depravity; wickedness",
+        "context": "The judge spoke of the moral turpitude of the crime."
+      },
+      {
+        "term": "vicissitude",
+        "definition": "a change of fortune, typically unwelcome",
+        "context": "She endured the vicissitudes of a long career in politics."
+      },
+      {
+        "term": "zeitgeist",
+        "definition": "the spirit or mood of a particular period",
+        "context": "The film perfectly captured the zeitgeist of the 1990s."
+      },
+      {
+        "term": "all things considered",
+        "definition": "taking everything into account",
+        "context": "All things considered, the event was a success."
+      },
+      {
+        "term": "be that as it may",
+        "definition": "despite that; even so",
+        "context": "Be that as it may, the deadline still applies."
+      },
+      {
+        "term": "for what it is worth",
+        "definition": "said when giving an opinion you are not sure about",
+        "context": "For what it is worth, I think we should wait."
+      },
+      {
+        "term": "in light of",
+        "definition": "considering; because of",
+        "context": "In light of the new evidence, the case was reopened."
+      },
+      {
+        "term": "inasmuch as",
+        "definition": "to the extent that",
+        "context": "Inasmuch as I can tell, the project is on track."
+      },
+      {
+        "term": "ipso facto",
+        "definition": "by that very fact; as a direct result",
+        "context": "They breached the contract and are ipso facto liable."
+      },
+      {
+        "term": "mutatis mutandis",
+        "definition": "with the necessary changes made",
+        "context": "The same regulations apply mutatis mutandis to subcontractors."
+      },
+      {
+        "term": "notwithstanding",
+        "definition": "in spite of; nevertheless",
+        "context": "Notwithstanding the delays, the project was completed on time."
+      },
+      {
+        "term": "on balance",
+        "definition": "after considering all factors",
+        "context": "On balance, the benefits outweigh the risks."
+      },
+      {
+        "term": "on the contrary",
+        "definition": "used to intensify a denial or disagreement",
+        "context": "It was not boring — on the contrary, it was fascinating."
+      },
+      {
+        "term": "to all intents and purposes",
+        "definition": "in every practical sense",
+        "context": "The project is, to all intents and purposes, finished."
+      },
+      {
+        "term": "to that end",
+        "definition": "for that purpose",
+        "context": "We need better data — to that end, we are hiring analysts."
+      },
+      {
+        "term": "vis-à-vis",
+        "definition": "in relation to; compared with",
+        "context": "The company\\"
+      },
+      {
+        "term": "whereas",
+        "definition": "in contrast or comparison with the fact that",
+        "context": "She is extroverted, whereas her brother is very reserved."
+      },
+      {
+        "term": "whereby",
+        "definition": "by which; according to which",
+        "context": "They adopted a system whereby complaints are tracked digitally."
+      },
+      {
+        "term": "hitherto",
+        "definition": "until now; up to this point",
+        "context": "The study revealed hitherto unknown side effects."
+      },
+      {
+        "term": "insofar as",
+        "definition": "to the degree that",
+        "context": "The law applies insofar as it does not conflict with EU regulations."
+      },
+      {
+        "term": "ostensibly",
+        "definition": "apparently or supposedly, but perhaps not actually",
+        "context": "The meeting was ostensibly about budget, but really about layoffs."
+      },
+      {
+        "term": "prima facie",
+        "definition": "at first sight; based on first impression",
+        "context": "There is a prima facie case for negligence."
+      },
+      {
+        "term": "quid pro quo",
+        "definition": "something given in return for something else",
+        "context": "The deal involved a clear quid pro quo between the parties."
+      },
+      {
+        "term": "sine qua non",
+        "definition": "an essential condition",
+        "context": "Trust is a sine qua non for any successful partnership."
+      },
+      {
+        "term": "inter alia",
+        "definition": "among other things",
+        "context": "The report discusses, inter alia, the impact on employment."
+      },
+      {
+        "term": "per se",
+        "definition": "by itself; intrinsically",
+        "context": "The work is not difficult per se, but it requires patience."
+      },
+      {
+        "term": "de facto",
+        "definition": "in fact; in reality",
+        "context": "She is the de facto leader of the organization."
+      },
+      {
+        "term": "modus operandi",
+        "definition": "a particular way of doing things",
+        "context": "Detectives identified the criminal\\"
+      },
+      {
+        "term": "fait accompli",
+        "definition": "something that has already been done and cannot be changed",
+        "context": "By the time we objected, the merger was a fait accompli."
+      },
+      {
+        "term": "ad hoc",
+        "definition": "created for a particular purpose as necessary",
+        "context": "An ad hoc committee was formed to review the policy."
+      },
+      {
+        "term": "mea culpa",
+        "definition": "an acknowledgement of personal fault",
+        "context": "The CEO issued a public mea culpa for the data breach."
+      },
+      {
+        "term": "status quo",
+        "definition": "the existing state of affairs",
+        "context": "Some board members preferred to maintain the status quo."
+      },
+      {
+        "term": "carte blanche",
+        "definition": "complete freedom to act as one wishes",
+        "context": "The director was given carte blanche to redesign the programme."
+      }
+    ]
+  }
+}

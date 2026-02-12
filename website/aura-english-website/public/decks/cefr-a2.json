@@ -1,0 +1,1511 @@
+{
+  "version": "1.0",
+  "exportedAt": "2026-02-12T00:00:00.000Z",
+  "deck": {
+    "name": "A2 – Elementary Vocabulary",
+    "description": "Elementary: expand your range with travel, shopping, routines, and simple descriptions.",
+    "language": "en",
+    "cards": [
+      {
+        "term": "ticket",
+        "definition": "a piece of paper that allows you to travel or enter",
+        "context": "I bought a train ticket online."
+      },
+      {
+        "term": "passport",
+        "definition": "an official document for international travel",
+        "context": "Do not forget your passport at the airport."
+      },
+      {
+        "term": "luggage",
+        "definition": "bags and suitcases for traveling",
+        "context": "My luggage is very heavy."
+      },
+      {
+        "term": "suitcase",
+        "definition": "a large bag with a handle for travel",
+        "context": "I packed my suitcase last night."
+      },
+      {
+        "term": "flight",
+        "definition": "a journey by plane",
+        "context": "The flight to New York takes eight hours."
+      },
+      {
+        "term": "taxi",
+        "definition": "a car that takes passengers for money",
+        "context": "We took a taxi to the hotel."
+      },
+      {
+        "term": "bicycle",
+        "definition": "a two-wheeled vehicle powered by pedaling",
+        "context": "She rides her bicycle to work."
+      },
+      {
+        "term": "journey",
+        "definition": "an act of traveling from one place to another",
+        "context": "The journey took three hours."
+      },
+      {
+        "term": "map",
+        "definition": "a drawing that shows roads and places",
+        "context": "I used a map to find the museum."
+      },
+      {
+        "term": "travel",
+        "definition": "to go from one place to another",
+        "context": "I love to travel to new countries."
+      },
+      {
+        "term": "arrive",
+        "definition": "to reach a place",
+        "context": "We arrive at the airport at noon."
+      },
+      {
+        "term": "depart",
+        "definition": "to leave a place",
+        "context": "The train departs at 9:15."
+      },
+      {
+        "term": "direction",
+        "definition": "the path something moves along",
+        "context": "Can you give me directions to the museum?"
+      },
+      {
+        "term": "cross",
+        "definition": "to go from one side to the other",
+        "context": "Cross the street at the traffic lights."
+      },
+      {
+        "term": "bridge",
+        "definition": "a structure built over a river or road",
+        "context": "We walked across the old bridge."
+      },
+      {
+        "term": "traffic",
+        "definition": "vehicles moving on roads",
+        "context": "There is a lot of traffic in the morning."
+      },
+      {
+        "term": "petrol",
+        "definition": "fuel for cars (also called gasoline)",
+        "context": "We need to stop for petrol."
+      },
+      {
+        "term": "road",
+        "definition": "a paved way for vehicles",
+        "context": "This road leads to the beach."
+      },
+      {
+        "term": "corner",
+        "definition": "the point where two streets meet",
+        "context": "The café is on the corner."
+      },
+      {
+        "term": "price",
+        "definition": "the amount of money something costs",
+        "context": "What is the price of this jacket?"
+      },
+      {
+        "term": "sell",
+        "definition": "to give something in exchange for money",
+        "context": "They sell fresh bread every morning."
+      },
+      {
+        "term": "customer",
+        "definition": "a person who buys goods or services",
+        "context": "The customer asked for a receipt."
+      },
+      {
+        "term": "receipt",
+        "definition": "a paper showing what you bought and paid",
+        "context": "Keep the receipt in case you want a refund."
+      },
+      {
+        "term": "size",
+        "definition": "how big or small something is",
+        "context": "What size shirt do you wear?"
+      },
+      {
+        "term": "basket",
+        "definition": "a container for carrying shopping items",
+        "context": "I put the fruit in the basket."
+      },
+      {
+        "term": "change",
+        "definition": "coins you get back after paying",
+        "context": "Here is your change."
+      },
+      {
+        "term": "discount",
+        "definition": "a reduction in the usual price",
+        "context": "There is a 20 percent discount today."
+      },
+      {
+        "term": "spend",
+        "definition": "to use money to buy things",
+        "context": "I spend too much money on clothes."
+      },
+      {
+        "term": "cost",
+        "definition": "the amount of money needed for something",
+        "context": "How much does this book cost?"
+      },
+      {
+        "term": "card",
+        "definition": "a plastic payment method",
+        "context": "Can I pay by card?"
+      },
+      {
+        "term": "cash",
+        "definition": "money in coins and notes",
+        "context": "I prefer to pay in cash."
+      },
+      {
+        "term": "supermarket",
+        "definition": "a large shop selling food and household items",
+        "context": "I go to the supermarket every Saturday."
+      },
+      {
+        "term": "healthy",
+        "definition": "in good physical condition",
+        "context": "Eating fruit keeps you healthy."
+      },
+      {
+        "term": "ill",
+        "definition": "not feeling well, sick",
+        "context": "She is ill and cannot go to school."
+      },
+      {
+        "term": "pain",
+        "definition": "a feeling of physical suffering",
+        "context": "I have a pain in my back."
+      },
+      {
+        "term": "medicine",
+        "definition": "a substance used to treat illness",
+        "context": "Take your medicine after breakfast."
+      },
+      {
+        "term": "doctor",
+        "definition": "a person who treats sick people",
+        "context": "I have an appointment with the doctor."
+      },
+      {
+        "term": "nurse",
+        "definition": "a person who cares for sick people",
+        "context": "The nurse checked my temperature."
+      },
+      {
+        "term": "dentist",
+        "definition": "a doctor for teeth",
+        "context": "I go to the dentist twice a year."
+      },
+      {
+        "term": "temperature",
+        "definition": "a measure of heat or fever",
+        "context": "She has a high temperature."
+      },
+      {
+        "term": "headache",
+        "definition": "a pain in the head",
+        "context": "I have a headache from the noise."
+      },
+      {
+        "term": "stomach",
+        "definition": "the organ where food is digested",
+        "context": "My stomach hurts after eating too much."
+      },
+      {
+        "term": "cold",
+        "definition": "a common illness with a runny nose",
+        "context": "I caught a cold last week."
+      },
+      {
+        "term": "rest",
+        "definition": "to relax or stop working",
+        "context": "You need to rest when you are ill."
+      },
+      {
+        "term": "exercise",
+        "definition": "physical activity to stay healthy",
+        "context": "I do exercise three times a week."
+      },
+      {
+        "term": "hurt",
+        "definition": "to feel pain or cause pain",
+        "context": "My knee hurts when I run."
+      },
+      {
+        "term": "tooth",
+        "definition": "one of the hard white parts in your mouth",
+        "context": "The child lost a tooth yesterday."
+      },
+      {
+        "term": "blood",
+        "definition": "the red liquid flowing through the body",
+        "context": "The nurse took a blood test."
+      },
+      {
+        "term": "neck",
+        "definition": "the part of the body connecting head to shoulders",
+        "context": "She has a pain in her neck."
+      },
+      {
+        "term": "finger",
+        "definition": "one of the five parts at the end of the hand",
+        "context": "He cut his finger with a knife."
+      },
+      {
+        "term": "shoulder",
+        "definition": "the joint connecting arm to body",
+        "context": "He put his hand on my shoulder."
+      },
+      {
+        "term": "knee",
+        "definition": "the joint in the middle of the leg",
+        "context": "She fell and hurt her knee."
+      },
+      {
+        "term": "skin",
+        "definition": "the outer covering of the body",
+        "context": "Protect your skin from the sun."
+      },
+      {
+        "term": "hobby",
+        "definition": "an activity you enjoy in your free time",
+        "context": "My hobby is reading books."
+      },
+      {
+        "term": "sport",
+        "definition": "a physical activity or game",
+        "context": "Football is a popular sport."
+      },
+      {
+        "term": "football",
+        "definition": "a team sport played with a round ball",
+        "context": "We play football every weekend."
+      },
+      {
+        "term": "music",
+        "definition": "sounds arranged in a pleasing way",
+        "context": "I listen to music while studying."
+      },
+      {
+        "term": "movie",
+        "definition": "a film shown at a cinema",
+        "context": "We watched a movie last night."
+      },
+      {
+        "term": "game",
+        "definition": "an activity you play for fun",
+        "context": "The children are playing a board game."
+      },
+      {
+        "term": "photo",
+        "definition": "a picture taken with a camera",
+        "context": "She took a photo of the sunset."
+      },
+      {
+        "term": "camera",
+        "definition": "a device for taking photos",
+        "context": "I bought a new camera for my trip."
+      },
+      {
+        "term": "guitar",
+        "definition": "a string instrument for making music",
+        "context": "He plays the guitar very well."
+      },
+      {
+        "term": "draw",
+        "definition": "to make a picture with a pen or pencil",
+        "context": "She likes to draw animals."
+      },
+      {
+        "term": "paint",
+        "definition": "to make a picture using colors",
+        "context": "He paints landscapes on the weekend."
+      },
+      {
+        "term": "magazine",
+        "definition": "a printed publication with articles and pictures",
+        "context": "She reads a fashion magazine."
+      },
+      {
+        "term": "newspaper",
+        "definition": "a printed daily publication with news",
+        "context": "He reads the newspaper every morning."
+      },
+      {
+        "term": "cinema",
+        "definition": "a place where you watch movies",
+        "context": "We go to the cinema on Fridays."
+      },
+      {
+        "term": "museum",
+        "definition": "a building where historical objects are displayed",
+        "context": "The museum has a great art collection."
+      },
+      {
+        "term": "concert",
+        "definition": "a live music performance",
+        "context": "We went to a concert in the park."
+      },
+      {
+        "term": "holiday",
+        "definition": "a time of rest from work; a vacation",
+        "context": "We are going on holiday next month."
+      },
+      {
+        "term": "party",
+        "definition": "a social event with food, drink, and fun",
+        "context": "She is having a birthday party."
+      },
+      {
+        "term": "invitation",
+        "definition": "a request to attend an event",
+        "context": "I received an invitation to the wedding."
+      },
+      {
+        "term": "celebrate",
+        "definition": "to do something special for a happy event",
+        "context": "We celebrate Christmas with our family."
+      },
+      {
+        "term": "thin",
+        "definition": "not fat, slim",
+        "context": "She is tall and thin."
+      },
+      {
+        "term": "fat",
+        "definition": "having a lot of body weight",
+        "context": "The cat is getting fat."
+      },
+      {
+        "term": "strong",
+        "definition": "having physical power",
+        "context": "He is very strong."
+      },
+      {
+        "term": "weak",
+        "definition": "not physically strong",
+        "context": "She feels weak after the illness."
+      },
+      {
+        "term": "rich",
+        "definition": "having a lot of money",
+        "context": "He became rich through hard work."
+      },
+      {
+        "term": "poor",
+        "definition": "having very little money",
+        "context": "They were poor but happy."
+      },
+      {
+        "term": "heavy",
+        "definition": "weighing a lot",
+        "context": "This box is very heavy."
+      },
+      {
+        "term": "light",
+        "definition": "not weighing much; also brightness",
+        "context": "This bag is light and easy to carry."
+      },
+      {
+        "term": "hard",
+        "definition": "solid and firm; also difficult",
+        "context": "The exam was really hard."
+      },
+      {
+        "term": "soft",
+        "definition": "not hard; gentle to touch",
+        "context": "The pillow is very soft."
+      },
+      {
+        "term": "dark",
+        "definition": "with little or no light",
+        "context": "It gets dark early in winter."
+      },
+      {
+        "term": "bright",
+        "definition": "giving out a lot of light",
+        "context": "The sun is very bright today."
+      },
+      {
+        "term": "wide",
+        "definition": "having a large distance from side to side",
+        "context": "The river is very wide here."
+      },
+      {
+        "term": "narrow",
+        "definition": "having a small distance from side to side",
+        "context": "The street is too narrow for cars."
+      },
+      {
+        "term": "round",
+        "definition": "shaped like a circle",
+        "context": "The table is round."
+      },
+      {
+        "term": "flat",
+        "definition": "smooth and level",
+        "context": "The road is flat and easy to cycle on."
+      },
+      {
+        "term": "deep",
+        "definition": "going a long way down",
+        "context": "The swimming pool is two meters deep."
+      },
+      {
+        "term": "dry",
+        "definition": "not wet",
+        "context": "The clothes are dry now."
+      },
+      {
+        "term": "wet",
+        "definition": "covered with water",
+        "context": "The grass is wet from the rain."
+      },
+      {
+        "term": "fresh",
+        "definition": "recently made or picked; not old",
+        "context": "I buy fresh vegetables at the market."
+      },
+      {
+        "term": "wonderful",
+        "definition": "extremely good",
+        "context": "We had a wonderful time at the beach."
+      },
+      {
+        "term": "terrible",
+        "definition": "extremely bad",
+        "context": "The weather was terrible yesterday."
+      },
+      {
+        "term": "horrible",
+        "definition": "causing fear or dislike",
+        "context": "The food tasted horrible."
+      },
+      {
+        "term": "lovely",
+        "definition": "very attractive or pleasant",
+        "context": "What a lovely day!"
+      },
+      {
+        "term": "strange",
+        "definition": "unusual or unexpected",
+        "context": "I heard a strange noise last night."
+      },
+      {
+        "term": "normal",
+        "definition": "usual, typical",
+        "context": "It is normal to feel nervous."
+      },
+      {
+        "term": "special",
+        "definition": "different from what is usual",
+        "context": "Today is a special day."
+      },
+      {
+        "term": "popular",
+        "definition": "liked by many people",
+        "context": "This café is very popular."
+      },
+      {
+        "term": "famous",
+        "definition": "known by many people",
+        "context": "Paris is famous for the Eiffel Tower."
+      },
+      {
+        "term": "modern",
+        "definition": "relating to the present time",
+        "context": "The hotel is very modern."
+      },
+      {
+        "term": "simple",
+        "definition": "easy to understand or do",
+        "context": "The recipe is very simple."
+      },
+      {
+        "term": "comfortable",
+        "definition": "providing physical ease and relaxation",
+        "context": "This chair is very comfortable."
+      },
+      {
+        "term": "boring",
+        "definition": "not interesting",
+        "context": "The movie was boring."
+      },
+      {
+        "term": "fun",
+        "definition": "enjoyable and entertaining",
+        "context": "The party was really fun."
+      },
+      {
+        "term": "polite",
+        "definition": "having good manners",
+        "context": "He is always polite to everyone."
+      },
+      {
+        "term": "rude",
+        "definition": "not polite, offensive",
+        "context": "It is rude to talk during a movie."
+      },
+      {
+        "term": "careful",
+        "definition": "paying attention to avoid mistakes",
+        "context": "Be careful when crossing the road."
+      },
+      {
+        "term": "dangerous",
+        "definition": "able to cause harm",
+        "context": "Swimming in the river is dangerous."
+      },
+      {
+        "term": "lucky",
+        "definition": "having good fortune",
+        "context": "You are lucky to have such a nice family."
+      },
+      {
+        "term": "possible",
+        "definition": "able to happen or be done",
+        "context": "Is it possible to change my seat?"
+      },
+      {
+        "term": "impossible",
+        "definition": "not able to happen",
+        "context": "It is impossible to finish today."
+      },
+      {
+        "term": "sure",
+        "definition": "certain about something",
+        "context": "Are you sure about that?"
+      },
+      {
+        "term": "certain",
+        "definition": "completely sure",
+        "context": "I am certain she will come."
+      },
+      {
+        "term": "lazy",
+        "definition": "not wanting to work or be active",
+        "context": "He felt lazy on Sunday morning."
+      },
+      {
+        "term": "funny",
+        "definition": "making you laugh",
+        "context": "That joke was very funny."
+      },
+      {
+        "term": "angry",
+        "definition": "feeling strong displeasure",
+        "context": "She was angry about the mistake."
+      },
+      {
+        "term": "afraid",
+        "definition": "feeling fear",
+        "context": "The child is afraid of the dark."
+      },
+      {
+        "term": "excited",
+        "definition": "feeling eager and enthusiastic",
+        "context": "I am excited about the trip."
+      },
+      {
+        "term": "surprised",
+        "definition": "feeling amazement at something unexpected",
+        "context": "She was surprised by the gift."
+      },
+      {
+        "term": "worried",
+        "definition": "feeling anxious or troubled",
+        "context": "I am worried about the exam."
+      },
+      {
+        "term": "proud",
+        "definition": "feeling pleased about an achievement",
+        "context": "Her parents are proud of her."
+      },
+      {
+        "term": "alone",
+        "definition": "without other people",
+        "context": "She lives alone in a small flat."
+      },
+      {
+        "term": "teacher",
+        "definition": "a person who teaches",
+        "context": "Our teacher is very patient."
+      },
+      {
+        "term": "student",
+        "definition": "a person who studies",
+        "context": "She is a university student."
+      },
+      {
+        "term": "class",
+        "definition": "a group of students or a lesson",
+        "context": "My English class starts at two."
+      },
+      {
+        "term": "lesson",
+        "definition": "a period of learning or teaching",
+        "context": "The lesson lasted one hour."
+      },
+      {
+        "term": "exam",
+        "definition": "a formal test of knowledge",
+        "context": "I have an exam next week."
+      },
+      {
+        "term": "homework",
+        "definition": "work given to students to do at home",
+        "context": "I have to do my homework tonight."
+      },
+      {
+        "term": "test",
+        "definition": "a set of questions to check knowledge",
+        "context": "The test was easier than expected."
+      },
+      {
+        "term": "company",
+        "definition": "a business organization",
+        "context": "He works for a big company."
+      },
+      {
+        "term": "meeting",
+        "definition": "a gathering of people to discuss things",
+        "context": "I have a meeting at three."
+      },
+      {
+        "term": "boss",
+        "definition": "the person in charge at work",
+        "context": "My boss is on holiday this week."
+      },
+      {
+        "term": "salary",
+        "definition": "regular payment for work",
+        "context": "He gets his salary at the end of the month."
+      },
+      {
+        "term": "colleague",
+        "definition": "a person you work with",
+        "context": "My colleague helped me with the project."
+      },
+      {
+        "term": "interview",
+        "definition": "a meeting to decide if someone gets a job",
+        "context": "I have a job interview tomorrow."
+      },
+      {
+        "term": "experience",
+        "definition": "knowledge gained from doing something",
+        "context": "She has five years of experience."
+      },
+      {
+        "term": "decision",
+        "definition": "a choice you make",
+        "context": "It was a difficult decision."
+      },
+      {
+        "term": "mistake",
+        "definition": "something done wrong",
+        "context": "Everyone makes mistakes sometimes."
+      },
+      {
+        "term": "practice",
+        "definition": "doing something regularly to improve",
+        "context": "Practice makes perfect."
+      },
+      {
+        "term": "success",
+        "definition": "achieving a goal",
+        "context": "Hard work leads to success."
+      },
+      {
+        "term": "university",
+        "definition": "a place for higher education",
+        "context": "She studies law at university."
+      },
+      {
+        "term": "agree",
+        "definition": "to have the same opinion",
+        "context": "I agree with your idea."
+      },
+      {
+        "term": "arrive",
+        "definition": "to reach a destination",
+        "context": "The bus arrives at ten."
+      },
+      {
+        "term": "believe",
+        "definition": "to think something is true",
+        "context": "I believe you are right."
+      },
+      {
+        "term": "belong",
+        "definition": "to be the property of",
+        "context": "This pen belongs to Maria."
+      },
+      {
+        "term": "borrow",
+        "definition": "to take something with the plan to return it",
+        "context": "Can I borrow your dictionary?"
+      },
+      {
+        "term": "break",
+        "definition": "to separate into pieces",
+        "context": "Be careful not to break the glass."
+      },
+      {
+        "term": "build",
+        "definition": "to construct something",
+        "context": "They are building a new school."
+      },
+      {
+        "term": "catch",
+        "definition": "to grab something in motion",
+        "context": "She tried to catch the ball."
+      },
+      {
+        "term": "check",
+        "definition": "to examine or verify",
+        "context": "Please check your email."
+      },
+      {
+        "term": "choose",
+        "definition": "to select from options",
+        "context": "You can choose any color."
+      },
+      {
+        "term": "clean",
+        "definition": "to remove dirt from something",
+        "context": "I clean my room every Saturday."
+      },
+      {
+        "term": "climb",
+        "definition": "to go up using hands and feet",
+        "context": "We climbed to the top of the hill."
+      },
+      {
+        "term": "collect",
+        "definition": "to gather things together",
+        "context": "She collects stamps as a hobby."
+      },
+      {
+        "term": "compare",
+        "definition": "to look at similarities and differences",
+        "context": "Compare the two pictures."
+      },
+      {
+        "term": "complain",
+        "definition": "to say you are unhappy about something",
+        "context": "He complained about the noise."
+      },
+      {
+        "term": "continue",
+        "definition": "to keep doing something",
+        "context": "Please continue reading."
+      },
+      {
+        "term": "copy",
+        "definition": "to make something the same as the original",
+        "context": "Copy the sentences into your notebook."
+      },
+      {
+        "term": "correct",
+        "definition": "to make something right",
+        "context": "The teacher corrected our work."
+      },
+      {
+        "term": "count",
+        "definition": "to say numbers in order",
+        "context": "Can you count to one hundred?"
+      },
+      {
+        "term": "cover",
+        "definition": "to place something over or on",
+        "context": "Cover the food to keep it warm."
+      },
+      {
+        "term": "cry",
+        "definition": "to produce tears from the eyes",
+        "context": "The baby started to cry."
+      },
+      {
+        "term": "cut",
+        "definition": "to divide with a sharp tool",
+        "context": "Cut the bread into slices."
+      },
+      {
+        "term": "decide",
+        "definition": "to make a choice",
+        "context": "I cannot decide what to wear."
+      },
+      {
+        "term": "describe",
+        "definition": "to say what something is like",
+        "context": "Describe your best friend."
+      },
+      {
+        "term": "discover",
+        "definition": "to find something new",
+        "context": "I discovered a great café nearby."
+      },
+      {
+        "term": "discuss",
+        "definition": "to talk about something",
+        "context": "We discussed the plan at the meeting."
+      },
+      {
+        "term": "dream",
+        "definition": "to see images while sleeping; to wish for",
+        "context": "I dream of traveling the world."
+      },
+      {
+        "term": "drop",
+        "definition": "to let something fall",
+        "context": "She dropped her phone on the floor."
+      },
+      {
+        "term": "enjoy",
+        "definition": "to take pleasure in",
+        "context": "I enjoy cooking Italian food."
+      },
+      {
+        "term": "enter",
+        "definition": "to go into a place",
+        "context": "Please enter through the main door."
+      },
+      {
+        "term": "explain",
+        "definition": "to make something clear",
+        "context": "Can you explain this word to me?"
+      },
+      {
+        "term": "fill",
+        "definition": "to make something full",
+        "context": "Fill the glass with water."
+      },
+      {
+        "term": "fix",
+        "definition": "to repair something",
+        "context": "He fixed the broken chair."
+      },
+      {
+        "term": "follow",
+        "definition": "to go after or behind",
+        "context": "Follow me, I will show you the way."
+      },
+      {
+        "term": "forget",
+        "definition": "to not remember",
+        "context": "I always forget my password."
+      },
+      {
+        "term": "grow",
+        "definition": "to become bigger",
+        "context": "Children grow quickly."
+      },
+      {
+        "term": "guess",
+        "definition": "to give an answer without being sure",
+        "context": "Guess how old I am."
+      },
+      {
+        "term": "happen",
+        "definition": "to take place or occur",
+        "context": "What happened yesterday?"
+      },
+      {
+        "term": "hate",
+        "definition": "to dislike very strongly",
+        "context": "I hate getting up early."
+      },
+      {
+        "term": "hope",
+        "definition": "to wish for something good",
+        "context": "I hope the weather will be nice."
+      },
+      {
+        "term": "hurry",
+        "definition": "to move or do things quickly",
+        "context": "Hurry up, we are late!"
+      },
+      {
+        "term": "imagine",
+        "definition": "to form a picture in your mind",
+        "context": "Imagine living near the beach."
+      },
+      {
+        "term": "include",
+        "definition": "to contain as a part",
+        "context": "The price includes breakfast."
+      },
+      {
+        "term": "invite",
+        "definition": "to ask someone to come somewhere",
+        "context": "I invited my friends to dinner."
+      },
+      {
+        "term": "join",
+        "definition": "to become part of a group",
+        "context": "Would you like to join us for lunch?"
+      },
+      {
+        "term": "keep",
+        "definition": "to continue to have something",
+        "context": "Keep the change."
+      },
+      {
+        "term": "knock",
+        "definition": "to hit a door or surface with your hand",
+        "context": "Someone is knocking on the door."
+      },
+      {
+        "term": "laugh",
+        "definition": "to make sounds when something is funny",
+        "context": "The joke made everyone laugh."
+      },
+      {
+        "term": "lend",
+        "definition": "to give something temporarily",
+        "context": "Can you lend me ten euros?"
+      },
+      {
+        "term": "lie",
+        "definition": "to be in a flat position; to not tell the truth",
+        "context": "I like to lie on the beach."
+      },
+      {
+        "term": "lose",
+        "definition": "to not be able to find something",
+        "context": "I always lose my keys."
+      },
+      {
+        "term": "miss",
+        "definition": "to feel sad about absence; to fail to catch",
+        "context": "I miss my family when I travel."
+      },
+      {
+        "term": "notice",
+        "definition": "to become aware of something",
+        "context": "Did you notice the new painting?"
+      },
+      {
+        "term": "offer",
+        "definition": "to present something for acceptance",
+        "context": "He offered me a cup of coffee."
+      },
+      {
+        "term": "order",
+        "definition": "to request food or a product",
+        "context": "I ordered pizza for dinner."
+      },
+      {
+        "term": "own",
+        "definition": "to possess or have",
+        "context": "She owns a small business."
+      },
+      {
+        "term": "pick",
+        "definition": "to choose or lift up",
+        "context": "Pick a card, any card."
+      },
+      {
+        "term": "plan",
+        "definition": "to decide what you will do",
+        "context": "We plan to leave early."
+      },
+      {
+        "term": "prefer",
+        "definition": "to like one thing more than another",
+        "context": "I prefer tea to coffee."
+      },
+      {
+        "term": "prepare",
+        "definition": "to make ready",
+        "context": "She prepared a nice dinner."
+      },
+      {
+        "term": "promise",
+        "definition": "to say you will definitely do something",
+        "context": "I promise to call you tonight."
+      },
+      {
+        "term": "pull",
+        "definition": "to move something toward you",
+        "context": "Pull the door to open it."
+      },
+      {
+        "term": "push",
+        "definition": "to move something away from you",
+        "context": "Push the button to start."
+      },
+      {
+        "term": "receive",
+        "definition": "to get something that is given or sent",
+        "context": "I received a letter from my friend."
+      },
+      {
+        "term": "recognize",
+        "definition": "to know someone or something from before",
+        "context": "I did not recognize her with short hair."
+      },
+      {
+        "term": "remember",
+        "definition": "to bring back to mind",
+        "context": "I remember our first meeting."
+      },
+      {
+        "term": "repair",
+        "definition": "to fix something that is broken",
+        "context": "He repaired the bicycle."
+      },
+      {
+        "term": "return",
+        "definition": "to come or go back",
+        "context": "We return home on Sunday."
+      },
+      {
+        "term": "ring",
+        "definition": "to make the sound of a bell",
+        "context": "The phone is ringing."
+      },
+      {
+        "term": "save",
+        "definition": "to keep something for later use",
+        "context": "I save money every month."
+      },
+      {
+        "term": "search",
+        "definition": "to look carefully to find something",
+        "context": "She searched for her keys everywhere."
+      },
+      {
+        "term": "share",
+        "definition": "to use or have something with others",
+        "context": "We share a room at the hotel."
+      },
+      {
+        "term": "shout",
+        "definition": "to speak very loudly",
+        "context": "Do not shout in the library."
+      },
+      {
+        "term": "smile",
+        "definition": "to make a happy expression with your mouth",
+        "context": "She smiled when she saw the flowers."
+      },
+      {
+        "term": "taste",
+        "definition": "to try food or drink; the flavor of something",
+        "context": "Taste this soup, it is delicious."
+      },
+      {
+        "term": "throw",
+        "definition": "to send through the air with force",
+        "context": "Throw the ball to me."
+      },
+      {
+        "term": "touch",
+        "definition": "to put your hand on something",
+        "context": "Do not touch the painting."
+      },
+      {
+        "term": "visit",
+        "definition": "to go to see a person or place",
+        "context": "We visit our grandparents every Sunday."
+      },
+      {
+        "term": "wake",
+        "definition": "to stop sleeping",
+        "context": "I wake up at six every day."
+      },
+      {
+        "term": "wish",
+        "definition": "to hope for something",
+        "context": "I wish I could travel more."
+      },
+      {
+        "term": "worry",
+        "definition": "to feel anxious or troubled",
+        "context": "Do not worry, everything will be fine."
+      },
+      {
+        "term": "wake up",
+        "definition": "to stop sleeping and get out of bed",
+        "context": "I wake up at 6:30 every morning."
+      },
+      {
+        "term": "get dressed",
+        "definition": "to put on clothes",
+        "context": "I get dressed before breakfast."
+      },
+      {
+        "term": "brush",
+        "definition": "to clean with a brush",
+        "context": "Brush your teeth twice a day."
+      },
+      {
+        "term": "shower",
+        "definition": "to wash your body under running water",
+        "context": "I take a shower every morning."
+      },
+      {
+        "term": "towel",
+        "definition": "a piece of cloth for drying",
+        "context": "Hand me a towel, please."
+      },
+      {
+        "term": "mirror",
+        "definition": "a glass surface that reflects images",
+        "context": "She looked at herself in the mirror."
+      },
+      {
+        "term": "floor",
+        "definition": "the surface you walk on inside",
+        "context": "Please clean the kitchen floor."
+      },
+      {
+        "term": "wall",
+        "definition": "a vertical surface of a room or building",
+        "context": "There is a map on the wall."
+      },
+      {
+        "term": "stairs",
+        "definition": "steps going up or down",
+        "context": "Take the stairs to the second floor."
+      },
+      {
+        "term": "lamp",
+        "definition": "a device that produces light",
+        "context": "Turn on the lamp, it is dark."
+      },
+      {
+        "term": "sofa",
+        "definition": "a long comfortable seat",
+        "context": "We sat on the sofa and watched TV."
+      },
+      {
+        "term": "fridge",
+        "definition": "a machine for keeping food cold",
+        "context": "The milk is in the fridge."
+      },
+      {
+        "term": "oven",
+        "definition": "a heated space for cooking food",
+        "context": "Bake the cake in the oven for 30 minutes."
+      },
+      {
+        "term": "plate",
+        "definition": "a flat dish for food",
+        "context": "Put the food on a plate."
+      },
+      {
+        "term": "knife",
+        "definition": "a tool with a blade for cutting",
+        "context": "Cut the bread with a knife."
+      },
+      {
+        "term": "fork",
+        "definition": "a tool with prongs for eating",
+        "context": "Use a fork to eat the salad."
+      },
+      {
+        "term": "spoon",
+        "definition": "a tool with a round end for eating soup",
+        "context": "Stir the soup with a spoon."
+      },
+      {
+        "term": "switch",
+        "definition": "a device for turning things on or off",
+        "context": "The light switch is next to the door."
+      },
+      {
+        "term": "lock",
+        "definition": "a device for securing a door",
+        "context": "Lock the door when you leave."
+      },
+      {
+        "term": "rubbish",
+        "definition": "waste material; garbage",
+        "context": "Put the rubbish in the bin."
+      },
+      {
+        "term": "email",
+        "definition": "electronic mail sent via the internet",
+        "context": "I will send you an email tonight."
+      },
+      {
+        "term": "message",
+        "definition": "a piece of information sent to someone",
+        "context": "She left a message on my phone."
+      },
+      {
+        "term": "internet",
+        "definition": "a global network of computers",
+        "context": "I use the internet every day."
+      },
+      {
+        "term": "computer",
+        "definition": "an electronic device for processing data",
+        "context": "I work on my computer all day."
+      },
+      {
+        "term": "screen",
+        "definition": "the display part of a device",
+        "context": "The screen of my phone is broken."
+      },
+      {
+        "term": "website",
+        "definition": "a page or group of pages on the internet",
+        "context": "Check the hotel website for prices."
+      },
+      {
+        "term": "password",
+        "definition": "a secret word for accessing an account",
+        "context": "Do not share your password."
+      },
+      {
+        "term": "battery",
+        "definition": "a device that stores power",
+        "context": "My phone battery is low."
+      },
+      {
+        "term": "letter",
+        "definition": "a written message, usually sent by post",
+        "context": "I wrote a letter to my grandmother."
+      },
+      {
+        "term": "sign",
+        "definition": "a notice giving information or instructions",
+        "context": "The sign says no parking."
+      },
+      {
+        "term": "news",
+        "definition": "new information about recent events",
+        "context": "I watch the news every evening."
+      },
+      {
+        "term": "gift",
+        "definition": "something given to someone; a present",
+        "context": "She gave me a gift for my birthday."
+      },
+      {
+        "term": "chance",
+        "definition": "a possibility or opportunity",
+        "context": "You will have another chance to try."
+      },
+      {
+        "term": "difference",
+        "definition": "a way in which things are not the same",
+        "context": "What is the difference between these two?"
+      },
+      {
+        "term": "example",
+        "definition": "something that shows what others are like",
+        "context": "Can you give me an example?"
+      },
+      {
+        "term": "fact",
+        "definition": "something known to be true",
+        "context": "It is a fact that the Earth is round."
+      },
+      {
+        "term": "group",
+        "definition": "a number of people or things together",
+        "context": "A group of students visited the museum."
+      },
+      {
+        "term": "habit",
+        "definition": "something you do regularly",
+        "context": "Reading before bed is a good habit."
+      },
+      {
+        "term": "opinion",
+        "definition": "a personal view or judgment",
+        "context": "In my opinion, this is the best restaurant."
+      },
+      {
+        "term": "reason",
+        "definition": "the cause or explanation for something",
+        "context": "What is the reason for the delay?"
+      },
+      {
+        "term": "result",
+        "definition": "something that happens because of something else",
+        "context": "The result of the test was good."
+      },
+      {
+        "term": "rule",
+        "definition": "an instruction that must be followed",
+        "context": "You must follow the school rules."
+      },
+      {
+        "term": "sort",
+        "definition": "a type or kind",
+        "context": "What sort of music do you like?"
+      },
+      {
+        "term": "begin",
+        "definition": "to start",
+        "context": "The meeting will begin at two."
+      },
+      {
+        "term": "end",
+        "definition": "to stop or finish",
+        "context": "The class ends at three."
+      },
+      {
+        "term": "seem",
+        "definition": "to appear to be",
+        "context": "She seems very happy today."
+      },
+      {
+        "term": "finally",
+        "definition": "after a long time; at last",
+        "context": "We finally arrived at the hotel."
+      },
+      {
+        "term": "perhaps",
+        "definition": "possibly, maybe",
+        "context": "Perhaps we can meet next week."
+      },
+      {
+        "term": "quite",
+        "definition": "to a certain extent",
+        "context": "The film was quite good."
+      },
+      {
+        "term": "especially",
+        "definition": "more than usually",
+        "context": "I like fruit, especially strawberries."
+      },
+      {
+        "term": "almost",
+        "definition": "very nearly but not completely",
+        "context": "I am almost finished."
+      },
+      {
+        "term": "instead",
+        "definition": "in place of something else",
+        "context": "I had tea instead of coffee."
+      },
+      {
+        "term": "recently",
+        "definition": "not long ago",
+        "context": "I recently started a new job."
+      },
+      {
+        "term": "towards",
+        "definition": "in the direction of",
+        "context": "She walked towards the park."
+      },
+      {
+        "term": "across",
+        "definition": "from one side to the other",
+        "context": "The shop is across the street."
+      },
+      {
+        "term": "along",
+        "definition": "following the length of",
+        "context": "We walked along the river."
+      },
+      {
+        "term": "around",
+        "definition": "in the area of; approximately",
+        "context": "There are shops around the corner."
+      },
+      {
+        "term": "behind",
+        "definition": "at the back of something",
+        "context": "The car park is behind the hotel."
+      },
+      {
+        "term": "above",
+        "definition": "higher than something",
+        "context": "The plane flew above the clouds."
+      },
+      {
+        "term": "below",
+        "definition": "lower than something",
+        "context": "The temperature is below zero."
+      },
+      {
+        "term": "outside",
+        "definition": "not inside a building",
+        "context": "The children are playing outside."
+      },
+      {
+        "term": "inside",
+        "definition": "within a building or space",
+        "context": "Come inside, it is raining."
+      },
+      {
+        "term": "through",
+        "definition": "moving from one side to another",
+        "context": "We walked through the forest."
+      },
+      {
+        "term": "during",
+        "definition": "throughout the time of",
+        "context": "I fell asleep during the movie."
+      },
+      {
+        "term": "until",
+        "definition": "up to the point in time that",
+        "context": "Wait here until I come back."
+      },
+      {
+        "term": "since",
+        "definition": "from a particular time",
+        "context": "I have lived here since 2015."
+      },
+      {
+        "term": "while",
+        "definition": "during the time that",
+        "context": "I read while I waited."
+      },
+      {
+        "term": "although",
+        "definition": "in spite of the fact that",
+        "context": "Although it was cold, we went for a walk."
+      },
+      {
+        "term": "however",
+        "definition": "but; despite that",
+        "context": "The hotel was expensive. However, the service was excellent."
+      },
+      {
+        "term": "actually",
+        "definition": "in fact, really",
+        "context": "I actually enjoyed the concert."
+      },
+      {
+        "term": "anyway",
+        "definition": "regardless; in any case",
+        "context": "It rained, but we went anyway."
+      },
+      {
+        "term": "neither",
+        "definition": "not one and not the other",
+        "context": "Neither answer is correct."
+      },
+      {
+        "term": "either",
+        "definition": "one or the other of two",
+        "context": "You can sit on either side."
+      },
+      {
+        "term": "else",
+        "definition": "in addition; different",
+        "context": "What else do you need?"
+      },
+      {
+        "term": "except",
+        "definition": "not including",
+        "context": "Everyone came except Tom."
+      }
+    ]
+  }
+}
