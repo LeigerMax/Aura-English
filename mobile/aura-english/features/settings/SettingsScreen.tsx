@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import {
   View,
   Text,
@@ -9,6 +9,7 @@ import {
   ScrollView,
   ActivityIndicator,
   Switch,
+  Animated,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
@@ -51,9 +52,40 @@ const APP_VERSION = Constants.expoConfig?.version ?? '1.0.0';
  * - Switch theme
  */
 export const SettingsScreen: React.FC = () => {
-  const { colors, themeMode, setThemeMode } = useTheme();
+  const { colors, themeMode, setThemeMode, isAuroraUnlocked, unlockAurora } = useTheme();
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   const styles = React.useMemo(() => createStyles(colors), [colors]);
+
+  // ── Easter egg: tap version 7 times to unlock Aurora theme ──
+  const tapCountRef = useRef(0);
+  const lastTapRef = useRef(0);
+  const shakeAnim = useRef(new Animated.Value(0)).current;
+
+  const handleVersionTap = useCallback(() => {
+    const now = Date.now();
+    // Reset counter if more than 2s between taps
+    if (now - lastTapRef.current > 2000) {
+      tapCountRef.current = 0;
+    }
+    lastTapRef.current = now;
+    tapCountRef.current += 1;
+
+    if (tapCountRef.current >= 7 && !isAuroraUnlocked) {
+      tapCountRef.current = 0;
+      unlockAurora();
+      // Animate a little shake/pulse
+      Animated.sequence([
+        Animated.timing(shakeAnim, { toValue: 10, duration: 50, useNativeDriver: true }),
+        Animated.timing(shakeAnim, { toValue: -10, duration: 50, useNativeDriver: true }),
+        Animated.timing(shakeAnim, { toValue: 10, duration: 50, useNativeDriver: true }),
+        Animated.timing(shakeAnim, { toValue: 0, duration: 50, useNativeDriver: true }),
+      ]).start();
+      Alert.alert('🌌 Aurora Unlocked!', 'You discovered a secret theme! Check the Appearance section.');
+    } else if (tapCountRef.current >= 4 && !isAuroraUnlocked) {
+      const remaining = 7 - tapCountRef.current;
+      Alert.alert('🤔', `${remaining} more tap${remaining > 1 ? 's' : ''} to unlock something special…`);
+    }
+  }, [isAuroraUnlocked, unlockAurora, shakeAnim]);
 
   // AI provider state
   const [activeProvider, setActiveProvider] = useState<AIProviderType>('gemini');
@@ -192,15 +224,20 @@ export const SettingsScreen: React.FC = () => {
         {/* App Info */}
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>About</Text>
-          <View style={styles.card}>
-            <View style={styles.row}>
-              <Ionicons name="information-circle-outline" size={22} color={colors.text.secondary} />
-              <View style={styles.rowContent}>
-                <Text style={styles.label}>App</Text>
-                <Text style={styles.value}>Aura English v{APP_VERSION}</Text>
+          <TouchableOpacity activeOpacity={0.7} onPress={handleVersionTap}>
+            <Animated.View style={[styles.card, { transform: [{ translateX: shakeAnim }] }]}>
+              <View style={styles.row}>
+                <Ionicons name="information-circle-outline" size={22} color={colors.text.secondary} />
+                <View style={styles.rowContent}>
+                  <Text style={styles.label}>App</Text>
+                  <Text style={styles.value}>Aura English v{APP_VERSION}</Text>
+                </View>
+                {isAuroraUnlocked && (
+                  <Text style={{ fontSize: 18 }}>🌌</Text>
+                )}
               </View>
-            </View>
-          </View>
+            </Animated.View>
+          </TouchableOpacity>
         </View>
 
         {/* Theme Section */}
@@ -211,17 +248,23 @@ export const SettingsScreen: React.FC = () => {
           </Text>
 
           <View style={styles.card}>
-            {(['light', 'dark', 'system'] as ThemeMode[]).map((mode) => {
+            {([
+              ...(['light', 'dark', 'system'] as ThemeMode[]),
+              ...(isAuroraUnlocked ? ['aurora' as ThemeMode] : []),
+            ]).map((mode, idx, arr) => {
               const isActive = themeMode === mode;
+              const isLast = idx === arr.length - 1;
               const iconMap: Record<ThemeMode, keyof typeof Ionicons.glyphMap> = {
                 light: 'sunny-outline',
                 dark: 'moon-outline',
                 system: 'phone-portrait-outline',
+                aurora: 'sparkles',
               };
               const labelMap: Record<ThemeMode, string> = {
                 light: 'Light',
                 dark: 'Dark',
                 system: 'System',
+                aurora: '🌌 Aurora',
               };
 
               return (
@@ -230,7 +273,8 @@ export const SettingsScreen: React.FC = () => {
                   style={[
                     styles.themeOption,
                     isActive && { backgroundColor: colors.primary + '15' },
-                    mode !== 'system' && styles.themeOptionBorder,
+                    mode === 'aurora' && isActive && { backgroundColor: '#A855F7' + '15' },
+                    !isLast && styles.themeOptionBorder,
                   ]}
                   onPress={() => setThemeMode(mode)}
                   activeOpacity={0.7}

@@ -15,7 +15,7 @@ import { GrammarHomeScreen, GrammarCategoryScreen, GrammarRuleScreen } from '@/f
 import { StatisticsScreen } from '@/features/statistics';
 import { getCategoryById, getRuleById } from '@/data/grammar';
 import { SettingsScreen, ApiKeyTutorialScreen } from '@/features/settings';
-import { ThemeProvider, useTheme, loadThemePreference } from '@/core/theme';
+import { ThemeProvider, useTheme, loadThemePreference, loadAuroraUnlocked } from '@/core/theme';
 import type { ThemeMode, ThemeColors } from '@/core/theme';
 import { useColorScheme as useNativeWindColorScheme } from 'nativewind';
 import { getDatabase } from '@/core/database';
@@ -115,6 +115,7 @@ function AppContent() {
 export default function App() {
   const [isReady, setIsReady] = useState(false);
   const [initialTheme, setInitialTheme] = useState<ThemeMode>('system');
+  const [auroraUnlocked, setAuroraUnlocked] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [isUpdating, setIsUpdating] = useState(false);
 
@@ -170,9 +171,11 @@ export default function App() {
     Promise.all([
       getDatabase().then(async (db) => { await seedDefaultDecks(db); }),
       loadThemePreference(),
+      loadAuroraUnlocked(),
     ])
-      .then(([, mode]) => {
+      .then(([, mode, aurora]) => {
         setInitialTheme(mode);
+        setAuroraUnlocked(aurora);
         setIsReady(true);
         // Check for OTA updates first, then check for native APK updates
         checkForOTAUpdate();
@@ -207,7 +210,7 @@ export default function App() {
   }
 
   return (
-    <ThemeProvider initialMode={initialTheme}>
+    <ThemeProvider initialMode={initialTheme} initialAuroraUnlocked={auroraUnlocked}>
       <AppContent />
       {updateVersionInfo && (
         <UpdateModal

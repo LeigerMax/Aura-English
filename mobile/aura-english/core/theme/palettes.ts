@@ -2,7 +2,7 @@
  * Light and dark color palettes for the application.
  */
 
-export type ThemeMode = 'light' | 'dark' | 'system';
+export type ThemeMode = 'light' | 'dark' | 'system' | 'aurora';
 
 export interface ThemeColors {
   primary: string;
@@ -71,6 +71,41 @@ export const lightColors: ThemeColors = {
   borderLight: '#F3F4F6',
   shadow: 'rgba(0, 0, 0, 0.1)',
   shadowDark: 'rgba(0, 0, 0, 0.2)',
+};
+
+/** Aurora palette — deep purple / dark / cyan easter-egg theme. */
+export const auroraColors: ThemeColors = {
+  primary: '#A855F7',
+  primaryDark: '#7C3AED',
+  primaryLight: '#C084FC',
+  secondary: '#22D3EE',
+  secondaryDark: '#06B6D4',
+  secondaryLight: '#67E8F9',
+  accent: {
+    deck: '#C084FC',
+    flashcard: '#F0ABFC',
+    quiz: '#22D3EE',
+    challenge: '#F472B6',
+    grammar: '#67E8F9',
+    settings: '#A78BFA',
+  },
+  background: '#0C0A1A',
+  surface: '#1A1333',
+  surfaceLight: '#2A1F4E',
+  text: {
+    primary: '#EDE9FE',
+    secondary: '#C4B5FD',
+    tertiary: '#8B5CF6',
+    inverse: '#0C0A1A',
+  },
+  success: '#34D399',
+  warning: '#FBBF24',
+  error: '#FB7185',
+  info: '#67E8F9',
+  border: '#2A1F4E',
+  borderLight: '#1A1333',
+  shadow: 'rgba(168, 85, 247, 0.3)',
+  shadowDark: 'rgba(168, 85, 247, 0.5)',
 };
 
 /** Dark palette. */

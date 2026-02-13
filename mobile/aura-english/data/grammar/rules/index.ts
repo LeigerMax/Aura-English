@@ -10,3 +10,7 @@ export {
   adjectivesAdverbsRules,
   connectorsRules,
 } from './other';
+export { modalsRules } from './modals';
+export { comparativesRules } from './comparatives';
+export { conditionalsRules } from './conditionals';
+export { passiveVoiceRules, quantifiersRules } from './extras';

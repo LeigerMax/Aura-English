@@ -14,6 +14,11 @@ import {
   pronounsRules,
   adjectivesAdverbsRules,
   connectorsRules,
+  modalsRules,
+  comparativesRules,
+  conditionalsRules,
+  passiveVoiceRules,
+  quantifiersRules,
 } from './rules';
 import {
   tensesExercises,
@@ -24,6 +29,11 @@ import {
   adjectivesAdverbsExercises,
   auxiliariesExercises,
   connectorsExercises,
+  modalsExercises,
+  comparativesExercises,
+  conditionalsExercises,
+  passiveVoiceExercises,
+  quantifiersExercises,
 } from './exercises';
 
 // ── Aggregated collections ───────────────────────
@@ -38,6 +48,11 @@ export const allRules: GrammarRule[] = [
   ...pronounsRules,
   ...adjectivesAdverbsRules,
   ...connectorsRules,
+  ...modalsRules,
+  ...comparativesRules,
+  ...conditionalsRules,
+  ...passiveVoiceRules,
+  ...quantifiersRules,
 ];
 
 export const allExercises: GrammarExercise[] = [
@@ -49,6 +64,11 @@ export const allExercises: GrammarExercise[] = [
   ...adjectivesAdverbsExercises,
   ...auxiliariesExercises,
   ...connectorsExercises,
+  ...modalsExercises,
+  ...comparativesExercises,
+  ...conditionalsExercises,
+  ...passiveVoiceExercises,
+  ...quantifiersExercises,
 ];
 
 // ── Lookup maps (built once at import time) ──────
