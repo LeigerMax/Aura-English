@@ -18,6 +18,7 @@ All notable changes to the Aura English project will be documented in this file.
   - AI & Future Tech (45 cards)
   - Psychology & Human Behavior (45 cards)
 - **Agent Rule**: Added automatic changelog update requirements for the AI assistant.
+- **SEO Optimization**: Added comprehensive meta tags, dynamic `sitemap.ts`, `robots.ts`, and Google Site Verification to the website.
 
 ### Changed
 - **Version Bump**: Updated application version to `v1.4.2`.

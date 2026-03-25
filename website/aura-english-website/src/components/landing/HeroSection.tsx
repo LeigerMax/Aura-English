@@ -32,7 +32,7 @@ export function HeroSection() {
             <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-blue-400 to-indigo-500 blur-xl opacity-40" />
             <Image
               src="/logo.png"
-              alt={`${APP_NAME} logo`}
+              alt={`${APP_NAME} app logo - Learn English with AI`}
               width={100}
               height={100}
               className="relative rounded-3xl shadow-2xl"

@@ -80,22 +80,22 @@ export const STEPS: Step[] = [
 export const SCREENSHOTS: Screenshot[] = [
   {
     src: "/screenshots/home.png",
-    alt: "Aura English Home Screen",
+    alt: "Aura English app home screen showing vocabulary decks and learning progress",
     label: "Home",
   },
   {
     src: "/screenshots/flashcard.png",
-    alt: "Flashcard Review",
+    alt: "Interactive English vocabulary flashcard review with spaced repetition",
     label: "Flashcards",
   },
   {
     src: "/screenshots/quiz.png",
-    alt: "Quiz Mode",
+    alt: "English learning quiz mode testing vocabulary and grammar knowledge",
     label: "Quiz",
   },
   {
     src: "/screenshots/grammar.png",
-    alt: "Grammar Lessons",
+    alt: "Interactive English grammar lessons covering A1 to C2 rules",
     label: "Grammar",
   },
 ];
