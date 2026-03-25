@@ -40,8 +40,7 @@ interface ProgressRingProps {
 }
 
 /**
- * A circular progress indicator drawn with two overlapping Views.
- * Lightweight — no SVG dependency.
+ * A circular progress indicator using semi-circle clipping for 1% granularity.
  */
 export const ProgressRing: React.FC<ProgressRingProps> = ({
   progress,
@@ -51,36 +50,82 @@ export const ProgressRing: React.FC<ProgressRingProps> = ({
   const { colors } = useTheme();
   const clampedProgress = Math.max(0, Math.min(100, progress));
 
+  // Shared styles for the half-circle containers
+  const halfSize = size / 2;
+  const commonHalf: any = {
+    width: halfSize,
+    height: size,
+    overflow: 'hidden',
+    position: 'absolute',
+  };
+
+  // Shared circle style for the fillers
+  const circleStyle: any = {
+    width: size,
+    height: size,
+    borderRadius: size / 2,
+    borderWidth: strokeWidth,
+    position: 'absolute',
+  };
+
+  /**
+   * Rotation logic:
+   * We use rotate(45deg) as base so the colored borders (Top+Right) 
+   * align perfectly with the target half-side.
+   * Then we subtract (180 - progress_in_degrees) to hide it.
+   */
+  const rightRotation = 45 + (Math.min(50, clampedProgress) / 50) * 180 - 180;
+  const leftRotation = 45 + (Math.max(0, clampedProgress - 50) / 50) * 180 - 180;
+
   return (
     <View style={{ width: size, height: size, alignItems: 'center', justifyContent: 'center' }}>
-      {/* Track */}
+      {/* Background Track */}
       <View
         style={{
-          position: 'absolute',
           width: size,
           height: size,
           borderRadius: size / 2,
           borderWidth: strokeWidth,
           borderColor: colors.surfaceLight,
-        }}
-      />
-      {/* Filled arc — approximated with dashed border */}
-      <View
-        style={{
           position: 'absolute',
-          width: size,
-          height: size,
-          borderRadius: size / 2,
-          borderWidth: strokeWidth,
-          borderColor: CATEGORY_COLORS.mastered,
-          borderTopColor: clampedProgress >= 25 ? CATEGORY_COLORS.mastered : 'transparent',
-          borderRightColor: clampedProgress >= 50 ? CATEGORY_COLORS.mastered : 'transparent',
-          borderBottomColor: clampedProgress >= 75 ? CATEGORY_COLORS.mastered : 'transparent',
-          borderLeftColor: clampedProgress > 0 ? CATEGORY_COLORS.mastered : 'transparent',
-          transform: [{ rotate: '-90deg' }],
         }}
       />
-      {/* Center label */}
+
+      {/* Right Half Filler */}
+      {clampedProgress > 0 && (
+        <View style={{ ...commonHalf, right: 0 }}>
+          <View
+            style={{
+              ...circleStyle,
+              right: 0,
+              borderTopColor: CATEGORY_COLORS.mastered,
+              borderRightColor: CATEGORY_COLORS.mastered,
+              borderBottomColor: 'transparent',
+              borderLeftColor: 'transparent',
+              transform: [{ rotate: `${rightRotation}deg` }],
+            }}
+          />
+        </View>
+      )}
+
+      {/* Left Half Filler */}
+      {clampedProgress > 50 && (
+        <View style={{ ...commonHalf, left: 0 }}>
+          <View
+            style={{
+              ...circleStyle,
+              left: 0,
+              borderBottomColor: CATEGORY_COLORS.mastered,
+              borderLeftColor: CATEGORY_COLORS.mastered,
+              borderTopColor: 'transparent',
+              borderRightColor: 'transparent',
+              transform: [{ rotate: `${leftRotation}deg` }],
+            }}
+          />
+        </View>
+      )}
+
+      {/* Label */}
       <Text style={{ fontSize: size * 0.22, fontWeight: '800', color: colors.text.primary }}>
         {clampedProgress}%
       </Text>

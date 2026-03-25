@@ -2,7 +2,7 @@
   "expo": {
     "name": "Aura English",
     "slug": "aura-english",
-    "version": "1.4.1",
+    "version": "1.4.2",
     "orientation": "portrait",
     "scheme": "auraenglish",
     "plateforms": [
@@ -27,7 +27,7 @@
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false,
       "package": "com.allmaxou.auraenglish",
-      "versionCode": 5
+      "versionCode": 6
     },
     "web": {
       "output": "static"
@@ -35,7 +35,8 @@
     "plugins": [
       "expo-sqlite",
       "expo-secure-store",
-      "expo-audio"
+      "expo-audio",
+      "expo-notifications"
     ],
     "experiments": {
       "reactCompiler": true

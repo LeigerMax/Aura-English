@@ -35,10 +35,10 @@ export const DeckDetailScreen: React.FC<DeckDetailScreenProps> = ({ navigation, 
   const [loading, setLoading] = React.useState(true);
   const [loadingMore, setLoadingMore] = React.useState(false);
   const [hasMore, setHasMore] = React.useState(true);
-  const [searchQuery, setSearchQuery] = React.useState('');
+  const [searchQuery, setSearchQuery] = React.useState(''); // The active/debounced query
+  const [localSearchQuery, setLocalSearchQuery] = React.useState(''); // The immediate input value
   const [searchResults, setSearchResults] = React.useState<Flashcard[] | null>(null);
   const [searching, setSearching] = React.useState(false);
-  const searchTimeout = React.useRef<ReturnType<typeof setTimeout> | null>(null);
   const [exporting, setExporting] = React.useState(false);
   const [showQRModal, setShowQRModal] = React.useState(false);
 
@@ -136,39 +136,49 @@ export const DeckDetailScreen: React.FC<DeckDetailScreenProps> = ({ navigation, 
     );
   };
 
-  // ── Search ──
-  const handleSearchChange = React.useCallback((text: string) => {
-    setSearchQuery(text);
-
-    if (searchTimeout.current) clearTimeout(searchTimeout.current);
-
-    if (!text.trim()) {
+  // ── Search Debounce ──
+  React.useEffect(() => {
+    // If query is empty, reset immediately
+    if (!localSearchQuery.trim()) {
+      setSearchQuery('');
       setSearchResults(null);
       setSearching(false);
       return;
     }
 
-    // Longer debounce so the user can finish typing
-    searchTimeout.current = setTimeout(async () => {
-      setSearching(true);
+    // Set searching to true immediately to show feedback during debounce
+    setSearching(true);
+
+    const handler = setTimeout(async () => {
       try {
+        const trimmed = localSearchQuery.trim();
         // Search only by word (not definition/context)
-        const results = await flashcardRepository.searchFlashcardsByWord(text.trim());
+        const results = await flashcardRepository.searchFlashcardsByWord(trimmed);
+        
         // If we're in a specific deck (not global), filter results to this deck
+        let filteredResults = results;
         if (deckId !== GLOBAL_DECK_ID) {
           const allDeckCards = await flashcardRepository.getFlashcardsByDeck(deckId);
           const deckIds = new Set(allDeckCards.map((f) => f.id));
-          setSearchResults(results.filter((r) => deckIds.has(r.id)));
-        } else {
-          setSearchResults(results);
+          filteredResults = results.filter((r) => deckIds.has(r.id));
         }
-      } catch {
+        
+        setSearchResults(filteredResults);
+        setSearchQuery(trimmed); // Only update active query when search completes
+      } catch (error) {
+        console.error('Search failed:', error);
         setSearchResults([]);
       } finally {
         setSearching(false);
       }
-    }, 600);
-  }, [deckId]);
+    }, 800); // 800ms debounce as requested for better "finish writing" feel
+
+    return () => clearTimeout(handler);
+  }, [localSearchQuery, deckId]);
+
+  const handleSearchChange = React.useCallback((text: string) => {
+    setLocalSearchQuery(text);
+  }, []);
 
   const handleEditCard = (flashcard: Flashcard) => {
     navigation.navigate('FlashcardForm', { deckId, mode: 'edit', flashcard });
@@ -211,18 +221,8 @@ export const DeckDetailScreen: React.FC<DeckDetailScreenProps> = ({ navigation, 
     [],
   );
 
-  if (loading) {
-    return (
-      <SafeAreaView style={styles.safeArea}>
-        <View style={styles.loadingContainer}>
-          <ActivityIndicator size="large" color={colors.primary} />
-          <Text style={styles.loadingText}>Loading flashcards...</Text>
-        </View>
-      </SafeAreaView>
-    );
-  }
 
-  const renderHeader = () => (
+  const headerElement = React.useMemo(() => (
     <View>
       {/* Deck Info */}
       {deck && (
@@ -243,7 +243,7 @@ export const DeckDetailScreen: React.FC<DeckDetailScreenProps> = ({ navigation, 
           <Ionicons name="search" size={20} color={colors.text.tertiary} style={{ marginRight: sizes.spacing.sm }} />
           <TextInput
             style={styles.searchInput}
-            value={searchQuery}
+            value={localSearchQuery}
             onChangeText={handleSearchChange}
             placeholder="Search words..."
             placeholderTextColor={colors.text.tertiary}
@@ -251,7 +251,7 @@ export const DeckDetailScreen: React.FC<DeckDetailScreenProps> = ({ navigation, 
             autoCapitalize="none"
             returnKeyType="search"
           />
-          {searchQuery.length > 0 && (
+          {localSearchQuery.length > 0 && (
             <TouchableOpacity
               onPress={() => handleSearchChange('')}
               hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
@@ -344,7 +344,24 @@ export const DeckDetailScreen: React.FC<DeckDetailScreenProps> = ({ navigation, 
         </TouchableOpacity>
       )}
     </View>
-  );
+  ), [
+    deck,
+    totalCount,
+    colors,
+    styles,
+    localSearchQuery,
+    searching,
+    searchResults,
+    searchQuery,
+    exporting,
+    deckId,
+    navigation,
+    handleSearchChange,
+    handleAddCard,
+    handleExport,
+    handleDeleteDeck,
+    setShowQRModal,
+  ]);
 
   const renderFooter = () => {
     if (!loadingMore) return null;
@@ -371,6 +388,17 @@ export const DeckDetailScreen: React.FC<DeckDetailScreenProps> = ({ navigation, 
     </View>
   );
 
+  if (loading) {
+    return (
+      <SafeAreaView style={styles.safeArea}>
+        <View style={styles.loadingContainer}>
+          <ActivityIndicator size="large" color={colors.primary} />
+          <Text style={styles.loadingText}>Loading flashcards...</Text>
+        </View>
+      </SafeAreaView>
+    );
+  }
+
   const displayedCards = searchResults ?? flashcards;
 
   return (
@@ -379,7 +407,7 @@ export const DeckDetailScreen: React.FC<DeckDetailScreenProps> = ({ navigation, 
         data={displayedCards}
         keyExtractor={(item) => item.id}
         renderItem={renderItem}
-        ListHeaderComponent={renderHeader}
+        ListHeaderComponent={headerElement}
         ListFooterComponent={renderFooter}
         ListEmptyComponent={renderEmpty}
         contentContainerStyle={styles.scrollContent}

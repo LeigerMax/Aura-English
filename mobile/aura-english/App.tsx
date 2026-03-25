@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { View, Text, ActivityIndicator } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { NavigationContainer, DefaultTheme, DarkTheme, Theme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import * as Updates from 'expo-updates';
@@ -57,58 +58,60 @@ function AppContent() {
   }, [isDark]);
 
   return (
-    <NavigationContainer theme={navTheme}>
-      <Stack.Navigator
-        initialRouteName="Home"
-        screenOptions={{
-          headerStyle: { backgroundColor: colors.surface },
-          headerShadowVisible: true,
-          headerTintColor: colors.primary,
-          headerTitleStyle: { fontWeight: '700' },
-          animation: 'slide_from_right',
-          contentStyle: { backgroundColor: colors.background },
-        }}
-      >
-        <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
-        <Stack.Screen name="Deck" component={DeckListScreen} options={{ title: 'My Decks' }} />
-        <Stack.Screen
-          name="DeckDetail"
-          component={DeckDetailScreen}
-          options={({ route }) => ({ title: route.params.deckName })}
-        />
-        <Stack.Screen
-          name="FlashcardForm"
-          component={FlashcardFormScreen}
-          options={({ route }) => ({ title: route.params.mode === 'edit' ? 'Edit Card' : 'New Card' })}
-        />
-        <Stack.Screen name="Quiz" component={QuizScreen} options={{ title: 'Quiz' }} />
-        <Stack.Screen
-          name="Review"
-          component={ReviewScreen}
-          options={({ route }) => ({ title: route.params?.deckName ? `Review: ${route.params.deckName}` : 'Review' })}
-        />
-        <Stack.Screen name="Challenge" component={ChallengeScreen} options={{ title: 'Challenge' }} />
-        <Stack.Screen name="Grammar" component={GrammarHomeScreen} options={{ title: 'Grammar' }} />
-        <Stack.Screen
-          name="GrammarCategory"
-          component={GrammarCategoryScreen}
-          options={({ route }) => ({
-            title: getCategoryById(route.params.categoryId)?.title ?? 'Category',
-          })}
-        />
-        <Stack.Screen
-          name="GrammarRule"
-          component={GrammarRuleScreen}
-          options={({ route }) => ({
-            title: getRuleById(route.params.ruleId)?.title ?? 'Grammar Rule',
-          })}
-        />
-        <Stack.Screen name="Settings" component={SettingsScreen} options={{ title: 'Settings' }} />
-        <Stack.Screen name="Statistics" component={StatisticsScreen} options={{ title: 'Statistics' }} />
-        <Stack.Screen name="ApiKeyTutorial" component={ApiKeyTutorialScreen} options={{ title: 'API Key Setup' }} />
-        <Stack.Screen name="OnlineDecks" component={OnlineDecksScreen} options={{ title: 'Online Decks' }} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <SafeAreaProvider>
+      <NavigationContainer theme={navTheme}>
+        <Stack.Navigator
+          initialRouteName="Home"
+          screenOptions={{
+            headerStyle: { backgroundColor: colors.surface },
+            headerShadowVisible: true,
+            headerTintColor: colors.primary,
+            headerTitleStyle: { fontWeight: '700' },
+            animation: 'slide_from_right',
+            contentStyle: { backgroundColor: colors.background },
+          }}
+        >
+          <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
+          <Stack.Screen name="Deck" component={DeckListScreen} options={{ title: 'My Decks' }} />
+          <Stack.Screen
+            name="DeckDetail"
+            component={DeckDetailScreen}
+            options={({ route }) => ({ title: route.params.deckName })}
+          />
+          <Stack.Screen
+            name="FlashcardForm"
+            component={FlashcardFormScreen}
+            options={({ route }) => ({ title: route.params.mode === 'edit' ? 'Edit Card' : 'New Card' })}
+          />
+          <Stack.Screen name="Quiz" component={QuizScreen} options={{ title: 'Quiz' }} />
+          <Stack.Screen
+            name="Review"
+            component={ReviewScreen}
+            options={({ route }) => ({ title: route.params?.deckName ? `Review: ${route.params.deckName}` : 'Review' })}
+          />
+          <Stack.Screen name="Challenge" component={ChallengeScreen} options={{ title: 'Challenge' }} />
+          <Stack.Screen name="Grammar" component={GrammarHomeScreen} options={{ title: 'Grammar' }} />
+          <Stack.Screen
+            name="GrammarCategory"
+            component={GrammarCategoryScreen}
+            options={({ route }) => ({
+              title: getCategoryById(route.params.categoryId)?.title ?? 'Category',
+            })}
+          />
+          <Stack.Screen
+            name="GrammarRule"
+            component={GrammarRuleScreen}
+            options={({ route }) => ({
+              title: getRuleById(route.params.ruleId)?.title ?? 'Grammar Rule',
+            })}
+          />
+          <Stack.Screen name="Settings" component={SettingsScreen} options={{ title: 'Settings' }} />
+          <Stack.Screen name="Statistics" component={StatisticsScreen} options={{ title: 'Statistics' }} />
+          <Stack.Screen name="ApiKeyTutorial" component={ApiKeyTutorialScreen} options={{ title: 'API Key Setup' }} />
+          <Stack.Screen name="OnlineDecks" component={OnlineDecksScreen} options={{ title: 'Online Decks' }} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </SafeAreaProvider>
   );
 }
 

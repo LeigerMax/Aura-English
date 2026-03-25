@@ -16,8 +16,8 @@ import type { Flashcard, NotificationSettings } from '@/types/models';
  *   previous notifications first, so there are never duplicates.
  */
 
-/** Identifiers for the three daily notifications. */
-const NOTIF_IDS = ['daily-word-10', 'daily-word-14', 'daily-word-18'] as const;
+/** Number of days to pre-schedule */
+const DAYS_AHEAD = 7;
 
 /** Fixed schedule hours */
 const SCHEDULE_HOURS = [10, 14, 18] as const;
@@ -36,34 +36,41 @@ export async function requestPermissions(): Promise<boolean> {
 }
 
 // ──────────────────────────────────────────────
-// Random word selection
+// Word selection
 // ──────────────────────────────────────────────
 
-async function pickRandomWord(): Promise<Flashcard | null> {
-  const cards = await flashcardRepository.getAllFlashcards();
-  if (cards.length === 0) return null;
-  return cards[Math.floor(Math.random() * cards.length)];
+/** Picks N unique random words from the repository */
+async function pickUniqueWords(n: number): Promise<Flashcard[]> {
+  const allCards = await flashcardRepository.getAllFlashcards();
+  if (allCards.length === 0) return [];
+  
+  // Shuffle all cards
+  const shuffled = [...allCards].sort(() => Math.random() - 0.5);
+  
+  // Return at most N cards
+  return shuffled.slice(0, n);
 }
 
 // ──────────────────────────────────────────────
 // Scheduling
 // ──────────────────────────────────────────────
 
-/** Cancel all existing daily notifications. */
+/** 
+ * Cancel all existing daily notifications.
+ * We cancel everything from expo because identifiers might have changed.
+ */
 export async function cancelDailyNotifications(): Promise<void> {
-  await Promise.all(
-    NOTIF_IDS.map((id) => Notifications.cancelScheduledNotificationAsync(id)),
-  );
+  await Notifications.cancelAllScheduledNotificationsAsync();
 }
 
 /**
- * Schedule (or reschedule) the 3 daily notifications
- * at 10:00, 14:00 and 18:00 according to the persisted settings.
+ * Schedule (or reschedule) notifications for the next 7 days.
+ * Total of 21 notifications (3 per day).
  */
 export async function scheduleDailyNotifications(): Promise<void> {
   const settings = await getNotificationSettings();
 
-  // Always cancel first to avoid duplicates
+  // Always cancel everything first to avoid duplicates
   await cancelDailyNotifications();
 
   if (!settings.enabled) return;
@@ -71,24 +78,37 @@ export async function scheduleDailyNotifications(): Promise<void> {
   const granted = await requestPermissions();
   if (!granted) return;
 
-  // Schedule one notification per time slot
-  for (let i = 0; i < SCHEDULE_HOURS.length; i++) {
-    const card = await pickRandomWord();
-    if (!card) continue;
+  const numNeeded = DAYS_AHEAD * SCHEDULE_HOURS.length;
+  const cards = await pickUniqueWords(numNeeded);
+  if (cards.length === 0) return;
 
-    await Notifications.scheduleNotificationAsync({
-      identifier: NOTIF_IDS[i],
-      content: {
-        title: `📖 Word of the Day: ${card.word}`,
-        body: card.definition,
-        sound: true,
-      },
-      trigger: {
-        type: Notifications.SchedulableTriggerInputTypes.DAILY,
-        hour: SCHEDULE_HOURS[i],
-        minute: 0,
-      },
-    });
+  const now = new Date();
+  let cardIdx = 0;
+
+  for (let d = 0; d < DAYS_AHEAD; d++) {
+    for (let h = 0; h < SCHEDULE_HOURS.length; h++) {
+      // Create a date for this slot
+      const triggerDate = new Date();
+      triggerDate.setDate(now.getDate() + d);
+      triggerDate.setHours(SCHEDULE_HOURS[h], 0, 0, 0);
+
+      // Skip if this slot is already in the past
+      if (triggerDate <= now) continue;
+
+      // Wrap around if we have fewer cards than slots
+      const card = cards[cardIdx % cards.length];
+      cardIdx++;
+
+      await Notifications.scheduleNotificationAsync({
+        identifier: `daily-word-${d}-${SCHEDULE_HOURS[h]}`,
+        content: {
+          title: `📖 Word of the Day: ${card.word}`,
+          body: card.definition,
+          sound: true,
+        },
+        trigger: triggerDate, // Testing if Date is accepted, adding cast if needed to satisfy older types
+      } as any);
+    }
   }
 }
 
