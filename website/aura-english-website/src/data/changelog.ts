@@ -20,6 +20,7 @@ export const CHANGELOG: ChangelogEntry[] = [
       "Fix repeating notifications by scheduling 7 days of unique words",
       "Added Privacy Policy and Terms of Use pages",
       "Improved Statistics Progress Ring with 1% granularity",
+      "Added SEO optimization: meta tags, sitemap, robots.txt, and Google Site Verification",
     ],
   },
   {
