@@ -24,14 +24,34 @@ export function Footer() {
           Made with <Heart className="h-3.5 w-3.5 text-pink-500 fill-pink-500" /> for English learners
         </p>
 
-        <Link
-          href={GITHUB_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-1.5 hover:text-slate-600 transition-colors"
-        >
-          <Github className="h-4 w-4" /> GitHub
-        </Link>
+        <div className="flex items-center gap-6">
+          <Link
+            href="/changelog"
+            className="hover:text-slate-600 transition-colors"
+          >
+            Changelog
+          </Link>
+          <Link
+            href="/privacy"
+            className="hover:text-slate-600 transition-colors"
+          >
+            Privacy
+          </Link>
+          <Link
+            href="/terms"
+            className="hover:text-slate-600 transition-colors"
+          >
+            Terms
+          </Link>
+          <Link
+            href={GITHUB_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 hover:text-slate-600 transition-colors"
+          >
+            <Github className="h-4 w-4" /> GitHub
+          </Link>
+        </div>
       </div>
     </footer>
   );

@@ -9,6 +9,7 @@ import { APP_NAME } from "@/src/constants";
 const NAV_LINKS = [
   { href: "/#features", label: "Features" },
   { href: "/#how-it-works", label: "How it works" },
+  { href: "/changelog", label: "Changelog" },
   { href: "/download", label: "Download" },
 ] as const;
 

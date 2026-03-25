@@ -156,16 +156,6 @@ Carte d'information élégante
 - **Grammar** - Règles de grammaire
 - **Révision espacée** - Algorithme SRS
 
-## 🔮 Prochaines fonctionnalités
-
-- [ ] Intégration API OpenAI pour suggestions
-- [ ] Mode sombre complet
-- [ ] Synchronisation cloud
-- [ ] Partage de decks communautaires
-- [ ] Statistiques avancées avec graphiques
-- [ ] Notifications de révision
-- [ ] Mode hors ligne complet
-- [ ] Export/Import de decks
 
 ## 🤝 Contribution
 

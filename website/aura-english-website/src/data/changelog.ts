@@ -10,6 +10,19 @@ export interface ChangelogEntry {
  */
 export const CHANGELOG: ChangelogEntry[] = [
   {
+    version: "1.4.2",
+    date: "2026-03-25",
+    changes: [
+      "Add 11 new vocabulary decks (total 490+ cards)",
+      "Update app version to 1.4.2",
+      "Specialized decks: Finance, AI, Psychology",
+      "Automatic changelog system implementation",
+      "Fix repeating notifications by scheduling 7 days of unique words",
+      "Added Privacy Policy and Terms of Use pages",
+      "Improved Statistics Progress Ring with 1% granularity",
+    ],
+  },
+  {
     version: "1.4.1",
     date: "2026-02-12",
     changes: [
